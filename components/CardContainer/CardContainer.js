@@ -1,8 +1,11 @@
+import { Card } from "./CardContainer.styled";
+
 export default function CardContainer({ question, answer }) {
   return (
     <>
-      <div>{question}</div>
-      <div>{answer}</div>
+      <Card>{question}</Card>
+      <Card>{answer}</Card>
+      <br />
     </>
   );
 }
