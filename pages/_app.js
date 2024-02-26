@@ -1,5 +1,6 @@
 import GlobalStyle from "../styles";
 import initialFlashCards from "../lib.data.json";
+import Header from "@/components/Header/Header";
 
 export default function App({ Component, pageProps }) {
   const initialData = initialFlashCards;
@@ -7,7 +8,10 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
-      <Component initialData={initialData} {...pageProps} />
+      <main>
+        <Header />
+        <Component initialData={initialData} {...pageProps} />
+      </main>
     </>
   );
 }

@@ -17,11 +17,21 @@ export default createGlobalStyle`
   }
 
   body {
-    display: grid;
+    
     margin: auto;
     font-family: system-ui;
     place-items: center;
     min-height: 100vh;
     max-width: 50rem;
   }
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  width: 640px;
+  margin: 0 auto;
+}
+
 `;

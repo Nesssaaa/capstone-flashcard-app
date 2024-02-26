@@ -5,7 +5,7 @@ export default function HomePage({ initialData }) {
   console.log("HomePage:", initialData);
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <CardList initialData={initialData} />
     </div>
   );
