@@ -1,7 +1,12 @@
-export default function HomePage() {
+import CardList from "@/components/CardList/CardList";
+import Header from "@/components/Header/Header";
+
+export default function HomePage({ initialData }) {
+  console.log("HomePage:", initialData);
   return (
     <div>
-      <h1>Flashcard App</h1>
+      <Header />
+      <CardList initialData={initialData} />
     </div>
   );
 }

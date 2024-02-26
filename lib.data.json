@@ -1,0 +1,10 @@
+[
+  { "id": 1, "question": "Welcome", "answer": "Willkommen" },
+  { "id": 2, "question": "Bienvenido/Bienvenida", "answer": "Willkommen" },
+  { "id": 3, "question": "Bienvenue", "answer": "Willkommen" },
+  { "id": 4, "question": "Willkommen", "answer": "Willkommen" },
+  { "id": 5, "question": "Benvenuto/Benvenuta", "answer": "Willkommen" },
+  { "id": 6, "question": "Bem-vindo/Bem-vinda", "answer": "Willkommen" },
+  { "id": 7, "question": "Welkom", "answer": "Willkommen" },
+  { "id": 8, "question": "Välkommen", "answer": "Willkommen" }
+]
