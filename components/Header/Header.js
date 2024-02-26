@@ -1,3 +1,5 @@
+import { StyledHeader } from "./Header.styled.js";
+
 export default function Header() {
-  return <Header>Flashcard App</Header>;
+  return <StyledHeader>Flashcard App</StyledHeader>;
 }

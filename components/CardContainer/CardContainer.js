@@ -1,10 +1,10 @@
-import { Card } from "./CardContainer.styled";
+import { StyledCardContainer } from "./CardContainer.styled";
 
 export default function CardContainer({ question, answer }) {
   return (
     <>
-      <Card>{question}</Card>
-      <Card>{answer}</Card>
+      <StyledCardContainer>{question}</StyledCardContainer>
+      <StyledCardContainer>{answer}</StyledCardContainer>
       <br />
     </>
   );

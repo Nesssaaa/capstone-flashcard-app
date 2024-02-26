@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Card = styled.div`
+export const StyledCardContainer = styled.div`
   display: flex;
   min-height: 10rem;
   width: auto;
