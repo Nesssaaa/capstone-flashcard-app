@@ -16,22 +16,28 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+ 
+
   body {
-    
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
     font-family: system-ui;
-    place-items: center;
-    min-height: 100vh;
-    max-width: 50rem;
   }
 
-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  width: 640px;
-  margin: 0 auto;
-}
+  // fuer das <div id="__next">, das next.js einbaut
+  body > div {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    max-height: 100vh;
+    gap: 1rem;
+  }
 
+  main {
+    padding: var(--main-padding);
+    flex: 1;
+    overflow: auto;
+}
 `;
