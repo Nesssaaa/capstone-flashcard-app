@@ -8,8 +8,8 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <GlobalStyle />
+      <Header />
       <main>
-        <Header />
         <Component initialData={initialData} {...pageProps} />
       </main>
     </>
