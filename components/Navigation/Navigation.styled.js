@@ -25,7 +25,7 @@ export const StyledList = styled.ul`
 
 export const StyledListItem = styled.li`
   list-style: none;
-  border: 2px solid green;
+  border: 2px solid black;
   flex-basis: 33%;
   height: 48px;
   display: flex;

@@ -14,7 +14,7 @@ export default function Navigation() {
           <StyledLink href="/">Home</StyledLink>
         </StyledListItem>
         <StyledListItem>
-          <StyledLink href="/">Neu</StyledLink>
+          <StyledLink href="/new">Neu</StyledLink>
         </StyledListItem>
 
         <StyledListItem>
