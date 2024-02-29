@@ -4,11 +4,11 @@ import {
   StyledInput,
   StyledLabel,
 } from "./Form.styled";
-export default function Form({ onSubmit /*state = {} */ }) {
+export default function Form({ onSubmit }) {
   function handleSubmit(event) {
     event.preventDefault();
-    const data = Object.fromEntries(new FormData(event.target));
-    onSubmit(data);
+    const newCardData = Object.fromEntries(new FormData(event.target));
+    onSubmit(newCardData);
     event.target.reset();
     event.target.elements.question.focus();
   }

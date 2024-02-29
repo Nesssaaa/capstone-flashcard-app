@@ -1,9 +1,9 @@
 import Form from "../components/Form/Form";
 
-export default function NewPage() {
+export default function NewPage({ addCard }) {
   return (
     <>
-      <Form onSubmit={(data) => console.log(data)} />
+      <Form onSubmit={addCard} />
     </>
   );
 }
