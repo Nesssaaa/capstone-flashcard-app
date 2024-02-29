@@ -11,7 +11,6 @@ export default function Form({ onSubmit /*state = {} */ }) {
     onSubmit(data);
     event.target.reset();
     event.target.elements.question.focus();
-    console.log(data);
   }
 
   return (
@@ -22,7 +21,6 @@ export default function Form({ onSubmit /*state = {} */ }) {
           name="question"
           required
           placeholder="Gib hier deine Frage ein"
-          //   defaultValue={state.question}
         />
       </StyledLabel>
       <StyledLabel>
@@ -31,7 +29,6 @@ export default function Form({ onSubmit /*state = {} */ }) {
           name="answer"
           required
           placeholder="Gib hier dein Antwort ein"
-          //   defaultValue={state.answer}
         />
       </StyledLabel>
 

@@ -16,10 +16,6 @@ export default function Navigation() {
         <StyledListItem>
           <StyledLink href="/new">Neu</StyledLink>
         </StyledListItem>
-
-        <StyledListItem>
-          <StyledLink href="/">Archiv</StyledLink>
-        </StyledListItem>
       </StyledList>
     </StyledNavigation>
   );
