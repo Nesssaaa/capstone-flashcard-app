@@ -11,10 +11,11 @@ export default function Form({ onSubmit }) {
     event.preventDefault();
     const newCardData = Object.fromEntries(new FormData(event.target));
     onSubmit(newCardData);
+    toast("Karte erfolgreich hinzugefügt");
     event.target.reset();
     event.target.elements.question.focus();
   }
-  const notify = () => toast("Karte erfolgreich hinzugefügt");
+
   return (
     <StyledForm onSubmit={handleSubmit}>
       <StyledLabel>
@@ -23,6 +24,7 @@ export default function Form({ onSubmit }) {
           name="question"
           required
           placeholder="Gib hier deine Frage ein"
+          type="text"
         />
       </StyledLabel>
       <StyledLabel>
@@ -31,12 +33,11 @@ export default function Form({ onSubmit }) {
           name="answer"
           required
           placeholder="Gib hier dein Antwort ein"
+          type="text"
         />
       </StyledLabel>
 
-      <StyledButton type="submit" onClick={notify}>
-        Submit
-      </StyledButton>
+      <StyledButton type="submit">Submit</StyledButton>
       <ToastContainer
         position="bottom-center"
         autoClose={4000}
