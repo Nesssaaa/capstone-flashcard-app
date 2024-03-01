@@ -8,10 +8,9 @@ import Layout from "@/components/Layout/Layout";
 export default function App({ Component, pageProps }) {
   const [cards, setCards] = useLocalStorageState("cards", { defaultValue: [] });
   const initialData = initialFlashCards;
-  console.log("Klappt", cards);
 
   function addCard(newCardData) {
-    const newCards = [...cards, { id: nanoid(), ...newCardData }];
+    const newCards = [{ id: nanoid(), ...newCardData }, ...cards];
     setCards(newCards);
   }
 

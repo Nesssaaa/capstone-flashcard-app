@@ -39,7 +39,7 @@ export default function Form({ onSubmit }) {
 
       <StyledButton type="submit">Submit</StyledButton>
       <ToastContainer
-        position="bottom-center"
+        position="top-center"
         autoClose={4000}
         hideProgressBar={false}
         newestOnTop={false}

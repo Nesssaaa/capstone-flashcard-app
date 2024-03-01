@@ -26,6 +26,7 @@ export default createGlobalStyle`
     font-family: system-ui;
   max-width: 640px;
     margin: 0 auto;
+    background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
   }
 
   // fuer das <div id="__next">, das next.js einbaut

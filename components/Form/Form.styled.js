@@ -14,13 +14,15 @@ export const StyledLabel = styled.label`
 `;
 
 export const StyledButton = styled.button`
-  margin: 0;
+  margin: auto;
   padding: 0 1rem;
-  height: 2.5rem;
+  height: 3rem;
+  width: 9rem;
+  color: white;
   border-radius: 0.5rem;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.4);
 `;
 
 export const StyledInput = styled.input`
