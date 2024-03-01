@@ -1,3 +1,4 @@
+import ButtonNavBar from "../ButtonNavBar/ButtonNavBar";
 import CardContainer from "../CardContainer/CardContainer";
 
 export default function CardList({ initialData, cards }) {
@@ -16,6 +17,7 @@ export default function CardList({ initialData, cards }) {
       {initialData.map((card) => (
         <div key={card.id}>
           <CardContainer question={card.question} answer={card.answer} />
+          <ButtonNavBar />
         </div>
       ))}
     </>

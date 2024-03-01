@@ -15,7 +15,6 @@ export default function CardContainer({ question, answer }) {
         <StyledCardContainer onClick={flipCard}>{question}</StyledCardContainer>
         <StyledCardContainer onClick={flipCard}>{answer}</StyledCardContainer>
       </ReactCardFlip>
-      <br />
     </>
   );
 }
