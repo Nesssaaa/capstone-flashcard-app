@@ -24,6 +24,9 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: system-ui;
+  max-width: 640px;
+    margin: 0 auto;
+    background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);
   }
 
   // fuer das <div id="__next">, das next.js einbaut
@@ -33,11 +36,9 @@ export default createGlobalStyle`
     flex: 1;
     max-height: 100vh;
     gap: 1rem;
+    
+    
   }
 
-  main {
-    padding: var(--main-padding);
-    flex: 1;
-    overflow: auto;
-}
+ 
 `;

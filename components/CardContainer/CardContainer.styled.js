@@ -10,6 +10,9 @@ export const StyledCardContainer = styled.div`
   padding: 10px;
   justify-content: center;
   align-items: center;
-  background-color: lightcoral;
+  border-radius: 20px;
+  background-color: white;
+  opacity: 0.6;
+
   font-size: 1.5rem;
 `;
