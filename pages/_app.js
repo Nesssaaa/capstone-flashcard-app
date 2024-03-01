@@ -7,7 +7,6 @@ import Layout from "@/components/Layout/Layout";
 
 export default function App({ Component, pageProps }) {
   const [cards, setCards] = useLocalStorageState("cards", { defaultValue: [] });
-  const initialData = initialFlashCards;
 
   function addCard(newCardData) {
     const newCards = [{ id: nanoid(), ...newCardData }, ...cards];
@@ -20,8 +19,7 @@ export default function App({ Component, pageProps }) {
         <GlobalStyle />
 
         <Component
-          initialData={initialData}
-          cards={cards}
+          cards={[...cards, ...initialFlashCards]}
           setCards={setCards}
           addCard={addCard}
           {...pageProps}
