@@ -1,12 +1,9 @@
 import CardList from "@/components/CardList/CardList";
-import Header from "@/components/Header/Header";
 
-export default function HomePage({ initialData }) {
-  console.log("HomePage:", initialData);
+export default function HomePage({ initialData, cards }) {
   return (
     <div>
-      {/* <Header /> */}
-      <CardList initialData={initialData} />
+      <CardList initialData={initialData} cards={cards} />
     </div>
   );
 }
