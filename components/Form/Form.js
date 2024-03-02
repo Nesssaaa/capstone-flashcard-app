@@ -7,6 +7,7 @@ import {
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
+import { calculateFontSize } from "@/utils";
 export default function Form({ onSubmit }) {
   const [questionText, setQuestionText] = useState("");
   const [answerText, setAnswerText] = useState("");
@@ -26,33 +27,18 @@ export default function Form({ onSubmit }) {
   function handleAnswerChange(event) {
     setAnswerText(event.target.value);
   }
-  function calculateQuestionFontSize() {
-    const wordCount = questionText.trim().split(/\s+/).length;
-    const maxFontSize = 35;
-    const minFontSize = 6;
-    const newSize = Math.max(minFontSize, maxFontSize - wordCount / 4);
-    return newSize;
-  }
-
-  function calculateAnswerFontSize() {
-    const wordCount = answerText.trim().split(/\s+/).length;
-    const maxFontSize = 35;
-    const minFontSize = 10;
-    const newSize = Math.max(minFontSize, maxFontSize - wordCount / 4);
-    return newSize;
-  }
 
   return (
     <StyledForm onSubmit={handleSubmit}>
       <StyledLabel>
         Frage
         <StyledInput
-          onChange={handleQuestionChange} //arrow function?
+          onChange={handleQuestionChange}
           name="question"
           required
           placeholder="Gib hier deine Frage ein"
           type="text"
-          style={{ fontSize: `${calculateQuestionFontSize()}px` }}
+          style={{ fontSize: `${calculateFontSize(questionText)}px` }}
         />
       </StyledLabel>
       <StyledLabel>
@@ -63,7 +49,7 @@ export default function Form({ onSubmit }) {
           required
           placeholder="Gib hier dein Antwort ein"
           type="text"
-          style={{ fontSize: `${calculateAnswerFontSize()}px` }}
+          style={{ fontSize: `${calculateFontSize(answerText)}px` }}
         />
       </StyledLabel>
 
