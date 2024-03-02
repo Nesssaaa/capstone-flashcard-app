@@ -6,10 +6,12 @@ import {
 } from "./Form.styled";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-export default function Form({ onSubmit }) {
+
+export default function Form({ onSubmit, card = {} }) {
   function handleSubmit(event) {
     event.preventDefault();
     const newCardData = Object.fromEntries(new FormData(event.target));
+    //da Form für new und edit, sollte const besser cardData oder nur data heißen - gleiches siehe App.js
     onSubmit(newCardData);
     toast("Karte erfolgreich hinzugefügt");
     event.target.reset();
@@ -25,6 +27,7 @@ export default function Form({ onSubmit }) {
           required
           placeholder="Gib hier deine Frage ein"
           type="text"
+          defaultValue={card.question}
         />
       </StyledLabel>
       <StyledLabel>
@@ -34,6 +37,7 @@ export default function Form({ onSubmit }) {
           required
           placeholder="Gib hier dein Antwort ein"
           type="text"
+          defaultValue={card.answer}
         />
       </StyledLabel>
 

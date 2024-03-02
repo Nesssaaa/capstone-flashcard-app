@@ -1,8 +1,17 @@
 import CardButton from "../CardButton/CardButton";
-export default function ButtonNavBar({ onEdit }) {
+import { useRouter } from "next/router";
+
+export default function ButtonNavBar({ id }) {
+  const router = useRouter();
+
+  function onEdit() {
+    console.log("clicked");
+    router.push(`/cards/${id}/edit`);
+  }
+
   return (
     <>
-      <CardButton onclick={onEdit}>Bearbeiten</CardButton>
+      <CardButton onClick={onEdit}>Bearbeiten</CardButton>
       <CardButton>Löschen</CardButton>
     </>
   );
