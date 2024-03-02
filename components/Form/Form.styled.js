@@ -20,7 +20,7 @@ export const StyledButton = styled.button`
   padding: 0 1rem;
   height: 3rem;
   width: 9rem;
-  color: white;
+  color: var(--color-font-2);
   border-radius: 0.5rem;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
