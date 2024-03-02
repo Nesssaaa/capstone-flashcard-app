@@ -1,5 +1,6 @@
 import CardButton from "../CardButton/CardButton";
 import { useRouter } from "next/router";
+import { StyledButtonNavBar } from "./ButtonNavBar.styled";
 
 export default function ButtonNavBar({ id }) {
   const router = useRouter();
@@ -10,9 +11,8 @@ export default function ButtonNavBar({ id }) {
   }
 
   return (
-    <>
+    <StyledButtonNavBar>
       <CardButton onClick={onEdit}>Bearbeiten</CardButton>
-      <CardButton>Löschen</CardButton>
-    </>
+    </StyledButtonNavBar>
   );
 }

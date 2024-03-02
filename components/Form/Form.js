@@ -10,9 +10,8 @@ import "react-toastify/dist/ReactToastify.css";
 export default function Form({ onSubmit, card = {} }) {
   function handleSubmit(event) {
     event.preventDefault();
-    const newCardData = Object.fromEntries(new FormData(event.target));
-    //da Form für new und edit, sollte const besser cardData oder nur data heißen - gleiches siehe App.js
-    onSubmit(newCardData);
+    const data = Object.fromEntries(new FormData(event.target));
+    onSubmit(data);
     toast("Karte erfolgreich hinzugefügt");
     event.target.reset();
     event.target.elements.question.focus();
@@ -55,3 +54,5 @@ export default function Form({ onSubmit, card = {} }) {
     </StyledForm>
   );
 }
+
+//Toastify funktioniert nicht nach edit-submit

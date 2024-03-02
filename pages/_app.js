@@ -11,10 +11,9 @@ export default function App({ Component, pageProps }) {
   function getCard(id) {
     return cards.find((card) => card.id == id);
   }
-  console.log(getCard());
 
-  function addCard(newCardData) {
-    const newCards = [{ id: nanoid(), ...newCardData }, ...cards];
+  function addCard(data) {
+    const newCards = [{ id: nanoid(), ...data }, ...cards];
     setCards(newCards);
   }
 
