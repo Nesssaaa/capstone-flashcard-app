@@ -6,12 +6,17 @@ import { nanoid } from "nanoid";
 import Layout from "@/components/Layout/Layout";
 
 export default function App({ Component, pageProps }) {
-  const [cards, setCards] = useLocalStorageState("cards", { defaultValue: [] });
+  const [cards, setCards] = useLocalStorageState("cards", {
+    defaultValue: [],
+  });
   const initialData = initialFlashCards;
 
   function addCard(newCardData) {
     const newCards = [{ id: nanoid(), ...newCardData }, ...cards];
     setCards(newCards);
+  }
+  function deleteCard(id) {
+    setCards((cards) => cards.filter((card) => card.id !== id));
   }
 
   return (
@@ -24,6 +29,7 @@ export default function App({ Component, pageProps }) {
           cards={cards}
           setCards={setCards}
           addCard={addCard}
+          deleteCard={deleteCard}
           {...pageProps}
         />
       </Layout>
