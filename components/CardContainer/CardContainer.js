@@ -7,17 +7,9 @@ import { useState } from "react";
 import { calculateFontSize } from "@/utils";
 export default function CardContainer({ question, answer }) {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [questionText, setQuestionText] = useState("");
-  const [answerText, setAnswerText] = useState("");
+
   function flipCard() {
     setIsFlipped(!isFlipped);
-  }
-  function handleQuestionChange(event) {
-    setQuestionText(event.target.value);
-  }
-
-  function handleAnswerChange(event) {
-    setAnswerText(event.target.value);
   }
 
   return (
@@ -25,15 +17,13 @@ export default function CardContainer({ question, answer }) {
       <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped}>
         <StyledCardContainerQuestion
           onClick={flipCard}
-          onChange={handleQuestionChange}
-          style={{ fontSize: `${calculateFontSize(questionText)}px` }}
+          style={{ fontSize: `${calculateFontSize(question)}px` }}
         >
           {question}
         </StyledCardContainerQuestion>
         <StyledCardContainerAnswer
           onClick={flipCard}
-          onChange={handleAnswerChange}
-          style={{ fontSize: `${calculateFontSize(answerText)}px` }}
+          style={{ fontSize: `${calculateFontSize(answer)}px` }}
         >
           {answer}
         </StyledCardContainerAnswer>

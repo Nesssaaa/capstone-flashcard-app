@@ -13,8 +13,6 @@ export const StyledCardContainerQuestion = styled.div`
   border-radius: 20px;
   background-color: var(--color-card-1);
   opacity: 0.7;
-
-  font-size: 1.3rem;
 `;
 
 export const StyledCardContainerAnswer = styled.div`
@@ -30,6 +28,4 @@ export const StyledCardContainerAnswer = styled.div`
   border-radius: 20px;
   background-color: var(--color-card-2);
   opacity: 0.6;
-
-  font-size: 1.3rem;
 `;
