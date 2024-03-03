@@ -9,14 +9,14 @@ export default function CardList({ initialData, cards, deleteCard }) {
       message: "Möchtest du diese Karte wirklich löschen?",
       buttons: [
         {
-          label: "Ja",
+          label: "Ja, bitte.",
           onClick: () => {
             const id = event.target.value;
             deleteCard(id);
           },
         },
         {
-          label: "Nein",
+          label: "Nein, danke.",
         },
       ],
     });
