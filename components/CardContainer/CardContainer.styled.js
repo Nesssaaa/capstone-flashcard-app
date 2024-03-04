@@ -33,10 +33,10 @@ export const StyledTextShow = styled.textarea`
   min-height: 18rem;
   border-radius: 0.5rem;
   border: none;
-  background-color: invisible;
+  background-color: transparent;
   text-align: center;
   font-family: system-ui;
   resize: none;
+  outline: none;
+  font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};
 `;
-
-/*font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};*/

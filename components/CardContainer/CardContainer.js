@@ -16,25 +16,13 @@ export default function CardContainer({ question, answer }) {
   return (
     <>
       <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped}>
-        <StyledCardContainerQuestion
-          onClick={flipCard}
-          // textLength={question.length}
-        >
-          <StyledTextShow
-            readOnly
-            style={{ fontSize: `${calculateFontSize(question)}px` }}
-          >
+        <StyledCardContainerQuestion onClick={flipCard}>
+          <StyledTextShow readOnly textLength={question}>
             {question}
           </StyledTextShow>
         </StyledCardContainerQuestion>
-        <StyledCardContainerAnswer
-          onClick={flipCard}
-          // textLength={answer.length}
-        >
-          <StyledTextShow
-            readOnly
-            style={{ fontSize: `${calculateFontSize(answer)}px` }}
-          >
+        <StyledCardContainerAnswer onClick={flipCard}>
+          <StyledTextShow readOnly textLength={answer}>
             {answer}
           </StyledTextShow>
         </StyledCardContainerAnswer>
