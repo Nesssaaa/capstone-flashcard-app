@@ -39,5 +39,5 @@ export const StyledInput = styled.textarea`
   text-align: center;
   font-family: system-ui;
   resize: none;
+  font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};
 `;
-//font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};

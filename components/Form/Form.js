@@ -6,7 +6,7 @@ import {
 } from "./Form.styled";
 
 import { useState } from "react";
-import { calculateFontSize } from "@/utils";
+
 export default function Form({ onSubmit, card = {} }) {
   const [questionText, setQuestionText] = useState("");
   const [answerText, setAnswerText] = useState("");
@@ -38,7 +38,7 @@ export default function Form({ onSubmit, card = {} }) {
           placeholder="Gib hier deine Frage ein"
           type="text"
           defaultValue={card.question}
-          style={{ fontSize: `${calculateFontSize(questionText)}px` }}
+          textLength={questionText}
         />
       </StyledLabel>
       <StyledLabel>
@@ -50,7 +50,7 @@ export default function Form({ onSubmit, card = {} }) {
           placeholder="Gib hier deine Antwort ein"
           type="text"
           defaultValue={card.answer}
-          style={{ fontSize: `${calculateFontSize(answerText)}px` }}
+          textLength={answerText}
         />
       </StyledLabel>
 
