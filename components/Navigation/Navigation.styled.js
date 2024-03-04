@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Link from "next/link";
 
 export const StyledNavigation = styled.nav`
-  background-color: blanchedalmond;
+  background-color: var(--color-background-3);
   padding: 0;
 
   width: 100%;
@@ -25,7 +25,7 @@ export const StyledList = styled.ul`
 
 export const StyledListItem = styled.li`
   list-style: none;
-  border: 2px solid black;
+  border: 2px solid var(--color-border-1);
   flex-basis: 50%;
   height: 48px;
   display: flex;
