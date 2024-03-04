@@ -6,4 +6,6 @@ export const StyledHeader = styled.div`
   padding: 1rem;
   flex-direction: row;
   justify-content: center;
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.5);
+  font-size: 1.5rem;
 `;

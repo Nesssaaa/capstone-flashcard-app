@@ -3,10 +3,11 @@ import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
 :root {
   //background -colors-body, Header Navigation
-    --color-background-1: #00C9FF;
+    /* --color-background-1: #00c8ff; */
+    --color-background-1: #154f5f;
     --color-background-2: #92FE9D;
     --color-background-3: white;
-    --color-background-4: #000000;
+    --color-background-4: black;
 
     
 
@@ -21,6 +22,7 @@ export default createGlobalStyle`
     //border-colors
     --color-border-1: #000000;
     --color-border-2: white;
+    
    
 
     --gap: 20px;
