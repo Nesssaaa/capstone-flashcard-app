@@ -2,7 +2,7 @@ import CardContainer from "../CardContainer/CardContainer";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
-export default function CardList({ initialData, cards, deleteCard }) {
+export default function CardList({ cards, deleteCard }) {
   function handleDelete(event) {
     confirmAlert({
       title: "Karte löschen?",
@@ -24,7 +24,7 @@ export default function CardList({ initialData, cards, deleteCard }) {
 
   return (
     <>
-      {cards
+      {/* {cards
         ? cards.map((newCard) => (
             <div key={newCard.id}>
               <CardContainer
@@ -36,11 +36,10 @@ export default function CardList({ initialData, cards, deleteCard }) {
               </button>
             </div>
           ))
-        : null}
-      {initialData.map((card) => (
+        : null} */}
+      {cards.map((card) => (
         <div key={card.id}>
           <CardContainer question={card.question} answer={card.answer} />
-          {/* button bringt id mit und sendet mit dem Clickevent id an Funktion handleDelete; id bekomme ich, indem ich den Value aus dem Event auslese */}
           <button value={card.id} onClick={handleDelete}>
             Karte löschen!
           </button>
