@@ -17,13 +17,13 @@ export default function CardContainer({ question, answer }) {
       <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped}>
         <StyledCardContainerQuestion
           onClick={flipCard}
-          style={{ fontSize: `${calculateFontSize(question)}px` }}
+          // style={{ fontSize: `${calculateFontSize(question)}px` }}
         >
           {question}
         </StyledCardContainerQuestion>
         <StyledCardContainerAnswer
           onClick={flipCard}
-          style={{ fontSize: `${calculateFontSize(answer)}px` }}
+          // style={{ fontSize: `${calculateFontSize(answer)}px` }}
         >
           {answer}
         </StyledCardContainerAnswer>

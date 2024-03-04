@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 export default function App({ Component, pageProps }) {
   const [cards, setCards] = useLocalStorageState("cards", {
-    defaultValue: [initialFlashCards],
+    defaultValue: initialFlashCards,
   });
 
   function getCard(id) {

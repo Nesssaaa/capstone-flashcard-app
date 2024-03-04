@@ -38,7 +38,7 @@ export default function Form({ onSubmit, card = {} }) {
           placeholder="Gib hier deine Frage ein"
           type="text"
           defaultValue={card.question}
-          style={{ fontSize: `${calculateFontSize(questionText)}px` }}
+          // style={{ fontSize: `${calculateFontSize(questionText)}px` }}
         />
       </StyledLabel>
       <StyledLabel>
@@ -50,7 +50,7 @@ export default function Form({ onSubmit, card = {} }) {
           placeholder="Gib hier dein Antwort ein"
           type="text"
           defaultValue={card.answer}
-          style={{ fontSize: `${calculateFontSize(answerText)}px` }}
+          // style={{ fontSize: `${calculateFontSize(answerText)}px` }}
         />
       </StyledLabel>
 
