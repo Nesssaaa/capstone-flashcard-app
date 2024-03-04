@@ -1,6 +1,7 @@
 import {
   StyledCardContainerAnswer,
   StyledCardContainerQuestion,
+  StyledTextShow,
 } from "./CardContainer.styled";
 import ReactCardFlip from "react-card-flip";
 import { useState } from "react";
@@ -17,15 +18,25 @@ export default function CardContainer({ question, answer }) {
       <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped}>
         <StyledCardContainerQuestion
           onClick={flipCard}
-          style={{ fontSize: `${calculateFontSize(question)}px` }}
+          // textLength={question.length}
         >
-          {question}
+          <StyledTextShow
+            readOnly
+            style={{ fontSize: `${calculateFontSize(question)}px` }}
+          >
+            {question}
+          </StyledTextShow>
         </StyledCardContainerQuestion>
         <StyledCardContainerAnswer
           onClick={flipCard}
-          style={{ fontSize: `${calculateFontSize(answer)}px` }}
+          // textLength={answer.length}
         >
-          {answer}
+          <StyledTextShow
+            readOnly
+            style={{ fontSize: `${calculateFontSize(answer)}px` }}
+          >
+            {answer}
+          </StyledTextShow>
         </StyledCardContainerAnswer>
       </ReactCardFlip>
     </>

@@ -47,7 +47,7 @@ export default function Form({ onSubmit, card = {} }) {
           onChange={handleAnswerChange}
           name="answer"
           required
-          placeholder="Gib hier dein Antwort ein"
+          placeholder="Gib hier deine Antwort ein"
           type="text"
           defaultValue={card.answer}
           style={{ fontSize: `${calculateFontSize(answerText)}px` }}

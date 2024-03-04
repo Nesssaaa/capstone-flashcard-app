@@ -1,31 +1,42 @@
+import { calculateFontSize } from "@/utils";
 import styled from "styled-components";
 
-export const StyledCardContainerQuestion = styled.div`
+const BaseCardStyle = `
   display: flex;
   min-height: 25rem;
   width: auto;
   margin-left: 2rem;
   margin-right: 2rem;
   border: 2px var(--color-border-1) solid;
-  padding: 10px;
+  padding: 5px;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  background-color: var(--color-card-1);
   opacity: 0.7;
+  resize: none;
+  font-family: system-ui;
+`;
+
+export const StyledCardContainerQuestion = styled.div`
+  ${BaseCardStyle}
+  background-color: var(--color-card-1);
 `;
 
 export const StyledCardContainerAnswer = styled.div`
-  display: flex;
-  min-height: 25rem;
-  width: auto;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  border: 2px var(--color-border-1) solid;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 20px;
+  ${BaseCardStyle}
   background-color: var(--color-card-2);
-  opacity: 0.6;
 `;
+
+export const StyledTextShow = styled.textarea`
+  margin: 0.5rem;
+  padding: 0.5rem;
+  min-height: 18rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: invisible;
+  text-align: center;
+  font-family: system-ui;
+  resize: none;
+`;
+
+/*font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};*/

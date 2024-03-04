@@ -57,5 +57,11 @@ export default createGlobalStyle`
     
   }
 
+  p, span, textarea, input, div {
+
+    word-wrap: break-word;
+    overflow-wrap: break-word; 
+  }
+
  
 `;
