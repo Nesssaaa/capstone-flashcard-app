@@ -24,19 +24,6 @@ export default function CardList({ cards, deleteCard }) {
 
   return (
     <>
-      {/* {cards
-        ? cards.map((newCard) => (
-            <div key={newCard.id}>
-              <CardContainer
-                question={newCard.question}
-                answer={newCard.answer}
-              />
-              <button value={newCard.id} onClick={handleDelete}>
-                Karte löschen!
-              </button>
-            </div>
-          ))
-        : null} */}
       {cards.map((card) => (
         <div key={card.id}>
           <CardContainer question={card.question} answer={card.answer} />
