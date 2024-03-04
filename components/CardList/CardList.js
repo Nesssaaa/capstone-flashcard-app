@@ -5,13 +5,10 @@ export default function CardList({ cards }) {
   return (
     <>
       {cards &&
-        cards.map((newCard) => (
-          <div key={newCard.id}>
-            <CardContainer
-              question={newCard.question}
-              answer={newCard.answer}
-            />
-            <ButtonNavBar id={newCard.id} />
+        cards.map((card) => (
+          <div key={card.id}>
+            <CardContainer question={card.question} answer={card.answer} />
+            <ButtonNavBar id={card.id} />
           </div>
         ))}
     </>

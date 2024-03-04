@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 export default function EditPage({ getCard, editCard }) {
   const router = useRouter();
   const card = getCard(router.query.id);
-  console.log("edit:", router.query.id);
 
   if (!card) {
     return "Error";

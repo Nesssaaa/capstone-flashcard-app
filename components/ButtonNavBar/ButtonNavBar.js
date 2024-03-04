@@ -6,7 +6,6 @@ export default function ButtonNavBar({ id }) {
   const router = useRouter();
 
   function onEdit() {
-    console.log("clicked");
     router.push(`/cards/${id}/edit`);
   }
 
