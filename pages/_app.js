@@ -8,7 +8,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function App({ Component, pageProps }) {
-  const [cards, setCards] = useLocalStorageState("cards", { defaultValue: [] });
+  const [cards, setCards] = useLocalStorageState("cards", {
+    defaultValue: [initialFlashCards],
+  });
 
   function getCard(id) {
     return cards.find((card) => card.id === id);
@@ -33,7 +35,7 @@ export default function App({ Component, pageProps }) {
         <GlobalStyle />
 
         <Component
-          cards={[...cards, ...initialFlashCards]}
+          cards={cards}
           getCard={getCard}
           addCard={addCard}
           editCard={editCard}
