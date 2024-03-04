@@ -28,7 +28,6 @@ export default function CardContainer({ question, answer }) {
           {answer}
         </StyledCardContainerAnswer>
       </ReactCardFlip>
-      <br />
     </>
   );
 }

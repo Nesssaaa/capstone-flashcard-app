@@ -4,18 +4,17 @@ import {
   StyledInput,
   StyledLabel,
 } from "./Form.styled";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import { useState } from "react";
 import { calculateFontSize } from "@/utils";
-export default function Form({ onSubmit }) {
+export default function Form({ onSubmit, card = {} }) {
   const [questionText, setQuestionText] = useState("");
   const [answerText, setAnswerText] = useState("");
   function handleSubmit(event) {
     event.preventDefault();
-    const newCardData = Object.fromEntries(new FormData(event.target));
-    onSubmit(newCardData);
-    toast("Karte erfolgreich hinzugefügt");
+    const data = Object.fromEntries(new FormData(event.target));
+    onSubmit(data);
+
     event.target.reset();
     event.target.elements.question.focus();
   }
@@ -38,6 +37,7 @@ export default function Form({ onSubmit }) {
           required
           placeholder="Gib hier deine Frage ein"
           type="text"
+          defaultValue={card.question}
           style={{ fontSize: `${calculateFontSize(questionText)}px` }}
         />
       </StyledLabel>
@@ -49,21 +49,12 @@ export default function Form({ onSubmit }) {
           required
           placeholder="Gib hier dein Antwort ein"
           type="text"
+          defaultValue={card.answer}
           style={{ fontSize: `${calculateFontSize(answerText)}px` }}
         />
       </StyledLabel>
 
       <StyledButton type="submit">Submit</StyledButton>
-      <ToastContainer
-        position="top-center"
-        autoClose={4000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        draggable
-        theme="light"
-      />
     </StyledForm>
   );
 }
