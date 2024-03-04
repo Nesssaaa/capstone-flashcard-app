@@ -1,5 +1,4 @@
 import { StyledCardButton } from "./CardButton.styled";
-import Link from "next/link";
 
 export default function CardButton({ children, onClick }) {
   return (

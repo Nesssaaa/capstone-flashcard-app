@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
   const [cards, setCards] = useLocalStorageState("cards", { defaultValue: [] });
 
   function getCard(id) {
-    return cards.find((card) => card.id == id);
+    return cards.find((card) => card.id === id);
   }
 
   function addCard(data) {
