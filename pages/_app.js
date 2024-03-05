@@ -11,18 +11,19 @@ export default function App({ Component, pageProps }) {
   const [cards, setCards] = useLocalStorageState("cards", {
     defaultValue: initialFlashCards,
   });
-  const [isMastered, setIsMastered] = useLocalStorageState("isMastered", {
-    defaultValue: false,
-  });
+  // const [isMastered, setIsMastered] = useLocalStorageState("isMastered", {
+  //   defaultValue: false,
+  // });
   function getCard(id) {
     return cards.find((card) => card.id === id);
   }
 
   function addCard(data) {
-    const newCards = [{ id: nanoid(), ...data }, ...cards];
+    const newCards = [{ id: nanoid(), ...data, isMastered: false }, ...cards];
     setCards(newCards);
     // setIsMastered(false);
     toast("Karte erfolgreich hinzugefügt");
+    console.log("newCards:", newCards);
   }
 
   function editCard(data) {
@@ -37,15 +38,16 @@ export default function App({ Component, pageProps }) {
     setCards((cards) => cards.filter((card) => card.id !== id));
   }
 
-  function toggleMastered(id) {
+  function toggleMasteredCards(id) {
+    console.log("toggle, ich hab die", id);
     const updatedCards = cards.map((card) => {
-      if (card.id === id) {
+      if (card.id == id) {
         return { ...card, isMastered: !card.isMastered };
       } else {
         return card;
       }
     });
-    setIsMastered(updatedCards);
+    setCards(updatedCards);
   }
 
   return (
@@ -59,8 +61,7 @@ export default function App({ Component, pageProps }) {
           addCard={addCard}
           editCard={editCard}
           deleteCard={deleteCard}
-          // toggleMastered={toggleMastered}
-          isMastered={isMastered}
+          toggleMasteredCards={toggleMasteredCards}
           {...pageProps}
         />
         <ToastContainer

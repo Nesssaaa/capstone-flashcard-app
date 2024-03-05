@@ -3,13 +3,13 @@
     "id": "1",
     "question": "Welcome",
     "answer": "Willkommen",
-    "isMastered": "true"
+    "isMastered": true
   },
   {
     "id": "2",
     "question": "Bienvenido/Bienvenida",
     "answer": "Willkommen",
-    "isMastered": "false"
+    "isMastered": false
   },
   { "id": "3", "question": "Bienvenue", "answer": "Willkommen" },
   { "id": "4", "question": "Benvenuto/Benvenuta", "answer": "Willkommen" },

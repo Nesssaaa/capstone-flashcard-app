@@ -1,19 +1,18 @@
-import Link from "next/link";
-export default function ArchivesPage({ cards = [] }) {
+import CardList from "@/components/CardList/CardList";
+
+export default function ArchivesPage({ cards = [], toggleMasteredCards }) {
   const masteredCards = cards.filter((card) => card.isMastered);
+  console.log(masteredCards);
   return (
     <>
       <h1>Archiv - schon geschafft!!</h1>
-      <ul>
-        {masteredCards.map((card) => (
-          <li key={card.id}>
-            Karten
-            {/* <Link href={`/musicals/${musical.id}`}>
-              {musical.title} - Click here for more Infos...
-            </Link> */}
-          </li>
-        ))}
-      </ul>
+      {!masteredCards.length ? (
+        <p>Dein Archiv ist noch leer.</p>
+      ) : (
+        <>
+          <CardList cards={masteredCards} onToggle={toggleMasteredCards} />
+        </>
+      )}
     </>
   );
 }
