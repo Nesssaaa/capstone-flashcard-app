@@ -38,6 +38,7 @@ export const StyledInput = styled.textarea`
   background-color: var(--color-background-3);
   text-align: center;
   font-family: system-ui;
+  opacity: 0.7;
   resize: none;
   outline: none;
   font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};
