@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { calculateFontSize } from "@/utils";
 
 export const StyledForm = styled.form`
   display: flex;
@@ -33,8 +34,12 @@ export const StyledInput = styled.textarea`
   height: 14rem;
   border-radius: 0.5rem;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  background-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 10px 2px var(--color-background-1);
+  background-color: var(--color-background-3);
   text-align: center;
   font-family: system-ui;
+  opacity: 0.7;
+  resize: none;
+  outline: none;
+  font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};
 `;

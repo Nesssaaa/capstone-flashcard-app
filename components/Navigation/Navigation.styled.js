@@ -25,10 +25,11 @@ export const StyledList = styled.ul`
 
 export const StyledListItem = styled.li`
   list-style: none;
-  border: 2px solid var(--color-border-1);
+  /* border: 2px solid var(--color-border-1); */
   flex-basis: 50%;
   height: 48px;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.5);
 `;
