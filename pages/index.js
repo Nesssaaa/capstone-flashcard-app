@@ -1,9 +1,9 @@
 import CardList from "@/components/CardList/CardList";
 
-export default function HomePage({ initialData, cards }) {
+export default function HomePage({ cards, deleteCard }) {
   return (
     <div>
-      <CardList initialData={initialData} cards={cards} />
+      <CardList cards={cards} deleteCard={deleteCard} />
     </div>
   );
 }
