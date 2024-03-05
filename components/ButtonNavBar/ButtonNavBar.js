@@ -19,8 +19,7 @@ export default function ButtonNavBar({ id, deleteCard }) {
         {
           label: "Ja, bitte.",
           onClick: () => {
-            // const id = event.target.value;
-            deleteCard({ id });
+            deleteCard(id);
           },
         },
         {
