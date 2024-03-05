@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }) {
   const [cards, setCards] = useLocalStorageState("cards", {
     defaultValue: initialFlashCards,
   });
-
+  console.log(cards);
   function getCard(id) {
     return cards.find((card) => card.id === id);
   }
@@ -29,6 +29,11 @@ export default function App({ Component, pageProps }) {
     toast("Karte erfolgreich bearbeitet");
   }
 
+  function deleteCard(id) {
+    console.log("Card deleted", { id });
+    setCards((cards) => cards.filter((card) => card.id !== id));
+  }
+
   return (
     <>
       <Layout>
@@ -39,6 +44,7 @@ export default function App({ Component, pageProps }) {
           getCard={getCard}
           addCard={addCard}
           editCard={editCard}
+          deleteCard={deleteCard}
           {...pageProps}
         />
         <ToastContainer
