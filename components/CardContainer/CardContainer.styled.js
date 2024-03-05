@@ -3,10 +3,12 @@ import styled from "styled-components";
 
 const BaseCardStyle = `
   display: flex;
+  flex-direction: column;
   min-height: 25rem;
   width: auto;
   margin-left: 2rem;
   margin-right: 2rem;
+  margin-bottom: 3rem;
   // border: 2px var(--color-border-1) solid;
   padding: 5px;
   justify-content: center;
@@ -15,6 +17,7 @@ const BaseCardStyle = `
   opacity: 0.7;
   resize: none;
   font-family: system-ui;
+  
 `;
 
 export const StyledCardContainerQuestion = styled.div`
@@ -33,12 +36,14 @@ export const StyledCardContainerAnswer = styled.div`
 
 export const StyledTextShow = styled.textarea`
   margin: 0.5rem;
+  margin-top: 1rem;
   padding: 0.5rem;
-  min-height: 18rem;
+  min-height: 16rem;
   border-radius: 0.5rem;
   border: none;
   background-color: transparent;
   text-align: center;
+
   font-family: system-ui;
   resize: none;
   outline: none;

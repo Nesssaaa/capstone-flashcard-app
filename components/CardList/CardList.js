@@ -7,9 +7,14 @@ export default function CardList({ cards, deleteCard }) {
       {cards &&
         cards.map((card) => (
           <div key={card.id}>
-            <CardContainer question={card.question} answer={card.answer} />
+            <CardContainer
+              question={card.question}
+              answer={card.answer}
+              deleteCard={deleteCard}
+              id={card.id}
+            />
 
-            <ButtonNavBar id={card.id} deleteCard={deleteCard} />
+            {/* <ButtonNavBar id={card.id} deleteCard={deleteCard} /> */}
           </div>
         ))}
     </>
