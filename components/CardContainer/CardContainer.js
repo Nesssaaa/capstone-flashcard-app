@@ -5,8 +5,9 @@ import {
 } from "./CardContainer.styled";
 import ReactCardFlip from "react-card-flip";
 import { useState } from "react";
-import { calculateFontSize } from "@/utils";
-export default function CardContainer({ question, answer }) {
+
+import ButtonNavBar from "../ButtonNavBar/ButtonNavBar";
+export default function CardContainer({ question, answer, id, deleteCard }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   function flipCard() {
@@ -20,11 +21,13 @@ export default function CardContainer({ question, answer }) {
           <StyledTextShow readOnly textLength={question}>
             {question}
           </StyledTextShow>
+          <ButtonNavBar id={id} deleteCard={deleteCard} />
         </StyledCardContainerQuestion>
         <StyledCardContainerAnswer onClick={flipCard}>
           <StyledTextShow readOnly textLength={answer}>
             {answer}
           </StyledTextShow>
+          <ButtonNavBar id={id} deleteCard={deleteCard} />
         </StyledCardContainerAnswer>
       </ReactCardFlip>
     </>
