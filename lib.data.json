@@ -1,6 +1,16 @@
 [
-  { "id": "1", "question": "Welcome", "answer": "Willkommen" },
-  { "id": "2", "question": "Bienvenido/Bienvenida", "answer": "Willkommen" },
+  {
+    "id": "1",
+    "question": "Welcome",
+    "answer": "Willkommen",
+    "isMastered": "true"
+  },
+  {
+    "id": "2",
+    "question": "Bienvenido/Bienvenida",
+    "answer": "Willkommen",
+    "isMastered": "false"
+  },
   { "id": "3", "question": "Bienvenue", "answer": "Willkommen" },
   { "id": "4", "question": "Benvenuto/Benvenuta", "answer": "Willkommen" },
   { "id": "5", "question": "Bem-vindo/Bem-vinda", "answer": "Willkommen" },

@@ -11,7 +11,9 @@ export default function App({ Component, pageProps }) {
   const [cards, setCards] = useLocalStorageState("cards", {
     defaultValue: initialFlashCards,
   });
-  console.log(cards);
+  const [isMastered, setIsMastered] = useLocalStorageState("isMastered", {
+    defaultValue: false,
+  });
   function getCard(id) {
     return cards.find((card) => card.id === id);
   }
@@ -19,6 +21,7 @@ export default function App({ Component, pageProps }) {
   function addCard(data) {
     const newCards = [{ id: nanoid(), ...data }, ...cards];
     setCards(newCards);
+    // setIsMastered(false);
     toast("Karte erfolgreich hinzugefügt");
   }
 
@@ -34,6 +37,17 @@ export default function App({ Component, pageProps }) {
     setCards((cards) => cards.filter((card) => card.id !== id));
   }
 
+  function toggleMastered(id) {
+    const updatedCards = cards.map((card) => {
+      if (card.id === id) {
+        return { ...card, isMastered: !card.isMastered };
+      } else {
+        return card;
+      }
+    });
+    setIsMastered(updatedCards);
+  }
+
   return (
     <>
       <Layout>
@@ -45,6 +59,8 @@ export default function App({ Component, pageProps }) {
           addCard={addCard}
           editCard={editCard}
           deleteCard={deleteCard}
+          // toggleMastered={toggleMastered}
+          isMastered={isMastered}
           {...pageProps}
         />
         <ToastContainer
