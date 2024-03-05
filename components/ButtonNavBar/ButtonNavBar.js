@@ -33,6 +33,7 @@ export default function ButtonNavBar({ id, deleteCard }) {
     <StyledButtonNavBar>
       <CardButton onClick={onEdit}>Bearbeiten</CardButton>
       <CardButton onClick={handleDelete}>Löschen</CardButton>
+      <CardButton>Archiv</CardButton>
     </StyledButtonNavBar>
   );
 }
