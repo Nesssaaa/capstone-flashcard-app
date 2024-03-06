@@ -13,6 +13,7 @@ export default function CardContainer({
   id,
   deleteCard,
   toggleMastered,
+  isMastered,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -31,6 +32,7 @@ export default function CardContainer({
             id={id}
             deleteCard={deleteCard}
             toggleMastered={toggleMastered}
+            isMastered={isMastered}
           />
         </StyledCardContainerQuestion>
         <StyledCardContainerAnswer onClick={flipCard}>
@@ -41,6 +43,7 @@ export default function CardContainer({
             id={id}
             deleteCard={deleteCard}
             toggleMastered={toggleMastered}
+            isMastered={isMastered}
           />
         </StyledCardContainerAnswer>
       </ReactCardFlip>

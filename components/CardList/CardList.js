@@ -1,4 +1,3 @@
-import ButtonNavBar from "../ButtonNavBar/ButtonNavBar";
 import CardContainer from "../CardContainer/CardContainer";
 
 export default function CardList({ cards, deleteCard, toggleMastered }) {
@@ -15,9 +14,8 @@ export default function CardList({ cards, deleteCard, toggleMastered }) {
                 deleteCard={deleteCard}
                 id={card.id}
                 toggleMastered={toggleMastered}
+                isMastered={card.isMastered}
               />
-
-              {/* <ButtonNavBar id={card.id} deleteCard={deleteCard} /> */}
             </div>
           ))}
     </>

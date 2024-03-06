@@ -4,7 +4,12 @@ import { StyledButtonNavBar } from "./ButtonNavBar.styled";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
-export default function ButtonNavBar({ id, deleteCard, toggleMastered }) {
+export default function ButtonNavBar({
+  id,
+  deleteCard,
+  toggleMastered,
+  isMastered,
+}) {
   const router = useRouter();
 
   function onEdit() {
@@ -29,30 +34,19 @@ export default function ButtonNavBar({ id, deleteCard, toggleMastered }) {
     });
   }
 
-  function handleToggle() {
-    confirmAlert({
-      title: "Karte archivieren",
-      message:
-        "Bist du dir sicher, dass du diese Karte nicht erneut sehen möchtest?",
-      buttons: [
-        {
-          label: "Ja, bin ich.",
-          onClick: () => {
-            toggleMastered(id);
-          },
-        },
-        {
-          label: "Nein, doch nicht.",
-        },
-      ],
-    });
+  function handleToggle(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    toggleMastered(id);
   }
 
   return (
     <StyledButtonNavBar>
       <CardButton onClick={onEdit}>Bearbeiten</CardButton>
       <CardButton onClick={handleDelete}>Löschen</CardButton>
-      <CardButton onClick={handleToggle}>Archiv</CardButton>
+      <CardButton onClick={handleToggle}>
+        {isMastered ? "wiederholen" : "geschafft"}
+      </CardButton>
     </StyledButtonNavBar>
   );
 }

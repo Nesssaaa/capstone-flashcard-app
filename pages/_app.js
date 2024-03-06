@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }) {
   }
 
   function addCard(data) {
-    const newCards = [{ id: nanoid(), ...data }, ...cards];
+    const newCards = [{ id: nanoid(), ...data, isMastered: false }, ...cards];
     setCards(newCards);
     toast("Karte erfolgreich hinzugefügt");
   }
