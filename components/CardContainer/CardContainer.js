@@ -25,9 +25,11 @@ export default function CardContainer({
     <>
       <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped}>
         <StyledCardContainerQuestion onClick={flipCard}>
-          <StyledTextShow readOnly textLength={question}>
-            {question}
-          </StyledTextShow>
+          <StyledTextShow
+            readOnly
+            textLength={question}
+            value={question}
+          ></StyledTextShow>
           <ButtonNavBar
             id={id}
             deleteCard={deleteCard}
@@ -36,9 +38,11 @@ export default function CardContainer({
           />
         </StyledCardContainerQuestion>
         <StyledCardContainerAnswer onClick={flipCard}>
-          <StyledTextShow readOnly textLength={answer}>
-            {answer}
-          </StyledTextShow>
+          <StyledTextShow
+            readOnly
+            textLength={answer}
+            value={answer}
+          ></StyledTextShow>
           <ButtonNavBar
             id={id}
             deleteCard={deleteCard}
