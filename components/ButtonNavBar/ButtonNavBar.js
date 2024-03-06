@@ -4,12 +4,7 @@ import { StyledButtonNavBar } from "./ButtonNavBar.styled";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
-export default function ButtonNavBar({
-  id,
-  deleteCard,
-  toggleMastered,
-  isMastered,
-}) {
+export default function ButtonNavBar({ id, deleteCard, onToggle, isMastered }) {
   const router = useRouter();
 
   function onEdit() {
@@ -34,17 +29,17 @@ export default function ButtonNavBar({
     });
   }
 
-  function handleToggle(event) {
-    event.preventDefault();
-    event.stopPropagation();
-    toggleMastered(id);
-  }
+  // function onToggle(id) {
+  //   // event.preventDefault();
+  //   // event.stopPropagation();
+  //   toggleMastered(id);
+  // }
 
   return (
     <StyledButtonNavBar>
       <CardButton onClick={onEdit}>Bearbeiten</CardButton>
       <CardButton onClick={handleDelete}>Löschen</CardButton>
-      <CardButton onClick={handleToggle}>
+      <CardButton onClick={() => onToggle(id)}>
         {isMastered ? "wiederholen" : "geschafft"}
       </CardButton>
     </StyledButtonNavBar>

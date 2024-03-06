@@ -1,8 +1,8 @@
 import CardContainer from "@/components/CardContainer/CardContainer";
 
-import { StyledText, StyledPageName } from "../../components/Archive.styled";
+import { StyledText, StyledPageName } from "../components/Archive.styled";
 
-export default function ArchivesPage({ cards, deleteCard, toggleMastered }) {
+export default function ArchivesPage({ cards, deleteCard, onToggle }) {
   return (
     <>
       <StyledPageName>Das kann ich schon!</StyledPageName>
@@ -19,7 +19,7 @@ export default function ArchivesPage({ cards, deleteCard, toggleMastered }) {
                   answer={card.answer}
                   deleteCard={deleteCard}
                   id={card.id}
-                  toggleMastered={toggleMastered}
+                  onToggle={onToggle}
                   isMastered={card.isMastered}
                 />
               </div>

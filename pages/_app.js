@@ -61,7 +61,7 @@ export default function App({ Component, pageProps }) {
           addCard={addCard}
           editCard={editCard}
           deleteCard={deleteCard}
-          toggleMastered={toggleMastered}
+          onToggle={toggleMastered}
           {...pageProps}
         />
         <ToastContainer

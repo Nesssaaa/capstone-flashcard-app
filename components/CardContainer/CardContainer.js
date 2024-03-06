@@ -12,7 +12,7 @@ export default function CardContainer({
   answer,
   id,
   deleteCard,
-  toggleMastered,
+  onToggle,
   isMastered,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -31,7 +31,7 @@ export default function CardContainer({
           <ButtonNavBar
             id={id}
             deleteCard={deleteCard}
-            toggleMastered={toggleMastered}
+            onToggle={onToggle}
             isMastered={isMastered}
           />
         </StyledCardContainerQuestion>
@@ -42,7 +42,7 @@ export default function CardContainer({
           <ButtonNavBar
             id={id}
             deleteCard={deleteCard}
-            toggleMastered={toggleMastered}
+            onToggle={onToggle}
             isMastered={isMastered}
           />
         </StyledCardContainerAnswer>
