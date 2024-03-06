@@ -39,6 +39,12 @@ export default function App({ Component, pageProps }) {
       cards.map((card) => {
         if (card.id === id) {
           card.isMastered = !card.isMastered;
+          // const isMastered = card.isMastered;
+          if (!card.isMastered) {
+            toast("Neue Runde");
+          } else {
+            toast("Super🤩");
+          }
         }
         return card;
       })
@@ -61,7 +67,7 @@ export default function App({ Component, pageProps }) {
         />
         <ToastContainer
           position="top-center"
-          autoClose={4000}
+          autoClose={3000}
           hideProgressBar={false}
           newestOnTop={false}
           closeOnClick
