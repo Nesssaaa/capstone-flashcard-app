@@ -9,7 +9,6 @@ const BaseCardStyle = `
   margin-left: 2rem;
   margin-right: 2rem;
   margin-bottom: 3rem;
-  // border: 2px var(--color-border-1) solid;
   padding: 5px;
   justify-content: center;
   align-items: center;

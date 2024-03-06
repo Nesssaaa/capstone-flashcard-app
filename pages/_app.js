@@ -30,7 +30,6 @@ export default function App({ Component, pageProps }) {
   }
 
   function deleteCard(id) {
-    console.log("Card deleted", { id });
     setCards((cards) => cards.filter((card) => card.id !== id));
   }
 
@@ -39,7 +38,7 @@ export default function App({ Component, pageProps }) {
       cards.map((card) => {
         if (card.id === id) {
           card.isMastered = !card.isMastered;
-          // const isMastered = card.isMastered;
+
           if (!card.isMastered) {
             toast("Neue Runde");
           } else {

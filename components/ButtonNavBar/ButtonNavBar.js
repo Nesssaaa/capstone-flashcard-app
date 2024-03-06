@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import { StyledButtonNavBar } from "./ButtonNavBar.styled";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
-// import { ToastContainer, toast } from "react-toastify";
 
 export default function ButtonNavBar({
   id,
@@ -39,11 +38,6 @@ export default function ButtonNavBar({
     event.preventDefault();
     event.stopPropagation();
     toggleMastered(id);
-    // if (!isMastered) {
-    //   toast("Neue Runde");
-    // } else {
-    //   toast("Super🤩");
-    // }
   }
 
   return (
