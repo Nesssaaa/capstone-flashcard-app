@@ -40,6 +40,7 @@ export const StyledTextShow = styled.textarea`
   padding: 0.5rem;
   min-height: 16rem;
   border-radius: 0.5rem;
+  width: 100%;
   border: none;
   background-color: transparent;
   text-align: center;

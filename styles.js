@@ -47,7 +47,7 @@ export default createGlobalStyle`
     background: linear-gradient(90deg, var(--color-background-1) 0%, var(--color-background-2) 100%);
   }
 
-  // fuer das <div id="__next">, das next.js einbaut
+ 
   body > div {
     display: flex;
     flex-direction: column;
@@ -59,11 +59,6 @@ export default createGlobalStyle`
     
   }
 
-  p, span, textarea, input, div {
-
-    word-wrap: break-word;
-    overflow-wrap: break-word; 
-  }
-
+ 
  
 `;
