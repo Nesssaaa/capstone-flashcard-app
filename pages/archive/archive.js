@@ -1,6 +1,6 @@
 import CardContainer from "@/components/CardContainer/CardContainer";
 
-import { StyledText, StyledPageName } from "./archive.styled";
+import { StyledText, StyledPageName } from "../../components/Archive.styled";
 
 export default function ArchivesPage({ cards, deleteCard, toggleMastered }) {
   return (
