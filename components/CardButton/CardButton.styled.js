@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const StyledCardButton = styled.button`
   margin: auto;
   padding: 0 1rem;
-  height: 2rem;
-  width: auto;
-  border-radius: 0.5rem;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   background-color: var(--color-background-1);

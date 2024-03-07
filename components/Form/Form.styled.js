@@ -19,8 +19,8 @@ export const StyledLabel = styled.label`
 export const StyledButton = styled.button`
   margin: auto;
   padding: 0 1rem;
-  height: 6rem;
-  width: 6rem;
+  height: 5rem;
+  width: 5rem;
   color: var(--color-font-2);
   border-radius: 50%;
   border: none;
