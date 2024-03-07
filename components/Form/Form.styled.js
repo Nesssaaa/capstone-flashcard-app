@@ -29,9 +29,9 @@ export const StyledButton = styled.button`
 `;
 
 export const StyledInput = styled.textarea`
-  margin: 0.5rem;
+  margin: 0.2rem 0.7rem;
   padding: 3rem;
-  height: 14rem;
+  height: 13rem;
   border-radius: 0.5rem;
   border: none;
   box-shadow: 2px 2px 10px 2px var(--color-background-1);

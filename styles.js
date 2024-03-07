@@ -18,6 +18,7 @@ export default createGlobalStyle`
     //font-colors
     --color-font-1: #000000;
     --color-font-2: white;
+    --color-font-3: var(--color-background-1);
 
     //border-colors
     --color-border-1: #000000;
