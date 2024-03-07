@@ -29,18 +29,17 @@ export const StyledListItem = styled.li`
   margin: 0;
   list-style: none;
   flex-basis: 33.33%;
-  height: 49px;
+  height: 3.4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-
   background-color: ${({ isActive }) =>
     isActive ? "var(--color-fox)" : "var(--color-background-3)"};
 `;
 
 export const IconWrapper = styled.div`
   display: flex;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   justify-content: center;
   align-items: center;
 `;

@@ -19,8 +19,8 @@ export const StyledLabel = styled.label`
 export const StyledButton = styled.button`
   margin: auto;
   padding: 0 1rem;
-  height: 5rem;
-  width: 5rem;
+  height: 4.5rem;
+  width: 4.5rem;
   color: var(--color-font-2);
   border-radius: 50%;
   border: none;
@@ -45,5 +45,5 @@ export const StyledInput = styled.textarea`
 `;
 
 export const IconWrapper = styled.div`
-  font-size: 3rem;
+  font-size: 2.7rem;
 `;
