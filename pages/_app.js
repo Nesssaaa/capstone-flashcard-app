@@ -33,7 +33,7 @@ export default function App({ Component, pageProps }) {
     setCards((cards) => cards.filter((card) => card.id !== id));
   }
 
-  function toggleMastered(id) {
+  function handleToggleMastered(id) {
     setCards((cards) =>
       cards.map((card) => {
         if (card.id === id) {
@@ -61,7 +61,7 @@ export default function App({ Component, pageProps }) {
           addCard={addCard}
           editCard={editCard}
           deleteCard={deleteCard}
-          onToggle={toggleMastered}
+          onToggle={handleToggleMastered}
           {...pageProps}
         />
         <ToastContainer

@@ -29,12 +29,6 @@ export default function ButtonNavBar({ id, deleteCard, onToggle, isMastered }) {
     });
   }
 
-  // function onToggle(id) {
-  //   // event.preventDefault();
-  //   // event.stopPropagation();
-  //   toggleMastered(id);
-  // }
-
   return (
     <StyledButtonNavBar>
       <CardButton onClick={onEdit}>Bearbeiten</CardButton>
