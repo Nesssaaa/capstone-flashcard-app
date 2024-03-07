@@ -9,5 +9,8 @@ export const StyledButtonNavBar = styled.div`
   justify-content: center;
 `;
 export const IconWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 2.3rem;
 `;
