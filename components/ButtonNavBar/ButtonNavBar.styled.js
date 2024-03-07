@@ -8,3 +8,6 @@ export const StyledButtonNavBar = styled.div`
   gap: 1.5rem;
   justify-content: center;
 `;
+export const IconWrapper = styled.div`
+  font-size: 2.3rem;
+`;

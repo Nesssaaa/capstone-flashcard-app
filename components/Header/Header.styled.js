@@ -13,3 +13,8 @@ export const StyledHeader = styled.div`
   font-weight: bold;
   border-radius: 0 0 30px 30px;
 `;
+
+export const IconWrapper = styled.div`
+  font-size: 3rem;
+  margin-left: 1.5rem;
+`;
