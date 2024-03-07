@@ -2,10 +2,11 @@ import {
   StyledCardContainerAnswer,
   StyledCardContainerQuestion,
   StyledTextShow,
+  IconWrapper,
 } from "./CardContainer.styled";
 import ReactCardFlip from "react-card-flip";
 import { useState } from "react";
-
+import { BsPhoneFlip } from "react-icons/bs";
 import ButtonNavBar from "../ButtonNavBar/ButtonNavBar";
 export default function CardContainer({
   question,
@@ -30,6 +31,9 @@ export default function CardContainer({
             textLength={question}
             value={question}
           ></StyledTextShow>
+          <IconWrapper>
+            <BsPhoneFlip />
+          </IconWrapper>
           <ButtonNavBar
             id={id}
             deleteCard={deleteCard}
@@ -43,6 +47,9 @@ export default function CardContainer({
             textLength={answer}
             value={answer}
           ></StyledTextShow>
+          <IconWrapper>
+            <BsPhoneFlip />
+          </IconWrapper>
           <ButtonNavBar
             id={id}
             deleteCard={deleteCard}
