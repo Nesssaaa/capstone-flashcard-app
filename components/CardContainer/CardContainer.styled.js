@@ -54,5 +54,5 @@ export const IconWrapper = styled.div`
   font-size: 2.3rem;
   color: var(--color-font-3);
   opacity: 0.8;
-  margin-left: 18rem;
+  margin-left: 80%;
 `;
