@@ -9,7 +9,6 @@ const BaseCardStyle = `
   margin-left: 2rem;
   margin-right: 2rem;
   margin-bottom: 3rem;
-  // border: 2px var(--color-border-1) solid;
   padding: 5px;
   justify-content: center;
   align-items: center;
@@ -40,6 +39,7 @@ export const StyledTextShow = styled.textarea`
   padding: 0.5rem;
   min-height: 16rem;
   border-radius: 0.5rem;
+  width: 100%;
   border: none;
   background-color: transparent;
   text-align: center;
