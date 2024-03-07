@@ -23,7 +23,8 @@ export default createGlobalStyle`
     --color-border-1: #000000;
     --color-border-2: white;
     
-   
+   //special-colors
+   --color-fox:#ba7309;
 
     --gap: 20px;
   }

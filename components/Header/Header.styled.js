@@ -9,7 +9,7 @@ export const StyledHeader = styled.div`
   justify-content: center;
   /* box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.5); */
   font-size: 2.5rem;
-  color: #ba7309;
+  color: var(--color-fox);
   font-weight: bold;
   border-radius: 0 0 30px 30px;
 `;
