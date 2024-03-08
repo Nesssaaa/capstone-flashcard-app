@@ -6,7 +6,8 @@ import {
 } from "./CardContainer.styled";
 import ReactCardFlip from "react-card-flip";
 import { useState } from "react";
-import { BsPhoneFlip } from "react-icons/bs";
+
+import { MdOutlineRotateLeft } from "react-icons/md";
 import ButtonNavBar from "../ButtonNavBar/ButtonNavBar";
 export default function CardContainer({
   question,
@@ -32,7 +33,7 @@ export default function CardContainer({
             value={question}
           ></StyledTextShow>
           <IconWrapper>
-            <BsPhoneFlip />
+            <MdOutlineRotateLeft />
           </IconWrapper>
           <ButtonNavBar
             id={id}
@@ -48,7 +49,7 @@ export default function CardContainer({
             value={answer}
           ></StyledTextShow>
           <IconWrapper>
-            <BsPhoneFlip />
+            <MdOutlineRotateLeft />
           </IconWrapper>
           <ButtonNavBar
             id={id}

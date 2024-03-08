@@ -4,11 +4,13 @@ export default createGlobalStyle`
 :root {
   //background -colors-body, Header Navigation
     /* --color-background-1: #00c8ff; */
-    --color-background-1: #154f5f;
-    --color-background-2: #92FE9D;
+    
+    --color-background-2:#6f846f4c;
     --color-background-3: white;
-    --color-background-4: black;
-
+    --color-background-4: #000000;
+    --color-background-1: #808580d5;
+    --color-background-5: #154f5f;
+    --color-background-6:  #92FE9D;
     
 
     //background -colors-card
