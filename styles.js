@@ -56,8 +56,8 @@ export default createGlobalStyle`
     display: flex;
     flex-direction: column;
     flex: 1;
-    max-height: 100vh;
-    min-height: 100vh;
+    max-height: 100lvh;
+    min-height: 100lvh;
     gap: 1rem;
     
     

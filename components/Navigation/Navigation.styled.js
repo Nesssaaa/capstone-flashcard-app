@@ -42,4 +42,6 @@ export const IconWrapper = styled.div`
   font-size: 2.8rem;
   justify-content: center;
   align-items: center;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 `;
