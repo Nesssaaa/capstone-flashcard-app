@@ -19,19 +19,19 @@ export const StyledLabel = styled.label`
 export const StyledButton = styled.button`
   margin: auto;
   padding: 0 1rem;
-  height: 3rem;
-  width: 9rem;
+  height: 4.5rem;
+  width: 4.5rem;
   color: var(--color-font-2);
-  border-radius: 0.5rem;
+  border-radius: 50%;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   background-color: rgba(0, 0, 0, 0.4);
 `;
 
 export const StyledInput = styled.textarea`
-  margin: 0.5rem;
+  margin: 0.2rem 0.7rem;
   padding: 3rem;
-  height: 14rem;
+  height: 13rem;
   border-radius: 0.5rem;
   border: none;
   box-shadow: 2px 2px 10px 2px var(--color-background-1);
@@ -42,4 +42,8 @@ export const StyledInput = styled.textarea`
   resize: none;
   outline: none;
   font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};
+`;
+
+export const IconWrapper = styled.div`
+  font-size: 2.7rem;
 `;

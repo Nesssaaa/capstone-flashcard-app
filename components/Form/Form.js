@@ -1,9 +1,12 @@
 import {
+  IconWrapper,
   StyledButton,
   StyledForm,
   StyledInput,
   StyledLabel,
 } from "./Form.styled";
+
+import { MdOutlineSaveAlt } from "react-icons/md";
 
 import { useState } from "react";
 
@@ -54,7 +57,11 @@ export default function Form({ onSubmit, card = {} }) {
         />
       </StyledLabel>
 
-      <StyledButton type="submit">Submit</StyledButton>
+      <StyledButton type="submit">
+        <IconWrapper>
+          <MdOutlineSaveAlt />
+        </IconWrapper>
+      </StyledButton>
     </StyledForm>
   );
 }

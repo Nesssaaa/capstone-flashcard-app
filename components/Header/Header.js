@@ -1,5 +1,10 @@
-import { StyledHeader } from "./Header.styled.js";
+import { StyledHeader, IconWrapper } from "./Header.styled.js";
 
 export default function Header() {
-  return <StyledHeader>SchlauFuchs 🦊</StyledHeader>;
+  return (
+    <StyledHeader>
+      {" "}
+      SchlauFuchs <IconWrapper> 🦊</IconWrapper>
+    </StyledHeader>
+  );
 }

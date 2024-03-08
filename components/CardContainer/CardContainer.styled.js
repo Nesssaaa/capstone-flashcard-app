@@ -4,7 +4,7 @@ import styled from "styled-components";
 const BaseCardStyle = `
   display: flex;
   flex-direction: column;
-  min-height: 25rem;
+  min-height: 28rem;
   width: auto;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -48,4 +48,11 @@ export const StyledTextShow = styled.textarea`
   resize: none;
   outline: none;
   font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};
+`;
+
+export const IconWrapper = styled.div`
+  font-size: 2.3rem;
+  color: var(--color-font-3);
+  opacity: 0.8;
+  margin-left: 80%;
 `;
