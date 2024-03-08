@@ -21,11 +21,13 @@ export const StyledButton = styled.button`
   padding: 0 1rem;
   height: 4.5rem;
   width: 4.5rem;
-  color: var(--color-font-2);
+  /* color: var(--color-font-2); */
   border-radius: 50%;
   border: none;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  background-color: rgba(0, 0, 0, 0.4);
+  /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: rgba(0, 0, 0, 0.4); */
+  background-color: var(--color-background-1);
+  color: var(--color-font-3);
 `;
 
 export const StyledInput = styled.textarea`

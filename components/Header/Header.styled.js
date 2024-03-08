@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledHeader = styled.div`
   display: flex;
-  background-color: #ffffff33;
+  background-color: #ffffffba;
   padding: 1rem;
   margin-bottom: 1.5rem;
   flex-direction: row;
@@ -11,7 +11,8 @@ export const StyledHeader = styled.div`
   font-size: 2.5rem;
   color: var(--color-fox);
   font-weight: bold;
-  border-radius: 0 0 30px 30px;
+  border-radius: 0 0 40px 40px;
+  border: 0.5px var(--color-background-1) solid;
 `;
 
 export const IconWrapper = styled.div`

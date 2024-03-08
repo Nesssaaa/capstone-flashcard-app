@@ -5,10 +5,10 @@ export default createGlobalStyle`
   //background -colors-body, Header Navigation
     /* --color-background-1: #00c8ff; */
     
-    --color-background-2:#6f846f4c;
+    --color-background-2:#595a5900;
     --color-background-3: white;
     --color-background-4: #000000;
-    --color-background-1: #808580d5;
+    --color-background-1: #bdbfbd60;
     --color-background-5: #154f5f;
     --color-background-6:  #92FE9D;
     
@@ -20,14 +20,14 @@ export default createGlobalStyle`
     //font-colors
     --color-font-1: #000000;
     --color-font-2: white;
-    --color-font-3: var(--color-background-1);
+    --color-font-3: #808580d5;
 
     //border-colors
     --color-border-1: #000000;
     --color-border-2: white;
     
    //special-colors
-   --color-fox:#ba7309;
+   --color-fox:#d56f21ff;
 
     --gap: 20px;
   }

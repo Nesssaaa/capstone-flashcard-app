@@ -13,22 +13,22 @@ export default function Navigation() {
   return (
     <StyledNavigation>
       <StyledList>
-        <StyledListItem isActive={router.pathname === "/"}>
-          <StyledLink href="/">
+        <StyledListItem>
+          <StyledLink isActive={router.pathname === "/"} href="/">
             <IconWrapper>
               <MdHome />
             </IconWrapper>
           </StyledLink>
         </StyledListItem>
-        <StyledListItem isActive={router.pathname === "/create"}>
-          <StyledLink href="/create">
+        <StyledListItem>
+          <StyledLink isActive={router.pathname === "/create"} href="/create">
             <IconWrapper>
               <MdOutlineAddCircleOutline />
             </IconWrapper>
           </StyledLink>
         </StyledListItem>
-        <StyledListItem isActive={router.pathname === "/archive"}>
-          <StyledLink href="/archive">
+        <StyledListItem>
+          <StyledLink isActive={router.pathname === "/archive"} href="/archive">
             <IconWrapper>
               <MdDone />
             </IconWrapper>
