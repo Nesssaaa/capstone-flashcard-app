@@ -4,11 +4,13 @@ export default createGlobalStyle`
 :root {
   //background -colors-body, Header Navigation
     /* --color-background-1: #00c8ff; */
-    --color-background-1: #154f5f;
-    --color-background-2: #92FE9D;
+    
+    --color-background-2:#595a5900;
     --color-background-3: white;
-    --color-background-4: black;
-
+    --color-background-4: #000000;
+    --color-background-1: #bdbfbd60;
+    --color-background-5: #154f5f;
+    --color-background-6:  #92FE9D;
     
 
     //background -colors-card
@@ -18,14 +20,14 @@ export default createGlobalStyle`
     //font-colors
     --color-font-1: #000000;
     --color-font-2: white;
-    --color-font-3: var(--color-background-1);
+    --color-font-3: #808580d5;
 
     //border-colors
     --color-border-1: #000000;
     --color-border-2: white;
     
    //special-colors
-   --color-fox:#ba7309;
+   --color-fox:#d56f21ff;
 
     --gap: 20px;
   }
@@ -54,8 +56,8 @@ export default createGlobalStyle`
     display: flex;
     flex-direction: column;
     flex: 1;
-    max-height: 100vh;
-    min-height: 100vh;
+    max-height: 100lvh;
+    min-height: 100lvh;
     gap: 1rem;
     
     

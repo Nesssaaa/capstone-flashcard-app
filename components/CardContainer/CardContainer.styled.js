@@ -21,15 +21,15 @@ const BaseCardStyle = `
 
 export const StyledCardContainerQuestion = styled.div`
   ${BaseCardStyle}
-  background-color: var(--color-card-1);
-  box-shadow: 2px 2px 8px 4px var(--color-background-1);
+  background-color: white /*conic-gradient (var(--color-card-1),*/;
+  box-shadow: 1px 1px 6px 1px var(--color-font-3);
   border: 2px var(--color-background-1) solid;
 `;
 
 export const StyledCardContainerAnswer = styled.div`
   ${BaseCardStyle}
   background-color: var(--color-card-1);
-  box-shadow: 2px 2px 8px 4px var(--color-background-2);
+  box-shadow: 2px 2px 8px 4px var(--color-font-3);
   border: 2px var(--color-background-2) solid;
 `;
 
