@@ -1,41 +1,47 @@
 import GlobalStyle from "../styles";
-import initialFlashCards from "../lib.data.json";
-import useLocalStorageState from "use-local-storage-state";
 import { nanoid } from "nanoid";
 
 import Layout from "@/components/Layout/Layout";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useSWR from "swr";
+
+const fetcher = (url) => fetch(url).then((response) => response.json());
 
 export default function App({ Component, pageProps }) {
-  const [cards, setCards] = useLocalStorageState("cards", {
-    defaultValue: initialFlashCards,
-  });
+  const { data, isLoading } = useSWR("/api/cards", fetcher);
+
+  if (isLoading) {
+    return <h1>Is loading...</h1>;
+  }
+  if (!data) {
+    return;
+  }
 
   function getCard(id) {
-    return cards.find((card) => card.id === id);
+    return data.find((card) => card.id === id);
   }
 
   function addCard(data) {
-    const newCards = [{ id: nanoid(), ...data, isMastered: false }, ...cards];
+    const newCards = [{ id: nanoid(), ...data, isMastered: false }, ...data];
     setCards(newCards);
     toast("Karte erfolgreich hinzugefügt");
   }
 
   function editCard(data) {
-    setCards((cards) =>
+    setCards((data) =>
       cards.map((card) => (card.id === data.id ? { ...card, ...data } : card))
     );
     toast("Karte erfolgreich bearbeitet");
   }
 
   function deleteCard(id) {
-    setCards((cards) => cards.filter((card) => card.id !== id));
+    setCards((data) => data.filter((card) => card.id !== id));
   }
 
   function handleToggleMastered(id) {
-    setCards((cards) =>
-      cards.map((card) => {
+    setCards((data) =>
+      data.map((card) => {
         if (card.id === id) {
           card.isMastered = !card.isMastered;
 
@@ -56,7 +62,7 @@ export default function App({ Component, pageProps }) {
         <GlobalStyle />
 
         <Component
-          cards={cards}
+          cards={data}
           getCard={getCard}
           addCard={addCard}
           editCard={editCard}
