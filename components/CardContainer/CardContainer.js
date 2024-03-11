@@ -5,9 +5,9 @@ import {
   IconWrapper,
 } from "./CardContainer.styled";
 import ReactCardFlip from "react-card-flip";
+import { MdTouchApp } from "react-icons/md";
 import { useState } from "react";
 
-import { MdOutlineRotateLeft } from "react-icons/md";
 import ButtonNavBar from "../ButtonNavBar/ButtonNavBar";
 export default function CardContainer({
   question,
@@ -25,7 +25,7 @@ export default function CardContainer({
 
   return (
     <>
-      <ReactCardFlip flipDirection="horizontal" isFlipped={isFlipped}>
+      <ReactCardFlip flipDirection="vertical" isFlipped={isFlipped}>
         <StyledCardContainerQuestion onClick={flipCard}>
           <StyledTextShow
             readOnly
@@ -33,7 +33,7 @@ export default function CardContainer({
             value={question}
           ></StyledTextShow>
           <IconWrapper>
-            <MdOutlineRotateLeft />
+            <MdTouchApp />
           </IconWrapper>
           <ButtonNavBar
             id={id}
@@ -49,7 +49,7 @@ export default function CardContainer({
             value={answer}
           ></StyledTextShow>
           <IconWrapper>
-            <MdOutlineRotateLeft />
+            <MdTouchApp />
           </IconWrapper>
           <ButtonNavBar
             id={id}

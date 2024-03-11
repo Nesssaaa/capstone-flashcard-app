@@ -29,7 +29,7 @@ export const StyledCardContainerQuestion = styled.div`
 export const StyledCardContainerAnswer = styled.div`
   ${BaseCardStyle}
   background-color: var(--color-card-1);
-  box-shadow: 2px 2px 8px 4px var(--color-font-3);
+  box-shadow: 2px 2px 8px 3px var(--color-fox);
   border: 2px var(--color-background-2) solid;
 `;
 
@@ -55,4 +55,5 @@ export const IconWrapper = styled.div`
   color: var(--color-font-3);
   opacity: 0.8;
   margin-left: 80%;
+  /* margin-bottom: 1.3rem; */
 `;
