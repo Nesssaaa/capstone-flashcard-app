@@ -32,15 +32,15 @@ export const MenuList = styled.ul`
   position: absolute;
   z-index: 1;
   height: 100vh;
-  width: -100vh;
+  width: -90vh;
   right: -2rem;
   list-style: none;
-  font-size: 1rem;
+  font-size: 0, 8rem;
   background-color: var(--color-background-5);
   opacity: 0.95;
   color: white;
   padding: 2rem;
-  margin: 0;
+  margin-left: 30%;
 `;
 
 export const StyledMenuItem = styled(MenuItem)`
