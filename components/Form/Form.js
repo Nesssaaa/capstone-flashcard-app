@@ -4,6 +4,7 @@ import {
   StyledForm,
   StyledInput,
   StyledLabel,
+  StyledFieldset,
 } from "./Form.styled";
 
 import { MdOutlineSaveAlt } from "react-icons/md";
@@ -15,6 +16,7 @@ export default function Form({ onSubmit, card = {} }) {
   function handleSubmit(event) {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(event.target));
+    console.log(data);
     onSubmit(data);
 
     event.target.reset();
@@ -31,31 +33,48 @@ export default function Form({ onSubmit, card = {} }) {
 
   return (
     <StyledForm onSubmit={handleSubmit}>
-      <StyledLabel>
-        Frage
-        <StyledInput
-          onChange={handleQuestionChange}
-          name="question"
-          required
-          placeholder="Gib hier deine Frage ein"
-          type="text"
-          defaultValue={card.question}
-          textLength={questionText}
-        />
-      </StyledLabel>
-      <StyledLabel>
-        Antwort
-        <StyledInput
-          onChange={handleAnswerChange}
-          name="answer"
-          required
-          placeholder="Gib hier deine Antwort ein"
-          type="text"
-          defaultValue={card.answer}
-          textLength={answerText}
-        />
-      </StyledLabel>
+      <StyledFieldset>
+        <legend>Erstelle einen neuen Kartenstapel</legend>
+        <StyledLabel>
+          Name
+          <input
+            onChange={handleQuestionChange}
+            type="text"
+            name="collection"
+            //Problem, wenn required, können nicht nur Karten oder nur Collections angelegt werden...
+            placeholder="Gib hier einen Namen ein"
+            defaultValue={card.collection}
+          ></input>
+        </StyledLabel>
+      </StyledFieldset>
 
+      <StyledFieldset>
+        <legend>Erstelle eine neue Lernkarte</legend>
+        <StyledLabel>
+          Vorderseite
+          <StyledInput
+            onChange={handleQuestionChange}
+            name="question"
+            // required
+            placeholder="Gib hier deine Frage ein"
+            type="text"
+            defaultValue={card.question}
+            textLength={questionText}
+          />
+        </StyledLabel>
+        <StyledLabel>
+          Rückseite
+          <StyledInput
+            onChange={handleAnswerChange}
+            name="answer"
+            // required
+            placeholder="Gib hier deine Antwort ein"
+            type="text"
+            defaultValue={card.answer}
+            textLength={answerText}
+          />
+        </StyledLabel>
+      </StyledFieldset>
       <StyledButton type="submit">
         <IconWrapper>
           <MdOutlineSaveAlt />

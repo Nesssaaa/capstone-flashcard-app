@@ -5,6 +5,18 @@ export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const StyledFieldset = styled.fieldset`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  max-width: 90vw;
+  min-width: 90vw;
 `;
 
 export const StyledLabel = styled.label`
@@ -43,6 +55,7 @@ export const StyledInput = styled.textarea`
   opacity: 0.7;
   resize: none;
   outline: none;
+  max-width: 80vw;
   font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};
 `;
 
