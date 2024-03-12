@@ -1,12 +1,14 @@
-import { StyledHeader, IconWrapper } from "./Header.styled.js";
-import Menu from "../Menu/Menu";
+import MenuComponent from "../MenuComponent/MenuComponent.js";
+import { StyledHeader, IconWrapper, StyledSpan } from "./Header.styled.js";
 
-export default function Header() {
+export default function Header({ toggleMenu }) {
   return (
     <StyledHeader>
       {" "}
       SchlauFuchs <IconWrapper> 🦊</IconWrapper>
-      <Menu />
+      <StyledSpan>
+        <MenuComponent toggleMenu={toggleMenu} />
+      </StyledSpan>
     </StyledHeader>
   );
 }

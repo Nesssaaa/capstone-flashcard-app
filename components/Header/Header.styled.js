@@ -15,6 +15,14 @@ export const StyledHeader = styled.div`
   border: 0.5px var(--color-background-1) solid;
 `;
 
+export const StyledSpan = styled.span`
+  margin-left: 15%;
+  border-radius: 0 0 40px 40px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+`;
+
 export const IconWrapper = styled.div`
   font-size: 3rem;
   margin-left: 1.5rem;
