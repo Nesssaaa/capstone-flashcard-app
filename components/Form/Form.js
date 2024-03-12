@@ -7,7 +7,6 @@ import {
 } from "./Form.styled";
 
 import { MdOutlineSaveAlt } from "react-icons/md";
-
 import { useState } from "react";
 
 export default function Form({ onSubmit, card = {} }) {
