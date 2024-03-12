@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MenuItem } from "@szhsin/react-menu";
+import { MenuButton, MenuItem } from "@szhsin/react-menu";
 import Link from "next/link";
 
 export const StyledMenu = styled.div`
@@ -62,4 +62,9 @@ export const IconWrapper = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 2.3rem;
+`;
+
+export const StyledMenuButton = styled(MenuButton)`
+  border: none;
+  background-color: transparent;
 `;

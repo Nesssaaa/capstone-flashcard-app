@@ -16,8 +16,8 @@ export const StyledHeader = styled.div`
 `;
 
 export const StyledSpan = styled.span`
-  margin-left: 15%;
-  border-radius: 0 0 40px 40px;
+  margin-left: 8%;
+
   justify-content: center;
   align-items: center;
   display: flex;

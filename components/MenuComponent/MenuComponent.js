@@ -4,6 +4,7 @@ import {
   MenuList,
   StyledMenuItem,
   StyledLink,
+  StyledMenuButton,
 } from "./MenuComponent.styled";
 import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
 import Link from "next/link";
@@ -21,12 +22,12 @@ export default function MenuComponent() {
     <>
       <Menu
         menuButton={
-          <MenuButton onClick={toggleMenu}>
+          <StyledMenuButton onClick={toggleMenu}>
             <IconWrapper>
               {/* <MdOutlineMenu /> */}
               {isOpen ? <MdOutlineClose /> : <MdOutlineMenu />}
             </IconWrapper>
-          </MenuButton>
+          </StyledMenuButton>
         }
       >
         {isOpen && (
