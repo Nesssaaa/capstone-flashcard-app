@@ -13,12 +13,12 @@ export default function ArchivesPage({ cards, deleteCard, onToggle }) {
           {cards
             .filter((card) => card.isMastered)
             .map((card) => (
-              <div key={card.id}>
+              <div key={card._id}>
                 <CardContainer
                   question={card.question}
                   answer={card.answer}
                   deleteCard={deleteCard}
-                  id={card.id}
+                  id={card._id}
                   onToggle={onToggle}
                   isMastered={card.isMastered}
                 />

@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }) {
     toast("Karte erfolgreich hinzugefügt");
   }
 
-  async function editCard(card) {
+  async function updateCard(card) {
     const response = await fetch(`/api/cards/${card._id}`, {
       method: "PUT",
       headers: {
@@ -51,28 +51,35 @@ export default function App({ Component, pageProps }) {
     if (response.ok) {
       mutate();
     }
+  }
+
+  async function editCard(card) {
+    updateCard(card);
     toast("Karte erfolgreich bearbeitet");
   }
 
-  function deleteCard(id) {
-    // setCards((data) => data.filter((card) => card._id !== id));
+  async function deleteCard(id) {
+    const response = await fetch(`/api/cards/${id}`, {
+      method: "DELETE",
+    });
+    if (response.ok) {
+      mutate();
+    }
+    toast("Karte wurde gelöscht");
   }
 
   function handleToggleMastered(id) {
-    setCards((data) =>
-      data.map((card) => {
-        if (card._id === id) {
-          card.isMastered = !card.isMastered;
-
-          if (!card.isMastered) {
-            toast("Neue Runde");
-          } else {
-            toast("Super🤩");
-          }
+    data.forEach((card) => {
+      if (card._id === id) {
+        card.isMastered = !card.isMastered;
+        updateCard(card);
+        if (!card.isMastered) {
+          toast("Neue Runde");
+        } else {
+          toast("Super🤩");
         }
-        return card;
-      })
-    );
+      }
+    });
   }
 
   return (

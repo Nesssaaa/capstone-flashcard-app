@@ -17,6 +17,13 @@ export default async function handler(request, response) {
   if (request.method === "PUT") {
     const cardData = request.body;
     await Card.findByIdAndUpdate(id, cardData);
-    return response.status(200).json({ status: `Joke ${id} updated!` });
+    return response.status(200).json({ status: `Card ${id} updated!` });
+  }
+
+  if (request.method === "DELETE") {
+    await Card.findByIdAndDelete(id);
+    return response
+      .status(200)
+      .json({ status: `Card ${id} successfully deleted.` });
   }
 }
