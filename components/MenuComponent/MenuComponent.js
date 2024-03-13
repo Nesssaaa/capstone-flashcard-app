@@ -7,35 +7,23 @@ import {
   StyledMenuButton,
   MainMenu,
 } from "./MenuComponent.styled";
-import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
-import Link from "next/link";
-import { useState } from "react";
 import { MdOutlineClose, MdOutlineMenu, MdHome } from "react-icons/md";
 
 export default function MenuComponent() {
-  // const [isOpen, setIsOpen] = useState(false);
-
-  // function toggleMenu() {
-  //   setIsOpen((prevIsOpen) => !prevIsOpen);
-  //   console.log("funktioniert");
-  // }
-
   return (
     <>
       <MainMenu
         menuButton={
-          <StyledMenuButton /*onClick={toggleMenu}*/>
+          <StyledMenuButton>
             <IconWrapper>
               <MdOutlineMenu />
-              {/* {isOpen ? <MdOutlineClose /> : <MdOutlineMenu />} */}
             </IconWrapper>
           </StyledMenuButton>
         }
         transition
       >
-        {/* {isOpen && ( */}
         <StyledMenu>
           <MenuList>
             <StyledMenuItem>
