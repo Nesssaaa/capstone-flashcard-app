@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
   function getCard(id) {
     return cards.find((card) => card.id === id);
   }
-  //check wo aufgerufen und ob die richtige data übergeben wird
+
   function getCollection(id) {
     return collections.find((collection) => collection.id === id);
   }
@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }) {
     setCards(newCards);
     toast("Karte erfolgreich hinzugefügt");
   }
-  //check wo aufgerufen und ob die richtige data übergeben wird
+
   function addCollection(data) {
     const newCollections = [{ id: nanoid(), ...data }, ...collections];
     setCollections(newCollections);
