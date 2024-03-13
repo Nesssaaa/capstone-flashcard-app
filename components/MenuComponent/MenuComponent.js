@@ -35,7 +35,7 @@ export default function MenuComponent() {
             <StyledMenuItem>
               <StyledLink href="/">
                 <IconWrapper size="1.3rem">
-                  <MdHome /> &nbsp; Hauptsseite
+                  <MdHome /> &nbsp; Hauptseite
                 </IconWrapper>
               </StyledLink>
             </StyledMenuItem>
