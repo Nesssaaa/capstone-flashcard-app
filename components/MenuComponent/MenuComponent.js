@@ -24,8 +24,8 @@ export default function MenuComponent() {
         menuButton={
           <StyledMenuButton onClick={toggleMenu}>
             <IconWrapper>
-              {/* <MdOutlineMenu /> */}
-              {isOpen ? <MdOutlineClose /> : <MdOutlineMenu />}
+              <MdOutlineMenu />
+              {/* {isOpen ? <MdOutlineClose /> : <MdOutlineMenu />} */}
             </IconWrapper>
           </StyledMenuButton>
         }
@@ -34,8 +34,14 @@ export default function MenuComponent() {
           <StyledMenu>
             <MenuList>
               <StyledMenuItem>
+                <IconWrapper size="1.3rem">
+                  <MdOutlineClose />
+                  &nbsp; Schließen
+                </IconWrapper>
+              </StyledMenuItem>
+              <StyledMenuItem>
                 <StyledLink href="/">
-                  <IconWrapper>
+                  <IconWrapper size="1.3rem">
                     <MdHome /> &nbsp; Hauptsseite
                   </IconWrapper>
                 </StyledLink>
