@@ -14,21 +14,24 @@ export default function Navigation() {
     <StyledNavigation>
       <StyledList>
         <StyledListItem>
-          <StyledLink isActive={router.pathname === "/"} href="/">
+          <StyledLink $isActive={router.pathname === "/"} href="/">
             <IconWrapper>
               <MdHome />
             </IconWrapper>
           </StyledLink>
         </StyledListItem>
         <StyledListItem>
-          <StyledLink isActive={router.pathname === "/create"} href="/create">
+          <StyledLink $isActive={router.pathname === "/create"} href="/create">
             <IconWrapper>
               <MdOutlineAddCircleOutline />
             </IconWrapper>
           </StyledLink>
         </StyledListItem>
         <StyledListItem>
-          <StyledLink isActive={router.pathname === "/archive"} href="/archive">
+          <StyledLink
+            $isActive={router.pathname === "/archive"}
+            href="/archive"
+          >
             <IconWrapper>
               <MdDone />
             </IconWrapper>

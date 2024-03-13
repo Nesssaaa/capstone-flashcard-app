@@ -11,8 +11,8 @@ export const StyledNavigation = styled.nav`
 export const StyledLink = styled(Link)`
   text-decoration: none;
   /* color: var(--color-font-3); */
-  color: ${({ isActive }) =>
-    isActive ? "var(--color-fox)" : "var(--color-font-3)"};
+  color: ${({ $isActive }) =>
+    $isActive ? "var(--color-fox)" : "var(--color-font-3)"};
 `;
 
 export const StyledList = styled.ul`
@@ -23,7 +23,6 @@ export const StyledList = styled.ul`
   margin: 0;
   padding: 0;
   justify-content: space-around;
-  /* box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.5); */
 `;
 
 export const StyledListItem = styled.li`
