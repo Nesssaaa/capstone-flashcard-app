@@ -1,6 +1,4 @@
 import GlobalStyle from "../styles";
-import { nanoid } from "nanoid";
-
 import Layout from "@/components/Layout/Layout";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -41,21 +39,29 @@ export default function App({ Component, pageProps }) {
     toast("Karte erfolgreich hinzugefügt");
   }
 
-  function editCard(data) {
-    setCards((data) =>
-      cards.map((card) => (card.id === data.id ? { ...card, ...data } : card))
-    );
+  async function editCard(card) {
+    const response = await fetch(`/api/cards/${card._id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(card),
+    });
+
+    if (response.ok) {
+      mutate();
+    }
     toast("Karte erfolgreich bearbeitet");
   }
 
   function deleteCard(id) {
-    setCards((data) => data.filter((card) => card.id !== id));
+    // setCards((data) => data.filter((card) => card._id !== id));
   }
 
   function handleToggleMastered(id) {
     setCards((data) =>
       data.map((card) => {
-        if (card.id === id) {
+        if (card._id === id) {
           card.isMastered = !card.isMastered;
 
           if (!card.isMastered) {

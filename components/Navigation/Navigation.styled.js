@@ -11,8 +11,8 @@ export const StyledNavigation = styled.nav`
 export const StyledLink = styled(Link)`
   text-decoration: none;
   /* color: var(--color-font-3); */
-  color: ${({ isActive }) =>
-    isActive ? "var(--color-fox)" : "var(--color-font-3)"};
+  color: ${({ $isActive }) =>
+    $isActive ? "var(--color-fox)" : "var(--color-font-3)"};
 `;
 
 export const StyledList = styled.ul`

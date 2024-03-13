@@ -6,11 +6,17 @@ export default async function handler(request, response) {
   const { id } = request.query;
 
   if (request.method === "GET") {
-    const card = await Card.findById(id);
+    const cardData = await Card.findById(id);
 
-    if (!card) {
+    if (!cardData) {
       return response.status(404).json({ status: "Not Found" });
     }
-    response.status(200).json(card);
+    response.status(200).json(cardData);
+  }
+
+  if (request.method === "PUT") {
+    const cardData = request.body;
+    await Card.findByIdAndUpdate(id, cardData);
+    return response.status(200).json({ status: `Joke ${id} updated!` });
   }
 }

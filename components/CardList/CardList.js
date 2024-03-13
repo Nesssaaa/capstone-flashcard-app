@@ -7,13 +7,13 @@ export default function CardList({ cards, deleteCard, onToggle }) {
         cards
           .filter((card) => card.isMastered === false)
           .map((card) => (
-            <div key={card.id}>
+            <div key={card._id}>
               <CardContainer
                 question={card.question}
                 answer={card.answer}
                 collection={card.collection}
                 deleteCard={deleteCard}
-                id={card.id}
+                id={card._id}
                 onToggle={onToggle}
                 isMastered={card.isMastered}
               />
