@@ -41,7 +41,6 @@ export default function Form({ onSubmit, card = {} }) {
             onChange={handleQuestionChange}
             type="text"
             name="collection"
-            //Problem, wenn required, können nicht nur Karten oder nur Collections angelegt werden...
             placeholder="Gib hier einen Namen ein"
             defaultValue={card.collection}
           ></input>
@@ -55,7 +54,7 @@ export default function Form({ onSubmit, card = {} }) {
           <StyledInput
             onChange={handleQuestionChange}
             name="question"
-            // required
+            required
             placeholder="Gib hier deine Frage ein"
             type="text"
             defaultValue={card.question}
