@@ -9,16 +9,6 @@ export const StyledForm = styled.form`
   align-items: center;
 `;
 
-export const StyledFieldset = styled.fieldset`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  max-width: 90vw;
-  min-width: 90vw;
-`;
-
 export const StyledLabel = styled.label`
   margin: 0.7rem;
   display: flex;

@@ -31,8 +31,8 @@ export default function App({ Component, pageProps }) {
   }
   //check wo aufgerufen und ob die richtige data übergeben wird
   function addCollection(data) {
-    const newCollection = [{ id: nanoid(), ...data }, ...collections];
-    setCollections(newCollection);
+    const newCollections = [{ id: nanoid(), ...data }, ...collections];
+    setCollections(newCollections);
     toast("Kartenstapel erfolgreich hinzugefügt");
   }
 
