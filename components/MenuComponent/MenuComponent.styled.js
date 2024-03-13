@@ -15,7 +15,6 @@ export const StyledMenu = styled.div`
 
 export const MenuList = styled.ul`
   position: absolute;
-
   top: 0;
   width: 80%;
   bottom: 0;
