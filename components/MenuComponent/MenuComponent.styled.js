@@ -50,7 +50,7 @@ export const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: ${({ size }) => size || "2.3rem"};
+  font-size: ${({ $size }) => $size || "2.3rem"};
 `;
 
 export const StyledMenuButton = styled(MenuButton)`

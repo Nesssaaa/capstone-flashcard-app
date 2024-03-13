@@ -27,14 +27,14 @@ export default function MenuComponent() {
         <StyledMenu>
           <MenuList>
             <StyledMenuItem>
-              <IconWrapper size="1.3rem">
+              <IconWrapper $size="1.3rem">
                 <MdOutlineClose />
                 &nbsp; Schließen
               </IconWrapper>
             </StyledMenuItem>
             <StyledMenuItem>
               <StyledLink href="/">
-                <IconWrapper size="1.3rem">
+                <IconWrapper $size="1.3rem">
                   <MdHome /> &nbsp; Hauptseite
                 </IconWrapper>
               </StyledLink>
