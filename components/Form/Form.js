@@ -8,6 +8,7 @@ import {
 
 import { MdOutlineSaveAlt } from "react-icons/md";
 import { useState } from "react";
+import { nanoid } from "nanoid";
 //collection muss hier noch übergeben werden um beim edit alten value voranzuzeigen
 export default function Form({
   onSubmit,
@@ -25,12 +26,14 @@ export default function Form({
     console.log(data);
     if (data.collection === "__NEW__") {
       console.log("oh, wir brauchen eine neue Colection", data.newCollection);
-      addCollection();
-      return;
+      const newCollection = { id: nanoid(), name: data.newCollection };
+      addCollection(newCollection);
+      data.collection = newCollection.id;
     }
     onSubmit(data);
 
     event.target.reset();
+    setShowNewCollection(false);
     event.target.elements.question.focus();
   }
 
@@ -53,7 +56,7 @@ export default function Form({
       Wähle einen passenden Kartenstapel
       <select
         name="collection"
-        defaultValue=""
+        defaultValue={card.collection}
         onChange={handleCollectionChange}
       >
         <option disabled value="">

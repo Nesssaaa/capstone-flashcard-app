@@ -1,4 +1,5 @@
-export default function Profile() {
+export default function CollectionsPage({ collections, cards }) {
+  console.log(collections, cards);
   return (
     <>
       <h1>hallo, hier kommen die collections rein</h1>

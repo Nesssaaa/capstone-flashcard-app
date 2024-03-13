@@ -1,7 +1,14 @@
-import Form from "@/components/Form/Form";
 import { useRouter } from "next/router";
+import Form from "../../../components/Form/Form";
 
-export default function EditPage({ getCard, editCard }) {
+//die h2 vom Form muss für edit-mode noch angepasst werden
+
+export default function EditPage({
+  getCard,
+  editCard,
+  collections,
+  addCollection,
+}) {
   const router = useRouter();
   const card = getCard(router.query.id);
 
@@ -17,7 +24,12 @@ export default function EditPage({ getCard, editCard }) {
   return (
     <>
       <h1>Bearbeite deine Flashcard</h1>
-      <Form onSubmit={onSubmit} card={card} />
+      <Form
+        onSubmit={onSubmit}
+        card={card}
+        collections={collections}
+        addCollection={addCollection}
+      />
     </>
   );
 }

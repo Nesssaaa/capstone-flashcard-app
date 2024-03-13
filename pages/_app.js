@@ -1,5 +1,6 @@
 import GlobalStyle from "../styles";
 import initialFlashCards from "../lib.data.json";
+import initialCollections from "../lib.collections.json";
 import useLocalStorageState from "use-local-storage-state";
 import { nanoid } from "nanoid";
 
@@ -13,7 +14,7 @@ export default function App({ Component, pageProps }) {
   });
 
   const [collections, setCollections] = useLocalStorageState("collections", {
-    defaultValue: [],
+    defaultValue: initialCollections,
   });
 
   function getCard(id) {
