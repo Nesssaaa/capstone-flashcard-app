@@ -15,15 +15,15 @@ export const StyledMenu = styled.div`
 
 export const MenuList = styled.ul`
   position: absolute;
-  z-index: 1;
+
   top: 0;
-  left: 30%;
+  width: 80%;
   bottom: 0;
   list-style: none;
   font-size: 0.3rem;
   background-color: var(--color-background-4);
   opacity: 0.75;
-  color: white;
+  color: var(--color-fox);
   padding: 3rem;
   overflow-y: auto;
   overflow-x: hidden;
@@ -38,7 +38,7 @@ export const StyledMenuItem = styled(MenuItem)`
 `;
 
 export const StyledLink = styled(Link)`
-  color: white;
+  color: var(--color-fox);
   list-style: none;
   text-decoration: none;
 `;
