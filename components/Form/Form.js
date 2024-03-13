@@ -13,6 +13,8 @@ import { useState } from "react";
 export default function Form({ onSubmit, card = {} }) {
   const [questionText, setQuestionText] = useState("");
   const [answerText, setAnswerText] = useState("");
+  const [collectionText, setCollectionText] = useState("");
+
   function handleSubmit(event) {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(event.target));
@@ -28,6 +30,10 @@ export default function Form({ onSubmit, card = {} }) {
 
   function handleAnswerChange(event) {
     setAnswerText(event.target.value);
+  }
+
+  function handleCollectionText(event) {
+    setCollectionText(event.target.value);
   }
 
   return (
@@ -54,6 +60,18 @@ export default function Form({ onSubmit, card = {} }) {
           type="text"
           defaultValue={card.answer}
           textLength={answerText}
+        />
+      </StyledLabel>
+      <StyledLabel>
+        Sammlung
+        <StyledInput
+          onChange={handleCollectionText}
+          name="collection"
+          required
+          placeholder="Gib hier in welche Sammlung diese Karte gehört."
+          type="text"
+          defaultValue={card.collection}
+          textLength={collectionText}
         />
       </StyledLabel>
 

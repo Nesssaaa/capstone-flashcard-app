@@ -11,6 +11,7 @@ export default function CardList({ cards, deleteCard, onToggle }) {
               <CardContainer
                 question={card.question}
                 answer={card.answer}
+                collection={card.collection}
                 deleteCard={deleteCard}
                 id={card.id}
                 onToggle={onToggle}
