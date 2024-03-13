@@ -5,6 +5,7 @@ import {
   StyledMenuItem,
   StyledLink,
   StyledMenuButton,
+  MainMenu,
 } from "./MenuComponent.styled";
 import { Menu, MenuItem, MenuButton } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
@@ -23,7 +24,7 @@ export default function MenuComponent() {
 
   return (
     <>
-      <Menu
+      <MainMenu
         menuButton={
           <StyledMenuButton /*onClick={toggleMenu}*/>
             <IconWrapper>
@@ -53,7 +54,7 @@ export default function MenuComponent() {
           </MenuList>
         </StyledMenu>
         {/* )} */}
-      </Menu>
+      </MainMenu>
     </>
   );
 }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { MenuButton, MenuItem } from "@szhsin/react-menu";
+import { MenuButton, MenuItem, Menu } from "@szhsin/react-menu";
 import Link from "next/link";
 
 export const StyledMenu = styled.div`
@@ -12,20 +12,24 @@ export const StyledMenu = styled.div`
   justify-content: flex-start;
   align-items: center;
 `;
+export const MainMenu = styled(Menu)`
+  opacity: 0.85;
+  z-index: 1;
+`;
 
 export const MenuList = styled.ul`
   position: absolute;
   top: 0;
-  width: 80%;
-  bottom: 0;
+  max-width: 640px;
+  width: 100%;
+  height: 80%;
+
   list-style: none;
   font-size: 0.3rem;
   background-color: var(--color-background-4);
-  opacity: 0.75;
+
   color: var(--color-fox);
   padding: 3rem;
-  overflow-y: auto;
-  overflow-x: hidden;
 `;
 
 export const StyledMenuItem = styled(MenuItem)`
