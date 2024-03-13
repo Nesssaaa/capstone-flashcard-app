@@ -12,14 +12,28 @@ export default function App({ Component, pageProps }) {
     defaultValue: initialFlashCards,
   });
 
+  const [collections, setCollections] = useLocalStorageState("collections", {
+    defaultValue: [],
+  });
+
   function getCard(id) {
     return cards.find((card) => card.id === id);
+  }
+  //check wo aufgerufen und ob die richtige data übergeben wird
+  function getCollection(id) {
+    return collections.find((collection) => collection.id === id);
   }
 
   function addCard(data) {
     const newCards = [{ id: nanoid(), ...data, isMastered: false }, ...cards];
     setCards(newCards);
     toast("Karte erfolgreich hinzugefügt");
+  }
+  //check wo aufgerufen und ob die richtige data übergeben wird
+  function addCollection(data) {
+    const newCollection = [{ id: nanoid(), ...data }, ...collections];
+    setCollections(newCollection);
+    toast("Kartenstapel erfolgreich hinzugefügt");
   }
 
   function editCard(data) {
@@ -57,11 +71,14 @@ export default function App({ Component, pageProps }) {
 
         <Component
           cards={cards}
+          collections={collections}
           getCard={getCard}
           addCard={addCard}
           editCard={editCard}
           deleteCard={deleteCard}
           onToggle={handleToggleMastered}
+          getCollection={getCollection}
+          addCollection={addCollection}
           {...pageProps}
         />
         <ToastContainer
