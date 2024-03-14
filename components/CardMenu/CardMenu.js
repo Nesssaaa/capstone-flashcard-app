@@ -1,13 +1,44 @@
 import "@szhsin/react-menu/dist/core.css";
-import { MenuButton, MenuItem, Menu } from "@szhsin/react-menu";
-import Link from "next/link";
+import "@szhsin/react-menu/dist/transitions/slide.css";
+import { useRouter } from "next/router";
+import { Menu } from "@szhsin/react-menu";
 import { MdDeleteForever, MdEdit } from "react-icons/md";
 import { BsThreeDots } from "react-icons/bs";
-import { StyledMenuButton, IconWrapper } from "./CardMenu.styled";
+import {
+  StyledMenuButton,
+  IconWrapper,
+  StyledMenu,
+  StyledMenuItem,
+} from "./CardMenu.styled";
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 
-export default function CardMenu() {
+export default function CardMenu({ id, deleteCard }) {
+  const router = useRouter();
   function handleMenuClick(event) {
     event.stopPropagation();
+  }
+
+  function onEdit() {
+    router.push(`/cards/${id}/edit`);
+  }
+
+  function handleDelete() {
+    confirmAlert({
+      title: "Karte löschen?",
+      message: "Möchtest du diese Karte wirklich löschen?",
+      buttons: [
+        {
+          label: "Ja, bitte.",
+          onClick: () => {
+            deleteCard(id);
+          },
+        },
+        {
+          label: "Nein, danke.",
+        },
+      ],
+    });
   }
 
   return (
@@ -20,16 +51,17 @@ export default function CardMenu() {
             </IconWrapper>
           </StyledMenuButton>
         }
+        transition
       >
-        <div onClick={handleMenuClick}>
-          <MenuItem>
+        <StyledMenu onClick={handleMenuClick}>
+          <StyledMenuItem onClick={onEdit}>
             <MdEdit /> &nbsp; Karte bearbeiten
-          </MenuItem>
-          <MenuItem>
+          </StyledMenuItem>
+          <StyledMenuItem onClick={handleDelete}>
             <MdDeleteForever />
             &nbsp; Karte löschen
-          </MenuItem>
-        </div>
+          </StyledMenuItem>
+        </StyledMenu>
       </Menu>
     </>
   );

@@ -32,7 +32,11 @@ export default function CardContainer({
     <>
       <ReactCardFlip flipDirection="vertical" isFlipped={isFlipped}>
         <StyledCardContainerQuestion onClick={flipCard}>
-          <CardMenu onClick={stopMenuPropagation} />
+          <CardMenu
+            onClick={stopMenuPropagation}
+            id={id}
+            deleteCard={deleteCard}
+          />
           <StyledTextShow
             readOnly
             textLength={question}
