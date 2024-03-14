@@ -25,7 +25,7 @@ export default function Form({
     const data = Object.fromEntries(new FormData(event.target));
     console.log(data);
     if (data.collection === "__NEW__") {
-      console.log("oh, wir brauchen eine neue Colection", data.newCollection);
+      // console.log("oh, wir brauchen eine neue Colection", data.newCollection);
       const newCollection = { id: nanoid(), name: data.newCollection };
       addCollection(newCollection);
       data.collection = newCollection.id;
@@ -52,28 +52,28 @@ export default function Form({
   return (
     <StyledForm onSubmit={handleSubmit}>
       <h2>Erstelle neue Lernkarten</h2>
-      {/* <StyledLabel> */}
-      Wähle einen passenden Kartenstapel
-      <select
-        name="collection"
-        defaultValue={card.collection}
-        onChange={handleCollectionChange}
-      >
-        <option disabled value="">
-          Bitte triff eine Auswahl
-        </option>
-        <optgroup label="Anlage neue Sammlung">
-          <option value="__NEW__">Neue Sammlung anlegen</option>
-        </optgroup>
-        <optgroup label="Bestehende Sammlung">
-          {collections.map((collection) => (
-            <option key={collection.id} value={collection.id}>
-              {collection.name}
-            </option>
-          ))}
-        </optgroup>
-      </select>
-      {/* </StyledLabel> */}
+      <StyledLabel>
+        Wähle einen passenden Kartenstapel
+        <select
+          name="collection"
+          defaultValue={card.collection || ""}
+          onChange={handleCollectionChange}
+        >
+          <option disabled value="">
+            Bitte triff eine Auswahl
+          </option>
+          <optgroup label="Anlage neue Sammlung">
+            <option value="__NEW__">Neuen Kartenstapel anlegen</option>
+          </optgroup>
+          <optgroup label="Bestehende Sammlung">
+            {collections.map((collection) => (
+              <option key={collection.id} value={collection.id}>
+                {collection.name}
+              </option>
+            ))}
+          </optgroup>
+        </select>
+      </StyledLabel>
       {showNewCollection && <input name="newCollection" required />}
       <StyledLabel>
         Vorderseite
