@@ -9,10 +9,10 @@ import {
 import { MdOutlineSaveAlt } from "react-icons/md";
 import { useState } from "react";
 import { nanoid } from "nanoid";
-//collection muss hier noch übergeben werden um beim edit alten value voranzuzeigen
+
 export default function Form({
   onSubmit,
-  collections,
+  collections = {},
   card = {},
   addCollection,
 }) {
@@ -23,9 +23,8 @@ export default function Form({
   function handleSubmit(event) {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(event.target));
-    console.log(data);
+
     if (data.collection === "__NEW__") {
-      // console.log("oh, wir brauchen eine neue Colection", data.newCollection);
       const newCollection = { id: nanoid(), name: data.newCollection };
       addCollection(newCollection);
       data.collection = newCollection.id;

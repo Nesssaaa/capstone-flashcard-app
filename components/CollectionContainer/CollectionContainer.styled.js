@@ -8,6 +8,7 @@ export const StyledCollectionContainer = styled.div`
   border-radius: 20px;
   max-width: 75%;
   overflow: hidden;
+  margin: 2rem;
 `;
 
 export const StyledColorContainer = styled.div`
@@ -19,21 +20,12 @@ export const StyledColorContainer = styled.div`
 
 export const StyledTextContainer = styled.div`
   text-align: center;
-  margin-left: 0.7rem;
-  border: 2px solid red;
+  flex: 1;
 `;
-
-// export const IconWrapper = styled.div`
-//   display: flex;
-//   font-size: 2rem;
-//   justify-content: center;
-//   align-items: center;
-//   padding-left: 2.5rem;
-//   padding-right: 2.5rem;
-// `;
 
 export const CollectionLink = styled(Link)`
   text-decoration: none;
+  flex: 1;
   color: black;
   transition: color 0.3s;
   cursor: pointer;

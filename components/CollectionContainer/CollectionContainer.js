@@ -16,9 +16,6 @@ export default function CollectionContainer({ name, id }) {
         <CollectionLink href={`/collections/${id}`}>
           <StyledTextContainer>
             <h3>{name}</h3>
-            {/* <IconWrapper>
-            <FaRegPlayCircle />
-          </IconWrapper> */}
           </StyledTextContainer>
         </CollectionLink>
       </StyledCollectionContainer>

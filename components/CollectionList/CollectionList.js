@@ -12,5 +12,3 @@ export default function CollectionList({ collections }) {
     </>
   );
 }
-
-//Hier die Funktion noch anpassen
