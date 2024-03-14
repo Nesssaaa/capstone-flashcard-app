@@ -1,4 +1,5 @@
 import dbConnect from "@/db/connect.js";
+import { cardToDb, dbToCard } from "@/db/utils";
 import Card from "@/db/models/Card";
 
 export default async function handler(request, response) {
@@ -11,11 +12,11 @@ export default async function handler(request, response) {
     if (!cardData) {
       return response.status(404).json({ status: "Not Found" });
     }
-    response.status(200).json(cardData);
+    response.status(200).json(dbToCard(cardData));
   }
 
   if (request.method === "PUT") {
-    const cardData = request.body;
+    const cardData = cardToDb(request.body);
     await Card.findByIdAndUpdate(id, cardData);
     return response.status(200).json({ status: `Card ${id} updated!` });
   }

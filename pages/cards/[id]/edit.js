@@ -3,14 +3,14 @@ import { useRouter } from "next/router";
 
 export default function EditPage({ getCard, editCard }) {
   const router = useRouter();
-  const card = getCard(router.query._id);
+  const card = getCard(router.query.id);
 
   if (!card) {
     return "Error";
   }
 
   function onSubmit(data) {
-    editCard({ ...data, _id: card._id });
+    editCard({ ...data, id: card.id });
     router.push(`/`);
   }
 

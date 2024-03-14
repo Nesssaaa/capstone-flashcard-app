@@ -15,6 +15,7 @@ export default function App({ Component, pageProps }) {
     return <h1>Is loading...</h1>;
   }
   if (!data) {
+    console.log(data);
     return;
   }
 
@@ -39,7 +40,7 @@ export default function App({ Component, pageProps }) {
   }
 
   async function updateCard(card) {
-    const response = await fetch(`/api/cards/${card._id}`, {
+    const response = await fetch(`/api/cards/${card.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -69,7 +70,7 @@ export default function App({ Component, pageProps }) {
 
   function handleToggleMastered(id) {
     data.forEach((card) => {
-      if (card._id === id) {
+      if (card.id === id) {
         card.isMastered = !card.isMastered;
         updateCard(card);
         if (!card.isMastered) {
@@ -80,7 +81,7 @@ export default function App({ Component, pageProps }) {
       }
     });
   }
-
+  console.log(data);
   return (
     <>
       <Layout>
