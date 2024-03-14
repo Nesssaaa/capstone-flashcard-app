@@ -23,7 +23,6 @@ export default function App({ Component, pageProps }) {
   }
 
   async function addCard(card) {
-    // 1. neue Karte in DB speichern, 2. alle Karten neu laden (data-Array mit Daten aus DB überschreiben)
     const response = await fetch("/api/cards", {
       method: "POST",
       headers: {
