@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Menu } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import { MdDeleteForever, MdEdit, MdOutlineClose } from "react-icons/md";
@@ -15,18 +15,31 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 
 export default function CardMenu({ id, deleteCard }) {
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    }
+
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   function handleMenuClick(event) {
     event.stopPropagation();
+    setIsMenuOpen(!isMenuOpen);
   }
 
   function onEdit() {
     router.push(`/cards/${id}/edit`);
-  }
-
-  function handleToggleIcon() {
-    setIsOpen(!isOpen);
+    setIsMenuOpen(false);
   }
 
   function handleDelete() {
@@ -45,26 +58,23 @@ export default function CardMenu({ id, deleteCard }) {
         },
       ],
     });
+    setIsMenuOpen(false);
   }
 
   return (
     <>
       <Menu
+        isOpen={isMenuOpen}
         menuButton={
-          <StyledMenuButton
-            onClick={(event) => {
-              handleMenuClick(event);
-              handleToggleIcon();
-            }}
-          >
+          <StyledMenuButton onClick={handleMenuClick}>
             <IconWrapper>
-              {isOpen ? <MdOutlineClose /> : <BsThreeDots />}
+              {isMenuOpen ? <MdOutlineClose /> : <BsThreeDots />}
             </IconWrapper>
           </StyledMenuButton>
         }
         transition
       >
-        <StyledMenu onClick={handleMenuClick}>
+        <StyledMenu ref={menuRef}>
           <StyledMenuItem onClick={onEdit}>
             <MdEdit /> &nbsp; Karte bearbeiten
           </StyledMenuItem>

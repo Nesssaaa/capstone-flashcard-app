@@ -38,9 +38,6 @@ export const StyledMenuItem = styled(MenuItem)`
   gap: 1rem;
   padding: 1rem;
   font-size: 0.5rem important;
-`;
-
-export const StyledLink = styled(Link)`
   color: var(--color-fox);
   list-style: none;
   text-decoration: none;

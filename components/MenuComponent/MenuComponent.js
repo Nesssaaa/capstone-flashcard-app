@@ -32,16 +32,13 @@ export default function MenuComponent() {
                 &nbsp; Schließen
               </IconWrapper>
             </StyledMenuItem>
-            <StyledMenuItem>
-              <StyledLink href="/">
-                <IconWrapper $size="1.3rem">
-                  <MdHome /> &nbsp; Hauptseite
-                </IconWrapper>
-              </StyledLink>
+            <StyledMenuItem href="/">
+              <IconWrapper $size="1.3rem">
+                <MdHome /> &nbsp; Hauptseite
+              </IconWrapper>
             </StyledMenuItem>
           </MenuList>
         </StyledMenu>
-        {/* )} */}
       </MainMenu>
     </>
   );
