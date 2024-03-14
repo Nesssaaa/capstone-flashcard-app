@@ -4,6 +4,7 @@ import {
   StyledForm,
   StyledInput,
   StyledLabel,
+  Select,
 } from "./Form.styled";
 
 import { MdOutlineSaveAlt } from "react-icons/md";
@@ -53,7 +54,7 @@ export default function Form({
       <h2>Erstelle neue Lernkarten</h2>
       <StyledLabel>
         Wähle einen passenden Kartenstapel
-        <select
+        <Select
           name="collection"
           defaultValue={card.collection || ""}
           onChange={handleCollectionChange}
@@ -71,7 +72,7 @@ export default function Form({
               </option>
             ))}
           </optgroup>
-        </select>
+        </Select>
       </StyledLabel>
       {showNewCollection && <input name="newCollection" required />}
       <StyledLabel>

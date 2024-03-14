@@ -52,3 +52,8 @@ export const StyledInput = styled.textarea`
 export const IconWrapper = styled.div`
   font-size: 2.7rem;
 `;
+
+export const Select = styled.select`
+  font-size: 1.2rem;
+  padding: 2px 5px;
+`;
