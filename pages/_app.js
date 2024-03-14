@@ -4,7 +4,7 @@ import initialCollections from "../lib.collections.json";
 import useLocalStorageState from "use-local-storage-state";
 import { nanoid } from "nanoid";
 
-import Layout from "@/components/Layout/Layout";
+import Layout from "../components/Layout/Layout";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 

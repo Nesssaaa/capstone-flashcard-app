@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { calculateFontSize } from "@/utils";
+import { calculateFontSize } from "../../utils";
 
 export const StyledForm = styled.form`
   display: flex;
