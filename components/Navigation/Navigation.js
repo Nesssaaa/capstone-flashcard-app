@@ -7,6 +7,7 @@ import {
   StyledNavigation,
 } from "./Navigation.styled";
 import { MdOutlineAddCircleOutline, MdDone, MdHome } from "react-icons/md";
+import { BsCollectionFill } from "react-icons/bs";
 
 export default function Navigation() {
   const router = useRouter();
@@ -17,6 +18,16 @@ export default function Navigation() {
           <StyledLink $isActive={router.pathname === "/"} href="/">
             <IconWrapper>
               <MdHome />
+            </IconWrapper>
+          </StyledLink>
+        </StyledListItem>
+        <StyledListItem>
+          <StyledLink
+            $isActive={router.pathname === "/collections"}
+            href="/collections"
+          >
+            <IconWrapper>
+              <BsCollectionFill />
             </IconWrapper>
           </StyledLink>
         </StyledListItem>

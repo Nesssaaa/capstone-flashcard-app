@@ -1,4 +1,4 @@
-import CardContainer from "@/components/CardContainer/CardContainer";
+import CardContainer from "../components/CardContainer/CardContainer";
 
 import { StyledText, StyledPageName } from "../components/Archive.styled";
 

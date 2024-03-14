@@ -1,4 +1,4 @@
-import { calculateFontSize } from "../utils";
+import { calculateFontSize } from "../../utils";
 import styled from "styled-components";
 
 const BaseCardStyle = `

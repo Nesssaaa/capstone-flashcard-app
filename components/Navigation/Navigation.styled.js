@@ -30,7 +30,7 @@ export const StyledListItem = styled.li`
   padding: 0;
   margin: 0;
   list-style: none;
-  flex-basis: 33.33%;
+  flex-basis: 25%;
   height: 3.4rem;
   display: flex;
   justify-content: center;
