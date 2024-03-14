@@ -1,8 +1,8 @@
-import "@szhsin/react-menu/dist/core.css";
-import "@szhsin/react-menu/dist/transitions/slide.css";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import { Menu } from "@szhsin/react-menu";
-import { MdDeleteForever, MdEdit } from "react-icons/md";
+import "@szhsin/react-menu/dist/transitions/slide.css";
+import { MdDeleteForever, MdEdit, MdOutlineClose } from "react-icons/md";
 import { BsThreeDots } from "react-icons/bs";
 import {
   StyledMenuButton,
@@ -15,12 +15,18 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 
 export default function CardMenu({ id, deleteCard }) {
   const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
+
   function handleMenuClick(event) {
     event.stopPropagation();
   }
 
   function onEdit() {
     router.push(`/cards/${id}/edit`);
+  }
+
+  function handleToggleIcon() {
+    setIsOpen(!isOpen);
   }
 
   function handleDelete() {
@@ -45,9 +51,14 @@ export default function CardMenu({ id, deleteCard }) {
     <>
       <Menu
         menuButton={
-          <StyledMenuButton onClick={handleMenuClick}>
+          <StyledMenuButton
+            onClick={(event) => {
+              handleMenuClick(event);
+              handleToggleIcon();
+            }}
+          >
             <IconWrapper>
-              <BsThreeDots />
+              {isOpen ? <MdOutlineClose /> : <BsThreeDots />}
             </IconWrapper>
           </StyledMenuButton>
         }
