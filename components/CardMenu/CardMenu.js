@@ -21,13 +21,15 @@ export default function CardMenu() {
           </StyledMenuButton>
         }
       >
-        <MenuItem>
-          <MdEdit /> &nbsp; Karte bearbeiten
-        </MenuItem>
-        <MenuItem>
-          <MdDeleteForever />
-          &nbsp; Karte löschen
-        </MenuItem>
+        <div onClick={handleMenuClick}>
+          <MenuItem>
+            <MdEdit /> &nbsp; Karte bearbeiten
+          </MenuItem>
+          <MenuItem>
+            <MdDeleteForever />
+            &nbsp; Karte löschen
+          </MenuItem>
+        </div>
       </Menu>
     </>
   );
