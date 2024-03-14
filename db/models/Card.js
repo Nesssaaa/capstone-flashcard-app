@@ -6,7 +6,7 @@ const cardSchema = new Schema({
   question: { type: String, required: true },
   answer: { type: String, required: true },
   isMastered: { type: Boolean, required: true, default: false },
-  collection: { type: String, required: true },
+  deck: { type: String, required: true },
 });
 
 const Card = mongoose.models.Card || mongoose.model("Card", cardSchema);
