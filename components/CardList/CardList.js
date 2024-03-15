@@ -1,7 +1,6 @@
 import CardContainer from "../CardContainer/CardContainer";
 
 export default function CardList({ cards, deleteCard, onToggle }) {
-  console.log("Cardlist", cards);
   return (
     <>
       {cards &&
