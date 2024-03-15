@@ -38,9 +38,9 @@ export default function CollectionCardList({
       </StyledContainer>
       {!filteredCards.length ? (
         <StyledContainer>
+          <p>Dein Kartenstapel ist noch leer.</p>
+          <br />
           <p>
-            Dein Kartenstapel ist noch leer.
-            <br />
             <StyledLink href={"/"}>Füge neue Karten hinzu!</StyledLink>
           </p>
         </StyledContainer>
@@ -51,6 +51,9 @@ export default function CollectionCardList({
           onToggle={onToggle}
         />
       )}
+      <StyledContainer>
+        <StyledLink href="/collections">zurück zur Übersicht</StyledLink>
+      </StyledContainer>
     </>
   );
 }
