@@ -48,12 +48,7 @@ export default createGlobalStyle`
     max-width: 640px;
     margin: 0 auto;
     background: linear-gradient(90deg, var(--color-background-1) 0%, var(--color-background-2) 100%);
-    /* margin-bottom: 69px;
-    @media screen and (max-width: 414px) {
-      margin-bottom: 138px;
-    } */
-   
-  }
+ }
 
  
   body > div {

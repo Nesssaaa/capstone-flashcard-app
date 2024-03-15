@@ -52,9 +52,9 @@ export const IconWrapper = styled.div`
   padding-right: 2.5rem;
 
   @media screen and (max-width: 414px) {
-    font-size: 2rem; /* Beispieländerung für kleinere Bildschirme */
-    padding-left: 1.5rem; /* Beispieländerung für kleinere Bildschirme */
-    padding-right: 1.5rem; /* Beispieländerung für kleinere Bildschirme */
+    font-size: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 `;
 

@@ -13,7 +13,7 @@ import { nanoid } from "nanoid";
 
 export default function Form({
   onSubmit,
-  collections = {},
+  collections = [],
   card = {},
   addCollection,
 }) {

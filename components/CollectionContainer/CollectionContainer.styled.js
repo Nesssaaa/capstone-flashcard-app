@@ -3,7 +3,6 @@ import Link from "next/link";
 
 export const StyledCollectionContainer = styled.div`
   display: flex;
-  /* align-items: center; */
   border: 2px solid darkgray;
   border-radius: 20px;
   max-width: 75%;
