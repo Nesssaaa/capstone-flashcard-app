@@ -6,7 +6,7 @@ export default function CollectionList({ collections }) {
       {collections &&
         collections.map((collection) => (
           <div key={collection.id}>
-            <CollectionContainer name={collection.name} />
+            <CollectionContainer name={collection.name} id={collection.id} />
           </div>
         ))}
     </>
