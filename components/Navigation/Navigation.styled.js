@@ -57,3 +57,11 @@ export const IconWrapper = styled.div`
     padding-right: 1.5rem; /* Beispieländerung für kleinere Bildschirme */
   }
 `;
+
+export const Space = styled.div`
+  height: 3rem;
+
+  @media screen and (max-width: 414px) {
+    padding-bottom: 138px;
+  }
+`;
