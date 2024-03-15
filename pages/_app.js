@@ -15,7 +15,6 @@ export default function App({ Component, pageProps }) {
     return <h1>Is loading...</h1>;
   }
   if (!data) {
-    console.log(data);
     return;
   }
 
