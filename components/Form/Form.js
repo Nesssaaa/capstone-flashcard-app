@@ -51,7 +51,6 @@ export default function Form({
 
   return (
     <StyledForm onSubmit={handleSubmit}>
-      <h2>Erstelle neue Lernkarten</h2>
       <StyledLabel>
         Wähle einen passenden Kartenstapel
         <Select

@@ -28,7 +28,7 @@ export default function EditPage({
 
   return (
     <>
-      <StyledH1>Bearbeite deine Flashcard</StyledH1>
+      <StyledH1>Bearbeite deine Lernkarten</StyledH1>
       <Form
         onSubmit={onSubmit}
         card={card}
