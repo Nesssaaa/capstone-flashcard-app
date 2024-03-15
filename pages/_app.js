@@ -22,7 +22,6 @@ export default function App({ Component, pageProps }) {
   }
 
   function getCollection(id) {
-    console.log("collections sind:", collections);
     return collections.find((collection) => collection.id === id);
   }
 

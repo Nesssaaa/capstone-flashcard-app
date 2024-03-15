@@ -2,8 +2,6 @@ import { useRouter } from "next/router";
 import Form from "../../../components/Form/Form";
 import styled from "styled-components";
 
-//die h2 vom Form muss für edit-mode noch angepasst werden
-
 export const StyledH1 = styled.h1`
   text-align: center;
 `;
