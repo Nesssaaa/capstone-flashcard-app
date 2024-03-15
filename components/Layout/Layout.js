@@ -7,7 +7,7 @@ export default function Layout({ children }) {
     <>
       <Header />
       <StyledMain>{children}</StyledMain>
-      <Navigation />
+      {/* <Navigation /> */}
     </>
   );
 }
