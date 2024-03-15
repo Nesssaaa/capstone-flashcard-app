@@ -9,7 +9,7 @@ export const StyledContainer = styled.div`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  color: var(--color-fox);
 `;
 
 export default function CollectionCardList({
