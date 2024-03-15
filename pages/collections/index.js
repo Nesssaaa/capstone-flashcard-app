@@ -5,6 +5,7 @@ import {
   IconWrapper,
   StyledLink,
 } from "../../components/Navigation/Navigation.styled";
+import Navigation from "../../components/Navigation/Navigation";
 
 export default function CollectionsPage({ collections }) {
   if (collections.length === 0) {
@@ -24,6 +25,7 @@ export default function CollectionsPage({ collections }) {
     <>
       <h1>Deine Kartenstapel</h1>
       <CollectionList collections={collections} />
+      <Navigation />
     </>
   );
 }
