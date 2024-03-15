@@ -1,6 +1,7 @@
 import CardContainer from "../components/CardContainer/CardContainer";
 
 import { StyledText, StyledPageName } from "../components/Archive.styled";
+import Navigation from "../components/Navigation/Navigation";
 
 export default function ArchivesPage({ cards, deleteCard, onToggle }) {
   return (
@@ -26,6 +27,7 @@ export default function ArchivesPage({ cards, deleteCard, onToggle }) {
             ))}
         </>
       )}
+      <Navigation />
     </>
   );
 }

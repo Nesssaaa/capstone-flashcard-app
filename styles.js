@@ -43,12 +43,16 @@ export default createGlobalStyle`
   body {
     display: flex;
     flex-direction: column;
-    margin: 0;
     padding: 0;
     font-family: system-ui;
-  max-width: 640px;
+    max-width: 640px;
     margin: 0 auto;
     background: linear-gradient(90deg, var(--color-background-1) 0%, var(--color-background-2) 100%);
+    /* margin-bottom: 69px;
+    @media screen and (max-width: 414px) {
+      margin-bottom: 138px;
+    } */
+   
   }
 
  
@@ -59,6 +63,7 @@ export default createGlobalStyle`
     max-height: 100lvh;
     min-height: 100lvh;
     gap: 1rem;
+    
     
     
   }
