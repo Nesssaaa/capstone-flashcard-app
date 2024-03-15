@@ -26,9 +26,10 @@ export default function CollectionCardList({
   }
 
   const filteredCards = collection
-    ? cards.filter((card) => card.collection === collection.id)
+    ? cards
+        .filter((card) => card.collection === collection.id)
+        .filter((card) => card.isMastered === false)
     : [];
-  console.log("hier kommt die collection-id", collection, router.query.id);
 
   return (
     <>

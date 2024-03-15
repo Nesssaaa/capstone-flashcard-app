@@ -5,7 +5,7 @@ export default function CardList({ cards, deleteCard, onToggle }) {
     <>
       {cards &&
         cards
-          .filter((card) => card.isMastered === false)
+          // .filter((card) => card.isMastered === false)
           .map((card) => (
             <div key={card.id}>
               <CardContainer
