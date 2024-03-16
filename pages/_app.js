@@ -61,7 +61,6 @@ export default function App({ Component, pageProps }) {
   }
 
   async function deleteCard(id) {
-    console.log("Ich soll folgende Karte loeschen", id);
     const response = await fetch(`/api/cards/${id}`, {
       method: "DELETE",
     });
