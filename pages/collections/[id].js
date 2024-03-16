@@ -41,7 +41,7 @@ export default function CollectionCardList({
           <p>Dein Kartenstapel ist noch leer.</p>
           <br />
           <p>
-            <StyledLink href={"/"}>Füge neue Karten hinzu!</StyledLink>
+            <StyledLink href={"/create"}>Füge neue Karten hinzu!</StyledLink>
           </p>
         </StyledContainer>
       ) : (
