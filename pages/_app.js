@@ -12,22 +12,22 @@ import { useRouter } from "next/router";
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
 export default function App({ Component, pageProps }) {
-  const { data, isLoading, mutate } = useSWR("/api/cards", fetcher);
+  const { data: cards, isLoading, mutate } = useSWR("/api/cards", fetcher);
   const router = useRouter();
   const [collections, setCollections] = useLocalStorageState("collections", {
     defaultValue: initialCollections,
   });
-  
+
   if (isLoading) {
     return <h1>Is loading...</h1>;
   }
-  if (!data) {
+
+  if (!cards) {
     return;
   }
 
-
   function getCard(id) {
-    return data.find((card) => card.id === id);
+    return cards.find((card) => card.id === id);
   }
 
   async function addCard(card) {
@@ -45,7 +45,7 @@ export default function App({ Component, pageProps }) {
     toast("Karte erfolgreich hinzugefügt");
   }
 
-  async function updateCard(card) {
+  async function editCard(card) {
     const response = await fetch(`/api/cards/${card.id}`, {
       method: "PUT",
       headers: {
@@ -56,22 +56,19 @@ export default function App({ Component, pageProps }) {
 
     if (response.ok) {
       mutate();
+      toast("Karte erfolgreich bearbeitet");
     }
   }
 
-  async function editCard(card) {
-    updateCard(card);
-    toast("Karte erfolgreich bearbeitet");
-  }
-
   async function deleteCard(id) {
+    console.log("Ich soll folgende Karte loeschen", id);
     const response = await fetch(`/api/cards/${id}`, {
       method: "DELETE",
     });
     if (response.ok) {
       mutate();
+      toast("Karte wurde gelöscht");
     }
-    toast("Karte wurde gelöscht");
   }
 
   function getCollection(id) {
@@ -85,7 +82,7 @@ export default function App({ Component, pageProps }) {
   }
 
   function handleToggleMastered(id) {
-    data.forEach((card) => {
+    cards.forEach((card) => {
       if (card.id === id) {
         card.isMastered = !card.isMastered;
         updateCard(card);
@@ -103,7 +100,7 @@ export default function App({ Component, pageProps }) {
         <GlobalStyle />
 
         <Component
-          cards={data}
+          cards={cards}
           collections={collections}
           getCard={getCard}
           addCard={addCard}
