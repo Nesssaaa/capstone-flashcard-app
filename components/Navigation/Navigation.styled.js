@@ -29,7 +29,6 @@ export const StyledList = styled.ul`
   margin: 0;
   padding: 0;
   justify-content: space-around;
-  /* box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.5); */
 `;
 
 export const StyledListItem = styled.li`

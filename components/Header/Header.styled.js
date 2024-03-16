@@ -19,6 +19,14 @@ export const StyledHeader = styled.div`
   }
 `;
 
+export const StyledSpan = styled.span`
+  margin-left: 8%;
+
+  justify-content: center;
+  align-items: center;
+  display: flex;
+`;
+
 export const IconWrapper = styled.div`
   font-size: 3rem;
   margin-left: 1.5rem;
