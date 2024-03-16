@@ -12,8 +12,12 @@ export async function seedDb() {
     await Card.create(cardToDb(card));
   }
 
-  for (const deck of initialCollections) {
-    await Deck.create(collectionToDb(deck));
+  const decks = await Deck.find();
+
+  if (decks.length === 0) {
+    for (const deck of initialCollections) {
+      await Deck.create(collectionToDb(deck));
+    }
   }
 
   return initialCards;
