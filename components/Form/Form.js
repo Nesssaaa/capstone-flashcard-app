@@ -28,12 +28,6 @@ export default function Form({
     if (data.collection === "__NEW__") {
       const newCollection = await addCollection({ name: data.newCollection });
       data.collection = newCollection.id;
-      console.log(
-        "data ist jetzt",
-        data,
-        "und newCollection ist",
-        newCollection
-      );
     }
     onSubmit(data);
 
