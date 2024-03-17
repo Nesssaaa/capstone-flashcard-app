@@ -1,22 +1,15 @@
 import GlobalStyle from "../styles";
-import initialCollections from "../lib.collections.json";
-import useLocalStorageState from "use-local-storage-state";
 import { nanoid } from "nanoid";
 
 import Layout from "../components/Layout/Layout";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useSWR from "swr";
-import { useRouter } from "next/router";
 
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
 export default function App({ Component, pageProps }) {
   const { data: cards, isLoading, mutate } = useSWR("/api/cards", fetcher);
-  const router = useRouter();
-  const [collections, setCollections] = useLocalStorageState("collections", {
-    defaultValue: initialCollections,
-  });
 
   if (isLoading) {
     return <h1>Is loading...</h1>;
