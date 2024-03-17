@@ -62,28 +62,26 @@ export default function CardMenu({ id, deleteCard }) {
   }
 
   return (
-    <>
-      <Menu
-        isOpen={isMenuOpen}
-        menuButton={
-          <StyledMenuButton onClick={handleMenuClick}>
-            <IconWrapper>
-              {isMenuOpen ? <MdOutlineClose /> : <BsThreeDots />}
-            </IconWrapper>
-          </StyledMenuButton>
-        }
-        transition
-      >
-        <StyledMenu ref={menuRef}>
-          <StyledMenuItem onClick={onEdit}>
-            <MdEdit /> &nbsp; Karte bearbeiten
-          </StyledMenuItem>
-          <StyledMenuItem onClick={handleDelete}>
-            <MdDeleteForever />
-            &nbsp; Karte löschen
-          </StyledMenuItem>
-        </StyledMenu>
-      </Menu>
-    </>
+    <Menu
+      isOpen={isMenuOpen}
+      menuButton={
+        <StyledMenuButton onClick={handleMenuClick}>
+          <IconWrapper>
+            {isMenuOpen ? <MdOutlineClose /> : <BsThreeDots />}
+          </IconWrapper>
+        </StyledMenuButton>
+      }
+      transition
+    >
+      <StyledMenu ref={menuRef}>
+        <StyledMenuItem onClick={onEdit}>
+          <MdEdit /> &nbsp; Karte bearbeiten
+        </StyledMenuItem>
+        <StyledMenuItem onClick={handleDelete}>
+          <MdDeleteForever />
+          &nbsp; Karte löschen
+        </StyledMenuItem>
+      </StyledMenu>
+    </Menu>
   );
 }
