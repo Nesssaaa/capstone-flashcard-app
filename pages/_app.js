@@ -9,9 +9,18 @@ import useSWR from "swr";
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
 export default function App({ Component, pageProps }) {
-  const { data: cards, isLoading, mutate } = useSWR("/api/cards", fetcher);
+  const {
+    data: cards,
+    isLoading: isLoadingCards,
+    mutate: mutateCards,
+  } = useSWR("/api/cards", fetcher);
+  const {
+    data: collections,
+    isLoading: isLoadingCollections,
+    mutate: mutateCollections,
+  } = useSWR("/api/collections", fetcher);
 
-  if (isLoading) {
+  if (isLoadingCards) {
     return <h1>Is loading...</h1>;
   }
 
@@ -32,7 +41,7 @@ export default function App({ Component, pageProps }) {
       body: JSON.stringify(card),
     });
     if (response.ok) {
-      mutate();
+      mutateCards();
     }
 
     toast("Karte erfolgreich hinzugefügt");
@@ -48,7 +57,7 @@ export default function App({ Component, pageProps }) {
     });
 
     if (response.ok) {
-      mutate();
+      mutateCards();
     }
   }
 
@@ -62,19 +71,36 @@ export default function App({ Component, pageProps }) {
       method: "DELETE",
     });
     if (response.ok) {
-      mutate();
+      mutateCards();
       toast("Karte wurde gelöscht");
     }
+  }
+
+  if (isLoadingCollections) {
+    return <h1>Is loading...</h1>;
+  }
+
+  if (!collections) {
+    return;
   }
 
   function getCollection(id) {
     return collections.find((collection) => collection.id === id);
   }
 
-  function addCollection(data) {
-    const newCollections = [{ id: nanoid(), ...data }, ...collections];
-    setCollections(newCollections);
-    toast("Kartenstapel erfolgreich hinzugefügt");
+  async function addCollection(collection) {
+    const response = await fetch("/api/collections", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(collection),
+    });
+    if (response.ok) {
+      mutateCollections();
+      toast("Kartenstapel erfolgreich hinzugefügt");
+      return await response.json();
+    }
   }
 
   function handleToggleMastered(id) {

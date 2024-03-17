@@ -21,14 +21,19 @@ export default function Form({
   const [answerText, setAnswerText] = useState("");
   const [showNewCollection, setShowNewCollection] = useState(false);
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(event.target));
 
     if (data.collection === "__NEW__") {
-      const newCollection = { id: nanoid(), name: data.newCollection };
-      addCollection(newCollection);
+      const newCollection = await addCollection({ name: data.newCollection });
       data.collection = newCollection.id;
+      console.log(
+        "data ist jetzt",
+        data,
+        "und newCollection ist",
+        newCollection
+      );
     }
     onSubmit(data);
 
