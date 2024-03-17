@@ -1,18 +1,20 @@
+import Head from "next/head";
 import GlobalStyle from "../styles";
 import Layout from "@/components/Layout/Layout";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useSWR from "swr";
-import { useRouter } from "next/router";
+import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
 
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
 export default function App({ Component, pageProps }) {
   const { data, isLoading, mutate } = useSWR("/api/cards", fetcher);
-  const router = useRouter();
+
+  return <LoadingSpinner />;
 
   if (isLoading) {
-    return <h1>Is loading...</h1>;
+    return <LoadingSpinner />;
   }
   if (!data) {
     console.log(data);
@@ -84,6 +86,9 @@ export default function App({ Component, pageProps }) {
   console.log(data);
   return (
     <>
+      <Head>
+        <title>SchlauFuchs</title>
+      </Head>
       <Layout>
         <GlobalStyle />
 
