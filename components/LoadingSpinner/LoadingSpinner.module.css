@@ -12,7 +12,7 @@
   filter: drop-shadow(30px 25px 0 currentColor)
     drop-shadow(60px 0 0 currentColor) drop-shadow(120px 0 0 currentColor);
   clip-path: inset(0 100% 0 0);
-  animation: l13 2s infinite steps(7);
+  animation: l13 1s infinite steps(7);
 }
 .loader:before {
   content: "";
