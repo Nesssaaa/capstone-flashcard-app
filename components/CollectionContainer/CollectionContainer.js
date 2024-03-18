@@ -10,13 +10,13 @@ import {
 
 import CollectionMenu from "../CollectionMenu/CollectionMenu";
 
-export default function CollectionContainer({ name, id, deleteCard }) {
+export default function CollectionContainer({ name, id, deleteCollection }) {
   return (
     <>
       <StyledCollectionContainer>
         <StyledColorContainer />
         <StyledTextContainer>
-          <CollectionMenu />
+          <CollectionMenu deleteCollection={deleteCollection} id={id} />
           <CollectionLink href={`/collections/${id}`}>
             <h3>{name}</h3>
           </CollectionLink>

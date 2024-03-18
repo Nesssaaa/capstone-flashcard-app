@@ -13,7 +13,7 @@ import {
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
-export default function CollectionMenu({ id, deleteCard }) {
+export default function CollectionMenu({ id, deleteCollection }) {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
@@ -41,15 +41,49 @@ export default function CollectionMenu({ id, deleteCard }) {
   //     setIsMenuOpen(false);
   //   }
 
+  function handleDelete() {
+    confirmAlert({
+      title: "Kartenstapel löschen?",
+      message: "Möchtest du den gesamten Stapel wirklich löschen?",
+      buttons: [
+        {
+          label: "Ja, bitte.",
+          onClick: () => {
+            deleteCollection(id);
+          },
+        },
+        {
+          label: "Nein, danke.",
+        },
+      ],
+    });
+    setIsMenuOpen(false);
+  }
+
   //   function handleDelete() {
   //     confirmAlert({
-  //       title: "Karte löschen?",
-  //       message: "Möchtest du diese Karte wirklich löschen?",
+  //       title: "Kartenstapel löschen?",
+  //       message: "Möchtest du den gesamten Stapel wirklich löschen?",
   //       buttons: [
   //         {
   //           label: "Ja, bitte.",
   //           onClick: () => {
-  //             deleteCard(id);
+  //             confirmAlert({
+  //               title: "Doppelte Bestätigung",
+  //               message:
+  //                 "Bist du sicher, dass du den Kartenstapel endgültig löschen möchtest?",
+  //               buttons: [
+  //                 {
+  //                   label: "Ja, endgültig löschen",
+  //                   onClick: () => {
+  //                     deleteCard(id);
+  //                   },
+  //                 },
+  //                 {
+  //                   label: "Abbrechen",
+  //                 },
+  //               ],
+  //             });
   //           },
   //         },
   //         {
@@ -76,7 +110,7 @@ export default function CollectionMenu({ id, deleteCard }) {
         <StyledMenuItem /*onClick={onEdit}*/>
           <MdEdit /> &nbsp; Kartenstapel bearbeiten
         </StyledMenuItem>
-        <StyledMenuItem /*onClick={handleDelete}*/>
+        <StyledMenuItem onClick={handleDelete}>
           <MdDeleteForever />
           &nbsp; Kartenstapel löschen
         </StyledMenuItem>

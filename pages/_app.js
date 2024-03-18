@@ -84,6 +84,24 @@ export default function App({ Component, pageProps }) {
     return;
   }
 
+  async function deleteCollection(id) {
+    const response = await fetch(`/api/collections/${id}`, {
+      method: "DELETE",
+    });
+    if (response.ok) {
+      mutateCollections();
+      toast("Kartenstapel wurde gelöscht");
+    }
+  }
+
+  if (isLoadingCollections) {
+    return <h1>Is loading...</h1>;
+  }
+
+  if (!collections) {
+    return;
+  }
+
   function getCollection(id) {
     return collections.find((collection) => collection.id === id);
   }
@@ -131,6 +149,7 @@ export default function App({ Component, pageProps }) {
           onToggle={handleToggleMastered}
           getCollection={getCollection}
           addCollection={addCollection}
+          deleteCollection={deleteCollection}
           {...pageProps}
         />
         <ToastContainer
