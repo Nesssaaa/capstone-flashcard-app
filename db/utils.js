@@ -17,3 +17,17 @@ export function dbToCard({ _id, question, answer, deck, isMastered }) {
     isMastered,
   };
 }
+
+export function collectionToDb({ id, name }) {
+  return {
+    _id: id,
+    name,
+  };
+}
+
+export function dbToCollection({ _id, name }) {
+  return {
+    id: _id,
+    name,
+  };
+}

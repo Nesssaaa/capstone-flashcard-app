@@ -4,23 +4,35 @@ import {
   StyledForm,
   StyledInput,
   StyledLabel,
+  Select,
 } from "./Form.styled";
 
 import { MdOutlineSaveAlt } from "react-icons/md";
-
 import { useState } from "react";
+import { nanoid } from "nanoid";
 
-export default function Form({ onSubmit, card = {} }) {
+export default function Form({
+  onSubmit,
+  collections = [],
+  card = {},
+  addCollection,
+}) {
   const [questionText, setQuestionText] = useState("");
   const [answerText, setAnswerText] = useState("");
-  const [collectionText, setCollectionText] = useState("");
+  const [showNewCollection, setShowNewCollection] = useState(false);
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(event.target));
+
+    if (data.collection === "__NEW__") {
+      const newCollection = await addCollection({ name: data.newCollection });
+      data.collection = newCollection.id;
+    }
     onSubmit(data);
 
     event.target.reset();
+    setShowNewCollection(false);
     event.target.elements.question.focus();
   }
 
@@ -32,14 +44,37 @@ export default function Form({ onSubmit, card = {} }) {
     setAnswerText(event.target.value);
   }
 
-  function handleCollectionText(event) {
-    setCollectionText(event.target.value);
+  function handleCollectionChange(event) {
+    setShowNewCollection(event.target.value === "__NEW__");
   }
 
   return (
     <StyledForm onSubmit={handleSubmit}>
       <StyledLabel>
-        Frage
+        Wähle einen passenden Kartenstapel
+        <Select
+          name="collection"
+          defaultValue={card.collection || ""}
+          onChange={handleCollectionChange}
+        >
+          <option disabled value="">
+            Bitte triff eine Auswahl
+          </option>
+          <optgroup label="Anlage neue Sammlung">
+            <option value="__NEW__">Neuen Kartenstapel anlegen</option>
+          </optgroup>
+          <optgroup label="Bestehende Sammlung">
+            {collections.map((collection) => (
+              <option key={collection.id} value={collection.id}>
+                {collection.name}
+              </option>
+            ))}
+          </optgroup>
+        </Select>
+      </StyledLabel>
+      {showNewCollection && <input name="newCollection" required />}
+      <StyledLabel>
+        Vorderseite
         <StyledInput
           onChange={handleQuestionChange}
           name="question"
@@ -51,7 +86,7 @@ export default function Form({ onSubmit, card = {} }) {
         />
       </StyledLabel>
       <StyledLabel>
-        Antwort
+        Rückseite
         <StyledInput
           onChange={handleAnswerChange}
           name="answer"
@@ -62,19 +97,6 @@ export default function Form({ onSubmit, card = {} }) {
           textLength={answerText}
         />
       </StyledLabel>
-      <StyledLabel>
-        Sammlung
-        <StyledInput
-          onChange={handleCollectionText}
-          name="collection"
-          required
-          placeholder="Gib hier in welche Sammlung diese Karte gehört."
-          type="text"
-          defaultValue={card.collection}
-          textLength={collectionText}
-        />
-      </StyledLabel>
-
       <StyledButton type="submit">
         <IconWrapper>
           <MdOutlineSaveAlt />
