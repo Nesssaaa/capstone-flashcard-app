@@ -1,55 +1,121 @@
 import GlobalStyle from "../styles";
-import initialFlashCards from "../lib.data.json";
-import useLocalStorageState from "use-local-storage-state";
 import { nanoid } from "nanoid";
 
-import Layout from "@/components/Layout/Layout";
+import Layout from "../components/Layout/Layout";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import useSWR from "swr";
+
+const fetcher = (url) => fetch(url).then((response) => response.json());
 
 export default function App({ Component, pageProps }) {
-  const [cards, setCards] = useLocalStorageState("cards", {
-    defaultValue: initialFlashCards,
-  });
+  const {
+    data: cards,
+    isLoading: isLoadingCards,
+    mutate: mutateCards,
+  } = useSWR("/api/cards", fetcher);
+  const {
+    data: collections,
+    isLoading: isLoadingCollections,
+    mutate: mutateCollections,
+  } = useSWR("/api/collections", fetcher);
+
+  if (isLoadingCards) {
+    return <h1>Is loading...</h1>;
+  }
+
+  if (!cards) {
+    return;
+  }
 
   function getCard(id) {
     return cards.find((card) => card.id === id);
   }
 
-  function addCard(data) {
-    const newCards = [{ id: nanoid(), ...data, isMastered: false }, ...cards];
-    setCards(newCards);
+  async function addCard(card) {
+    const response = await fetch("/api/cards", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(card),
+    });
+    if (response.ok) {
+      mutateCards();
+    }
+
     toast("Karte erfolgreich hinzugefügt");
   }
 
-  function editCard(data) {
-    setCards((cards) =>
-      cards.map((card) => (card.id === data.id ? { ...card, ...data } : card))
-    );
+  async function updateCard(card) {
+    const response = await fetch(`/api/cards/${card.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(card),
+    });
+
+    if (response.ok) {
+      mutateCards();
+    }
+  }
+
+  async function editCard(card) {
+    updateCard(card);
     toast("Karte erfolgreich bearbeitet");
   }
 
-  function deleteCard(id) {
-    setCards((cards) => cards.filter((card) => card.id !== id));
+  async function deleteCard(id) {
+    const response = await fetch(`/api/cards/${id}`, {
+      method: "DELETE",
+    });
+    if (response.ok) {
+      mutateCards();
+      toast("Karte wurde gelöscht");
+    }
+  }
+
+  if (isLoadingCollections) {
+    return <h1>Is loading...</h1>;
+  }
+
+  if (!collections) {
+    return;
+  }
+
+  function getCollection(id) {
+    return collections.find((collection) => collection.id === id);
+  }
+
+  async function addCollection(collection) {
+    const response = await fetch("/api/collections", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(collection),
+    });
+    if (response.ok) {
+      mutateCollections();
+      toast("Kartenstapel erfolgreich hinzugefügt");
+      return await response.json();
+    }
   }
 
   function handleToggleMastered(id) {
-    setCards((cards) =>
-      cards.map((card) => {
-        if (card.id === id) {
-          card.isMastered = !card.isMastered;
-
-          if (!card.isMastered) {
-            toast("Neue Runde");
-          } else {
-            toast("Super🤩");
-          }
+    cards.forEach((card) => {
+      if (card.id === id) {
+        card.isMastered = !card.isMastered;
+        updateCard(card);
+        if (!card.isMastered) {
+          toast("Neue Runde");
+        } else {
+          toast("Super🤩");
         }
-        return card;
-      })
-    );
+      }
+    });
   }
-
   return (
     <>
       <Layout>
@@ -57,11 +123,14 @@ export default function App({ Component, pageProps }) {
 
         <Component
           cards={cards}
+          collections={collections}
           getCard={getCard}
           addCard={addCard}
           editCard={editCard}
           deleteCard={deleteCard}
           onToggle={handleToggleMastered}
+          getCollection={getCollection}
+          addCollection={addCollection}
           {...pageProps}
         />
         <ToastContainer

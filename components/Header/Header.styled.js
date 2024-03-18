@@ -13,6 +13,10 @@ export const StyledHeader = styled.div`
   font-weight: bold;
   border-radius: 0 0 40px 40px;
   border: 0.5px var(--color-background-1) solid;
+
+  @media screen and (max-width: 414px) {
+    font-size: 2.2rem;
+  }
 `;
 
 export const StyledSpan = styled.span`
@@ -29,4 +33,9 @@ export const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 414px) {
+    font-size: 2.5rem;
+    margin-left: 1rem;
+  }
 `;

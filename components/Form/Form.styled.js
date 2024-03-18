@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import { calculateFontSize } from "@/utils";
+import { calculateFontSize } from "../../utils";
 
 export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const StyledLabel = styled.label`
@@ -43,9 +45,15 @@ export const StyledInput = styled.textarea`
   opacity: 0.7;
   resize: none;
   outline: none;
+  max-width: 80vw;
   font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};
 `;
 
 export const IconWrapper = styled.div`
   font-size: 2.7rem;
+`;
+
+export const Select = styled.select`
+  font-size: 1.2rem;
+  padding: 2px 5px;
 `;

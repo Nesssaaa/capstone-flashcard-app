@@ -1,4 +1,4 @@
-import { calculateFontSize } from "@/utils";
+import { calculateFontSize } from "../../utils";
 import styled from "styled-components";
 
 const BaseCardStyle = `
@@ -16,7 +16,6 @@ const BaseCardStyle = `
   opacity: 0.7;
   resize: none;
   font-family: system-ui;
-  
 `;
 
 export const StyledCardContainerQuestion = styled.div`
@@ -54,5 +53,4 @@ export const IconWrapper = styled.div`
   color: var(--color-font-3);
   opacity: 0.8;
   margin-left: 80%;
-  /* margin-bottom: 1.3rem; */
 `;
