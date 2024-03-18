@@ -36,63 +36,55 @@ export default function CollectionMenu({ id, deleteCollection }) {
     setIsMenuOpen(!isMenuOpen);
   }
 
-  //   function onEdit() {
-  //     router.push(`/cards/${id}/edit`);
-  //     setIsMenuOpen(false);
-  //   }
-
-  function handleDelete() {
-    confirmAlert({
-      title: "Kartenstapel löschen?",
-      message: "Möchtest du den gesamten Stapel wirklich löschen?",
-      buttons: [
-        {
-          label: "Ja, bitte.",
-          onClick: () => {
-            deleteCollection(id);
-          },
-        },
-        {
-          label: "Nein, danke.",
-        },
-      ],
-    });
+  function onEdit() {
+    router.push(`/cards/${id}/edit`);
     setIsMenuOpen(false);
   }
 
-  //   function handleDelete() {
-  //     confirmAlert({
-  //       title: "Kartenstapel löschen?",
-  //       message: "Möchtest du den gesamten Stapel wirklich löschen?",
-  //       buttons: [
-  //         {
-  //           label: "Ja, bitte.",
-  //           onClick: () => {
-  //             confirmAlert({
-  //               title: "Doppelte Bestätigung",
-  //               message:
-  //                 "Bist du sicher, dass du den Kartenstapel endgültig löschen möchtest?",
-  //               buttons: [
-  //                 {
-  //                   label: "Ja, endgültig löschen",
-  //                   onClick: () => {
-  //                     deleteCard(id);
-  //                   },
-  //                 },
-  //                 {
-  //                   label: "Abbrechen",
-  //                 },
-  //               ],
-  //             });
-  //           },
-  //         },
-  //         {
-  //           label: "Nein, danke.",
-  //         },
-  //       ],
-  //     });
-  //     setIsMenuOpen(false);
-  //   }
+  async function handleDelete() {
+    const confirmFirst = await new Promise((resolve) => {
+      confirmAlert({
+        title: "Kartenstapel löschen?",
+        message: "Möchtest du den gesamten Stapel wirklich löschen?",
+        buttons: [
+          {
+            label: "Ja, bitte.",
+            onClick: () => resolve(true),
+          },
+          {
+            label: "Nein, danke.",
+            onClick: () => resolve(false),
+          },
+        ],
+      });
+    });
+
+    if (confirmFirst) {
+      const confirmSecond = await new Promise((resolve) => {
+        confirmAlert({
+          title: "Endgültig löschen",
+          message:
+            "Bist du dir sicher, dass du den gesamten Kartenstapel endgültig löschen möchtest?",
+          buttons: [
+            {
+              label: "Ja, endgültig löschen.",
+              onClick: () => resolve(true),
+            },
+            {
+              label: "Nein, abbrechen.",
+              onClick: () => resolve(false),
+            },
+          ],
+        });
+      });
+
+      if (confirmSecond) {
+        deleteCollection(id);
+      }
+    }
+
+    setIsMenuOpen(false);
+  }
 
   return (
     <Menu
