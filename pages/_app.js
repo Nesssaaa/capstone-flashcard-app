@@ -1,25 +1,35 @@
 import GlobalStyle from "../styles";
-import Layout from "@/components/Layout/Layout";
+import { nanoid } from "nanoid";
+
+import Layout from "../components/Layout/Layout";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useSWR from "swr";
-import { useRouter } from "next/router";
 
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
 export default function App({ Component, pageProps }) {
-  const { data, isLoading, mutate } = useSWR("/api/cards", fetcher);
-  const router = useRouter();
+  const {
+    data: cards,
+    isLoading: isLoadingCards,
+    mutate: mutateCards,
+  } = useSWR("/api/cards", fetcher);
+  const {
+    data: collections,
+    isLoading: isLoadingCollections,
+    mutate: mutateCollections,
+  } = useSWR("/api/collections", fetcher);
 
-  if (isLoading) {
+  if (isLoadingCards) {
     return <h1>Is loading...</h1>;
   }
-  if (!data) {
+
+  if (!cards) {
     return;
   }
 
   function getCard(id) {
-    return data.find((card) => card.id === id);
+    return cards.find((card) => card.id === id);
   }
 
   async function addCard(card) {
@@ -30,9 +40,8 @@ export default function App({ Component, pageProps }) {
       },
       body: JSON.stringify(card),
     });
-
     if (response.ok) {
-      mutate();
+      mutateCards();
     }
 
     toast("Karte erfolgreich hinzugefügt");
@@ -48,7 +57,7 @@ export default function App({ Component, pageProps }) {
     });
 
     if (response.ok) {
-      mutate();
+      mutateCards();
     }
   }
 
@@ -62,13 +71,40 @@ export default function App({ Component, pageProps }) {
       method: "DELETE",
     });
     if (response.ok) {
-      mutate();
+      mutateCards();
+      toast("Karte wurde gelöscht");
     }
-    toast("Karte wurde gelöscht");
+  }
+
+  if (isLoadingCollections) {
+    return <h1>Is loading...</h1>;
+  }
+
+  if (!collections) {
+    return;
+  }
+
+  function getCollection(id) {
+    return collections.find((collection) => collection.id === id);
+  }
+
+  async function addCollection(collection) {
+    const response = await fetch("/api/collections", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(collection),
+    });
+    if (response.ok) {
+      mutateCollections();
+      toast("Kartenstapel erfolgreich hinzugefügt");
+      return await response.json();
+    }
   }
 
   function handleToggleMastered(id) {
-    data.forEach((card) => {
+    cards.forEach((card) => {
       if (card.id === id) {
         card.isMastered = !card.isMastered;
         updateCard(card);
@@ -86,12 +122,15 @@ export default function App({ Component, pageProps }) {
         <GlobalStyle />
 
         <Component
-          cards={data}
+          cards={cards}
+          collections={collections}
           getCard={getCard}
           addCard={addCard}
           editCard={editCard}
           deleteCard={deleteCard}
           onToggle={handleToggleMastered}
+          getCollection={getCollection}
+          addCollection={addCollection}
           {...pageProps}
         />
         <ToastContainer

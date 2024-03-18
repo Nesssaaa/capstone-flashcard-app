@@ -7,8 +7,8 @@ import {
 import ReactCardFlip from "react-card-flip";
 import { MdTouchApp } from "react-icons/md";
 import { useState } from "react";
-
 import ButtonNavBar from "../ButtonNavBar/ButtonNavBar";
+
 export default function CardContainer({
   question,
   answer,

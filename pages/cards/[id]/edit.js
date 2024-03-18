@@ -1,7 +1,17 @@
-import Form from "@/components/Form/Form";
 import { useRouter } from "next/router";
+import Form from "../../../components/Form/Form";
+import styled from "styled-components";
 
-export default function EditPage({ getCard, editCard }) {
+export const StyledH1 = styled.h1`
+  text-align: center;
+`;
+
+export default function EditPage({
+  getCard,
+  editCard,
+  collections,
+  addCollection,
+}) {
   const router = useRouter();
   const card = getCard(router.query.id);
 
@@ -16,8 +26,13 @@ export default function EditPage({ getCard, editCard }) {
 
   return (
     <>
-      <h1>Bearbeite deine Flashcard</h1>
-      <Form onSubmit={onSubmit} card={card} />
+      <StyledH1>Bearbeite deine Lernkarten</StyledH1>
+      <Form
+        onSubmit={onSubmit}
+        card={card}
+        collections={collections}
+        addCollection={addCollection}
+      />
     </>
   );
 }
