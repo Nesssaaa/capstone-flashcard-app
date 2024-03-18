@@ -33,9 +33,8 @@ export const StyledCardContainerAnswer = styled.div`
 `;
 
 export const StyledTextShow = styled.textarea`
-  margin: 0.5rem;
-  margin-top: 1rem;
-  padding: 0.5rem;
+  margin: 0 0.8rem 0.5rem 0.8rem;
+  padding: 0 0.5rem 0.5rem 0.5rem;
   min-height: 16rem;
   border-radius: 0.5rem;
   width: 100%;
