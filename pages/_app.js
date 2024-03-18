@@ -1,6 +1,5 @@
 import Head from "next/head";
 import GlobalStyle from "../styles";
-import { nanoid } from "nanoid";
 
 import Layout from "../components/Layout/Layout";
 import { ToastContainer, toast } from "react-toastify";
@@ -22,7 +21,7 @@ export default function App({ Component, pageProps }) {
     mutate: mutateCollections,
   } = useSWR("/api/collections", fetcher);
 
-  if (isLoading) {
+  if (isLoadingCards || isLoadingCollections) {
     return <LoadingSpinner />;
   }
 
