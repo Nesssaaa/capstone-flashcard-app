@@ -9,34 +9,37 @@ import {
 import { FaCheck } from "react-icons/fa";
 import { ImCancelCircle } from "react-icons/im";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-export default function CollectionForm({
-  collection = {},
-  collections = [],
-  addCollection,
-  onSubmit,
-}) {
-  const [collectionName, setCollectionName] = useState("");
+export default function CollectionForm({ collection, editCollection }) {
+  const currentCollection = collection;
+  const router = useRouter();
 
-  async function handleSubmit(event) {
+  function handleSubmit(event) {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(event.target));
 
-    onSubmit(data);
-
     event.target.reset();
-    setCollectionName(false);
+    editCollection({
+      id: currentCollection.id,
+      name: data.collectionName,
+    });
+    router.push(`/collections`);
+  }
+
+  function handleCancel() {
+    router.push(`/collections`);
   }
 
   return (
     <StyledForm onSubmit={handleSubmit}>
       <StyledInput
-        name="collection"
+        name="collectionName"
         required
-        placeholder="Wie soll dein neuer Kartenstapel heißen?"
+        placeholder="Wie soll dein Kartenstapel heißen?"
         type="text"
         defaultValue={collection.name}
-        textLength={collectionName}
+        textLength={collection.name}
       />
       <StyledButton type="submit">
         <IconWrapper>
@@ -44,8 +47,7 @@ export default function CollectionForm({
         </IconWrapper>
       </StyledButton>
 
-      <StyledButton>
-        <Link href="/collections"></Link>
+      <StyledButton type="button" onClick={handleCancel}>
         <IconWrapper>
           <ImCancelCircle />
         </IconWrapper>

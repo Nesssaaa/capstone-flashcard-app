@@ -33,6 +33,7 @@ export default function EditCollectionPage({
         collection={collection}
         collections={collections}
         addCollection={addCollection}
+        editCollection={editCollection}
       />
     </>
   );
