@@ -1,6 +1,7 @@
 import CardList from "../../components/CardList/CardList.js";
 import { useRouter } from "next/router";
 import styled from "styled-components";
+import CollectionNavbar from "@/components/CollectionNavBar/CollectionNavBar.js";
 import Link from "next/link.js";
 
 export const StyledContainer = styled.div`
@@ -51,9 +52,7 @@ export default function CollectionCardList({
           onToggle={onToggle}
         />
       )}
-      <StyledContainer>
-        <StyledLink href="/collections">zurück zur Übersicht</StyledLink>
-      </StyledContainer>
+      <CollectionNavbar />
     </>
   );
 }
