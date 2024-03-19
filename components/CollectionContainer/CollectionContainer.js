@@ -8,16 +8,19 @@ import {
   CollectionLink,
 } from "./CollectionContainer.styled";
 
-export default function CollectionContainer({ name, id }) {
+import CollectionMenu from "../CollectionMenu/CollectionMenu";
+
+export default function CollectionContainer({ name, id, deleteCollection }) {
   return (
     <>
       <StyledCollectionContainer>
         <StyledColorContainer />
-        <CollectionLink href={`/collections/${id}`}>
-          <StyledTextContainer>
+        <StyledTextContainer>
+          <CollectionMenu deleteCollection={deleteCollection} id={id} />
+          <CollectionLink href={`/collections/${id}`}>
             <h3>{name}</h3>
-          </StyledTextContainer>
-        </CollectionLink>
+          </CollectionLink>
+        </StyledTextContainer>
       </StyledCollectionContainer>
     </>
   );

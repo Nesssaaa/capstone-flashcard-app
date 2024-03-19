@@ -7,7 +7,7 @@ import {
 } from "../../components/Navigation/Navigation.styled";
 import Navigation from "../../components/Navigation/Navigation";
 
-export default function CollectionsPage({ collections }) {
+export default function CollectionsPage({ collections, deleteCollection }) {
   if (collections.length === 0) {
     return (
       <>
@@ -24,7 +24,10 @@ export default function CollectionsPage({ collections }) {
   return (
     <>
       <h1>Deine Kartenstapel</h1>
-      <CollectionList collections={collections} />
+      <CollectionList
+        collections={collections}
+        deleteCollection={deleteCollection}
+      />
       <Navigation />
     </>
   );
