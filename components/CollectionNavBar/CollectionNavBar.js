@@ -9,7 +9,7 @@ import {
 import { BsCollectionFill } from "react-icons/bs";
 import { MdQuiz } from "react-icons/md";
 
-export default function CollectionNavbar() {
+export default function CollectionNavbar({ collection }) {
   return (
     <>
       <StyledNavigation>
@@ -23,7 +23,7 @@ export default function CollectionNavbar() {
           </StyledListItem>
 
           <StyledListItem>
-            <StyledLink href="/collections/quiz">
+            <StyledLink href={`/collections/${collection.id}/quiz`}>
               <IconWrapper>
                 <MdQuiz />
               </IconWrapper>

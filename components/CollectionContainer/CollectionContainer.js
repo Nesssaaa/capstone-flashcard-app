@@ -4,7 +4,6 @@ import {
   StyledCollectionContainer,
   StyledColorContainer,
   StyledTextContainer,
-  IconWrapper,
   CollectionLink,
 } from "./CollectionContainer.styled";
 

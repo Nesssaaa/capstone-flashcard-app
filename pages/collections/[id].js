@@ -52,7 +52,7 @@ export default function CollectionCardList({
           onToggle={onToggle}
         />
       )}
-      <CollectionNavbar />
+      <CollectionNavbar collection={collection} />
     </>
   );
 }
