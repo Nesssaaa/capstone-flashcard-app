@@ -11,7 +11,7 @@ export const StyledNavigation = styled.nav`
   width: 100vw;
 
   @media screen and (max-width: 414px) {
-    padding-bottom: 69px;
+    /* padding-bottom: 69px; */
   }
 `;
 

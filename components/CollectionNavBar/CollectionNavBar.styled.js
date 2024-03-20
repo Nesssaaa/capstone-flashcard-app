@@ -9,16 +9,10 @@ export const StyledNavigation = styled.nav`
   background-color: var(--color-background-1);
   max-width: 640px;
   width: 100vw;
-
-  @media screen and (max-width: 414px) {
-    padding-bottom: 69px;
-  }
 `;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  /* color: var(--color-fox); */
-  /* color: var(--color-font-3); */
   color: ${({ $isActive }) =>
     $isActive ? "var(--color-fox)" : "var(--color-font-3)"};
 `;
@@ -57,11 +51,3 @@ export const IconWrapper = styled.div`
     padding-right: 1.5rem;
   }
 `;
-
-// export const Space = styled.div`
-//   height: 3rem;
-
-//   @media screen and (max-width: 414px) {
-//     padding-bottom: 138px;
-//   }
-// `;
