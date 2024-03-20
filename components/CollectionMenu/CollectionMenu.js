@@ -99,9 +99,6 @@ export default function CollectionMenu({ id, deleteCollection }) {
       transition
     >
       <StyledMenu ref={menuRef}>
-        <StyledMenuItem /*onClick={onEdit}*/>
-          <MdEdit /> &nbsp; Kartenstapel bearbeiten
-        </StyledMenuItem>
         <StyledMenuItem onClick={handleDelete}>
           <MdDeleteForever />
           &nbsp; Kartenstapel löschen

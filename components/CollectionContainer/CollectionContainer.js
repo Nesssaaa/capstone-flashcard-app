@@ -1,5 +1,3 @@
-import { FaRegPlayCircle } from "react-icons/fa";
-import Link from "next/link";
 import {
   StyledCollectionContainer,
   StyledColorContainer,
