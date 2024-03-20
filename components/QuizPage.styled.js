@@ -9,6 +9,7 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   color: var(--color-fox);
   font-size: 1.5rem;
+  margin-bottom: 1rem;
 `;
 
 export const StyledContainer = styled.div`
