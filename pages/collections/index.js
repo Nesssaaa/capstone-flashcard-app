@@ -1,4 +1,3 @@
-import Link from "next/link";
 import CollectionList from "../../components/CollectionList/CollectionList";
 import { MdOutlineCreateNewFolder } from "react-icons/md";
 import {
