@@ -1,10 +1,6 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-export const StyledCollectionName = styled.h1`
-  text-align: center;
-`;
-
 export const StyledLink = styled(Link)`
   text-decoration: none;
   color: var(--color-fox);
@@ -30,7 +26,6 @@ export const StyledButtonContainer = styled.div`
 `;
 
 export const StyledButton = styled.button`
-  /* font-size: 2rem; */
   padding: 2rem;
   border: none;
   background-color: rgba(0, 0, 0, 0);

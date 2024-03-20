@@ -9,10 +9,6 @@ export const StyledNavigation = styled.nav`
   border-top: 0.5px var(--color-background-1) solid;
   max-width: 640px;
   width: 100vw;
-
-  @media screen and (max-width: 414px) {
-    /* padding-bottom: 69px; */
-  }
 `;
 
 export const StyledLink = styled(Link)`

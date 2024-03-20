@@ -6,7 +6,6 @@ import { useRouter } from "next/router";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
 import {
-  StyledCollectionName,
   StyledLink,
   StyledContainer,
   StyledSection,
@@ -32,14 +31,12 @@ export default function QuizPage({
 
   const [quizCards, setQuizCards] = useState(getRandomCards(filteredCards, 15));
   const { countPosition, increment, decrement } = useCount(0);
-  console.log(countPosition, quizCards);
 
   const card = quizCards[countPosition];
   const collectionName = collection ? collection.name : "lädt gerade...";
 
   return (
     <StyledContainer>
-      {/* <StyledCollectionName>{collectionName}</StyledCollectionName> */}
       <CollectionHeader name={collectionName} />
       <CardContainer
         question={card.question}
