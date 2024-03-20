@@ -1,4 +1,3 @@
-import Link from "next/link";
 import CollectionList from "../../components/CollectionList/CollectionList";
 import { MdOutlineCreateNewFolder } from "react-icons/md";
 import {
@@ -6,12 +5,15 @@ import {
   StyledLink,
 } from "../../components/Navigation/Navigation.styled";
 import Navigation from "../../components/Navigation/Navigation";
+import { StyledHeadlines } from "@/components/Headline.styled";
 
-export default function CollectionsPage({ collections }) {
+export default function CollectionsPage({ collections, deleteCollection }) {
   if (collections.length === 0) {
     return (
       <>
-        <h1>Erstelle jetzt deinen ersten Kartenstapel!</h1>
+        <StyledHeadlines>
+          Erstelle jetzt deinen ersten Kartenstapel!
+        </StyledHeadlines>
         <StyledLink href={"/create"}>
           <IconWrapper>
             <MdOutlineCreateNewFolder />
@@ -23,8 +25,11 @@ export default function CollectionsPage({ collections }) {
 
   return (
     <>
-      <h1>Deine Kartenstapel</h1>
-      <CollectionList collections={collections} />
+      <StyledHeadlines>Deine Kartenstapel</StyledHeadlines>
+      <CollectionList
+        collections={collections}
+        deleteCollection={deleteCollection}
+      />
       <Navigation />
     </>
   );
