@@ -21,8 +21,6 @@ export default function EditCollectionPage({
 
   function onSubmit(data) {
     editCollection({ ...data, id: collection.id });
-
-    // router.push(`/`);
   }
 
   return (
