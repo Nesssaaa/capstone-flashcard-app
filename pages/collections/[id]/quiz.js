@@ -14,6 +14,7 @@ import {
   StyledButtonNavBar,
   IconWrapper,
 } from "@/components/QuizPage.styled.js";
+import CollectionHeader from "@/components/CollectionHeader/CollectionHeader.js";
 
 export default function QuizPage({
   cards,
@@ -38,7 +39,8 @@ export default function QuizPage({
 
   return (
     <StyledContainer>
-      <StyledCollectionName>{collectionName}</StyledCollectionName>
+      {/* <StyledCollectionName>{collectionName}</StyledCollectionName> */}
+      <CollectionHeader name={collectionName} />
       <CardContainer
         question={card.question}
         answer={card.answer}
