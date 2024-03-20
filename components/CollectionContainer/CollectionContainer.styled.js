@@ -13,8 +13,8 @@ export const StyledCollectionContainer = styled.div`
 export const StyledColorContainer = styled.div`
   display: flex;
   border-radius: 15px 0px 0px 15px;
-  background-color: orange;
-  width: 4rem;
+  background-color: var(--color-fox);
+  width: 25%;
 `;
 
 export const StyledTextContainer = styled.div`
@@ -28,8 +28,14 @@ export const CollectionLink = styled(Link)`
   flex: 1;
   color: black;
   transition: color 0.3s;
+
   cursor: pointer;
   &:hover {
     color: orangered;
   }
+`;
+
+export const StyledCollectionName = styled.h3`
+  margin-top: 0;
+  margin-bottom: 2.2rem;
 `;
