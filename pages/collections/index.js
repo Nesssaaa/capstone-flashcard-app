@@ -5,12 +5,19 @@ import {
   StyledLink,
 } from "../../components/Navigation/Navigation.styled";
 import Navigation from "../../components/Navigation/Navigation";
+import styled from "styled-components";
+
+export const StyledHeadline = styled.h1`
+  text-align: center;
+`;
 
 export default function CollectionsPage({ collections }) {
   if (collections.length === 0) {
     return (
       <>
-        <h1>Erstelle jetzt deinen ersten Kartenstapel!</h1>
+        <StyledHeadline>
+          Erstelle jetzt deinen ersten Kartenstapel!
+        </StyledHeadline>
         <StyledLink href={"/create"}>
           <IconWrapper>
             <MdOutlineCreateNewFolder />
@@ -22,7 +29,7 @@ export default function CollectionsPage({ collections }) {
 
   return (
     <>
-      <h1>Deine Kartenstapel</h1>
+      <StyledHeadline>Deine Kartenstapel</StyledHeadline>
       <CollectionList collections={collections} />
       <Navigation />
     </>
