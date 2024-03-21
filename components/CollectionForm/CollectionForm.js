@@ -7,16 +7,28 @@ import {
 import { FaCheck } from "react-icons/fa";
 import { ImCancelCircle } from "react-icons/im";
 import { useRouter } from "next/router";
-import { CirclePicker } from "react-color";
+import CollectionContainer from "../CollectionContainer/CollectionContainer";
+import Circle from "@uiw/react-color-circle";
 import { useState } from "react";
 
 export default function CollectionForm({ collection, editCollection }) {
-  const currentCollection = collection;
+  const [currentCollection, setCurrentCollection] = useState(collection);
   const router = useRouter();
-  const [color, setColor] = useState("#fff");
 
   function handleChangeColor(color) {
-    setColor({ background: color.hex });
+    setCurrentCollection({
+      id: currentCollection.id,
+      name: currentCollection.name,
+      color: color.hex,
+    });
+  }
+
+  function handleChangeName(event) {
+    setCurrentCollection({
+      id: currentCollection.id,
+      name: event.target.value,
+      color: currentCollection.color,
+    });
   }
 
   function handleSubmit(event) {
@@ -27,6 +39,7 @@ export default function CollectionForm({ collection, editCollection }) {
     editCollection({
       id: currentCollection.id,
       name: data.collectionName,
+      color: currentCollection.color,
     });
     router.push(`/collections`);
   }
@@ -37,15 +50,30 @@ export default function CollectionForm({ collection, editCollection }) {
 
   return (
     <StyledForm onSubmit={handleSubmit}>
-      <CirclePicker color={setColor} onChangeColor={handleChangeColor} />
-
+      <CollectionContainer
+        name={currentCollection.name}
+        color={currentCollection.color}
+        id={currentCollection.id}
+      />
+      <Circle
+        colors={[
+          "#FF0000",
+          "#FFFF00",
+          "#008000",
+          "#48D1CC",
+          "#7B68BB",
+          "#FF69B4",
+        ]}
+        onChange={handleChangeColor}
+      />
       <StyledInput
         name="collectionName"
         required
         placeholder="Wie soll dein Kartenstapel heißen?"
         type="text"
-        defaultValue={collection.name}
-        textLength={collection.name}
+        defaultValue={currentCollection.name}
+        textLength={currentCollection.name}
+        onChange={handleChangeName}
       />
       <StyledButton type="submit">
         <IconWrapper>

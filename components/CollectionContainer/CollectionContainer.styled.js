@@ -13,7 +13,7 @@ export const StyledCollectionContainer = styled.div`
 export const StyledColorContainer = styled.div`
   display: flex;
   border-radius: 15px 0px 0px 15px;
-  background-color: orange;
+  background-color: ${(props) => props.color};
   width: 25%;
 `;
 
