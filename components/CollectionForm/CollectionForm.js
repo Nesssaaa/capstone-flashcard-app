@@ -7,10 +7,17 @@ import {
 import { FaCheck } from "react-icons/fa";
 import { ImCancelCircle } from "react-icons/im";
 import { useRouter } from "next/router";
+import { CirclePicker } from "react-color";
+import { useState } from "react";
 
 export default function CollectionForm({ collection, editCollection }) {
   const currentCollection = collection;
   const router = useRouter();
+  const [color, setColor] = useState("#fff");
+
+  function handleChangeColor(color) {
+    setColor({ background: color.hex });
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -30,6 +37,8 @@ export default function CollectionForm({ collection, editCollection }) {
 
   return (
     <StyledForm onSubmit={handleSubmit}>
+      <CirclePicker color={setColor} onChangeColor={handleChangeColor} />
+
       <StyledInput
         name="collectionName"
         required
