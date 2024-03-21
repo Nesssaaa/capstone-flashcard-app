@@ -5,11 +5,19 @@ import {
   StyledColorContainer,
   StyledTextContainer,
   CollectionLink,
+  StyledCollectionName,
+  StyledWrapper,
+  StyledCounter,
 } from "./CollectionContainer.styled";
 
 import CollectionMenu from "../CollectionMenu/CollectionMenu";
 
-export default function CollectionContainer({ name, id, deleteCollection }) {
+export default function CollectionContainer({
+  name,
+  id,
+  deleteCollection,
+  cards,
+}) {
   return (
     <>
       <StyledCollectionContainer>
@@ -17,7 +25,11 @@ export default function CollectionContainer({ name, id, deleteCollection }) {
         <StyledTextContainer>
           <CollectionMenu deleteCollection={deleteCollection} id={id} />
           <CollectionLink href={`/collections/${id}`}>
-            <h3>{name}</h3>
+            <StyledWrapper>
+              <StyledCollectionName>{name}</StyledCollectionName>
+
+              <StyledCounter>{cards.length}</StyledCounter>
+            </StyledWrapper>
           </CollectionLink>
         </StyledTextContainer>
       </StyledCollectionContainer>

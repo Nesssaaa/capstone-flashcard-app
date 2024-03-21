@@ -8,7 +8,11 @@ import {
 import Navigation from "../../components/Navigation/Navigation";
 
 
-export default function CollectionsPage({ collections, deleteCollection }) {
+export default function CollectionsPage({
+  collections,
+  deleteCollection,
+  cards,
+}) {
   if (collections.length === 0) {
     return (
       <>
@@ -28,6 +32,7 @@ export default function CollectionsPage({ collections, deleteCollection }) {
       <CollectionList
         collections={collections}
         deleteCollection={deleteCollection}
+        cards={cards}
       />
       <Navigation />
     </>
