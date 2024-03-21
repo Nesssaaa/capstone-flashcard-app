@@ -2,7 +2,6 @@ import {
   StyledCollectionContainer,
   StyledColorContainer,
   StyledTextContainer,
-  IconWrapper,
   CollectionLink,
   StyledCollectionName,
 } from "./CollectionContainer.styled";

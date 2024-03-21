@@ -5,9 +5,9 @@ export const StyledCollectionContainer = styled.div`
   display: flex;
   border: 2px solid darkgray;
   border-radius: 20px;
+  min-width: 75%;
   max-width: 75%;
-  overflow: hidden;
-  margin: 2rem;
+  flex: 1;
 `;
 
 export const StyledColorContainer = styled.div`
@@ -20,6 +20,7 @@ export const StyledColorContainer = styled.div`
 export const StyledTextContainer = styled.div`
   text-align: center;
   flex: 1;
+  font-size: 1rem;
 `;
 
 export const CollectionLink = styled(Link)`

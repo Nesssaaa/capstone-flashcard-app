@@ -7,6 +7,7 @@ import {
 import Navigation from "../../components/Navigation/Navigation";
 import { StyledHeadlines } from "@/components/Headline.styled";
 
+
 export default function CollectionsPage({ collections, deleteCollection }) {
   if (collections.length === 0) {
     return (
