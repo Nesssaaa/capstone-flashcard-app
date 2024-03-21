@@ -12,6 +12,7 @@ export const StyledCollectionContainer = styled.div`
 
 export const StyledColorContainer = styled.div`
   display: flex;
+  flex-direction: row;
   border-radius: 15px 0px 0px 15px;
   background-color: var(--color-fox);
   width: 25%;
@@ -34,7 +35,7 @@ export const CollectionLink = styled(Link)`
   }
 `;
 
-export const StyledCollectionName = styled.h3`
+export const StyledCollectionName = styled.div`
   margin-top: 0;
   margin-bottom: 2.2rem;
 `;

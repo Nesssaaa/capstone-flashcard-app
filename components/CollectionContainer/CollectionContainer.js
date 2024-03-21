@@ -9,7 +9,12 @@ import {
 
 import CollectionMenu from "../CollectionMenu/CollectionMenu";
 
-export default function CollectionContainer({ name, id, deleteCollection }) {
+export default function CollectionContainer({
+  name,
+  id,
+  deleteCollection,
+  cards,
+}) {
   return (
     <>
       <StyledCollectionContainer>
@@ -19,6 +24,7 @@ export default function CollectionContainer({ name, id, deleteCollection }) {
           <CollectionLink href={`/collections/${id}`}>
             <StyledCollectionName>{name}</StyledCollectionName>
           </CollectionLink>
+          <StyledCollectionName>{cards.length}</StyledCollectionName>
         </StyledTextContainer>
       </StyledCollectionContainer>
     </>

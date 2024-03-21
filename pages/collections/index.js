@@ -7,7 +7,11 @@ import {
 import Navigation from "../../components/Navigation/Navigation";
 import { StyledHeadlines } from "@/components/Headline.styled";
 
-export default function CollectionsPage({ collections, deleteCollection }) {
+export default function CollectionsPage({
+  collections,
+  deleteCollection,
+  cards,
+}) {
   if (collections.length === 0) {
     return (
       <>
@@ -29,6 +33,7 @@ export default function CollectionsPage({ collections, deleteCollection }) {
       <CollectionList
         collections={collections}
         deleteCollection={deleteCollection}
+        cards={cards}
       />
       <Navigation />
     </>
