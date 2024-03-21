@@ -37,7 +37,7 @@ export const StyledCollectionName = styled.h3`
   margin-top: 0;
   margin-bottom: 2.2rem;
   overflow-wrap: break-word;
-  max-width: 40%;
+  max-width: 45%;
 `;
 
 export const StyledWrapper = styled.div`
