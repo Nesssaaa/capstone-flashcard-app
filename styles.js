@@ -58,13 +58,14 @@ export default createGlobalStyle`
     max-height: 100lvh;
     min-height: 100lvh;
     gap: 1rem;
-    
-    
-    
   }
 
+  .hiddenButton {
+  visibility: hidden;
+}
 
 
  
+
  
 `;
