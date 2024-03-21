@@ -5,6 +5,8 @@ import {
   IconWrapper,
   CollectionLink,
   StyledCollectionName,
+  StyledWrapper,
+  StyledCounter,
 } from "./CollectionContainer.styled";
 
 import CollectionMenu from "../CollectionMenu/CollectionMenu";
@@ -22,9 +24,12 @@ export default function CollectionContainer({
         <StyledTextContainer>
           <CollectionMenu deleteCollection={deleteCollection} id={id} />
           <CollectionLink href={`/collections/${id}`}>
-            <StyledCollectionName>{name}</StyledCollectionName>
+            <StyledWrapper>
+              <StyledCollectionName>{name}</StyledCollectionName>
+
+              <StyledCounter>{cards.length}</StyledCounter>
+            </StyledWrapper>
           </CollectionLink>
-          <StyledCollectionName>{cards.length}</StyledCollectionName>
         </StyledTextContainer>
       </StyledCollectionContainer>
     </>

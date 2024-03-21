@@ -11,8 +11,6 @@ export const StyledCollectionContainer = styled.div`
 `;
 
 export const StyledColorContainer = styled.div`
-  display: flex;
-  flex-direction: row;
   border-radius: 15px 0px 0px 15px;
   background-color: var(--color-fox);
   width: 25%;
@@ -25,7 +23,7 @@ export const StyledTextContainer = styled.div`
 
 export const CollectionLink = styled(Link)`
   text-decoration: none;
-  flex: 1;
+
   color: black;
   transition: color 0.3s;
 
@@ -35,7 +33,22 @@ export const CollectionLink = styled(Link)`
   }
 `;
 
-export const StyledCollectionName = styled.div`
+export const StyledCollectionName = styled.h3`
   margin-top: 0;
   margin-bottom: 2.2rem;
+  overflow-wrap: break-word;
+  max-width: 40%;
+`;
+
+export const StyledWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+`;
+
+export const StyledCounter = styled.p`
+  margin-top: 0;
+  margin-bottom: 2.2rem;
+  min-width: 10%;
 `;
