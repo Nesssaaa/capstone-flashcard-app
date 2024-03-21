@@ -1,10 +1,11 @@
+import { FaRegPlayCircle } from "react-icons/fa";
+import Link from "next/link";
 import {
   StyledCollectionContainer,
   StyledColorContainer,
   StyledTextContainer,
   IconWrapper,
   CollectionLink,
-  StyledCollectionName,
 } from "./CollectionContainer.styled";
 
 import CollectionMenu from "../CollectionMenu/CollectionMenu";
@@ -17,8 +18,7 @@ export default function CollectionContainer({ name, id, deleteCollection }) {
         <StyledTextContainer>
           <CollectionMenu deleteCollection={deleteCollection} id={id} />
           <CollectionLink href={`/collections/${id}`}>
-         
-            <StyledCollectionName>{name}</StyledCollectionName>
+            <h3>{name}</h3>
           </CollectionLink>
         </StyledTextContainer>
       </StyledCollectionContainer>

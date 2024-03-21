@@ -9,9 +9,6 @@ import {
   IconWrapper,
   StyledMenu,
   StyledMenuItem,
-  StyledTitle,
-  StyledLabel,
-
 } from "./CollectionMenu.styled";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
@@ -41,7 +38,6 @@ export default function CollectionMenu({ id, deleteCollection }) {
   }
 
   function onEdit() {
-
     router.push(`/collections/${id}/edit`);
     setIsMenuOpen(false);
   }
@@ -67,25 +63,16 @@ export default function CollectionMenu({ id, deleteCollection }) {
     if (confirmFirst) {
       const confirmSecond = await new Promise((resolve) => {
         confirmAlert({
-
           title: "Endgültig löschen",
           message:
             "Bist du dir sicher, dass du den gesamten Kartenstapel endgültig löschen möchtest?",
-          title: <StyledTitle>Endgültig löschen</StyledTitle>,
-          message:
-            "Bist du dir ganz sicher? ALLE KARTEN dieses Kartenstapels werden gelöscht!!",
-
           buttons: [
             {
               label: "Ja, endgültig löschen.",
               onClick: () => resolve(true),
             },
             {
-
               label: "Nein, abbrechen.",
-
-              label: <StyledLabel>NEIN, abbrechen.</StyledLabel>,
-
               onClick: () => resolve(false),
             },
           ],
@@ -113,12 +100,9 @@ export default function CollectionMenu({ id, deleteCollection }) {
       transition
     >
       <StyledMenu ref={menuRef}>
-
         <StyledMenuItem onClick={onEdit}>
           <MdEdit /> &nbsp; Kartenstapel bearbeiten
         </StyledMenuItem>
-
-
         <StyledMenuItem onClick={handleDelete}>
           <MdDeleteForever />
           &nbsp; Kartenstapel löschen
