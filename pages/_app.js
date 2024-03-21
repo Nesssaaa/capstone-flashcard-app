@@ -87,13 +87,31 @@ export default function App({ Component, pageProps }) {
     return;
   }
 
+  async function updateCollection(collection) {
+    const response = await fetch(`/api/collections/${collection.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(collection),
+    });
+
+    if (response.ok) {
+      mutateCollections();
+    }
+  }
+
+  async function editCollection(collection) {
+    updateCollection(collection);
+    toast("Kartenstapel erfolgreich bearbeitet");
+  }
+
   async function deleteCollection(id) {
     const response = await fetch(`/api/collections/${id}`, {
       method: "DELETE",
     });
     if (response.ok) {
       mutateCollections();
-      mutateCards();
       toast("Kartenstapel wurde gelöscht");
     }
   }
@@ -157,6 +175,7 @@ export default function App({ Component, pageProps }) {
           getCollection={getCollection}
           addCollection={addCollection}
           deleteCollection={deleteCollection}
+          editCollection={editCollection}
           {...pageProps}
         />
         <ToastContainer

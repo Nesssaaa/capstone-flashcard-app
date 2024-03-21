@@ -48,12 +48,9 @@ export const StyledInput = styled.textarea`
   max-width: 80vw;
   font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};
 `;
-
 export const IconWrapper = styled.div`
-  font-size: 2.7rem;
-`;
-
-export const Select = styled.select`
-  font-size: 1.2rem;
-  padding: 2px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.3rem;
 `;

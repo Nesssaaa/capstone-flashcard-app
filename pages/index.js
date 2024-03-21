@@ -3,7 +3,6 @@ import Navigation from "../components/Navigation/Navigation";
 
 export default function HomePage({ cards, deleteCard, onToggle }) {
   const filteredCards = cards.filter((card) => card.isMastered === false);
-
   return (
     <>
       <div>

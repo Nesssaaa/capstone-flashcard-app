@@ -4,20 +4,15 @@ import Link from "next/link";
 export const StyledNavigation = styled.nav`
   position: fixed;
   bottom: 0;
-  background-color: var(--color-background-3);
-  padding: 0;
+  padding: 5px;
   border-top: 0.5px var(--color-background-1) solid;
+  background-color: var(--color-background-1);
   max-width: 640px;
   width: 100vw;
-
-  @media screen and (max-width: 414px) {
-    padding-bottom: 69px;
-  }
 `;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  /* color: var(--color-font-3); */
   color: ${({ $isActive }) =>
     $isActive ? "var(--color-fox)" : "var(--color-font-3)"};
 `;
@@ -54,13 +49,5 @@ export const IconWrapper = styled.div`
     font-size: 2rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-  }
-`;
-
-export const Space = styled.div`
-  height: 3rem;
-
-  @media screen and (max-width: 414px) {
-    padding-bottom: 138px;
   }
 `;
