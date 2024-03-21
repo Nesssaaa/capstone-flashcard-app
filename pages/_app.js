@@ -100,7 +100,7 @@ export default function App({ Component, pageProps }) {
     }
   }
 
-  function editCollection(collection) {
+  async function editCollection(collection) {
     updateCollection(collection);
     toast("Kartenstapel erfolgreich bearbeitet");
   }
