@@ -59,6 +59,9 @@ export const StyledCounter = styled.p`
   margin-top: 0;
   margin-bottom: 2.2rem;
   min-width: 10%;
+  border-radius: 20px 20px;
+  border: 2px solid darkgray;
+  color: #808080da;
 
   @media screen and (max-width: 414px) {
     margin-bottom: 1rem;
