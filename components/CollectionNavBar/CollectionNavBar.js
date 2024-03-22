@@ -4,6 +4,7 @@ import {
   StyledListItem,
   StyledLink,
   IconWrapper,
+  Space,
 } from "./CollectionNavBar.styled";
 
 import { BsCollectionFill } from "react-icons/bs";
@@ -12,6 +13,7 @@ import { MdQuiz } from "react-icons/md";
 export default function CollectionNavbar({ collection }) {
   return (
     <>
+      <Space />
       <StyledNavigation>
         <StyledList>
           <StyledListItem>

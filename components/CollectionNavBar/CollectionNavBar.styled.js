@@ -4,9 +4,9 @@ import Link from "next/link";
 export const StyledNavigation = styled.nav`
   position: fixed;
   bottom: 0;
-  padding: 5px;
+  background-color: var(--color-background-3);
+  padding: 0;
   border-top: 0.5px var(--color-background-1) solid;
-  background-color: var(--color-background-1);
   max-width: 640px;
   width: 100vw;
 `;
@@ -50,4 +50,8 @@ export const IconWrapper = styled.div`
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+`;
+
+export const Space = styled.div`
+  height: 3rem;
 `;
