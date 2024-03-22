@@ -1,6 +1,5 @@
 import Head from "next/head";
 import GlobalStyle from "../styles";
-
 import Layout from "../components/Layout/Layout";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

@@ -53,22 +53,24 @@ export default function QuizPage({
         Fortschritt: {countPosition + 1} von {quizCards.length}
         <br />
         <StyledButtonNavBar>
-          {countPosition > 0 && (
-            <StyledButton onClick={decrement}>
-              {" "}
-              <IconWrapper>
-                <FaArrowCircleLeft />
-              </IconWrapper>
-            </StyledButton>
-          )}
-          {countPosition < quizCards.length - 1 && (
-            <StyledButton onClick={increment}>
-              {" "}
-              <IconWrapper>
-                <FaArrowCircleRight />
-              </IconWrapper>
-            </StyledButton>
-          )}
+          <StyledButton
+            onClick={decrement}
+            className={countPosition === 0 ? "hiddenButton" : ""}
+          >
+            <IconWrapper>
+              <FaArrowCircleLeft />
+            </IconWrapper>
+          </StyledButton>
+          <StyledButton
+            onClick={increment}
+            className={
+              countPosition === quizCards.length - 1 ? "hiddenButton" : ""
+            }
+          >
+            <IconWrapper>
+              <FaArrowCircleRight />
+            </IconWrapper>
+          </StyledButton>
         </StyledButtonNavBar>
         <StyledLink href={`/collections/${collection.id}`}>
           zurück zur Übersicht
