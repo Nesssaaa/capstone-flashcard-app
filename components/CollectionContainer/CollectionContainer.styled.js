@@ -38,6 +38,10 @@ export const StyledCollectionName = styled.h3`
   margin-bottom: 2.2rem;
   overflow-wrap: break-word;
   max-width: 45%;
+  @media screen and (max-width: 414px) {
+    margin-bottom: 0.5rem;
+    max-width: 100%;
+  }
 `;
 
 export const StyledWrapper = styled.div`
@@ -45,10 +49,18 @@ export const StyledWrapper = styled.div`
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+
+  @media screen and (max-width: 414px) {
+    flex-direction: column;
+  }
 `;
 
 export const StyledCounter = styled.p`
   margin-top: 0;
   margin-bottom: 2.2rem;
   min-width: 10%;
+
+  @media screen and (max-width: 414px) {
+    margin-bottom: 1rem;
+  }
 `;

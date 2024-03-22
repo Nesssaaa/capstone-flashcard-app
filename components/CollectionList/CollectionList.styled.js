@@ -5,5 +5,5 @@ export const StyledListContainer = styled.div`
   flex-direction: column;
   flex: 1;
   align-items: center;
-  margin: 0.8rem;
+  margin: 1.1rem 0.5rem;
 `;

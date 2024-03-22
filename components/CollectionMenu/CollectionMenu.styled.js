@@ -5,6 +5,10 @@ export const StyledMenuButton = styled(MenuButton)`
   border: none;
   background-color: transparent;
   margin-left: 80%;
+
+  @media screen and (max-width: 414px) {
+    margin-left: 68%;
+  }
 `;
 
 export const IconWrapper = styled.div`
@@ -12,6 +16,10 @@ export const IconWrapper = styled.div`
   color: var(--color-font-3);
   opacity: 0.9;
   padding: 1rem 1rem 0 1rem;
+
+  @media screen and (max-width: 414px) {
+    padding: 0;
+  }
 `;
 
 export const StyledMenu = styled.div`
