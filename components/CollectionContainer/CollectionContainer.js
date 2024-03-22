@@ -16,7 +16,7 @@ export default function CollectionContainer({
   return (
     <>
       <StyledCollectionContainer>
-        <StyledColorContainer color={color} />
+        <StyledColorContainer $color={color} />
         <StyledTextContainer>
           <CollectionMenu deleteCollection={deleteCollection} id={id} />
           <CollectionLink href={`/collections/${id}`}>
