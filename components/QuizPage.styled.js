@@ -26,7 +26,6 @@ export const StyledButtonContainer = styled.div`
 `;
 
 export const StyledButton = styled.button`
-  padding: 2rem;
   border: none;
   background-color: rgba(0, 0, 0, 0);
 `;
