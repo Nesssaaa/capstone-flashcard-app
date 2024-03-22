@@ -27,7 +27,7 @@ export default createGlobalStyle`
     --color-border-2: white;
     
    //special-colors
-   --color-fox:#d56f21ff;
+   --color-fox:#db780de3;
 
     --gap: 20px;
   }

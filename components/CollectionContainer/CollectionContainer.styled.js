@@ -12,7 +12,7 @@ export const StyledCollectionContainer = styled.div`
 
 export const StyledColorContainer = styled.div`
   border-radius: 15px 0px 0px 15px;
-  background-color: orange;
+  background-color: var(--color-fox);
   width: 25%;
 `;
 
