@@ -14,6 +14,7 @@ import {
   IconWrapper,
 } from "@/components/QuizPage.styled.js";
 import CollectionHeader from "@/components/CollectionHeader/CollectionHeader.js";
+import { StyledHeadlines } from "@/components/Headline.styled";
 
 export default function QuizPage({
   cards,
@@ -38,6 +39,7 @@ export default function QuizPage({
   return (
     <StyledContainer>
       <CollectionHeader name={collectionName} />
+
       <CardContainer
         question={card.question}
         answer={card.answer}

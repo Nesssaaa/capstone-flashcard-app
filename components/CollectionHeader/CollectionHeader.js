@@ -1,9 +1,9 @@
-import { StyledCollectionHeader } from "./CollectionHeader.styled";
+import { StyledHeadlines } from "../Headline.styled";
 
 export default function CollectionHeader({ name }) {
   return (
     <>
-      <StyledCollectionHeader>{name}</StyledCollectionHeader>
+      <StyledHeadlines>{name}</StyledHeadlines>
     </>
   );
 }
