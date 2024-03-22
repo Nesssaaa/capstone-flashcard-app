@@ -15,7 +15,7 @@ import {
 } from "@/components/QuizPage.styled.js";
 import CollectionHeader from "@/components/CollectionHeader/CollectionHeader.js";
 import { StyledHeadlines } from "@/components/Headline.styled";
-
+import { Space } from "@/components/CollectionNavBar/CollectionNavBar.styled";
 export default function QuizPage({
   cards,
   getCollection,
@@ -75,6 +75,7 @@ export default function QuizPage({
         <StyledLink href={`/collections/${collection.id}`}>
           zurück zur Übersicht
         </StyledLink>
+        <Space />
       </StyledSection>
     </StyledContainer>
   );
