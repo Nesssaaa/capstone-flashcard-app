@@ -28,6 +28,7 @@ export const StyledButtonContainer = styled.div`
 export const StyledButton = styled.button`
   border: none;
   background-color: rgba(0, 0, 0, 0);
+  visibility: ${(props) => (props.$hidden ? "hidden" : "visible")};
 `;
 
 export const StyledButtonNavBar = styled.div`
