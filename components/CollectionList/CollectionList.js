@@ -1,19 +1,30 @@
 import CollectionContainer from "../CollectionContainer/CollectionContainer";
+import { StyledListContainer } from "./CollectionList.styled";
 
-export default function CollectionList({ collections, deleteCollection }) {
+export default function CollectionList({
+  collections,
+  cards,
+  deleteCollection,
+}) {
   return (
     <>
       {collections &&
-        collections.map((collection) => (
-          <div key={collection.id}>
-            <CollectionContainer
-              name={collection.name}
-              id={collection.id}
-              color={collection.color}
-              deleteCollection={deleteCollection}
-            />
-          </div>
-        ))}
+        collections.map((collection) => {
+          const filteredCards = cards.filter(
+            (card) => card.collection === collection.id
+          );
+          return (
+            <StyledListContainer key={collection.id}>
+              <CollectionContainer
+                name={collection.name}
+                id={collection.id}
+                color={collection.color}
+                deleteCollection={deleteCollection}
+                cards={filteredCards}
+              />
+            </StyledListContainer>
+          );
+        })}
     </>
   );
 }

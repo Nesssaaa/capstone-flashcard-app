@@ -5,13 +5,12 @@ export const StyledCollectionContainer = styled.div`
   display: flex;
   border: 2px solid darkgray;
   border-radius: 20px;
+  min-width: 75%;
   max-width: 75%;
-  overflow: hidden;
-  margin: 2rem;
+  flex: 1;
 `;
 
 export const StyledColorContainer = styled.div`
-  display: flex;
   border-radius: 15px 0px 0px 15px;
   background-color: ${(props) => props.$color};
   width: 25%;
@@ -20,15 +19,51 @@ export const StyledColorContainer = styled.div`
 export const StyledTextContainer = styled.div`
   text-align: center;
   flex: 1;
+  font-size: 1rem;
 `;
 
 export const CollectionLink = styled(Link)`
   text-decoration: none;
-  flex: 1;
+
   color: black;
   transition: color 0.3s;
   cursor: pointer;
   &:hover {
     color: orangered;
+  }
+`;
+
+export const StyledCollectionName = styled.h3`
+  margin-top: 0;
+  margin-bottom: 2.2rem;
+  overflow-wrap: break-word;
+  max-width: 45%;
+  @media screen and (max-width: 414px) {
+    margin-bottom: 0.5rem;
+    max-width: 100%;
+  }
+`;
+
+export const StyledWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  @media screen and (max-width: 414px) {
+    flex-direction: column;
+  }
+`;
+
+export const StyledCounter = styled.p`
+  margin-top: 0;
+  margin-bottom: 2.2rem;
+  min-width: 10%;
+  border-radius: 20px 20px;
+  border: 2px solid darkgray;
+  color: #808080da;
+
+  @media screen and (max-width: 414px) {
+    margin-bottom: 1rem;
   }
 `;

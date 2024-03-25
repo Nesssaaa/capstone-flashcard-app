@@ -1,11 +1,11 @@
 import Head from "next/head";
 import GlobalStyle from "../styles";
-
 import Layout from "../components/Layout/Layout";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useSWR from "swr";
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
+import { useEffect, useState } from "react";
 
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
@@ -15,6 +15,7 @@ export default function App({ Component, pageProps }) {
     isLoading: isLoadingCards,
     mutate: mutateCards,
   } = useSWR("/api/cards", fetcher);
+
   const {
     data: collections,
     isLoading: isLoadingCollections,
@@ -99,7 +100,7 @@ export default function App({ Component, pageProps }) {
     }
   }
 
-  function editCollection(collection) {
+  async function editCollection(collection) {
     updateCollection(collection);
     toast("Kartenstapel erfolgreich bearbeitet");
   }

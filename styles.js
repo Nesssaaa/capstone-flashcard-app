@@ -27,7 +27,7 @@ export default createGlobalStyle`
     --color-border-2: white;
     
    //special-colors
-   --color-fox:#d56f21ff;
+   --color-fox:#db780de3;
 
     --gap: 20px;
   }
@@ -58,13 +58,5 @@ export default createGlobalStyle`
     max-height: 100lvh;
     min-height: 100lvh;
     gap: 1rem;
-    
-    
-    
   }
-
-
-
- 
- 
 `;

@@ -1,7 +1,9 @@
 import CardList from "../../components/CardList/CardList.js";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import Link from "next/link.js";
+import CollectionNavbar from "@/components/CollectionNavBar/CollectionNavBar.js";
+import Link from "next/link";
+import CollectionHeader from "@/components/CollectionHeader/CollectionHeader.js";
 
 export const StyledContainer = styled.div`
   text-align: center;
@@ -34,7 +36,7 @@ export default function CollectionCardList({
   return (
     <>
       <StyledContainer>
-        <h1>{collection.name}</h1>
+        <CollectionHeader name={collection.name} />
       </StyledContainer>
       {!filteredCards.length ? (
         <StyledContainer>
@@ -51,9 +53,7 @@ export default function CollectionCardList({
           onToggle={onToggle}
         />
       )}
-      <StyledContainer>
-        <StyledLink href="/collections">zurück zur Übersicht</StyledLink>
-      </StyledContainer>
+      <CollectionNavbar collection={collection} />
     </>
   );
 }
