@@ -75,6 +75,7 @@ export default function Form({
       <StyledLabel>
         Vorderseite
         <StyledInput
+          id="question"
           onChange={handleQuestionChange}
           name="question"
           required
@@ -87,6 +88,7 @@ export default function Form({
       <StyledLabel>
         Rückseite
         <StyledInput
+          id="answer"
           onChange={handleAnswerChange}
           name="answer"
           required

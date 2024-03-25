@@ -68,6 +68,7 @@ export default function CollectionForm({ collection, editCollection }) {
       />
 
       <StyledInput
+        id="collectionName"
         aria-label="Wie soll dein Kartenstapel heißen?"
         name="collectionName"
         required
