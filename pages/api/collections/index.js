@@ -1,7 +1,6 @@
 import dbConnect from "@/db/connect.js";
 import { collectionToDb, dbToCollection } from "@/db/utils";
 import Deck from "@/db/models/Deck";
-import { seedDb } from "@/db/seed";
 
 export default async function handler(request, response) {
   await dbConnect();
