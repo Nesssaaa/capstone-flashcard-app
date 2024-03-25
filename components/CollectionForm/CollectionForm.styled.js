@@ -19,15 +19,14 @@ export const StyledLabel = styled.label`
 `;
 
 export const StyledButton = styled.button`
-  margin: auto;
+  margin: 0.2rem 1.5rem;
   padding: 0 1rem;
   height: 4.5rem;
   width: 4.5rem;
-  /* color: var(--color-font-2); */
+
   border-radius: 50%;
   border: none;
-  /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  background-color: rgba(0, 0, 0, 0.4); */
+
   background-color: var(--color-background-1);
   color: var(--color-font-3);
 `;
@@ -52,5 +51,5 @@ export const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.3rem;
+  font-size: 2.1rem;
 `;

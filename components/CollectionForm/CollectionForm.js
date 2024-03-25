@@ -77,17 +77,19 @@ export default function CollectionForm({ collection, editCollection }) {
         textLength={currentCollection.name}
         onChange={handleChangeName}
       />
-      <StyledButton type="submit">
-        <IconWrapper>
-          <FaCheck />
-        </IconWrapper>
-      </StyledButton>
+      <nav>
+        <StyledButton type="submit">
+          <IconWrapper>
+            <FaCheck />
+          </IconWrapper>
+        </StyledButton>
 
-      <StyledButton type="button" onClick={handleCancel}>
-        <IconWrapper>
-          <ImCancelCircle />
-        </IconWrapper>
-      </StyledButton>
+        <StyledButton type="button" onClick={handleCancel}>
+          <IconWrapper>
+            <ImCancelCircle />
+          </IconWrapper>
+        </StyledButton>
+      </nav>
     </StyledForm>
   );
 }
