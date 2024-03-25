@@ -3,16 +3,13 @@ import {
   StyledButton,
   StyledForm,
   StyledInput,
-  StyledLabel,
   IconWrapper,
 } from "./CollectionForm.styled";
 import { FaCheck } from "react-icons/fa";
 import { ImCancelCircle } from "react-icons/im";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import CollectionContainer from "../CollectionContainer/CollectionContainer";
 import Circle from "@uiw/react-color-circle";
-import { useState } from "react";
 
 export default function CollectionForm({ collection, editCollection }) {
   const [currentCollection, setCurrentCollection] = useState(collection);
