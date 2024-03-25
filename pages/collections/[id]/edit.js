@@ -12,9 +12,13 @@ export default function EditCollectionPage({
   editCollection,
   collections,
   addCollection,
+  cards,
 }) {
   const router = useRouter();
   const collection = getCollection(router.query.id);
+  const filteredCards = cards.filter(
+    (card) => card.collection == router.query.id
+  );
 
   if (!collection) {
     return "Error";
@@ -35,6 +39,7 @@ export default function EditCollectionPage({
         collections={collections}
         addCollection={addCollection}
         editCollection={editCollection}
+        cards={filteredCards}
       />
     </>
   );
