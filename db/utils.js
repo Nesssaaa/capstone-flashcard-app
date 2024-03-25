@@ -18,16 +18,18 @@ export function dbToCard({ _id, question, answer, deck, isMastered }) {
   };
 }
 
-export function collectionToDb({ id, name }) {
+export function collectionToDb({ id, name, color }) {
   return {
     _id: id,
     name,
+    color,
   };
 }
 
-export function dbToCollection({ _id, name }) {
+export function dbToCollection({ _id, name, color }) {
   return {
     id: _id,
     name,
+    color,
   };
 }

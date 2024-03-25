@@ -18,6 +18,7 @@ export default function CollectionList({
               <CollectionContainer
                 name={collection.name}
                 id={collection.id}
+                color={collection.color}
                 deleteCollection={deleteCollection}
                 cards={filteredCards}
               />

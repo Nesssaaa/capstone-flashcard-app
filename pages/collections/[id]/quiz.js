@@ -39,7 +39,6 @@ export default function QuizPage({
   return (
     <StyledContainer>
       <CollectionHeader name={collectionName} />
-
       <CardContainer
         question={card.question}
         answer={card.answer}
@@ -53,19 +52,14 @@ export default function QuizPage({
         Fortschritt: {countPosition + 1} von {quizCards.length}
         <br />
         <StyledButtonNavBar>
-          <StyledButton
-            onClick={decrement}
-            className={countPosition === 0 ? "hiddenButton" : ""}
-          >
+          <StyledButton onClick={decrement} $hidden={countPosition === 0}>
             <IconWrapper>
               <FaArrowCircleLeft />
             </IconWrapper>
           </StyledButton>
           <StyledButton
             onClick={increment}
-            className={
-              countPosition === quizCards.length - 1 ? "hiddenButton" : ""
-            }
+            $hidden={countPosition === quizCards.length - 1}
           >
             <IconWrapper>
               <FaArrowCircleRight />
