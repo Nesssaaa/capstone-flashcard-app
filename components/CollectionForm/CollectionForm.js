@@ -9,8 +9,9 @@ import { ImCancelCircle } from "react-icons/im";
 import { useRouter } from "next/router";
 import CollectionContainer from "../CollectionContainer/CollectionContainer";
 import Circle from "@uiw/react-color-circle";
+import { useState } from "react";
 
-export default function CollectionForm({ collection, editCollection }) {
+export default function CollectionForm({ collection, editCollection, cards }) {
   const [currentCollection, setCurrentCollection] = useState(collection);
   const router = useRouter();
 
@@ -53,6 +54,7 @@ export default function CollectionForm({ collection, editCollection }) {
         name={currentCollection.name}
         color={currentCollection.color}
         id={currentCollection.id}
+        cards={cards}
       />
       <Circle
         colors={[
