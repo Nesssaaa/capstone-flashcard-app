@@ -21,13 +21,16 @@ export default function CollectionContainer({
     <>
       <StyledCollectionContainer>
         <StyledColorContainer $color={color} />
-        <StyledTextContainer>
-          <CollectionMenu deleteCollection={deleteCollection} id={id} />
+        <StyledTextContainer noCards={!cards}>
+          {cards && (
+            <CollectionMenu deleteCollection={deleteCollection} id={id} />
+          )}
           <CollectionLink href={`/collections/${id}`}>
             <StyledWrapper>
               <StyledCollectionName>{name}</StyledCollectionName>
 
-              <StyledCounter>{cards ? cards.length : 0}</StyledCounter>
+              {/* <StyledCounter>{cards ? cards.length : 0}</StyledCounter> */}
+              {cards && <StyledCounter>{cards.length}</StyledCounter>}
             </StyledWrapper>
           </CollectionLink>
         </StyledTextContainer>
