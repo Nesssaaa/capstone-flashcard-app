@@ -9,6 +9,7 @@ import { ImCancelCircle } from "react-icons/im";
 import { useRouter } from "next/router";
 import CollectionContainer from "../CollectionContainer/CollectionContainer";
 import Circle from "@uiw/react-color-circle";
+import { useState } from "react";
 
 export default function CollectionForm({ collection, editCollection }) {
   const [currentCollection, setCurrentCollection] = useState(collection);
