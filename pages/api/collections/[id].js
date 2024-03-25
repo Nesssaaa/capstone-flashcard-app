@@ -1,6 +1,7 @@
 import dbConnect from "@/db/connect.js";
 import { collectionToDb, dbToCollection } from "@/db/utils";
 import Deck from "@/db/models/Deck";
+import Card from "@/db/models/Card";
 
 export default async function handler(request, response) {
   await dbConnect();
@@ -23,8 +24,10 @@ export default async function handler(request, response) {
 
   if (request.method === "DELETE") {
     await Deck.findByIdAndDelete(id);
-    return response
-      .status(200)
-      .json({ status: `Collection ${id} successfully deleted.` });
+    await Card.deleteMany({ deck: id });
+    return response.status(200).json({
+      status: `Collection ${id} including all associated cards successfully deleted.`,
+    });
   }
+  mutate();
 }
