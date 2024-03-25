@@ -43,12 +43,15 @@ export default function CardContainer({
         <IconWrapper>
           <MdTouchApp />
         </IconWrapper>
-        <ButtonNavBar
-          id={id}
-          deleteCard={deleteCard}
-          onToggle={onToggle}
-          isMastered={isMastered}
-        />
+        {isMastered && (
+          <ButtonNavBar
+            id={id}
+            deleteCard={deleteCard}
+            onToggle={onToggle}
+            isMastered={isMastered}
+            onClick={stopMenuPropagation}
+          />
+        )}
       </StyledCardContainerQuestion>
 
       <StyledCardContainerAnswer onClick={flipCard}>
@@ -66,6 +69,7 @@ export default function CardContainer({
           deleteCard={deleteCard}
           onToggle={onToggle}
           isMastered={isMastered}
+          onClick={stopMenuPropagation}
         />
       </StyledCardContainerAnswer>
     </ReactCardFlip>
