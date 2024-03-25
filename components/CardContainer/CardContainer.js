@@ -49,7 +49,6 @@ export default function CardContainer({
             deleteCard={deleteCard}
             onToggle={onToggle}
             isMastered={isMastered}
-            onClick={stopMenuPropagation}
           />
         )}
       </StyledCardContainerQuestion>
@@ -69,7 +68,6 @@ export default function CardContainer({
           deleteCard={deleteCard}
           onToggle={onToggle}
           isMastered={isMastered}
-          onClick={stopMenuPropagation}
         />
       </StyledCardContainerAnswer>
     </ReactCardFlip>
