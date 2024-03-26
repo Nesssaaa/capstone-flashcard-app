@@ -7,6 +7,7 @@ import {
 import { FaCheck } from "react-icons/fa";
 import { ImCancelCircle } from "react-icons/im";
 import { useRouter } from "next/router";
+import { useState } from "react";
 import CollectionContainer from "../CollectionContainer/CollectionContainer";
 import Circle from "@uiw/react-color-circle";
 
@@ -67,6 +68,7 @@ export default function CollectionForm({ collection, editCollection }) {
       />
 
       <StyledInput
+        id="collectionName"
         aria-label="Wie soll dein Kartenstapel heißen?"
         name="collectionName"
         required
@@ -76,17 +78,19 @@ export default function CollectionForm({ collection, editCollection }) {
         textLength={currentCollection.name}
         onChange={handleChangeName}
       />
-      <StyledButton type="submit">
-        <IconWrapper>
-          <FaCheck />
-        </IconWrapper>
-      </StyledButton>
+      <nav>
+        <StyledButton type="submit">
+          <IconWrapper>
+            <FaCheck />
+          </IconWrapper>
+        </StyledButton>
 
-      <StyledButton type="button" onClick={handleCancel}>
-        <IconWrapper>
-          <ImCancelCircle />
-        </IconWrapper>
-      </StyledButton>
+        <StyledButton type="button" onClick={handleCancel}>
+          <IconWrapper>
+            <ImCancelCircle />
+          </IconWrapper>
+        </StyledButton>
+      </nav>
     </StyledForm>
   );
 }

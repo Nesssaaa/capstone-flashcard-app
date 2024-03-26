@@ -31,3 +31,10 @@ export const StyledMenuItem = styled(MenuItem)`
   padding: 1rem 1rem 1rem 0.5rem;
   font-size: 1.1rem;
 `;
+export const StyledTitle = styled.p`
+  color: #bd1212;
+`;
+
+export const StyledLabel = styled.label`
+  font-size: 1rem;
+`;

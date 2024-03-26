@@ -43,12 +43,14 @@ export default function CardContainer({
         <IconWrapper>
           <MdTouchApp />
         </IconWrapper>
-        <ButtonNavBar
-          id={id}
-          deleteCard={deleteCard}
-          onToggle={onToggle}
-          isMastered={isMastered}
-        />
+        {isMastered && (
+          <ButtonNavBar
+            id={id}
+            deleteCard={deleteCard}
+            onToggle={onToggle}
+            isMastered={isMastered}
+          />
+        )}
       </StyledCardContainerQuestion>
 
       <StyledCardContainerAnswer onClick={flipCard}>

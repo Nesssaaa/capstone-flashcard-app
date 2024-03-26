@@ -18,20 +18,20 @@ export default function CollectionContainer({
   deleteCollection,
 }) {
   return (
-    <>
-      <StyledCollectionContainer>
-        <StyledColorContainer $color={color} />
-        <StyledTextContainer>
+    <StyledCollectionContainer>
+      <StyledColorContainer $color={color} />
+      <StyledTextContainer noCards={!cards}>
+        {cards && (
           <CollectionMenu deleteCollection={deleteCollection} id={id} />
-          <CollectionLink href={`/collections/${id}`}>
-            <StyledWrapper>
-              <StyledCollectionName>{name}</StyledCollectionName>
+        )}
+        <CollectionLink href={`/collections/${id}`}>
+          <StyledWrapper>
+            <StyledCollectionName>{name}</StyledCollectionName>
 
-              <StyledCounter>{cards.length}</StyledCounter>
-            </StyledWrapper>
-          </CollectionLink>
-        </StyledTextContainer>
-      </StyledCollectionContainer>
-    </>
+            {cards && <StyledCounter>{cards.length}</StyledCounter>}
+          </StyledWrapper>
+        </CollectionLink>
+      </StyledTextContainer>
+    </StyledCollectionContainer>
   );
 }
