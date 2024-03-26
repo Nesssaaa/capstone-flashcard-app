@@ -17,7 +17,7 @@ export default function ArchivesPage({
     return "Loading...";
   }
 
-  const filteredCards = cards ? cards.filter((card) => card.isMastered) : [];
+  const filteredCards = cards ? cards.filter((card) => !card.isMastered) : [];
 
   return (
     <>
