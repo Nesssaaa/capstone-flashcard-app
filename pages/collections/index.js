@@ -27,13 +27,15 @@ export default function CollectionsPage({
     );
   }
 
+  const filteredCards = cards ? cards.filter((card) => !card.isMastered) : [];
+
   return (
     <>
       <StyledHeadlines>Deine Kartenstapel</StyledHeadlines>
       <CollectionList
         collections={collections}
         deleteCollection={deleteCollection}
-        cards={cards}
+        cards={filteredCards}
       />
       <Navigation />
     </>

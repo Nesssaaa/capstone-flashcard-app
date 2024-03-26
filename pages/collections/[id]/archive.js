@@ -35,6 +35,7 @@ export default function CollectionArchiv({
 
   return (
     <>
+      <h1>Bist du das Archiv?</h1>
       <StyledContainer>
         <CollectionHeader name={collection.name} />
       </StyledContainer>
