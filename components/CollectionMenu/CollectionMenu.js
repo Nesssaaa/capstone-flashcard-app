@@ -91,7 +91,6 @@ export default function CollectionMenu({ id, deleteCollection }) {
 
   return (
     <Menu
-      isOpen={isMenuOpen}
       menuButton={
         <StyledMenuButton onClick={handleMenuClick}>
           <IconWrapper>
