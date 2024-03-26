@@ -29,7 +29,6 @@ export default function CollectionContainer({
             <StyledWrapper>
               <StyledCollectionName>{name}</StyledCollectionName>
 
-              {/* <StyledCounter>{cards ? cards.length : 0}</StyledCounter> */}
               {cards && <StyledCounter>{cards.length}</StyledCounter>}
             </StyledWrapper>
           </CollectionLink>
