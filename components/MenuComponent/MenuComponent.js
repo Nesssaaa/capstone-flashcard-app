@@ -3,13 +3,13 @@ import {
   IconWrapper,
   MenuList,
   StyledMenuItem,
-  StyledLink,
   StyledMenuButton,
   MainMenu,
 } from "./MenuComponent.styled";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import { MdOutlineClose, MdOutlineMenu, MdHome } from "react-icons/md";
+import { PiCards } from "react-icons/pi";
 
 export default function MenuComponent() {
   return (
@@ -35,6 +35,12 @@ export default function MenuComponent() {
             <StyledMenuItem href="/">
               <IconWrapper $size="1.3rem">
                 <MdHome /> &nbsp; Hauptseite
+              </IconWrapper>
+            </StyledMenuItem>
+            <StyledMenuItem href="/allCards">
+              <IconWrapper $size="1.3rem">
+                <PiCards />
+                &nbsp; Zu all meinen Karten
               </IconWrapper>
             </StyledMenuItem>
           </MenuList>
