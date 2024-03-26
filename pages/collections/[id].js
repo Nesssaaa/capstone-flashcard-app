@@ -28,10 +28,12 @@ export default function CollectionCardList({
     return <LoadingSpinner />;
   }
 
+  const isMastered = router.query["ismastered"] === "true";
+
   const filteredCards = collection
     ? cards
         .filter((card) => card.collection === collection.id)
-        .filter((card) => card.isMastered === false)
+        .filter((card) => card.isMastered === isMastered)
     : [];
 
   return (

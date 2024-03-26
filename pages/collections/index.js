@@ -36,6 +36,7 @@ export default function CollectionsPage({
         collections={collections}
         deleteCollection={deleteCollection}
         cards={filteredCards}
+        isMastered={false}
       />
       <Navigation />
     </>
