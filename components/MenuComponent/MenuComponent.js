@@ -8,8 +8,9 @@ import {
 } from "./MenuComponent.styled";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
-import { MdOutlineClose, MdOutlineMenu, MdHome } from "react-icons/md";
+import { MdOutlineClose, MdOutlineMenu } from "react-icons/md";
 import { PiCards } from "react-icons/pi";
+import { BsCollectionFill } from "react-icons/bs";
 
 export default function MenuComponent() {
   return (
@@ -32,9 +33,9 @@ export default function MenuComponent() {
                 &nbsp; Schließen
               </IconWrapper>
             </StyledMenuItem>
-            <StyledMenuItem href="/">
+            <StyledMenuItem href="/collections">
               <IconWrapper $size="1.3rem">
-                <MdHome /> &nbsp; Hauptseite
+                <BsCollectionFill /> &nbsp; Meine Kartenstapel
               </IconWrapper>
             </StyledMenuItem>
             <StyledMenuItem href="/allCards">
