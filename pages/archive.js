@@ -5,6 +5,7 @@ import { StyledText, StyledPageName } from "../components/Archive.styled";
 import Navigation from "../components/Navigation/Navigation";
 import { StyledHeadlines } from "@/components/Headline.styled";
 import CollectionList from "@/components/CollectionList/CollectionList";
+import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
 
 export default function ArchivesPage({
   cards,
@@ -14,7 +15,7 @@ export default function ArchivesPage({
   deleteCollection,
 }) {
   if (!cards) {
-    return "Loading...";
+    return <LoadingSpinner />;
   }
 
   const filteredCards = cards ? cards.filter((card) => !card.isMastered) : [];
