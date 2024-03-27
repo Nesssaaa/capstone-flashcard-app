@@ -63,8 +63,7 @@ export const StyledWrapper = styled.div`
 `;
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: ${({ $isActive }) =>
-    $isActive ? "var(--color-fox)" : "var(--color-font-3)"};
+  color: black;
   align-self: center;
 `;
 export const IconWrapper = styled.div`
