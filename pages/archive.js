@@ -1,13 +1,18 @@
-import CardContainer from "../components/CardContainer/CardContainer";
-import CardList from "../components/CardList/CardList";
-
 import { StyledText, StyledPageName } from "../components/Archive.styled";
 import Navigation from "../components/Navigation/Navigation";
 import { StyledHeadlines } from "@/components/Headline.styled";
+import CollectionList from "@/components/CollectionList/CollectionList";
+import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
 
-export default function ArchivesPage({ cards, deleteCard, onToggle }) {
+export default function ArchivesPage({
+  cards,
+  deleteCard,
+  onToggle,
+  collections,
+  deleteCollection,
+}) {
   if (!cards) {
-    return "Loading...";
+    return <LoadingSpinner />;
   }
 
   const filteredCards = cards ? cards.filter((card) => card.isMastered) : [];
@@ -18,10 +23,11 @@ export default function ArchivesPage({ cards, deleteCard, onToggle }) {
       {!filteredCards.length ? (
         <StyledText>Dein Archiv ist noch leer.</StyledText>
       ) : (
-        <CardList
+        <CollectionList
+          collections={collections}
           cards={filteredCards}
-          onToggle={onToggle}
-          deleteCard={deleteCard}
+          deleteCollection={deleteCollection}
+          isMastered={true}
         />
       )}
       <Navigation />

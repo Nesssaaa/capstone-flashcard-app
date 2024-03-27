@@ -1,4 +1,3 @@
-import Link from "next/link";
 import CollectionList from "../../components/CollectionList/CollectionList";
 import { MdOutlineCreateNewFolder } from "react-icons/md";
 import {
@@ -28,13 +27,16 @@ export default function CollectionsPage({
     );
   }
 
+  const filteredCards = cards ? cards.filter((card) => !card.isMastered) : [];
+
   return (
     <>
       <StyledHeadlines>Deine Kartenstapel</StyledHeadlines>
       <CollectionList
         collections={collections}
         deleteCollection={deleteCollection}
-        cards={cards}
+        cards={filteredCards}
+        isMastered={false}
       />
       <Navigation />
     </>

@@ -57,12 +57,12 @@ export default function CollectionForm({ collection, editCollection }) {
       />
       <Circle
         colors={[
-          "#FF0000",
-          "#FFFF00",
-          "#008000",
-          "#48D1CC",
-          "#7B68BB",
-          "#FF69B4",
+          "#CF7041",
+          "#E5C5BD",
+          "#E2A55E",
+          "#5E718B",
+          "#96AA9A",
+          "#B4BFC5",
         ]}
         onChange={handleChangeColor}
       />

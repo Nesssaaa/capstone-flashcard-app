@@ -1,7 +1,6 @@
-import CardList from "../../components/CardList/CardList.js";
+import CardList from "@/components/CardList/CardList";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import CollectionNavbar from "@/components/CollectionNavBar/CollectionNavBar.js";
 import Link from "next/link";
 import CollectionHeader from "@/components/CollectionHeader/CollectionHeader.js";
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner.js";
@@ -15,7 +14,7 @@ export const StyledLink = styled(Link)`
   color: var(--color-fox);
 `;
 
-export default function CollectionCardList({
+export default function CollectionArchiv({
   cards,
   getCollection,
   deleteCard,
@@ -28,12 +27,10 @@ export default function CollectionCardList({
     return <LoadingSpinner />;
   }
 
-  const isMastered = router.query["ismastered"] === "true";
-
   const filteredCards = collection
     ? cards
         .filter((card) => card.collection === collection.id)
-        .filter((card) => card.isMastered === isMastered)
+        .filter((card) => card.isMastered === true)
     : [];
 
   return (
@@ -43,11 +40,7 @@ export default function CollectionCardList({
       </StyledContainer>
       {!filteredCards.length ? (
         <StyledContainer>
-          <p>Dein Kartenstapel ist noch leer.</p>
-          <br />
-          <p>
-            <StyledLink href={"/create"}>Füge neue Karten hinzu!</StyledLink>
-          </p>
+          <p>Dein Archiv ist noch leer.</p>
         </StyledContainer>
       ) : (
         <CardList
@@ -56,7 +49,6 @@ export default function CollectionCardList({
           onToggle={onToggle}
         />
       )}
-      <CollectionNavbar collection={collection} />
     </>
   );
 }
