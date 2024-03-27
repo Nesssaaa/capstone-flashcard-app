@@ -1,11 +1,12 @@
 import Image from "next/image";
+import { FoxGif, StyledFox } from "./AnimatedFox.styled";
 
 export default function AnimatedFox() {
   return (
     <div>
-      <div>
-        <Image src="/fox.gif" alt="fox gif" width={300} height={300} />
-      </div>
+      <StyledFox>
+        <FoxGif src="/fox.gif" alt="fox gif" width={250} height={250} />
+      </StyledFox>
     </div>
   );
 }
