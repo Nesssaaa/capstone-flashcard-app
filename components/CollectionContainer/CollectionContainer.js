@@ -6,7 +6,10 @@ import {
   StyledCollectionName,
   StyledWrapper,
   StyledCounter,
+  IconWrapper,
+  StyledLink,
 } from "./CollectionContainer.styled";
+import { MdQuiz } from "react-icons/md";
 
 import CollectionMenu from "../CollectionMenu/CollectionMenu";
 
@@ -20,7 +23,14 @@ export default function CollectionContainer({
 }) {
   return (
     <StyledCollectionContainer>
-      <StyledColorContainer $color={color} />
+      <StyledColorContainer $color={color}>
+        {" "}
+        <StyledLink href={`/collections/${id}/quiz`}>
+          <IconWrapper>
+            <MdQuiz />
+          </IconWrapper>
+        </StyledLink>
+      </StyledColorContainer>
       <StyledTextContainer noCards={!cards}>
         {cards && (
           <CollectionMenu deleteCollection={deleteCollection} id={id} />
