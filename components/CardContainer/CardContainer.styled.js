@@ -45,11 +45,12 @@ export const StyledCardContainerAnswer = styled.div`
   border: 2px var(--color-background-2) solid;
 
   &::before {
-    content: ${({ level }) => `"Level ${level}"`};
+    content: ${({ level }) => `"${level}"`};
     position: absolute;
     bottom: 32px;
     left: 14px;
     font-size: 1.5rem;
+    font-weight: bold;
     color: var(--color-fox);
     opacity: 0.6;
     padding: 0.5rem;
@@ -73,6 +74,9 @@ export const StyledTextShow = styled.textarea`
 `;
 
 export const IconWrapper = styled.div`
+  position: absolute;
+  bottom: 32px;
+  right: 14px;
   font-size: 2.3rem;
   color: var(--color-font-3);
   opacity: 0.8;
