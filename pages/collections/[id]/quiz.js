@@ -35,7 +35,9 @@ export default function QuizPage({
 
   const card = quizCards[countPosition];
   const collectionName = collection ? collection.name : "lädt gerade...";
-
+  if (!filteredCards || filteredCards.length === 0) {
+    return <h2>Dieser Kartenstapel enthält noch keine Karten.</h2>;
+  }
   return (
     <StyledContainer>
       <CollectionHeader name={collectionName} />
