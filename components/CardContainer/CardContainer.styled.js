@@ -20,16 +20,40 @@ const BaseCardStyle = `
 
 export const StyledCardContainerQuestion = styled.div`
   ${BaseCardStyle}
+  position: relative;
   background-color: white /*conic-gradient (var(--color-card-1),*/;
   box-shadow: 1px 1px 6px 1px var(--color-font-3);
   border: 2px var(--color-background-1) solid;
+
+  &::before {
+    content: ${({ level }) => `"Level ${level}"`};
+    position: absolute;
+    bottom: 32px;
+    left: 14px;
+    font-size: 1.5rem;
+    color: var(--color-fox);
+    opacity: 0.6;
+    padding: 0.5rem;
+  }
 `;
 
 export const StyledCardContainerAnswer = styled.div`
   ${BaseCardStyle}
+  position: relative;
   background-color: var(--color-card-1);
   box-shadow: 2px 2px 8px 3px var(--color-fox);
   border: 2px var(--color-background-2) solid;
+
+  &::before {
+    content: ${({ level }) => `"Level ${level}"`};
+    position: absolute;
+    bottom: 32px;
+    left: 14px;
+    font-size: 1.5rem;
+    color: var(--color-fox);
+    opacity: 0.6;
+    padding: 0.5rem;
+  }
 `;
 
 export const StyledTextShow = styled.textarea`
