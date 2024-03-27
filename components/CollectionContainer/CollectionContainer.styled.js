@@ -20,11 +20,11 @@ export const StyledTextContainer = styled.div`
   text-align: center;
   flex: 1;
   font-size: 1rem;
-  padding-top: ${(props) => (props.noCards ? "1.7rem" : "0")};
+  padding-top: ${(props) => (props.$noCards ? "1.7rem" : "0")};
 
   @media screen and (max-width: 414px) {
-    padding-top: ${(props) => (props.noCards ? "1.5rem" : "0")};
-    padding-bottom: ${(props) => (props.noCards ? "1.2rem" : "0")};
+    padding-top: ${(props) => (props.$noCards ? "1.5rem" : "0")};
+    padding-bottom: ${(props) => (props.$noCards ? "1.2rem" : "0")};
   }
 `;
 

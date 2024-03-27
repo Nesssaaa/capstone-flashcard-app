@@ -13,3 +13,8 @@ export default function HomePage() {
     </>
   );
 }
+
+HomePage.getInitialProps = () => {
+  const disableLayout = true;
+  return { disableLayout };
+};
