@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Link from "next/link";
 
 export const StyledHeader = styled.div`
   display: flex;
@@ -38,4 +39,11 @@ export const IconWrapper = styled.div`
     font-size: 2.5rem;
     margin-left: 1rem;
   }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: var(--color-fox);
+  display: flex;
+  flex-direction: row;
 `;
