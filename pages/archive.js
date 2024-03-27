@@ -1,6 +1,3 @@
-import CardContainer from "../components/CardContainer/CardContainer";
-import CardList from "../components/CardList/CardList";
-
 import { StyledText, StyledPageName } from "../components/Archive.styled";
 import Navigation from "../components/Navigation/Navigation";
 import { StyledHeadlines } from "@/components/Headline.styled";
@@ -18,7 +15,7 @@ export default function ArchivesPage({
     return <LoadingSpinner />;
   }
 
-  const filteredCards = cards ? cards.filter((card) => !card.isMastered) : [];
+  const filteredCards = cards ? cards.filter((card) => card.isMastered) : [];
 
   return (
     <>
@@ -30,12 +27,8 @@ export default function ArchivesPage({
           collections={collections}
           cards={filteredCards}
           deleteCollection={deleteCollection}
+          isMastered={true}
         />
-        // <CardList
-        //   cards={filteredCards}
-        //   onToggle={onToggle}
-        //   deleteCard={deleteCard}
-        // />
       )}
       <Navigation />
     </>
