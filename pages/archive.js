@@ -29,11 +29,6 @@ export default function ArchivesPage({
           deleteCollection={deleteCollection}
           isMastered={true}
         />
-        // <CardList
-        //   cards={filteredCards}
-        //   onToggle={onToggle}
-        //   deleteCard={deleteCard}
-        // />
       )}
       <Navigation />
     </>
