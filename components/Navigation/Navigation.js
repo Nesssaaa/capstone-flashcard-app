@@ -17,13 +17,13 @@ export default function Navigation() {
       <Space />
       <StyledNavigation>
         <StyledList>
-          <StyledListItem>
+          {/* <StyledListItem>
             <StyledLink $isActive={router.pathname === "/"} href="/">
               <IconWrapper>
                 <MdHome />
               </IconWrapper>
             </StyledLink>
-          </StyledListItem>
+          </StyledListItem> */}
           <StyledListItem>
             <StyledLink
               $isActive={router.pathname === "/collections"}

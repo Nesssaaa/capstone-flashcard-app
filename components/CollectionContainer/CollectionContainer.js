@@ -16,6 +16,7 @@ export default function CollectionContainer({
   color,
   cards,
   deleteCollection,
+  isMastered,
 }) {
   return (
     <StyledCollectionContainer>
@@ -24,7 +25,7 @@ export default function CollectionContainer({
         {cards && (
           <CollectionMenu deleteCollection={deleteCollection} id={id} />
         )}
-        <CollectionLink href={`/collections/${id}`}>
+        <CollectionLink href={`/collections/${id}?ismastered=${isMastered}`}>
           <StyledWrapper>
             <StyledCollectionName>{name}</StyledCollectionName>
 
