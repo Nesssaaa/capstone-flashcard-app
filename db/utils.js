@@ -33,8 +33,8 @@ export function dbToCard({
     question,
     answer,
     isMastered,
-    level,
-    timestamp,
+    level: level || 1,
+    timestamp: timestamp || new Date(),
   };
 }
 
