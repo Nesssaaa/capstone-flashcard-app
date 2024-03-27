@@ -1,4 +1,4 @@
-import CardList from "../../components/CardList/CardList.js";
+import CardList from "@/components/CardList/CardList";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import Link from "next/link";
