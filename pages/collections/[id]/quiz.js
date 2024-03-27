@@ -46,6 +46,7 @@ export default function QuizPage({
         deleteCard={deleteCard}
         onToggle={onToggle}
         isMastered={card.isMastered}
+        level={card.level}
       ></CardContainer>
 
       <StyledSection>

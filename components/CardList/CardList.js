@@ -13,6 +13,7 @@ export default function CardList({ cards, deleteCard, onToggle }) {
               id={card.id}
               onToggle={onToggle}
               isMastered={card.isMastered}
+              level={card.level}
             />
           </div>
         ))}
