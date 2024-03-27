@@ -21,7 +21,7 @@ export default function CollectionContainer({
   return (
     <StyledCollectionContainer>
       <StyledColorContainer $color={color} />
-      <StyledTextContainer noCards={!cards}>
+      <StyledTextContainer $noCards={!cards}>
         {cards && (
           <CollectionMenu deleteCollection={deleteCollection} id={id} />
         )}
