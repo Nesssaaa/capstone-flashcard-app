@@ -28,6 +28,10 @@ export default function Form({
       const newCollection = await addCollection({ name: data.newCollection });
       data.collection = newCollection.id;
     }
+
+    // get current level from existing card or assign level 1, if card is new
+    data.level = card.level || 1;
+    console.log(data);
     onSubmit(data);
 
     event.target.reset();
