@@ -32,7 +32,7 @@ export const StyledTextContainer = styled.div`
 export const CollectionLink = styled(Link)`
   text-decoration: none;
 
-  color: black;
+  color: #000000c0;
   transition: color 0.3s;
   cursor: pointer;
   &:hover {
@@ -63,7 +63,7 @@ export const StyledWrapper = styled.div`
 `;
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: black;
+  color: #000000c0;
   align-self: center;
 `;
 export const IconWrapper = styled.div`

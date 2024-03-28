@@ -33,7 +33,9 @@ export default function CollectionContainer({
           </StyledLink>
         ) : (
           <IconWrapper>
-            <FaCheck />
+            <StyledLink href={`/collections/${id}?ismastered=${isMastered}`}>
+              <FaCheck />
+            </StyledLink>
           </IconWrapper>
         )}
       </StyledColorContainer>
