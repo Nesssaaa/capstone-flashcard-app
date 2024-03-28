@@ -28,21 +28,29 @@ export const StyledButtonContainer = styled.div`
 export const StyledNavButton = styled.button`
   border: none;
   background-color: rgba(0, 0, 0, 0);
+  color: var(--color-font-3);
+  font-size: 2.3rem;
+  margin: 15px;
   visibility: ${(props) => (props.$hidden ? "hidden" : "visible")};
 `;
 
 export const StyledQuizButtonRight = styled.button`
   border: none;
+  color: #f07067;
   background-color: rgba(0, 0, 0, 0);
+  font-size: 3rem;
+  padding: 5px;
 `;
 
 export const StyledQuizButtonWrong = styled.button`
   border: none;
+  color: #69bf8d;
   background-color: rgba(0, 0, 0, 0);
+  font-size: 3rem;
+  padding: 5px;
 `;
 
 export const StyledButtonNavBar = styled.div`
-  border: 2px solid green;
   width: auto;
   display: flex;
   margin-top: 0.5rem;
@@ -54,6 +62,4 @@ export const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.3rem;
-  color: var(--color-font-3);
 `;

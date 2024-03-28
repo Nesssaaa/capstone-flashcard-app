@@ -5,7 +5,7 @@ import CardContainer from "@/components/CardContainer/CardContainer.js";
 import { useRouter } from "next/router";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
-import { IoMdRadioButtonOff } from "react-icons/io";
+import { IoRadioButtonOnSharp } from "react-icons/io5";
 import {
   StyledLink,
   StyledContainer,
@@ -64,13 +64,13 @@ export default function QuizPage({
 
           <StyledQuizButtonRight>
             <IconWrapper>
-              <IoMdRadioButtonOff />
+              <IoRadioButtonOnSharp />
             </IconWrapper>
           </StyledQuizButtonRight>
 
           <StyledQuizButtonWrong>
             <IconWrapper>
-              <IoMdRadioButtonOff />
+              <IoRadioButtonOnSharp />
             </IconWrapper>
           </StyledQuizButtonWrong>
 
