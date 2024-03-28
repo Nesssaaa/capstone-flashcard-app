@@ -25,13 +25,24 @@ export const StyledButtonContainer = styled.div`
   justify-content: space-evenly;
 `;
 
-export const StyledButton = styled.button`
+export const StyledNavButton = styled.button`
   border: none;
   background-color: rgba(0, 0, 0, 0);
   visibility: ${(props) => (props.$hidden ? "hidden" : "visible")};
 `;
 
+export const StyledQuizButtonRight = styled.button`
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+`;
+
+export const StyledQuizButtonWrong = styled.button`
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+`;
+
 export const StyledButtonNavBar = styled.div`
+  border: 2px solid green;
   width: auto;
   display: flex;
   margin-top: 0.5rem;

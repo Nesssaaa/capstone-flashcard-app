@@ -5,13 +5,16 @@ import CardContainer from "@/components/CardContainer/CardContainer.js";
 import { useRouter } from "next/router";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
+import { IoMdRadioButtonOff } from "react-icons/io";
 import {
   StyledLink,
   StyledContainer,
   StyledSection,
-  StyledButton,
+  StyledNavButton,
   StyledButtonNavBar,
   IconWrapper,
+  StyledQuizButtonRight,
+  StyledQuizButtonWrong,
 } from "@/components/QuizPage.styled.js";
 import CollectionHeader from "@/components/CollectionHeader/CollectionHeader.js";
 import { StyledHeadlines } from "@/components/Headline.styled";
@@ -53,19 +56,32 @@ export default function QuizPage({
         Fortschritt: {countPosition + 1} von {quizCards.length}
         <br />
         <StyledButtonNavBar>
-          <StyledButton onClick={decrement} $hidden={countPosition === 0}>
+          <StyledNavButton onClick={decrement} $hidden={countPosition === 0}>
             <IconWrapper>
               <FaArrowCircleLeft />
             </IconWrapper>
-          </StyledButton>
-          <StyledButton
+          </StyledNavButton>
+
+          <StyledQuizButtonRight>
+            <IconWrapper>
+              <IoMdRadioButtonOff />
+            </IconWrapper>
+          </StyledQuizButtonRight>
+
+          <StyledQuizButtonWrong>
+            <IconWrapper>
+              <IoMdRadioButtonOff />
+            </IconWrapper>
+          </StyledQuizButtonWrong>
+
+          <StyledNavButton
             onClick={increment}
             $hidden={countPosition === quizCards.length - 1}
           >
             <IconWrapper>
               <FaArrowCircleRight />
             </IconWrapper>
-          </StyledButton>
+          </StyledNavButton>
         </StyledButtonNavBar>
         <StyledLink href={`/collections/${collection.id}`}>
           zurück zur Übersicht
