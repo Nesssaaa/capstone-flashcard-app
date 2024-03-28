@@ -7,7 +7,6 @@ export default function HowToUsePage() {
     <StyledMain>
       {/* <Space /> */}
 
-      <StyledHeadlines>Wie funktioniert die App?</StyledHeadlines>
       <HowToUse />
     </StyledMain>
   );

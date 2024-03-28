@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
-import { StyledButton, StyledImage, StyledNav } from "./HowToUse.styled";
+import {
+  StyledButton,
+  StyledImage,
+  StyledNav,
+  StyledExplainContainer,
+} from "./HowToUse.styled";
+import { StyledLink } from "@/components/HowToUse/HowToUse.styled";
 
 export default function ExplainPictures() {
   const explainPictures = [
@@ -24,7 +30,7 @@ export default function ExplainPictures() {
   };
 
   return (
-    <div>
+    <StyledExplainContainer>
       <StyledImage
         src={explainPictures[currentIndex]}
         alt={`ExplainPicture ${currentIndex + 1}`}
@@ -32,9 +38,25 @@ export default function ExplainPictures() {
         height={550}
       />
       <StyledNav>
-        <StyledButton onClick={handlePreviousClick}>Zurück</StyledButton>
-        <StyledButton onClick={handleNextClick}>Weiter</StyledButton>
+        <StyledButton
+          onClick={handlePreviousClick}
+          $hidden={currentIndex === 0}
+        >
+          Zurück
+        </StyledButton>
+        <StyledButton
+          onClick={handleNextClick}
+          $hidden={currentIndex === explainPictures.length - 1}
+        >
+          Weiter
+        </StyledButton>
       </StyledNav>
-    </div>
+      <StyledButton onClick>
+        {" "}
+        <StyledLink href="/collections">
+          Ansicht verlassen und gleich loslegen
+        </StyledLink>
+      </StyledButton>
+    </StyledExplainContainer>
   );
 }
