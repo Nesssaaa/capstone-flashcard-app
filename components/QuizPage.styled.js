@@ -34,7 +34,7 @@ export const StyledNavButton = styled.button`
   visibility: ${(props) => (props.$hidden ? "hidden" : "visible")};
 `;
 
-export const StyledQuizButtonRight = styled.button`
+export const StyledQuizButtonWrong = styled.button`
   border: none;
   color: #ffa7a1;
   /* color: #f07067; */
@@ -43,7 +43,7 @@ export const StyledQuizButtonRight = styled.button`
   padding: 5px;
 `;
 
-export const StyledQuizButtonWrong = styled.button`
+export const StyledQuizButtonRight = styled.button`
   border: none;
   color: #69bf8d;
   background-color: rgba(0, 0, 0, 0);
