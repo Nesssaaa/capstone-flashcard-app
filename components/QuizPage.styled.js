@@ -36,7 +36,8 @@ export const StyledNavButton = styled.button`
 
 export const StyledQuizButtonRight = styled.button`
   border: none;
-  color: #f07067;
+  color: #ffa7a1;
+  /* color: #f07067; */
   background-color: rgba(0, 0, 0, 0);
   font-size: 3rem;
   padding: 5px;

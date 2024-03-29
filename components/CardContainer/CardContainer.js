@@ -18,6 +18,7 @@ export default function CardContainer({
   onToggle,
   isMastered,
   level,
+  showArchiveButton = true,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -70,6 +71,7 @@ export default function CardContainer({
           deleteCard={deleteCard}
           onToggle={onToggle}
           isMastered={isMastered}
+          showArchiveButton={showArchiveButton}
         />
       </StyledCardContainerAnswer>
     </ReactCardFlip>

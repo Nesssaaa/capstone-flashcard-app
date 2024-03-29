@@ -5,7 +5,7 @@ import CardContainer from "@/components/CardContainer/CardContainer.js";
 import { useRouter } from "next/router";
 import { FaArrowCircleLeft } from "react-icons/fa";
 import { FaArrowCircleRight } from "react-icons/fa";
-import { FaCircle } from "react-icons/fa";
+import { PiSmileyDuotone, PiSmileySadDuotone } from "react-icons/pi";
 import {
   StyledLink,
   StyledContainer,
@@ -50,6 +50,7 @@ export default function QuizPage({
         onToggle={onToggle}
         isMastered={card.isMastered}
         level={card.level}
+        showArchiveButton={false}
       ></CardContainer>
 
       <StyledSection>
@@ -62,17 +63,17 @@ export default function QuizPage({
             </IconWrapper>
           </StyledNavButton>
 
-          <StyledQuizButtonRight>
-            <IconWrapper>
-              <FaCircle />
-            </IconWrapper>
-          </StyledQuizButtonRight>
-
           <StyledQuizButtonWrong>
             <IconWrapper>
-              <FaCircle />
+              <PiSmileyDuotone />
             </IconWrapper>
           </StyledQuizButtonWrong>
+
+          <StyledQuizButtonRight>
+            <IconWrapper>
+              <PiSmileySadDuotone />
+            </IconWrapper>
+          </StyledQuizButtonRight>
 
           <StyledNavButton
             onClick={increment}
