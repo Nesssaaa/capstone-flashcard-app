@@ -32,7 +32,7 @@ export default function CardContainer({
 
   return (
     <ReactCardFlip flipDirection="vertical" isFlipped={isFlipped}>
-      <StyledCardContainerQuestion onClick={flipCard} level={level}>
+      <StyledCardContainerQuestion onClick={flipCard} $level={level}>
         <CardMenu
           onClick={stopMenuPropagation}
           id={id}
@@ -56,7 +56,7 @@ export default function CardContainer({
         )}
       </StyledCardContainerQuestion>
 
-      <StyledCardContainerAnswer onClick={flipCard} level={level}>
+      <StyledCardContainerAnswer onClick={flipCard} $level={level}>
         <CardMenu onClick={stopMenuPropagation} />
         <StyledTextShow
           readOnly

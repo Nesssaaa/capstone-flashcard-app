@@ -26,7 +26,7 @@ export const StyledCardContainerQuestion = styled.div`
   border: 2px var(--color-background-1) solid;
 
   &::before {
-    content: ${({ level }) => `"${level}"`};
+    content: ${({ $level }) => `"${$level}"`};
     position: absolute;
     z-index: -1;
     top: -10px;
@@ -46,7 +46,7 @@ export const StyledCardContainerAnswer = styled.div`
   border: 2px var(--color-background-2) solid;
 
   &::before {
-    content: ${({ level }) => `"${level}"`};
+    content: ${({ $level }) => `"${$level}"`};
     position: absolute;
     z-index: -1;
     top: -2rem;
