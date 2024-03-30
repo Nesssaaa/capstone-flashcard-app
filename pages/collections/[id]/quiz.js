@@ -19,11 +19,13 @@ import {
 import CollectionHeader from "@/components/CollectionHeader/CollectionHeader.js";
 import { StyledHeadlines } from "@/components/Headline.styled";
 import { Space } from "@/components/CollectionNavBar/CollectionNavBar.styled";
+
 export default function QuizPage({
   cards,
   getCollection,
   onToggle,
   deleteCard,
+  updateCard,
 }) {
   const router = useRouter();
   const collection = getCollection(router.query.id);
@@ -33,11 +35,30 @@ export default function QuizPage({
         .filter((card) => card.isMastered === false)
     : [];
 
+  // Note:  We store a SNAPSHOT of the cards as they were at the beginning of the quiz in the state.
+  // Even if the cards are updated in the database through the calls of updateCard, the card's
+  // state in this quiz page remains the state of the card at the beginning of the quiz.
+  // This is intentional, such that the user can, for example, go back to the previous card
+  // and see the same state as before answering the card and can, e.g., correct a mis-click (right or wrong).
+  // The cards are only refreshed when the page is reloaded or a new quiz is started.
   const [quizCards, setQuizCards] = useState(getRandomCards(filteredCards, 15));
   const { countPosition, increment, decrement } = useCount(0);
 
   const card = quizCards[countPosition];
   const collectionName = collection ? collection.name : "lädt gerade...";
+
+  function onClickWrong() {
+    console.log("falsch");
+    const currentCard = quizCards[countPosition];
+    console.log(currentCard);
+    updateCard({ ...currentCard, level: 1, timestamp: new Date() });
+  }
+
+  function onClickRight() {
+    console.log("richtig");
+  }
+
+  console.log("hallo, hier ist die karte", card);
 
   return (
     <StyledContainer>
@@ -63,17 +84,17 @@ export default function QuizPage({
             </IconWrapper>
           </StyledNavButton>
 
-          <StyledQuizButtonWrong>
+          <StyledQuizButtonRight onClick={onClickRight}>
             <IconWrapper>
               <PiSmileyDuotone />
             </IconWrapper>
-          </StyledQuizButtonWrong>
+          </StyledQuizButtonRight>
 
-          <StyledQuizButtonRight>
+          <StyledQuizButtonWrong onClick={onClickWrong}>
             <IconWrapper>
               <PiSmileySadDuotone />
             </IconWrapper>
-          </StyledQuizButtonRight>
+          </StyledQuizButtonWrong>
 
           <StyledNavButton
             onClick={increment}

@@ -169,6 +169,7 @@ export default function App({ Component, pageProps }) {
           collections={collections}
           getCard={getCard}
           addCard={addCard}
+          updateCard={updateCard}
           editCard={editCard}
           deleteCard={deleteCard}
           onToggle={handleToggleMastered}
