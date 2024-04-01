@@ -34,6 +34,14 @@ export default function QuizPage({
     ? cards
         .filter((card) => card.collection === collection.id)
         .filter((card) => card.isMastered === false)
+        .sort((card1, card2) => {
+          if (card1.level < card2.level) return -1;
+          if (card1.level > card2.level) return 1;
+          if (card1.timestamp < card2.timestamp) return -1;
+          if (card1.timestamp > card2.timestamp) return 1;
+          return 0;
+        })
+        .slice(0, 15)
     : [];
 
   // Note:  We store a SNAPSHOT of the cards as they were at the beginning of the quiz in the state.
