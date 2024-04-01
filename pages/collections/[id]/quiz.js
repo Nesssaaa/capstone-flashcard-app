@@ -81,8 +81,6 @@ export default function QuizPage({
     continueQuiz();
   }
 
-  console.log("hallo, hier ist die karte", card);
-
   return (
     <StyledContainer>
       <CollectionHeader name={collectionName} />

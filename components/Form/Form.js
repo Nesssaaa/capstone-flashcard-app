@@ -31,9 +31,7 @@ export default function Form({
 
     // get current level from existing card or assign level 1, if card is new
     data.level = card.level || 1;
-    console.log("vor submit", data);
     onSubmit(data);
-    console.log("nach submit", data);
 
     event.target.reset();
     setShowNewCollection(false);
