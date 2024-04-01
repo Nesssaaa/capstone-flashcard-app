@@ -16,13 +16,15 @@ export default function EditPage({
   const router = useRouter();
   const card = getCard(router.query.id);
 
+  const isMastered = router.query["ismastered"] === "true";
+
   if (!card) {
     return "Error";
   }
 
   function onSubmit(data) {
     editCard({ ...data, id: card.id });
-    router.push(`/`);
+    router.push(`/collections/${card.collection}?ismastered=${isMastered}`);
   }
 
   return (
