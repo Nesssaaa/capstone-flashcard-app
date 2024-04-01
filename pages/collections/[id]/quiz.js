@@ -19,6 +19,7 @@ import {
 import CollectionHeader from "@/components/CollectionHeader/CollectionHeader.js";
 import { StyledHeadlines } from "@/components/Headline.styled";
 import { Space } from "@/components/CollectionNavBar/CollectionNavBar.styled";
+import { toast } from "react-toastify";
 
 export default function QuizPage({
   cards,
@@ -47,15 +48,29 @@ export default function QuizPage({
   const card = quizCards[countPosition];
   const collectionName = collection ? collection.name : "lädt gerade...";
 
+  const currentCard = quizCards[countPosition];
+
+  function continueQuiz() {
+    if (countPosition < quizCards.length - 1) {
+      increment();
+    } else {
+      toast("Geschafft!");
+    }
+  }
+
   function onClickWrong() {
-    console.log("falsch");
-    const currentCard = quizCards[countPosition];
-    console.log(currentCard);
     updateCard({ ...currentCard, level: 1, timestamp: new Date() });
+    continueQuiz();
   }
 
   function onClickRight() {
-    console.log("richtig");
+    updateCard({
+      ...currentCard,
+      level: Math.min(5, currentCard.level + 1),
+      isMastered: currentCard.level === 5,
+      timestamp: new Date(),
+    });
+    continueQuiz();
   }
 
   console.log("hallo, hier ist die karte", card);
