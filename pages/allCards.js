@@ -2,12 +2,13 @@ import CardList from "../components/CardList/CardList";
 import Navigation from "../components/Navigation/Navigation";
 
 export default function AllCardsPage({ cards, deleteCard, onToggle }) {
-  const filteredCards = cards.filter((card) => card.isMastered === false);
+  // const filteredCards = cards.filter((card) => card.isMastered === false);
   return (
     <>
       <div>
         <CardList
-          cards={filteredCards}
+          // cards={filteredCards}
+          cards={cards}
           deleteCard={deleteCard}
           onToggle={onToggle}
         />
