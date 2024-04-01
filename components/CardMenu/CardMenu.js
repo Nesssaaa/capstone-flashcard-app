@@ -13,7 +13,7 @@ import {
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
-export default function CardMenu({ id, deleteCard }) {
+export default function CardMenu({ id, deleteCard, isMastered }) {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
@@ -38,7 +38,7 @@ export default function CardMenu({ id, deleteCard }) {
   }
 
   function onEdit() {
-    router.push(`/cards/${id}/edit`);
+    router.push(`/cards/${id}/edit?ismastered=${isMastered}`);
     setIsMenuOpen(false);
   }
 

@@ -34,6 +34,7 @@ export default function CardContainer({
           onClick={stopMenuPropagation}
           id={id}
           deleteCard={deleteCard}
+          isMastered={isMastered}
         />
         <StyledTextShow
           readOnly
@@ -54,7 +55,7 @@ export default function CardContainer({
       </StyledCardContainerQuestion>
 
       <StyledCardContainerAnswer onClick={flipCard}>
-        <CardMenu onClick={stopMenuPropagation} />
+        <CardMenu onClick={stopMenuPropagation} isMastered={isMastered} />
         <StyledTextShow
           readOnly
           textLength={answer}
