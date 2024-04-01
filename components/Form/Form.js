@@ -58,6 +58,7 @@ export default function Form({
         Wähle einen passenden Kartenstapel
         <Select
           name="collection"
+          required
           defaultValue={card.collection || ""}
           onChange={handleCollectionChange}
         >
@@ -76,7 +77,14 @@ export default function Form({
           </optgroup>
         </Select>
       </StyledLabel>
-      {showNewCollection && <input name="newCollection" required />}
+      {showNewCollection && (
+        <>
+          <StyledLabel>
+            Name des neuen Kartenstapels
+            <input name="newCollection" required />
+          </StyledLabel>
+        </>
+      )}
       <StyledLabel>
         Vorderseite
         <StyledInput
