@@ -19,7 +19,6 @@ export const Space = styled.div`
 
 export const StyledButton = styled.button`
   background-color: #db780de3;
-
   padding: 0.8rem 1.2rem;
   font-size: 1rem;
   border: none;

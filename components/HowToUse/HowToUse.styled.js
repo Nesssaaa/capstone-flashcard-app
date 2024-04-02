@@ -8,7 +8,7 @@ export const StyledImage = styled(Image)`
 `;
 
 export const StyledButton = styled.button`
-  background-color: #db780de3;
+  background-color: var(--color-fox);
   color: white;
   padding: 0.8rem 1.2rem;
   font-size: 1rem;
@@ -26,9 +26,14 @@ export const StyledNav = styled.nav`
 `;
 
 export const StyledLink = styled(Link)`
-  color: white;
-
   text-decoration: none;
+  background-color: var(--color-fox);
+  color: white;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  margin: 1.7rem 0.5rem 0.3rem 0.5rem;
 `;
 
 export const StyledExplainContainer = styled.div`

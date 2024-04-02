@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-
+import { useState } from "react";
+import { explainPictures } from "./ExplainPicturesArray";
 import {
   StyledButton,
   StyledImage,
@@ -9,12 +9,6 @@ import {
 import { StyledLink } from "@/components/HowToUse/HowToUse.styled";
 
 export default function ExplainPictures() {
-  const explainPictures = [
-    "/Explain_Collection.png",
-    "/Explain_CreateForm.png",
-    "/Explain_Archiv.png",
-  ];
-
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handleNextClick = () => {
@@ -51,12 +45,9 @@ export default function ExplainPictures() {
           Weiter
         </StyledButton>
       </StyledNav>
-      <StyledButton onClick>
-        {" "}
-        <StyledLink href="/collections">
-          Ansicht verlassen und gleich loslegen
-        </StyledLink>
-      </StyledButton>
+      <StyledLink href="/collections">
+        Ansicht verlassen und gleich loslegen
+      </StyledLink>
     </StyledExplainContainer>
   );
 }
