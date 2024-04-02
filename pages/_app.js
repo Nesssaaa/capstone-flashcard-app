@@ -156,6 +156,14 @@ export default function App({ Component, pageProps }) {
       }
     });
   }
+
+  const disableLayout = pageProps.disableLayout || false;
+
+  // Wenn disableLayout true ist, render Layout nicht
+  if (disableLayout) {
+    return <Component {...pageProps} />;
+  }
+
   return (
     <>
       <Head>

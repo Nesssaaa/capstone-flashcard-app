@@ -39,7 +39,7 @@ export default function CollectionContainer({
           </IconWrapper>
         )}
       </StyledColorContainer>
-      <StyledTextContainer noCards={!cards}>
+      <StyledTextContainer $noCards={!cards}>
         {cards && (
           <CollectionMenu deleteCollection={deleteCollection} id={id} />
         )}
