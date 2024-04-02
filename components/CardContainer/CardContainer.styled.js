@@ -26,14 +26,15 @@ export const StyledCardContainerQuestion = styled.div`
   border: 2px var(--color-background-1) solid;
 
   &::before {
-    content: ${({ $level }) => `"${$level}"`};
+    content: ${({ $level }) => `"lvl ${$level}"`};
     position: absolute;
     z-index: -1;
-    top: -10px;
+    bottom: 1.7rem;
+    left: 0.7rem;
     font-weight: bold;
-    font-size: 22rem;
+    font-size: 2rem;
     color: var(--color-fox);
-    opacity: 0.2;
+    opacity: 0.3;
     padding: 0.5rem;
   }
 `;
@@ -46,14 +47,15 @@ export const StyledCardContainerAnswer = styled.div`
   border: 2px var(--color-background-2) solid;
 
   &::before {
-    content: ${({ $level }) => `"${$level}"`};
+    content: ${({ $level }) => `"lvl ${$level}"`};
     position: absolute;
     z-index: -1;
-    top: -2rem;
-    font-size: 20rem;
+    bottom: 1.7rem;
+    left: 0.7rem;
+    font-size: 2rem;
     font-weight: bold;
     color: var(--color-fox);
-    opacity: 0.2;
+    opacity: 0.3;
     padding: 0.5rem;
   }
 `;
