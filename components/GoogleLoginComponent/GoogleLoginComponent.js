@@ -1,4 +1,4 @@
-import { GoogleLogin } from "react-google-login";
+import { GoogleLogin } from "@react-oauth/google";
 
 export default function GoogleLoginComponent({ onSuccess, onFailure }) {
   const clientId =
@@ -6,11 +6,13 @@ export default function GoogleLoginComponent({ onSuccess, onFailure }) {
 
   return (
     <GoogleLogin
-      clientId={clientId}
-      buttonText="Mit Google anmelden"
-      onSuccess={onSuccess}
-      onFailure={onFailure}
-      cookiePolicy={"single_host_origin"}
+      onSuccess={(credentialResponse) => {
+        console.log(credentialResponse);
+      }}
+      onError={() => {
+        console.log("Login Failed");
+      }}
+      useOneTap
     />
   );
 }

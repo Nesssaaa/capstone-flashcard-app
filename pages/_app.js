@@ -7,6 +7,7 @@ import useSWR from "swr";
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
 import { useEffect, useState } from "react";
 import { SessionProvider } from "next-auth/react";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
@@ -158,37 +159,39 @@ export default function App({ Component, pageProps }) {
     });
   }
   return (
-    <SessionProvider session={pageProps.session}>
-      <Head>
-        <title>SchlauFuchs</title>
-      </Head>
-      <Layout>
-        <GlobalStyle />
-        <Component
-          cards={cards}
-          collections={collections}
-          getCard={getCard}
-          addCard={addCard}
-          editCard={editCard}
-          deleteCard={deleteCard}
-          onToggle={handleToggleMastered}
-          getCollection={getCollection}
-          addCollection={addCollection}
-          deleteCollection={deleteCollection}
-          editCollection={editCollection}
-          {...pageProps}
-        />
-        <ToastContainer
-          position="top-center"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          draggable
-          theme="light"
-        />
-      </Layout>
+    <SessionProvider {...pageProps}>
+      <GoogleOAuthProvider clientId="164811712266-gpi1skgmt79vl9h0msclu5jhphn3a4bt.apps.googleusercontent.com">
+        <Head>
+          <title>SchlauFuchs</title>
+        </Head>
+        <Layout>
+          <GlobalStyle />
+          <Component
+            cards={cards}
+            collections={collections}
+            getCard={getCard}
+            addCard={addCard}
+            editCard={editCard}
+            deleteCard={deleteCard}
+            onToggle={handleToggleMastered}
+            getCollection={getCollection}
+            addCollection={addCollection}
+            deleteCollection={deleteCollection}
+            editCollection={editCollection}
+            {...pageProps}
+          />
+          <ToastContainer
+            position="top-center"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            draggable
+            theme="light"
+          />
+        </Layout>
+      </GoogleOAuthProvider>
     </SessionProvider>
   );
 }
