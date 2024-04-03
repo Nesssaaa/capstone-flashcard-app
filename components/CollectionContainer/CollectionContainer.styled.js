@@ -10,6 +10,7 @@ export const StyledCollectionContainer = styled.div`
 `;
 
 export const StyledColorContainer = styled.div`
+  display: flex;
   border-radius: 15px 0px 0px 15px;
   background-color: ${(props) => props.$color};
   width: 25%;
@@ -30,7 +31,7 @@ export const StyledTextContainer = styled.div`
 export const CollectionLink = styled(Link)`
   text-decoration: none;
 
-  color: black;
+  color: #000000c0;
   transition: color 0.3s;
   cursor: pointer;
   &:hover {
@@ -59,10 +60,29 @@ export const StyledWrapper = styled.div`
     flex-direction: column;
   }
 `;
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #000000c0;
+  align-self: center;
+`;
+export const IconWrapper = styled.div`
+  display: flex;
+  font-size: 2.8rem;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+
+  @media screen and (max-width: 414px) {
+    font-size: 2rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+`;
 
 export const StyledCounter = styled.p`
   margin-top: 0;
-  margin-bottom: 2.2rem;
+  margin-bottom: 1.5rem;
   min-width: 10%;
   border-radius: 20px 20px;
   border: 2px solid darkgray;

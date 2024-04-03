@@ -37,6 +37,7 @@ export default function CardContainer({
           onClick={stopMenuPropagation}
           id={id}
           deleteCard={deleteCard}
+          isMastered={isMastered}
         />
         <StyledTextShow
           readOnly
@@ -56,8 +57,9 @@ export default function CardContainer({
         )}
       </StyledCardContainerQuestion>
 
-      <StyledCardContainerAnswer onClick={flipCard} $level={level}>
+      <StyledCardContainerAnswer onClick={flipCard} $level={level} isMastered={isMastered}>
         <CardMenu onClick={stopMenuPropagation} />
+
         <StyledTextShow
           readOnly
           textLength={answer}

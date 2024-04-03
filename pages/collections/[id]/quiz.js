@@ -44,17 +44,23 @@ export default function QuizPage({
         .slice(0, 15)
     : [];
 
+    if (!filteredCards || filteredCards.length === 0) {
+    return <h2>Dieser Kartenstapel enthält noch keine Karten.</h2>;
+  }
+  
   // Note:  We store a SNAPSHOT of the cards as they were at the beginning of the quiz in the state.
   // Even if the cards are updated in the database through the calls of updateCard, the card's
   // state in this quiz page remains the state of the card at the beginning of the quiz.
   // This is intentional, such that the user can, for example, go back to the previous card
   // and see the same state as before answering the card and can, e.g., correct a mis-click (right or wrong).
   // The cards are only refreshed when the page is reloaded or a new quiz is started.
+  
   const [quizCards, setQuizCards] = useState(getRandomCards(filteredCards, 15));
   const { countPosition, increment, decrement } = useCount(0);
 
   const card = quizCards[countPosition];
   const collectionName = collection ? collection.name : "lädt gerade...";
+
 
   const currentCard = quizCards[countPosition];
 
