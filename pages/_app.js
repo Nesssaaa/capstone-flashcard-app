@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import useSWR from "swr";
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
 import { useEffect, useState } from "react";
+import { SessionProvider } from "next-auth/react";
 
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
@@ -157,13 +158,12 @@ export default function App({ Component, pageProps }) {
     });
   }
   return (
-    <>
+    <SessionProvider session={pageProps.session}>
       <Head>
         <title>SchlauFuchs</title>
       </Head>
       <Layout>
         <GlobalStyle />
-
         <Component
           cards={cards}
           collections={collections}
@@ -189,6 +189,6 @@ export default function App({ Component, pageProps }) {
           theme="light"
         />
       </Layout>
-    </>
+    </SessionProvider>
   );
 }

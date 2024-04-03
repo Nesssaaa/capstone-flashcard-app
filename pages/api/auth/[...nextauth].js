@@ -1,5 +1,5 @@
 import NextAuth from "next-auth";
-import GithubProvider from "next-auth/providers/github";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@/db/models/User";
 
@@ -7,9 +7,9 @@ export default NextAuth({
   // Configure one or more authentication providers
 
   providers: [
-    GithubProvider({
-      clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET,
+    GoogleOAuthProvider({
+      clientId: process.env.GOOGLE_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
     }),
     CredentialsProvider({
       name: "credentials",
@@ -32,4 +32,22 @@ export default NextAuth({
       },
     }),
   ],
+  adapter: MongoDBAdapter(clientPromise),
+
+  // callbacks: {
+  //   async session({ session, user }) {
+  //     dbConnect();
+
+  //     const currentUser = await User.findById(user.id);
+
+  //     if (currentUser.favoritePonies == null) {
+  //       currentUser.favoritePonies = [];
+
+  //       currentUser.save();
+  //     }
+
+  //     return { ...session, user: { ...session.user, id: user.id } };
+  //   },
+  // },
+  // TODO: add callbacks
 });
