@@ -20,16 +20,44 @@ const BaseCardStyle = `
 
 export const StyledCardContainerQuestion = styled.div`
   ${BaseCardStyle}
+  position: relative;
   background-color: white /*conic-gradient (var(--color-card-1),*/;
   box-shadow: 1px 1px 6px 1px var(--color-font-3);
   border: 2px var(--color-background-1) solid;
+
+  &::before {
+    content: ${({ $level }) => `"lvl ${$level}"`};
+    position: absolute;
+    z-index: -1;
+    bottom: 1.7rem;
+    left: 0.7rem;
+    font-weight: bold;
+    font-size: 2rem;
+    color: var(--color-fox);
+    opacity: 0.3;
+    padding: 0.5rem;
+  }
 `;
 
 export const StyledCardContainerAnswer = styled.div`
   ${BaseCardStyle}
+  position: relative;
   background-color: var(--color-card-1);
   box-shadow: 2px 2px 8px 3px var(--color-fox);
   border: 2px var(--color-background-2) solid;
+
+  &::before {
+    content: ${({ $level }) => `"lvl ${$level}"`};
+    position: absolute;
+    z-index: -1;
+    bottom: 1.7rem;
+    left: 0.7rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color-fox);
+    opacity: 0.3;
+    padding: 0.5rem;
+  }
 `;
 
 export const StyledTextShow = styled.textarea`
@@ -49,6 +77,9 @@ export const StyledTextShow = styled.textarea`
 `;
 
 export const IconWrapper = styled.div`
+  position: absolute;
+  bottom: 32px;
+  right: 14px;
   font-size: 2.3rem;
   color: var(--color-font-3);
   opacity: 0.8;

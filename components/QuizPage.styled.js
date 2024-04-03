@@ -25,17 +25,35 @@ export const StyledButtonContainer = styled.div`
   justify-content: space-evenly;
 `;
 
-export const StyledButton = styled.button`
+export const StyledNavButton = styled.button`
   border: none;
   background-color: rgba(0, 0, 0, 0);
+  color: var(--color-font-3);
+  font-size: 2.3rem;
+  margin: 15px;
   visibility: ${(props) => (props.$hidden ? "hidden" : "visible")};
+`;
+
+export const StyledQuizButtonWrong = styled.button`
+  border: none;
+  color: #ffa7a1;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 3rem;
+  padding: 5px;
+`;
+
+export const StyledQuizButtonRight = styled.button`
+  border: none;
+  color: #69bf8d;
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 3rem;
+  padding: 5px;
 `;
 
 export const StyledButtonNavBar = styled.div`
   width: auto;
   display: flex;
   margin-top: 0.5rem;
-  margin-bottom: 0rem;
   gap: 2rem;
   justify-content: center;
 `;
@@ -43,6 +61,4 @@ export const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2.3rem;
-  color: var(--color-font-3);
 `;

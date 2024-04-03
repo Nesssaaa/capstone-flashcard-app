@@ -8,6 +8,8 @@ const cardSchema = new Schema({
   answer: { type: String, required: true },
   isMastered: { type: Boolean, required: true, default: false },
   deck: { type: Schema.Types.ObjectId, required: true, ref: "Deck" },
+  level: { type: Number, required: true },
+  timestamp: { type: Date, required: true, default: Date.now },
 });
 
 const Card = mongoose.models.Card || mongoose.model("Card", cardSchema);

@@ -9,6 +9,7 @@ import { MdTouchApp } from "react-icons/md";
 import { useState } from "react";
 import ButtonNavBar from "../ButtonNavBar/ButtonNavBar";
 import CardMenu from "../CardMenu/CardMenu";
+
 export default function CardContainer({
   question,
   answer,
@@ -16,6 +17,8 @@ export default function CardContainer({
   deleteCard,
   onToggle,
   isMastered,
+  level,
+  showArchiveButton = true,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -29,7 +32,7 @@ export default function CardContainer({
 
   return (
     <ReactCardFlip flipDirection="vertical" isFlipped={isFlipped}>
-      <StyledCardContainerQuestion onClick={flipCard}>
+      <StyledCardContainerQuestion onClick={flipCard} $level={level}>
         <CardMenu
           onClick={stopMenuPropagation}
           id={id}
@@ -54,8 +57,9 @@ export default function CardContainer({
         )}
       </StyledCardContainerQuestion>
 
-      <StyledCardContainerAnswer onClick={flipCard}>
-        <CardMenu onClick={stopMenuPropagation} isMastered={isMastered} />
+      <StyledCardContainerAnswer onClick={flipCard} $level={level} isMastered={isMastered}>
+        <CardMenu onClick={stopMenuPropagation} />
+
         <StyledTextShow
           readOnly
           textLength={answer}
@@ -69,6 +73,7 @@ export default function CardContainer({
           deleteCard={deleteCard}
           onToggle={onToggle}
           isMastered={isMastered}
+          showArchiveButton={showArchiveButton}
         />
       </StyledCardContainerAnswer>
     </ReactCardFlip>

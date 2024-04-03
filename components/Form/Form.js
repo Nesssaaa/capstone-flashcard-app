@@ -28,6 +28,9 @@ export default function Form({
       const newCollection = await addCollection({ name: data.newCollection });
       data.collection = newCollection.id;
     }
+
+    // get current level from existing card or assign level 1, if card is new
+    data.level = card.level || 1;
     onSubmit(data);
 
     event.target.reset();
@@ -53,6 +56,7 @@ export default function Form({
         Wähle einen passenden Kartenstapel
         <Select
           name="collection"
+          required
           defaultValue={card.collection || ""}
           onChange={handleCollectionChange}
         >
@@ -71,7 +75,14 @@ export default function Form({
           </optgroup>
         </Select>
       </StyledLabel>
-      {showNewCollection && <input name="newCollection" required />}
+      {showNewCollection && (
+        <>
+          <StyledLabel>
+            Name des neuen Kartenstapels
+            <input name="newCollection" required />
+          </StyledLabel>
+        </>
+      )}
       <StyledLabel>
         Vorderseite
         <StyledInput

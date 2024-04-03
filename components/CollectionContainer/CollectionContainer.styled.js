@@ -5,8 +5,7 @@ export const StyledCollectionContainer = styled.div`
   display: flex;
   border: 2px solid darkgray;
   border-radius: 20px;
-  min-width: 75%;
-  max-width: 75%;
+  width: 75%;
   flex: 1;
 `;
 
