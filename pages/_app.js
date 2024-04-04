@@ -5,10 +5,15 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useSWR from "swr";
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
+import { SessionProvider } from "next-auth/react";
+import LoginButton from "@/components/LoginButton/LoginButton";
 
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
-export default function App({ Component, pageProps }) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
   const {
     data: cards,
     isLoading: isLoadingCards,
@@ -167,7 +172,7 @@ export default function App({ Component, pageProps }) {
   }
 
   return (
-    <>
+    <SessionProvider session={session}>
       <Head>
         <title>SchlauFuchs</title>
       </Head>
@@ -200,6 +205,6 @@ export default function App({ Component, pageProps }) {
           theme="light"
         />
       </Layout>
-    </>
+    </SessionProvider>
   );
 }

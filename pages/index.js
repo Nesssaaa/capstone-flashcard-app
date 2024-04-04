@@ -9,6 +9,7 @@ import {
   StyledWelcome,
 } from "@/components/WelcomePage.styled";
 import { StyledButton } from "@/components/WelcomePage.styled";
+import LoginButton from "@/components/LoginButton/LoginButton";
 
 export default function HomePage() {
   return (
@@ -32,6 +33,7 @@ export default function HomePage() {
             und lernen!
           </StyledLink>
         </StyledButton>
+        <LoginButton />
       </nav>
     </StyledMain>
   );
