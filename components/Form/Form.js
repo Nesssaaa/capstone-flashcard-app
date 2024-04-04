@@ -9,6 +9,7 @@ import {
 
 import { MdOutlineSaveAlt } from "react-icons/md";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Form({
   onSubmit,
@@ -16,9 +17,13 @@ export default function Form({
   card = {},
   addCollection,
 }) {
+  const router = useRouter();
   const [questionText, setQuestionText] = useState("");
   const [answerText, setAnswerText] = useState("");
   const [showNewCollection, setShowNewCollection] = useState(false);
+  const [collectionId, setCollectionId] = useState(
+    card.collection || router.query["collection"] || ""
+  );
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -34,7 +39,9 @@ export default function Form({
     onSubmit(data);
 
     event.target.reset();
+    setCollectionId(data.collection);
     setShowNewCollection(false);
+
     event.target.elements.question.focus();
   }
 
@@ -48,6 +55,7 @@ export default function Form({
 
   function handleCollectionChange(event) {
     setShowNewCollection(event.target.value === "__NEW__");
+    setCollectionId(event.target.value);
   }
 
   return (
@@ -57,7 +65,7 @@ export default function Form({
         <Select
           name="collection"
           required
-          defaultValue={card.collection || ""}
+          value={collectionId}
           onChange={handleCollectionChange}
         >
           <option disabled value="">

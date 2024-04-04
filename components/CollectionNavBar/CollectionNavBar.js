@@ -26,7 +26,7 @@ export default function CollectionNavbar({ id }) {
           </StyledListItem>
 
           <StyledListItem>
-            <StyledLink href={`/create`}>
+            <StyledLink href={`/create?collection=${id}`}>
               <IconWrapper>
                 <MdOutlineAddCircleOutline />
               </IconWrapper>
