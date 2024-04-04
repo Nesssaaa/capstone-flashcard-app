@@ -57,7 +57,7 @@ export default function CollectionCardList({
           onToggle={onToggle}
         />
       )}
-      <FActionButton>jeweiliges Icon</FActionButton>
+      {!isMastered && <FActionButton>jeweiliges Icon</FActionButton>}
       <CollectionNavbar collection={collection} />
     </>
   );
