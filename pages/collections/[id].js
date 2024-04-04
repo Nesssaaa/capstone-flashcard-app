@@ -45,7 +45,7 @@ export default function CollectionCardList({
   return (
     <h1>
       <StyledContainer>
-        {isMastered && <CollectionHeader name={`Archiv: ${collection.name}`} />}
+        {isMastered && <CollectionHeader name={`${collection.name}-Archiv`} />}
         {!isMastered && <CollectionHeader name={collection.name} />}
       </StyledContainer>
       {!filteredCards.length ? (
