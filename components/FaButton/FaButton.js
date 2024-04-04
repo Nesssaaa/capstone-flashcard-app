@@ -2,9 +2,9 @@
 
 import { FAButton, IconWrapper } from "./FaButton.styled";
 
-export default function FActionButton({ children }) {
+export default function FActionButton({ children, onClick }) {
   return (
-    <FAButton>
+    <FAButton onClick={onClick}>
       <IconWrapper>{children}</IconWrapper>
     </FAButton>
   );

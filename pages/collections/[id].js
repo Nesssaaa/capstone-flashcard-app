@@ -6,6 +6,7 @@ import Link from "next/link";
 import CollectionHeader from "@/components/CollectionHeader/CollectionHeader.js";
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner.js";
 import FActionButton from "@/components/FaButton/FaButton.js";
+import { MdQuiz } from "react-icons/md";
 
 export const StyledContainer = styled.div`
   text-align: center;
@@ -37,6 +38,10 @@ export default function CollectionCardList({
         .filter((card) => card.isMastered === isMastered)
     : [];
 
+  function handleQuizClick() {
+    router.push(`/collections/${collection.id}/quiz`);
+  }
+
   return (
     <>
       <StyledContainer>
@@ -57,7 +62,11 @@ export default function CollectionCardList({
           onToggle={onToggle}
         />
       )}
-      {!isMastered && <FActionButton>jeweiliges Icon</FActionButton>}
+      {!isMastered && (
+        <FActionButton onClick={handleQuizClick}>
+          <MdQuiz />
+        </FActionButton>
+      )}
       <CollectionNavbar collection={collection} />
     </>
   );
