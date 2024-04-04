@@ -57,7 +57,7 @@ export default function CardContainer({
         )}
       </StyledCardContainerQuestion>
 
-      <StyledCardContainerAnswer onClick={flipCard} $level={level} isMastered={isMastered}>
+      <StyledCardContainerAnswer onClick={flipCard} $level={level}>
         <CardMenu onClick={stopMenuPropagation} />
 
         <StyledTextShow
