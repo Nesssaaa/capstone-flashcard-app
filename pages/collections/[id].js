@@ -5,6 +5,7 @@ import CollectionNavbar from "@/components/CollectionNavBar/CollectionNavBar.js"
 import Link from "next/link";
 import CollectionHeader from "@/components/CollectionHeader/CollectionHeader.js";
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner.js";
+import FActionButton from "@/components/FaButton/FaButton.js";
 
 export const StyledContainer = styled.div`
   text-align: center;
@@ -56,6 +57,7 @@ export default function CollectionCardList({
           onToggle={onToggle}
         />
       )}
+      <FActionButton>jeweiliges Icon</FActionButton>
       <CollectionNavbar collection={collection} />
     </>
   );
