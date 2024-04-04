@@ -48,7 +48,7 @@ export default function CollectionCardList({
         {isMastered && <CollectionHeader name={`${collection.name}-Archiv`} />}
         {!isMastered && <CollectionHeader name={collection.name} />}
       </StyledContainer>
-      {!filteredCards.length ? (
+      {!isMastered && !filteredCards.length ? (
         <StyledContainer>
           <p>Dein Kartenstapel ist noch leer.</p>
           <br />
@@ -70,7 +70,7 @@ export default function CollectionCardList({
           <MdQuiz />
         </FActionButton>
       )}
-      <CollectionNavbar collection={collection} />
+      <CollectionNavbar id={collection.id} />
     </h1>
   );
 }
