@@ -8,9 +8,10 @@ import {
 } from "./CollectionNavBar.styled";
 
 import { BsCollectionFill } from "react-icons/bs";
-import { MdQuiz } from "react-icons/md";
+import { RiArchive2Fill } from "react-icons/ri";
+import { MdOutlineAddCircleOutline, MdDone } from "react-icons/md";
 
-export default function CollectionNavbar({ collection }) {
+export default function CollectionNavbar({ id }) {
   return (
     <>
       <Space />
@@ -25,9 +26,17 @@ export default function CollectionNavbar({ collection }) {
           </StyledListItem>
 
           <StyledListItem>
-            <StyledLink href={`/collections/${collection.id}/quiz`}>
+            <StyledLink href={`/create`}>
               <IconWrapper>
-                <MdQuiz />
+                <MdOutlineAddCircleOutline />
+              </IconWrapper>
+            </StyledLink>
+          </StyledListItem>
+
+          <StyledListItem>
+            <StyledLink href={`/collections/${id}?ismastered=true`}>
+              <IconWrapper>
+                <RiArchive2Fill />
               </IconWrapper>
             </StyledLink>
           </StyledListItem>
