@@ -43,9 +43,10 @@ export default function CollectionCardList({
   }
 
   return (
-    <>
+    <h1>
       <StyledContainer>
-        <CollectionHeader name={collection.name} />
+        {isMastered && <CollectionHeader name={`Archiv: ${collection.name}`} />}
+        {!isMastered && <CollectionHeader name={collection.name} />}
       </StyledContainer>
       {!filteredCards.length ? (
         <StyledContainer>
@@ -56,11 +57,13 @@ export default function CollectionCardList({
           </p>
         </StyledContainer>
       ) : (
-        <CardList
-          cards={filteredCards}
-          deleteCard={deleteCard}
-          onToggle={onToggle}
-        />
+        <>
+          <CardList
+            cards={filteredCards}
+            deleteCard={deleteCard}
+            onToggle={onToggle}
+          />
+        </>
       )}
       {!isMastered && (
         <FActionButton onClick={handleQuizClick}>
@@ -68,6 +71,6 @@ export default function CollectionCardList({
         </FActionButton>
       )}
       <CollectionNavbar collection={collection} />
-    </>
+    </h1>
   );
 }

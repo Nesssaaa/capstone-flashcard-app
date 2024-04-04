@@ -13,7 +13,7 @@ export default function ArchivesPage({ cards, collections, deleteCollection }) {
 
   return (
     <>
-      <StyledHeadlines>Das kann ich schon!</StyledHeadlines>
+      <StyledHeadlines>Dein Archiv</StyledHeadlines>
       {!filteredCards.length ? (
         <StyledText>Dein Archiv ist noch leer.</StyledText>
       ) : (
