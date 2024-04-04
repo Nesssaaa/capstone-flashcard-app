@@ -2,6 +2,7 @@ import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@/db/models/User";
+import { dbToUser } from "@/db/utils";
 
 export default NextAuth({
   // Configure one or more authentication providers
@@ -18,7 +19,11 @@ export default NextAuth({
       },
       async authorize(credentials) {
         // this is only here in order to make it easier for people to test the application
-        const testUser = await User.findOne({ email: "testuser@example.com" });
+        const testUser = dbToUser(
+          await User.findOne({ name: credentials.username })
+        );
+        console.log(testUser);
+        console.log(process.env);
 
         if (
           credentials.username === "fuchs" &&

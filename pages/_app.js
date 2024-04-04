@@ -172,39 +172,41 @@ export default function App({
   }
 
   return (
-    <SessionProvider session={session}>
-      <Head>
-        <title>SchlauFuchs</title>
-      </Head>
-      <Layout>
-        <GlobalStyle />
+    <>
+      <SessionProvider session={session}>
+        <Head>
+          <title>SchlauFuchs</title>
+        </Head>
+        <Layout>
+          <GlobalStyle />
 
-        <Component
-          cards={cards}
-          collections={collections}
-          getCard={getCard}
-          addCard={addCard}
-          updateCard={updateCard}
-          editCard={editCard}
-          deleteCard={deleteCard}
-          onToggle={handleToggleMastered}
-          getCollection={getCollection}
-          addCollection={addCollection}
-          deleteCollection={deleteCollection}
-          editCollection={editCollection}
-          {...pageProps}
-        />
-        <ToastContainer
-          position="top-center"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          draggable
-          theme="light"
-        />
-      </Layout>
-    </SessionProvider>
+          <Component
+            cards={cards}
+            collections={collections}
+            getCard={getCard}
+            addCard={addCard}
+            updateCard={updateCard}
+            editCard={editCard}
+            deleteCard={deleteCard}
+            onToggle={handleToggleMastered}
+            getCollection={getCollection}
+            addCollection={addCollection}
+            deleteCollection={deleteCollection}
+            editCollection={editCollection}
+            {...pageProps}
+          />
+          <ToastContainer
+            position="top-center"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            draggable
+            theme="light"
+          />
+        </Layout>
+      </SessionProvider>
+    </>
   );
 }

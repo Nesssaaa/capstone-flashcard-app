@@ -19,7 +19,7 @@ export default async function handler(request, response) {
 
   if (request.method === "GET") {
     let collections = await Deck.find({
-      user: session.user?.name,
+      user: session.user?.id,
     });
 
     return response
@@ -32,7 +32,7 @@ export default async function handler(request, response) {
       const newCollection = await Deck.create(collectionToDb(request.body));
       const collection = new Collection({
         ...newCollection,
-        user: session.user?.name,
+        user: session.user?.id,
       });
 
       return response.status(201).json(dbToCollection(newCollection));

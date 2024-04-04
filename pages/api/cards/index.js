@@ -10,12 +10,13 @@ export default async function handler(request, response) {
   const session = await getServerSession(request, response, authOptions);
 
   if (request.method === "GET") {
+    let cards;
     if (session) {
-      const cards = await Card.find({
-        user: session.user?.name,
+      cards = await Card.find({
+        user: session.user?.id,
       });
     } else {
-      const cards = await Card.find();
+      cards = await Card.find();
       return response.status(200).json(cards);
     }
 
@@ -29,7 +30,7 @@ export default async function handler(request, response) {
   if (request.method === "POST") {
     try {
       const newCard = await Card.create(cardToDb(request.body));
-      const card = new Card({ ...newCard, user: session.user?.name });
+      const card = new Card({ ...newCard, user: session.user?.id });
 
       return response.status(201).json(dbToCard(newCard));
     } catch (error) {
