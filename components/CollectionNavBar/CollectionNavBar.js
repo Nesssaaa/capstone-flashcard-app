@@ -34,7 +34,7 @@ export default function CollectionNavbar({ id }) {
           </StyledListItem>
 
           <StyledListItem>
-            <StyledLink href={`/collections/${id}?ismastered=true`}>
+            <StyledLink href={`/collections/${id}?archive=true`}>
               <IconWrapper>
                 <RiArchive2Fill />
               </IconWrapper>

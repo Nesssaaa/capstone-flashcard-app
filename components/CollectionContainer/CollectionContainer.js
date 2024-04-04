@@ -20,12 +20,12 @@ export default function CollectionContainer({
   color,
   cards,
   deleteCollection,
-  isMastered,
+  archive = false,
 }) {
   return (
     <StyledCollectionContainer>
       <StyledColorContainer $color={color}>
-        {!isMastered ? (
+        {!archive ? (
           <StyledLink href={`/collections/${id}/quiz`}>
             <IconWrapper>
               <MdQuiz />
@@ -33,7 +33,7 @@ export default function CollectionContainer({
           </StyledLink>
         ) : (
           <IconWrapper>
-            <StyledLink href={`/collections/${id}?ismastered=${isMastered}`}>
+            <StyledLink href={`/collections/${id}?archive=${archive}`}>
               <FaCheck />
             </StyledLink>
           </IconWrapper>
@@ -44,7 +44,7 @@ export default function CollectionContainer({
         {cards && (
           <CollectionMenu deleteCollection={deleteCollection} id={id} />
         )}
-        <CollectionLink href={`/collections/${id}?ismastered=${isMastered}`}>
+        <CollectionLink href={`/collections/${id}?archive=${archive}`}>
           <StyledWrapper>
             <StyledCollectionName>{name}</StyledCollectionName>
 

@@ -30,25 +30,28 @@ export default function CollectionCardList({
     return <LoadingSpinner />;
   }
 
-  const isMastered = router.query["ismastered"] === "true";
+  const isArchivePage = router.query["archive"] === "true";
 
   const filteredCards = collection
     ? cards
         .filter((card) => card.collection === collection.id)
-        .filter((card) => card.isMastered === isMastered)
+        .filter((card) => card.isMastered === isArchivePage)
     : [];
 
   function handleQuizClick() {
     router.push(`/collections/${collection.id}/quiz`);
   }
 
+  const headerName = isArchivePage
+    ? `${collection.name}-Archiv`
+    : collection.name;
+
   return (
     <h1>
       <StyledContainer>
-        {isMastered && <CollectionHeader name={`${collection.name}-Archiv`} />}
-        {!isMastered && <CollectionHeader name={collection.name} />}
+        <CollectionHeader name={headerName} />
       </StyledContainer>
-      {!isMastered && !filteredCards.length ? (
+      {!isArchivePage && !filteredCards.length ? (
         <StyledContainer>
           <p>Dein Kartenstapel ist noch leer.</p>
           <br />
@@ -65,7 +68,7 @@ export default function CollectionCardList({
           />
         </>
       )}
-      {!isMastered && (
+      {!isArchivePage && (
         <FActionButton onClick={handleQuizClick}>
           <MdQuiz />
         </FActionButton>

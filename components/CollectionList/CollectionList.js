@@ -5,7 +5,7 @@ export default function CollectionList({
   collections,
   cards,
   deleteCollection,
-  isMastered,
+  archive = false,
 }) {
   return (
     <>
@@ -22,7 +22,7 @@ export default function CollectionList({
                 color={collection.color}
                 deleteCollection={deleteCollection}
                 cards={filteredCards}
-                isMastered={isMastered}
+                archive={archive}
               />
             </StyledListContainer>
           );

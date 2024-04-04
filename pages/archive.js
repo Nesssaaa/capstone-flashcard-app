@@ -21,7 +21,7 @@ export default function ArchivesPage({ cards, collections, deleteCollection }) {
           collections={collections}
           cards={filteredCards}
           deleteCollection={deleteCollection}
-          isMastered={true}
+          archive={true}
         />
       )}
       <Navigation />
