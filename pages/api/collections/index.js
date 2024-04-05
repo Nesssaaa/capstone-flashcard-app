@@ -3,11 +3,10 @@ import { collectionToDb, dbToCollection } from "@/db/utils";
 import Deck from "@/db/models/Deck";
 import { getServerSession } from "next-auth/next";
 import { Collection } from "mongoose";
-import { authOptions } from "../auth/[...nextauth]";
 
 export default async function handler(request, response) {
   await dbConnect();
-  const session = await getServerSession(request, response, authOptions);
+  const session = await getServerSession(request, response);
 
   if (!session) {
     return response.status(401).json({

@@ -3,11 +3,10 @@ import { cardToDb, dbToCard } from "@/db/utils";
 import Card from "@/db/models/Card";
 import { seedDb } from "@/db/seed";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "../auth/[...nextauth]";
 
 export default async function handler(request, response) {
   await dbConnect();
-  const session = await getServerSession(request, response, authOptions);
+  const session = await getServerSession(request, response);
 
   if (request.method === "GET") {
     let cards;
