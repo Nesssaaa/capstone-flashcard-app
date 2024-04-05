@@ -7,6 +7,7 @@ import CollectionHeader from "@/components/CollectionHeader/CollectionHeader.js"
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner.js";
 import FActionButton from "@/components/FaButton/FaButton.js";
 import { MdQuiz } from "react-icons/md";
+import GlobalStyle from "../../styles.js";
 
 export const StyledContainer = styled.div`
   text-align: center;
@@ -48,6 +49,7 @@ export default function CollectionCardList({
 
   return (
     <h1>
+      {isArchivePage && <GlobalStyle isArchive={true} />}
       <StyledContainer>
         <CollectionHeader name={headerName} />
       </StyledContainer>

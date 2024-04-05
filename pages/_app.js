@@ -5,7 +5,6 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useSWR from "swr";
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
-import { useState } from "react";
 
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
@@ -21,8 +20,6 @@ export default function App({ Component, pageProps }) {
     isLoading: isLoadingCollections,
     mutate: mutateCollections,
   } = useSWR("/api/collections", fetcher);
-
-  const [backgroundColor, setBackgroundColor] = useState();
 
   if (isLoadingCards || isLoadingCollections) {
     return <LoadingSpinner />;
@@ -175,7 +172,7 @@ export default function App({ Component, pageProps }) {
         <title>SchlauFuchs</title>
       </Head>
       <Layout>
-        <GlobalStyle />
+        <GlobalStyle isArchive={false} />
 
         <Component
           cards={cards}
