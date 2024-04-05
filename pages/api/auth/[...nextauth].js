@@ -4,7 +4,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@/db/models/User";
 import { dbToUser } from "@/db/utils";
 
-export default NextAuth({
+export const authOptions = {
   // Configure one or more authentication providers
   providers: [
     GithubProvider({
@@ -36,4 +36,32 @@ export default NextAuth({
       },
     }),
   ],
-});
+
+  // adapter: MongoDBAdapter(clientPromise),
+  // session: {
+  //   strategy: "jwt",
+  // },
+
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) {
+        token.accessToken = user.access_token;
+        token.id = user.id;
+      }
+
+      return token;
+    },
+    async session({ session, token }) {
+      if (token) {
+        session.accessToken = token.accessToken;
+        session.user.id = token.id;
+
+        return session;
+      } else {
+        return null;
+      }
+    },
+  },
+};
+
+export default NextAuth(authOptions);

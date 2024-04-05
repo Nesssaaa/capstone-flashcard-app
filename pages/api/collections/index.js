@@ -2,8 +2,8 @@ import dbConnect from "@/db/connect.js";
 import { collectionToDb, dbToCollection } from "@/db/utils";
 import Deck from "@/db/models/Deck";
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "../auth/[...nextauth]";
 import { Collection } from "mongoose";
+import { authOptions } from "../auth/[...nextauth]";
 
 export default async function handler(request, response) {
   await dbConnect();
