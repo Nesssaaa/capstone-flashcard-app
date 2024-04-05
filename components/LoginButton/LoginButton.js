@@ -10,7 +10,7 @@ export default function LoginButton() {
         <StyledButton onClick={() => signOut()}>Abmelden</StyledButton>
         <br />
         Angemeldet als {session.user.name} <br />
-        <Link href="/collections">Los geht's...</Link>
+        <Link href="/collections">Leg los...</Link>
       </>
     );
   } else {
