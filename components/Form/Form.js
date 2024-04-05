@@ -7,7 +7,10 @@ import {
   Select,
 } from "./Form.styled";
 
+import FActionButton from "../FaButton/FaButton";
+import { BsFillSendPlusFill } from "react-icons/bs";
 import { MdOutlineSaveAlt } from "react-icons/md";
+import { BsSendPlusFill } from "react-icons/bs";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
@@ -117,11 +120,10 @@ export default function Form({
           textLength={answerText}
         />
       </StyledLabel>
-      <StyledButton type="submit">
-        <IconWrapper>
-          <MdOutlineSaveAlt />
-        </IconWrapper>
-      </StyledButton>
+      <FActionButton type="submit">
+        {/* <BsFillSendPlusFill /> */}
+        <BsSendPlusFill />
+      </FActionButton>
     </StyledForm>
   );
 }
