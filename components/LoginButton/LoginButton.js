@@ -1,13 +1,16 @@
 import { signIn, signOut } from "next-auth/react";
 import { SessionProvider, useSession } from "next-auth/react";
 import { StyledButton } from "../WelcomePage.styled";
+import Link from "next/link";
 export default function LoginButton() {
   const { data: session } = useSession();
   if (session) {
     return (
       <>
-        Signed in as {session.user.name} <br />
         <StyledButton onClick={() => signOut()}>Abmelden</StyledButton>
+        <br />
+        Angemeldet als {session.user.name} <br />
+        <Link href="/collections">Los geht's...</Link>
       </>
     );
   } else {
