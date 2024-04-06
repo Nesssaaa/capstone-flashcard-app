@@ -4,8 +4,8 @@ export default createGlobalStyle`
 :root {
   //background -colors-body, Header Navigation
 
-  --color-background-1: ${(props) =>
-    props.isArchive ? `#8a8f8a60` : `#bdbfbd60`};
+    --color-background-1: ${(props) =>
+      props.$isArchive ? `#8a8f8a60` : `#bdbfbd60`};
     --color-background-2:#595a5900;
     --color-background-3: white;
     --color-background-4: #000000;

@@ -49,7 +49,7 @@ export default function CollectionCardList({
 
   return (
     <h1>
-      {isArchivePage && <GlobalStyle isArchive={true} />}
+      <GlobalStyle isArchive={isArchivePage} />
       <StyledContainer>
         <CollectionHeader name={headerName} />
       </StyledContainer>

@@ -14,7 +14,7 @@ export default function ArchivesPage({ cards, collections, deleteCollection }) {
 
   return (
     <>
-      <GlobalStyle isArchive={true} />
+      <GlobalStyle $isArchive />
       <StyledHeadlines>Dein Archiv</StyledHeadlines>
       {!filteredCards.length ? (
         <StyledText>Dein Archiv ist noch leer.</StyledText>

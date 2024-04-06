@@ -172,7 +172,7 @@ export default function App({ Component, pageProps }) {
         <title>SchlauFuchs</title>
       </Head>
       <Layout>
-        <GlobalStyle isArchive={false} />
+        <GlobalStyle />
 
         <Component
           cards={cards}
