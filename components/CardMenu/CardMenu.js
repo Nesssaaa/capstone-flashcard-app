@@ -42,7 +42,7 @@ export default function CardMenu({ id, deleteCard, isMastered }) {
     setIsMenuOpen(false);
   }
 
-  function handleDelete() {
+  function handleDelete(event) {
     confirmAlert({
       title: "Karte löschen?",
       message: "Möchtest du diese Karte wirklich löschen?",
@@ -71,8 +71,9 @@ export default function CardMenu({ id, deleteCard, isMastered }) {
         </StyledMenuButton>
       }
       transition
+      onClick={(event) => event.stopPropagation()}
     >
-      <StyledMenu ref={menuRef}>
+      <StyledMenu ref={menuRef} onClick={(event) => event.stopPropagation()}>
         <StyledMenuItem onClick={onEdit}>
           <MdEdit /> &nbsp; Karte bearbeiten
         </StyledMenuItem>
