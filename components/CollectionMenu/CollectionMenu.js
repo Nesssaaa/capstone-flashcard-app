@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { Menu } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import { MdDeleteForever, MdEdit, MdOutlineClose } from "react-icons/md";
+import { SlDirections } from "react-icons/sl";
 import { BsThreeDots } from "react-icons/bs";
 import {
   StyledMenuButton,
@@ -15,7 +16,11 @@ import {
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
-export default function CollectionMenu({ id, deleteCollection }) {
+export default function CollectionMenu({
+  id,
+  deleteCollection,
+  toggleCardDirection,
+}) {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
@@ -89,6 +94,11 @@ export default function CollectionMenu({ id, deleteCollection }) {
     setIsMenuOpen(false);
   }
 
+  function handleToggleCardDirection() {
+    toggleCardDirection(id);
+    setIsMenuOpen(false);
+  }
+
   return (
     <Menu
       menuButton={
@@ -107,6 +117,10 @@ export default function CollectionMenu({ id, deleteCollection }) {
         <StyledMenuItem onClick={handleDelete}>
           <MdDeleteForever />
           &nbsp; Kartenstapel löschen
+        </StyledMenuItem>
+        <StyledMenuItem onClick={handleToggleCardDirection}>
+          <SlDirections />
+          &nbsp; Umschalten der Kartenrichtung
         </StyledMenuItem>
       </StyledMenu>
     </Menu>

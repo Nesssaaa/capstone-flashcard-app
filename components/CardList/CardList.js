@@ -1,6 +1,11 @@
 import CardContainer from "../CardContainer/CardContainer";
 
-export default function CardList({ cards, deleteCard, onToggle }) {
+export default function CardList({
+  cards,
+  deleteCard,
+  onToggle,
+  toggleCardDirection,
+}) {
   return (
     <>
       {cards &&
@@ -14,6 +19,7 @@ export default function CardList({ cards, deleteCard, onToggle }) {
               onToggle={onToggle}
               isMastered={card.isMastered}
               level={card.level}
+              toggleCardDirection={toggleCardDirection}
             />
           </div>
         ))}

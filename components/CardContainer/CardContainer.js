@@ -27,7 +27,7 @@ export default function CardContainer({
     setIsFlipped(!isFlipped);
   }
 
-  function toggleHidden(event) {
+  function toggleCardDirection(event) {
     event.stopPropagation();
     setHidden(!hidden);
   }
@@ -85,7 +85,7 @@ export default function CardContainer({
           isMastered={isMastered}
           showArchiveButton={showArchiveButton}
         />
-        <button onClick={toggleHidden}>Richtung wechseln</button>
+        <button onClick={toggleCardDirection}>Richtung wechseln</button>
       </StyledCardContainerAnswer>
     </ReactCardFlip>
   );

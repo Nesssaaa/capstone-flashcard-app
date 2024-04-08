@@ -21,6 +21,7 @@ export default function CollectionContainer({
   cards,
   deleteCollection,
   isMastered,
+  toggleCardDirection,
 }) {
   return (
     <StyledCollectionContainer>
@@ -42,7 +43,11 @@ export default function CollectionContainer({
 
       <StyledTextContainer $noCards={!cards}>
         {cards && (
-          <CollectionMenu deleteCollection={deleteCollection} id={id} />
+          <CollectionMenu
+            deleteCollection={deleteCollection}
+            id={id}
+            toggleCardDirection={toggleCardDirection}
+          />
         )}
         <CollectionLink href={`/collections/${id}?ismastered=${isMastered}`}>
           <StyledWrapper>
