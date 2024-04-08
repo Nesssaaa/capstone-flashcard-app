@@ -21,9 +21,15 @@ export default function CardContainer({
   showArchiveButton = true,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   function flipCard() {
     setIsFlipped(!isFlipped);
+  }
+
+  function toggleHidden(event) {
+    event.stopPropagation();
+    setHidden(!hidden);
   }
 
   function stopMenuPropagation(event) {
@@ -41,8 +47,8 @@ export default function CardContainer({
         />
         <StyledTextShow
           readOnly
-          textLength={question}
-          value={question}
+          textLength={hidden ? answer : question}
+          value={hidden ? answer : question}
         ></StyledTextShow>
         <IconWrapper>
           <MdTouchApp />
@@ -57,13 +63,17 @@ export default function CardContainer({
         )}
       </StyledCardContainerQuestion>
 
-      <StyledCardContainerAnswer onClick={flipCard} $level={level} isMastered={isMastered}>
+      <StyledCardContainerAnswer
+        onClick={flipCard}
+        $level={level}
+        isMastered={isMastered}
+      >
         <CardMenu onClick={stopMenuPropagation} />
 
         <StyledTextShow
           readOnly
-          textLength={answer}
-          value={answer}
+          textLength={hidden ? question : answer}
+          value={hidden ? question : answer}
         ></StyledTextShow>
         <IconWrapper>
           <MdTouchApp />
@@ -75,6 +85,7 @@ export default function CardContainer({
           isMastered={isMastered}
           showArchiveButton={showArchiveButton}
         />
+        <button onClick={toggleHidden}>Richtung wechseln</button>
       </StyledCardContainerAnswer>
     </ReactCardFlip>
   );
