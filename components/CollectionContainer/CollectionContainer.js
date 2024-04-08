@@ -13,6 +13,7 @@ import { MdQuiz } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
 
 import CollectionMenu from "../CollectionMenu/CollectionMenu";
+import { useState } from "react";
 
 export default function CollectionContainer({
   name,
@@ -21,8 +22,11 @@ export default function CollectionContainer({
   cards,
   deleteCollection,
   isMastered,
-  toggleCardDirection,
 }) {
+  const [hidden, setHidden] = useState(false);
+  function toggleCardDirection() {
+    setHidden(!hidden);
+  }
   return (
     <StyledCollectionContainer>
       <StyledColorContainer $color={color}>

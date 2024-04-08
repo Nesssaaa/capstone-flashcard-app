@@ -5,6 +5,7 @@ export default function CardList({
   deleteCard,
   onToggle,
   toggleCardDirection,
+  hidden,
 }) {
   return (
     <>
@@ -20,6 +21,7 @@ export default function CardList({
               isMastered={card.isMastered}
               level={card.level}
               toggleCardDirection={toggleCardDirection}
+              hidden={hidden}
             />
           </div>
         ))}

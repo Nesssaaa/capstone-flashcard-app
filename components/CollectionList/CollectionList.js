@@ -6,6 +6,7 @@ export default function CollectionList({
   cards,
   deleteCollection,
   isMastered,
+  toggleCardDirection,
 }) {
   return (
     <>
@@ -23,6 +24,7 @@ export default function CollectionList({
                 deleteCollection={deleteCollection}
                 cards={filteredCards}
                 isMastered={isMastered}
+                toggleCardDirection={toggleCardDirection}
               />
             </StyledListContainer>
           );

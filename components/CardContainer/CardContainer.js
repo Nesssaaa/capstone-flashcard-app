@@ -19,18 +19,20 @@ export default function CardContainer({
   isMastered,
   level,
   showArchiveButton = true,
+  hidden,
+  toggleCardDirection,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
-  const [hidden, setHidden] = useState(false);
+  // const [hidden, setHidden] = useState(false);
 
   function flipCard() {
     setIsFlipped(!isFlipped);
   }
 
-  function toggleCardDirection(event) {
-    event.stopPropagation();
-    setHidden(!hidden);
-  }
+  // function toggleCardDirection(event) {
+  //   event.stopPropagation();
+  //   setHidden(!hidden);
+  // }
 
   function stopMenuPropagation(event) {
     event.stopPropagation();
@@ -85,7 +87,14 @@ export default function CardContainer({
           isMastered={isMastered}
           showArchiveButton={showArchiveButton}
         />
-        <button onClick={toggleCardDirection}>Richtung wechseln</button>
+        <button
+          onClick={(event) => {
+            stopMenuPropagation(event);
+            toggleCardDirection(event);
+          }}
+        >
+          Richtung wechseln
+        </button>
       </StyledCardContainerAnswer>
     </ReactCardFlip>
   );

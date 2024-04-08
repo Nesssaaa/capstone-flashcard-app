@@ -20,6 +20,7 @@ export default function CollectionMenu({
   id,
   deleteCollection,
   toggleCardDirection,
+  hidden,
 }) {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -94,11 +95,6 @@ export default function CollectionMenu({
     setIsMenuOpen(false);
   }
 
-  function handleToggleCardDirection() {
-    toggleCardDirection(id);
-    setIsMenuOpen(false);
-  }
-
   return (
     <Menu
       menuButton={
@@ -118,7 +114,7 @@ export default function CollectionMenu({
           <MdDeleteForever />
           &nbsp; Kartenstapel löschen
         </StyledMenuItem>
-        <StyledMenuItem onClick={handleToggleCardDirection}>
+        <StyledMenuItem onClick={() => toggleCardDirection(hidden)}>
           <SlDirections />
           &nbsp; Umschalten der Kartenrichtung
         </StyledMenuItem>

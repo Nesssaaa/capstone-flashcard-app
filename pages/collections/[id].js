@@ -21,6 +21,7 @@ export default function CollectionCardList({
   deleteCard,
   onToggle,
   toggleCardDirection,
+  hidden,
 }) {
   const router = useRouter();
   const collection = getCollection(router.query.id);
@@ -56,6 +57,7 @@ export default function CollectionCardList({
           deleteCard={deleteCard}
           onToggle={onToggle}
           toggleCardDirection={toggleCardDirection}
+          hidden={hidden}
         />
       )}
       <CollectionNavbar collection={collection} />

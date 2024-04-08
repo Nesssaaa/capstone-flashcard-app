@@ -187,6 +187,7 @@ export default function App({ Component, pageProps }) {
           addCollection={addCollection}
           deleteCollection={deleteCollection}
           editCollection={editCollection}
+          toggleCardDirection={toggleCardDirection}
           {...pageProps}
         />
         <ToastContainer

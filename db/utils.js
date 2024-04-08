@@ -38,18 +38,20 @@ export function dbToCard({
   };
 }
 
-export function collectionToDb({ id, name, color }) {
+export function collectionToDb({ id, name, color, reversedDirection }) {
   return {
     _id: id,
     name,
     color,
+    reversedDirection,
   };
 }
 
-export function dbToCollection({ _id, name, color }) {
+export function dbToCollection({ _id, name, color, reversedDirection }) {
   return {
     id: _id,
     name,
     color,
+    reversedDirection,
   };
 }
