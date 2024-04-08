@@ -63,8 +63,13 @@ export default function App({ Component, pageProps }) {
   }
 
   async function editCard(card) {
-    updateCard(card);
+    await updateCard(card);
     toast("Karte erfolgreich bearbeitet");
+  }
+
+  async function resetCard(card) {
+    await updateCard({ ...card, level: 1 });
+    toast("Möchtest du das Kartenlevel wirklich auf den Wert 1 zurücksetzen?");
   }
 
   async function deleteCard(id) {
@@ -181,6 +186,7 @@ export default function App({ Component, pageProps }) {
           addCard={addCard}
           updateCard={updateCard}
           editCard={editCard}
+          resetCard={resetCard}
           deleteCard={deleteCard}
           onToggle={handleToggleMastered}
           getCollection={getCollection}
