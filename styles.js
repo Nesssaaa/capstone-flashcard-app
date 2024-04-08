@@ -52,7 +52,7 @@ export default createGlobalStyle`
  }
 
  
-  body > div {
+  body > div:first-child {
     display: flex;
     flex-direction: column;
     flex: 1;
