@@ -9,6 +9,8 @@ import FActionButton from "@/components/FaButton/FaButton.js";
 import { MdQuiz } from "react-icons/md";
 import { GiCardDraw } from "react-icons/gi";
 import GlobalStyle from "../../styles.js";
+import { confirmAlert } from "react-confirm-alert";
+import "react-confirm-alert/src/react-confirm-alert.css";
 
 export const StyledContainer = styled.div`
   text-align: center;
@@ -25,6 +27,7 @@ export default function CollectionCardList({
   deleteCard,
   resetCard,
   onToggle,
+  updateCard,
 }) {
   const router = useRouter();
   const collection = getCollection(router.query.id);
@@ -45,11 +48,34 @@ export default function CollectionCardList({
     router.push(`/collections/${collection.id}/quiz`);
   }
 
-  function handleResetClick() {
-    filteredCards &&
-      filteredCards.forEach(async (card) => {
-        await resetCard(card);
+  async function handleResetClick() {
+    const confirmFirst = await new Promise((resolve) => {
+      confirmAlert({
+        title: "Karten zurücksetzen?",
+        message:
+          "Möchtest du wirklich alle Karten auf Level 1 zurücksetzen und in deinen aktiven Kartenstapel verschieben?",
+        buttons: [
+          {
+            label: "Ja, bitte.",
+            onClick: () => resolve(true),
+          },
+          {
+            label: "Nein, danke.",
+            onClick: () => resolve(false),
+          },
+        ],
       });
+    });
+
+    if (confirmFirst) {
+      //for each starts an asynchronous call for each card, but does not await the outcomes.
+      //This is ok here, because we don'T do anything here afterwards anyways.
+      filteredCards &&
+        filteredCards.forEach(async (card) => {
+          await resetCard(card);
+          await updateCard({ ...card, isMastered: false });
+        });
+    }
   }
 
   const headerName = isArchivePage
