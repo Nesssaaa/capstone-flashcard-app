@@ -7,6 +7,7 @@ export default function CollectionList({
   deleteCollection,
   isMastered,
   toggleCardDirection,
+  editCollection,
 }) {
   return (
     <>
@@ -18,9 +19,8 @@ export default function CollectionList({
           return (
             <StyledListContainer key={collection.id}>
               <CollectionContainer
-                name={collection.name}
-                id={collection.id}
-                color={collection.color}
+                collection={collection}
+                editCollection={editCollection}
                 deleteCollection={deleteCollection}
                 cards={filteredCards}
                 isMastered={isMastered}

@@ -51,9 +51,8 @@ export default function CollectionForm({ collection, editCollection }) {
   return (
     <StyledForm onSubmit={handleSubmit}>
       <CollectionContainer
-        name={currentCollection.name}
-        color={currentCollection.color}
-        id={currentCollection.id}
+        collection={currentCollection}
+        editCollection={editCollection}
       />
       <Circle
         colors={[

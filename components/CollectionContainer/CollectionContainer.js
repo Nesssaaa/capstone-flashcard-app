@@ -16,17 +16,17 @@ import CollectionMenu from "../CollectionMenu/CollectionMenu";
 import { useState } from "react";
 
 export default function CollectionContainer({
-  name,
-  id,
-  color,
+  collection,
   cards,
   deleteCollection,
   isMastered,
+  editCollection,
 }) {
-  const [hidden, setHidden] = useState(false);
+  const { color, name, id, reversedDirection } = collection;
   function toggleCardDirection() {
-    setHidden(!hidden);
+    editCollection({ ...collection, reversedDirection: !reversedDirection });
   }
+  console.log(collection);
   return (
     <StyledCollectionContainer>
       <StyledColorContainer $color={color}>

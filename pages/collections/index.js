@@ -11,6 +11,7 @@ export default function CollectionsPage({
   collections,
   deleteCollection,
   cards,
+  editCollection,
 }) {
   if (collections.length === 0) {
     return (
@@ -37,6 +38,7 @@ export default function CollectionsPage({
         deleteCollection={deleteCollection}
         cards={filteredCards}
         isMastered={false}
+        editCollection={editCollection}
       />
       <Navigation />
     </>

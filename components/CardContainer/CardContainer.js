@@ -19,7 +19,7 @@ export default function CardContainer({
   isMastered,
   level,
   showArchiveButton = true,
-  hidden,
+  reversedDirection,
   toggleCardDirection,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -49,8 +49,8 @@ export default function CardContainer({
         />
         <StyledTextShow
           readOnly
-          textLength={hidden ? answer : question}
-          value={hidden ? answer : question}
+          textLength={reversedDirection ? answer : question}
+          value={reversedDirection ? answer : question}
         ></StyledTextShow>
         <IconWrapper>
           <MdTouchApp />
@@ -74,8 +74,8 @@ export default function CardContainer({
 
         <StyledTextShow
           readOnly
-          textLength={hidden ? question : answer}
-          value={hidden ? question : answer}
+          textLength={reversedDirection ? question : answer}
+          value={reversedDirection ? question : answer}
         ></StyledTextShow>
         <IconWrapper>
           <MdTouchApp />
@@ -87,14 +87,14 @@ export default function CardContainer({
           isMastered={isMastered}
           showArchiveButton={showArchiveButton}
         />
-        <button
+        {/* <button
           onClick={(event) => {
             stopMenuPropagation(event);
             toggleCardDirection(event);
           }}
         >
           Richtung wechseln
-        </button>
+        </button> */}
       </StyledCardContainerAnswer>
     </ReactCardFlip>
   );

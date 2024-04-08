@@ -98,6 +98,7 @@ export default function QuizPage({
         isMastered={card.isMastered}
         level={card.level}
         showArchiveButton={false}
+        reversedDirection={collection.reversedDirection}
       ></CardContainer>
 
       <StyledSection>

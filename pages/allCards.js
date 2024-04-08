@@ -6,7 +6,6 @@ export default function AllCardsPage({
   deleteCard,
   onToggle,
   toggleCardDirection,
-  hidden,
 }) {
   return (
     <>
@@ -16,7 +15,6 @@ export default function AllCardsPage({
           deleteCard={deleteCard}
           onToggle={onToggle}
           toggleCardDirection={toggleCardDirection}
-          hidden={hidden}
         />
         <Navigation />
       </div>

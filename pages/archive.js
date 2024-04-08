@@ -4,7 +4,12 @@ import { StyledHeadlines } from "@/components/Headline.styled";
 import CollectionList from "@/components/CollectionList/CollectionList";
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
 
-export default function ArchivesPage({ cards, collections, deleteCollection }) {
+export default function ArchivesPage({
+  cards,
+  collections,
+  deleteCollection,
+  editCollection,
+}) {
   if (!cards) {
     return <LoadingSpinner />;
   }
@@ -22,6 +27,7 @@ export default function ArchivesPage({ cards, collections, deleteCollection }) {
           cards={filteredCards}
           deleteCollection={deleteCollection}
           isMastered={true}
+          editCollection={editCollection}
         />
       )}
       <Navigation />
