@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const FAButton = styled.button`
   border: none;
-  position: fixed;
-  bottom: 10vh;
-  right: 10vw;
+  position: absolute;
+  bottom: 5.5rem;
+  right: 3rem;
   cursor: pointer;
   width: 60px;
   height: 60px;
