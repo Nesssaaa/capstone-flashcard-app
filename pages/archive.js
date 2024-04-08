@@ -26,6 +26,7 @@ export default function ArchivesPage({ cards, collections, deleteCollection }) {
           archive={true}
         />
       )}
+
       <Navigation />
     </>
   );

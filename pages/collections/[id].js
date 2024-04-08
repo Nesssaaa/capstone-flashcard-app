@@ -7,6 +7,7 @@ import CollectionHeader from "@/components/CollectionHeader/CollectionHeader.js"
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner.js";
 import FActionButton from "@/components/FaButton/FaButton.js";
 import { MdQuiz } from "react-icons/md";
+import { GiCardDraw } from "react-icons/gi";
 import GlobalStyle from "../../styles.js";
 
 export const StyledContainer = styled.div`
@@ -22,6 +23,7 @@ export default function CollectionCardList({
   cards,
   getCollection,
   deleteCard,
+  resetCard,
   onToggle,
 }) {
   const router = useRouter();
@@ -43,12 +45,19 @@ export default function CollectionCardList({
     router.push(`/collections/${collection.id}/quiz`);
   }
 
+  function handleResetClick() {
+    filteredCards &&
+      filteredCards.forEach(async (card) => {
+        await resetCard(card);
+      });
+  }
+
   const headerName = isArchivePage
     ? `${collection.name}-Archiv`
     : collection.name;
 
   return (
-    <h1>
+    <>
       <GlobalStyle isArchive={isArchivePage} />
       <StyledContainer>
         <CollectionHeader name={headerName} />
@@ -75,7 +84,14 @@ export default function CollectionCardList({
           <MdQuiz />
         </FActionButton>
       )}
+
+      {isArchivePage && (
+        <FActionButton onClick={handleResetClick}>
+          <GiCardDraw />
+        </FActionButton>
+      )}
+
       <CollectionNavbar id={collection.id} />
-    </h1>
+    </>
   );
 }
