@@ -26,19 +26,14 @@ export default function CardContainer({
     setIsFlipped(!isFlipped);
   }
 
-  function stopMenuPropagation(event) {
-    event.stopPropagation();
+  function showCardMenu() {
+    return <CardMenu id={id} deleteCard={deleteCard} isMastered={isMastered} />;
   }
 
   return (
     <ReactCardFlip flipDirection="vertical" isFlipped={isFlipped}>
       <StyledCardContainerQuestion onClick={flipCard} $level={level}>
-        <CardMenu
-          onClick={stopMenuPropagation}
-          id={id}
-          deleteCard={deleteCard}
-          isMastered={isMastered}
-        />
+        {showCardMenu()}
         <StyledTextShow
           readOnly
           textLength={question}
@@ -58,7 +53,7 @@ export default function CardContainer({
       </StyledCardContainerQuestion>
 
       <StyledCardContainerAnswer onClick={flipCard} $level={level}>
-        <CardMenu onClick={stopMenuPropagation} />
+        {showCardMenu()}
 
         <StyledTextShow
           readOnly
