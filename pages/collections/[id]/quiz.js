@@ -27,6 +27,7 @@ export default function QuizPage({
   onToggle,
   deleteCard,
   updateCard,
+  resetCard,
 }) {
   const router = useRouter();
   const collection = getCollection(router.query.id);
@@ -98,6 +99,7 @@ export default function QuizPage({
         isMastered={card.isMastered}
         level={card.level}
         showArchiveButton={false}
+        resetCard={resetCard}
       ></CardContainer>
 
       <StyledSection>

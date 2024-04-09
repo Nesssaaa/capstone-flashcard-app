@@ -19,6 +19,7 @@ export default function CardContainer({
   isMastered,
   level,
   showArchiveButton = true,
+  resetCard,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
@@ -26,8 +27,26 @@ export default function CardContainer({
     setIsFlipped(!isFlipped);
   }
 
+  function handleResetCard() {
+    const card = {
+      id: id,
+      question: question,
+      answer: answer,
+      isMastered: isMastered,
+      level: level,
+    };
+    resetCard(card);
+  }
+
   function showCardMenu() {
-    return <CardMenu id={id} deleteCard={deleteCard} isMastered={isMastered} />;
+    return (
+      <CardMenu
+        id={id}
+        deleteCard={deleteCard}
+        isMastered={isMastered}
+        handleResetCard={handleResetCard}
+      />
+    );
   }
 
   return (

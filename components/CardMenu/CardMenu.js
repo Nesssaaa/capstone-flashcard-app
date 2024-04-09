@@ -4,6 +4,7 @@ import { Menu } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import { MdDeleteForever, MdEdit, MdOutlineClose } from "react-icons/md";
 import { BsThreeDots } from "react-icons/bs";
+import { RxReset } from "react-icons/rx";
 import {
   StyledMenuButton,
   IconWrapper,
@@ -13,7 +14,12 @@ import {
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
-export default function CardMenu({ id, deleteCard, isMastered }) {
+export default function CardMenu({
+  id,
+  deleteCard,
+  isMastered,
+  handleResetCard,
+}) {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
@@ -61,6 +67,10 @@ export default function CardMenu({ id, deleteCard, isMastered }) {
     setIsMenuOpen(false);
   }
 
+  function handleReset() {
+    handleResetCard();
+  }
+
   return (
     <Menu
       menuButton={
@@ -80,6 +90,10 @@ export default function CardMenu({ id, deleteCard, isMastered }) {
         <StyledMenuItem onClick={handleDelete}>
           <MdDeleteForever />
           &nbsp; Karte löschen
+        </StyledMenuItem>
+        <StyledMenuItem onClick={handleReset}>
+          <RxReset />
+          &nbsp; Kartenlevel zurücksetzen
         </StyledMenuItem>
       </StyledMenu>
     </Menu>
