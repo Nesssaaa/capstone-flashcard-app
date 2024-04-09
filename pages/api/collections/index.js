@@ -20,6 +20,9 @@ export default async function handler(request, response) {
     // Eleganter wäre es den Nutzer direkt aus der Session zu holen, allerdings steht dort aktuell nur der Name drin (NextAuth!?)
     let user = await User.findOne({ name: session.user?.name });
 
+    if (!user) {
+      return response.status(200).json([]);
+    }
     let collections = await Deck.find({
       user: user?.id,
     });
