@@ -38,6 +38,8 @@ export function dbToCard({
   };
 }
 
+// TODO: add user to card and collection, otherwise data will be lost
+
 export function collectionToDb({ id, name, color }) {
   return {
     _id: id,
@@ -51,5 +53,12 @@ export function dbToCollection({ _id, name, color }) {
     id: _id,
     name,
     color,
+  };
+}
+
+export function dbToUser({ _id, name }) {
+  return {
+    id: _id,
+    name,
   };
 }

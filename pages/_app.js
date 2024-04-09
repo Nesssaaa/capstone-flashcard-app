@@ -5,10 +5,15 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useSWR from "swr";
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
+import { SessionProvider } from "next-auth/react";
+import LoginButton from "@/components/LoginButton/LoginButton";
 
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
-export default function App({ Component, pageProps }) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
   const {
     data: cards,
     isLoading: isLoadingCards,
@@ -173,39 +178,41 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <Head>
-        <title>SchlauFuchs</title>
-      </Head>
-      <Layout>
-        <GlobalStyle />
+      <SessionProvider session={session}>
+        <Head>
+          <title>SchlauFuchs</title>
+        </Head>
+        <Layout>
+          <GlobalStyle />
 
-        <Component
-          cards={cards}
-          collections={collections}
-          getCard={getCard}
-          addCard={addCard}
-          updateCard={updateCard}
-          editCard={editCard}
-          resetCard={resetCard}
-          deleteCard={deleteCard}
-          onToggle={handleToggleMastered}
-          getCollection={getCollection}
-          addCollection={addCollection}
-          deleteCollection={deleteCollection}
-          editCollection={editCollection}
-          {...pageProps}
-        />
-        <ToastContainer
-          position="top-center"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          draggable
-          theme="light"
-        />
-      </Layout>
+          <Component
+            cards={cards}
+            collections={collections}
+            getCard={getCard}
+            addCard={addCard}
+            updateCard={updateCard}
+            editCard={editCard}
+            deleteCard={deleteCard}
+            onToggle={handleToggleMastered}
+            getCollection={getCollection}
+            addCollection={addCollection}
+            deleteCollection={deleteCollection}
+            editCollection={editCollection}
+ 			resetCard={resetCard}
+            {...pageProps}
+          />
+          <ToastContainer
+            position="top-center"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            draggable
+            theme="light"
+          />
+        </Layout>
+      </SessionProvider>
     </>
   );
 }
