@@ -20,7 +20,6 @@ export default function CardContainer({
   level,
   showArchiveButton = true,
   reversedDirection,
-  toggleCardDirection,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
