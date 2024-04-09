@@ -10,6 +10,7 @@ const cardSchema = new Schema({
   deck: { type: Schema.Types.ObjectId, required: true, ref: "Deck" },
   level: { type: Number, required: true },
   timestamp: { type: Date, required: true, default: Date.now },
+  user: { type: Schema.Types.ObjectId, required: true, ref: "User" },
 });
 
 const Card = mongoose.models.Card || mongoose.model("Card", cardSchema);

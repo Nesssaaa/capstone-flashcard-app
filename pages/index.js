@@ -9,6 +9,8 @@ import {
   StyledWelcome,
 } from "@/components/WelcomePage.styled";
 import { StyledButton } from "@/components/WelcomePage.styled";
+import LoginButton from "@/components/LoginButton/LoginButton";
+import { SessionProvider } from "next-auth/react";
 
 export default function HomePage() {
   return (
@@ -26,12 +28,9 @@ export default function HomePage() {
             die App?
           </StyledLink>
         </StyledButton>
-        <StyledButton>
-          <StyledLink href="/collections">
-            Gleich loslegen <br />
-            und lernen!
-          </StyledLink>
-        </StyledButton>
+        <SessionProvider>
+          <LoginButton />
+        </SessionProvider>
       </nav>
     </StyledMain>
   );
