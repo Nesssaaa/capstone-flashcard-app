@@ -10,29 +10,28 @@ import {
 } from "@/components/WelcomePage.styled";
 import { StyledButton } from "@/components/WelcomePage.styled";
 import LoginButton from "@/components/LoginButton/LoginButton";
-import { SessionProvider } from "next-auth/react";
 
 export default function HomePage() {
-  return (
-    <StyledMain>
-      <Space />
-      <StyledWelcome>Willkommen </StyledWelcome>
-      <StyledTitle>bei SchlauFuchs!</StyledTitle>
 
-      <AnimatedFox />
-      <StyledHeadlines>Die schlaue Art zu lernen!</StyledHeadlines>
-      <nav>
-        <StyledButton>
-          <StyledLink href="/howToUse">
-            Wie funktioniert <br />
-            die App?
-          </StyledLink>
-        </StyledButton>
-        <SessionProvider>
+  return (
+      <StyledMain>
+        <Space />
+        <StyledWelcome>Willkommen </StyledWelcome>
+        <StyledTitle>bei SchlauFuchs!</StyledTitle>
+
+        <AnimatedFox />
+        <StyledHeadlines>Die schlaue Art zu lernen!</StyledHeadlines>
+        <nav>
+          <StyledButton>
+            <StyledLink href="/howToUse">
+              Wie funktioniert <br />
+              die App?
+            </StyledLink>
+          </StyledButton>
           <LoginButton />
-        </SessionProvider>
-      </nav>
-    </StyledMain>
+        </nav>
+      </StyledMain>
+    )
   );
 }
 

@@ -1,9 +1,10 @@
-import { signIn, signOut } from "next-auth/react";
-import { SessionProvider, useSession } from "next-auth/react";
 import { StyledButton } from "../WelcomePage.styled";
 import Link from "next/link";
+import { useSession, signIn, signOut } from "next-auth/react";
+
 export default function LoginButton() {
   const { data: session } = useSession();
+  console.log(session);
   if (session) {
     return (
       <>
