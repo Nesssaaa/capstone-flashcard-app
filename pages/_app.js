@@ -69,7 +69,7 @@ export default function App({ Component, pageProps }) {
 
   async function resetCard(card) {
     await updateCard({ ...card, level: 1 });
-    toast("Möchtest du das Kartenlevel wirklich auf den Wert 1 zurücksetzen?");
+    toast("Das Kartenlevel wurde auf den Wert 1 zurückgesetzt");
   }
 
   async function deleteCard(id) {

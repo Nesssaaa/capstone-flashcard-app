@@ -5,7 +5,13 @@ import CollectionList from "@/components/CollectionList/CollectionList";
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
 import GlobalStyle from "../styles";
 
-export default function ArchivesPage({ cards, collections, deleteCollection }) {
+export default function ArchivesPage({
+  cards,
+  collections,
+  deleteCollection,
+  editCard,
+  resetCard,
+}) {
   if (!cards) {
     return <LoadingSpinner />;
   }
@@ -24,6 +30,8 @@ export default function ArchivesPage({ cards, collections, deleteCollection }) {
           cards={filteredCards}
           deleteCollection={deleteCollection}
           archive={true}
+          editCard={editCard}
+          resetCard={resetCard}
         />
       )}
 

@@ -5,6 +5,8 @@ export default function CollectionList({
   collections,
   cards,
   deleteCollection,
+  editCard,
+  resetCard,
   archive = false,
 }) {
   return (
@@ -23,6 +25,8 @@ export default function CollectionList({
                 deleteCollection={deleteCollection}
                 cards={filteredCards}
                 archive={archive}
+                editCard={editCard}
+                resetCard={resetCard}
               />
             </StyledListContainer>
           );

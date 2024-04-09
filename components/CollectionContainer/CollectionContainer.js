@@ -21,7 +21,14 @@ export default function CollectionContainer({
   cards,
   deleteCollection,
   archive = false,
+  resetCard,
 }) {
+  function handleResetCards() {
+    cards.forEach(async (card) => {
+      await resetCard(card);
+    });
+  }
+
   return (
     <StyledCollectionContainer>
       <StyledColorContainer $color={color}>
@@ -42,7 +49,11 @@ export default function CollectionContainer({
 
       <StyledTextContainer $noCards={!cards}>
         {cards && (
-          <CollectionMenu deleteCollection={deleteCollection} id={id} />
+          <CollectionMenu
+            deleteCollection={deleteCollection}
+            id={id}
+            resetCards={handleResetCards}
+          />
         )}
         <CollectionLink href={`/collections/${id}?archive=${archive}`}>
           <StyledWrapper>
