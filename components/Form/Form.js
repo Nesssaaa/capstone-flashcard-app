@@ -88,7 +88,7 @@ export default function Form({
         <>
           <StyledLabel>
             Name des neuen Kartenstapels
-            <input name="newCollection" required />
+            <input name="newCollection" required autoComplete="off" />
           </StyledLabel>
         </>
       )}
