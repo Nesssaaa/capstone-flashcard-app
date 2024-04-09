@@ -10,6 +10,7 @@ import {
 import { BsCollectionFill } from "react-icons/bs";
 import { RiArchive2Fill } from "react-icons/ri";
 import { MdOutlineAddCircleOutline, MdDone } from "react-icons/md";
+import NavBarButton from "../Navigation/NavBarButton";
 
 export default function CollectionNavbar({ id }) {
   return (
@@ -17,29 +18,15 @@ export default function CollectionNavbar({ id }) {
       <Space />
       <StyledNavigation>
         <StyledList>
-          <StyledListItem>
-            <StyledLink href="/collections">
-              <IconWrapper>
-                <BsCollectionFill />
-              </IconWrapper>
-            </StyledLink>
-          </StyledListItem>
-
-          <StyledListItem>
-            <StyledLink href={`/create?collection=${id}`}>
-              <IconWrapper>
-                <MdOutlineAddCircleOutline />
-              </IconWrapper>
-            </StyledLink>
-          </StyledListItem>
-
-          <StyledListItem>
-            <StyledLink href={`/collections/${id}?archive=true`}>
-              <IconWrapper>
-                <RiArchive2Fill />
-              </IconWrapper>
-            </StyledLink>
-          </StyledListItem>
+          <NavBarButton href="/collections" icon={<BsCollectionFill />} />
+          <NavBarButton
+            href={`/create?collection=${id}`}
+            icon={<MdOutlineAddCircleOutline />}
+          />
+          <NavBarButton
+            href={`/collections/${id}?archive=true`}
+            icon={<RiArchive2Fill />}
+          />
         </StyledList>
       </StyledNavigation>
     </>

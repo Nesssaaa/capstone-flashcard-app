@@ -10,6 +10,7 @@ import {
 import { MdOutlineAddCircleOutline } from "react-icons/md";
 import { BsCollectionFill } from "react-icons/bs";
 import { RiArchive2Fill } from "react-icons/ri";
+import NavBarButton from "./NavBarButton";
 
 export default function Navigation() {
   const router = useRouter();
@@ -18,36 +19,11 @@ export default function Navigation() {
       <Space />
       <StyledNavigation>
         <StyledList>
-          <StyledListItem>
-            <StyledLink
-              $isActive={router.pathname === "/collections"}
-              href="/collections"
-            >
-              <IconWrapper>
-                <BsCollectionFill />
-              </IconWrapper>
-            </StyledLink>
-          </StyledListItem>
-          <StyledListItem>
-            <StyledLink
-              $isActive={router.pathname === "/create"}
-              href="/create"
-            >
-              <IconWrapper>
-                <MdOutlineAddCircleOutline />
-              </IconWrapper>
-            </StyledLink>
-          </StyledListItem>
-          <StyledListItem>
-            <StyledLink
-              $isActive={router.pathname === "/archive"}
-              href="/archive"
-            >
-              <IconWrapper>
-                <RiArchive2Fill />
-              </IconWrapper>
-            </StyledLink>
-          </StyledListItem>
+          <NavBarButton href="/collections" icon={<BsCollectionFill />} />
+
+          <NavBarButton href="/create" icon={<MdOutlineAddCircleOutline />} />
+
+          <NavBarButton href="/archive" icon={<RiArchive2Fill />} />
         </StyledList>
       </StyledNavigation>
     </>
