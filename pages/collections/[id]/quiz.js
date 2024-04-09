@@ -100,8 +100,7 @@ export default function QuizPage({
         level={card.level}
         showArchiveButton={false}
         resetCard={resetCard}
-      ></CardContainer>
-
+      />
       <StyledSection>
         Fortschritt: {countPosition + 1} von {quizCards.length}
         <br />

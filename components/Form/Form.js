@@ -118,8 +118,7 @@ export default function Form({
           textLength={answerText}
         />
       </StyledLabel>
-      <FActionButton type="submit">
-        {/* <BsFillSendPlusFill /> */}
+      <FActionButton>
         <BsSendPlusFill />
       </FActionButton>
     </StyledForm>

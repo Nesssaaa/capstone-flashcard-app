@@ -29,7 +29,7 @@ export default function ArchivesPage({
           collections={collections}
           cards={filteredCards}
           deleteCollection={deleteCollection}
-          archive={true}
+          archive
           editCard={editCard}
           resetCard={resetCard}
         />

@@ -14,12 +14,7 @@ import {
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
-export default function CardMenu({
-  id,
-  deleteCard,
-  isMastered,
-  handleResetCard,
-}) {
+export default function CardMenu({ id, deleteCard, handleResetCard }) {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
@@ -67,10 +62,6 @@ export default function CardMenu({
     setIsMenuOpen(false);
   }
 
-  function handleReset() {
-    handleResetCard();
-  }
-
   return (
     <Menu
       menuButton={
@@ -91,7 +82,7 @@ export default function CardMenu({
           <MdDeleteForever />
           &nbsp; Karte löschen
         </StyledMenuItem>
-        <StyledMenuItem onClick={handleReset}>
+        <StyledMenuItem onClick={handleResetCard}>
           <RxReset />
           &nbsp; Kartenlevel zurücksetzen
         </StyledMenuItem>
