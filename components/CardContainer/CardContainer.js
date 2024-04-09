@@ -28,14 +28,14 @@ export default function CardContainer({
   }
 
   function handleResetCard() {
-    const card = {
-      id: id,
-      question: question,
-      answer: answer,
-      isMastered: isMastered,
-      level: level,
-    };
-    resetCard(card);
+    // const card = {
+    //   id: id,
+    //   question: question,
+    //   answer: answer,
+    //   isMastered: isMastered,
+    //   level: level,
+    // };
+    resetCard({ id, question, answer, isMastered, level });
   }
 
   function showCardMenu() {
