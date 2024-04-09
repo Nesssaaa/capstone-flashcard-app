@@ -23,6 +23,7 @@ export default async function handler(request, response) {
     if (!user) {
       return response.status(200).json([]);
     }
+
     let collections = await Deck.find({
       user: user?.id,
     });
