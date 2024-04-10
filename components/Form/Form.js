@@ -31,6 +31,7 @@ export default function Form({
     const data = Object.fromEntries(new FormData(event.target));
 
     if (data.collection === "__NEW__") {
+      const newCollection = await addCollection({ name: data.newCollection });
       data.collection = newCollection.id;
     }
 
@@ -38,7 +39,7 @@ export default function Form({
     data.level = card.level || 1;
     const success = await onSubmit(data);
     if (success) {
-      // event.target.reset();
+      event.target.reset();
       setCollectionId(data.collection);
       setShowNewCollection(false);
 

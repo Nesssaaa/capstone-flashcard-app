@@ -9,6 +9,7 @@ import { MdTouchApp } from "react-icons/md";
 import { useState } from "react";
 import ButtonNavBar from "../ButtonNavBar/ButtonNavBar";
 import CardMenu from "../CardMenu/CardMenu";
+import { useSession } from "next-auth/react";
 
 export default function CardContainer({
   question,
@@ -22,13 +23,21 @@ export default function CardContainer({
   resetCard,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const { data: session } = useSession();
 
   function flipCard() {
     setIsFlipped(!isFlipped);
   }
 
   function handleResetCard() {
-    resetCard({ id, question, answer, isMastered, level });
+    resetCard({
+      id,
+      question,
+      answer,
+      isMastered,
+      level,
+      user: session.user.id,
+    });
   }
 
   function showCardMenu() {

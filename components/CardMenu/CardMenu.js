@@ -14,7 +14,12 @@ import {
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
-export default function CardMenu({ id, deleteCard, handleResetCard }) {
+export default function CardMenu({
+  id,
+  deleteCard,
+  handleResetCard,
+  isMastered,
+}) {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
