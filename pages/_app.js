@@ -47,10 +47,12 @@ export default function App({
       body: JSON.stringify(card),
     });
     if (response.ok) {
+      toast("Karte erfolgreich hinzugefügt");
       mutateCards();
+    } else {
+      toast.error(`Fehler beim Speichern der Karte: ${response.statusText}`);
     }
-
-    toast("Karte erfolgreich hinzugefügt");
+    return response.ok;
   }
 
   async function updateCard(card) {
@@ -61,15 +63,20 @@ export default function App({
       },
       body: JSON.stringify(card),
     });
-
     if (response.ok) {
       mutateCards();
+    } else {
+      toast.error(`Fehler beim Speichern der Karte: ${response.statusText}`);
     }
+    return response.ok;
   }
 
   async function editCard(card) {
-    await updateCard(card);
-    toast("Karte erfolgreich bearbeitet");
+    const success = await updateCard(card);
+    if (success) {
+      toast("Karte erfolgreich bearbeitet");
+    }
+    return success;
   }
 
   async function resetCard(card) {
@@ -198,7 +205,7 @@ export default function App({
             addCollection={addCollection}
             deleteCollection={deleteCollection}
             editCollection={editCollection}
- 			resetCard={resetCard}
+            resetCard={resetCard}
             {...pageProps}
           />
           <ToastContainer

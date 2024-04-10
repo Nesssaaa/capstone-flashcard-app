@@ -37,13 +37,14 @@ export default function Form({
 
     // get current level from existing card or assign level 1, if card is new
     data.level = card.level || 1;
-    onSubmit(data);
+    const success = await onSubmit(data);
+    if (success) {
+      // event.target.reset();
+      setCollectionId(data.collection);
+      setShowNewCollection(false);
 
-    event.target.reset();
-    setCollectionId(data.collection);
-    setShowNewCollection(false);
-
-    event.target.elements.question.focus();
+      event.target.elements.question.focus();
+    }
   }
 
   function handleQuestionChange(event) {
