@@ -3,10 +3,14 @@ import { cardToDb, dbToCard } from "@/db/utils";
 import Card from "@/db/models/Card";
 import { seedDb } from "@/db/seed";
 import { getServerSession } from "next-auth/next";
+import { authOptions } from "../auth/[...nextauth]";
 
 export default async function handler(request, response) {
   await dbConnect();
-  const session = await getServerSession(request, response);
+  const session = await getServerSession(request, response, authOptions);
+
+  if (!session.user?.id)
+    return response.status(401).json({ status: "Not logged in" });
 
   if (request.method === "GET") {
     let cards;
@@ -15,10 +19,12 @@ export default async function handler(request, response) {
         user: session.user?.id,
       });
     } else {
+      // TODO such cards cannot exist anymore, since user is a required field on the card object
       cards = await Card.find();
       return response.status(200).json(cards);
     }
 
+    // TODO: Seed for correct user
     if (cards.length === 0) {
       cards = await seedDb();
     }
@@ -28,8 +34,10 @@ export default async function handler(request, response) {
 
   if (request.method === "POST") {
     try {
-      const newCard = await Card.create(cardToDb(request.body));
-      const card = new Card({ ...newCard, user: session.user?.id });
+      const cardData = request.body;
+      cardData.user = session.user.id;
+
+      const newCard = await Card.create(cardToDb(cardData));
 
       return response.status(201).json(dbToCard(newCard));
     } catch (error) {
