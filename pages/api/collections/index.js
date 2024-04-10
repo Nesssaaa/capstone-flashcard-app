@@ -4,9 +4,11 @@ import Deck from "@/db/models/Deck";
 import User from "@/db/models/User";
 import { getServerSession } from "next-auth/next";
 
+import { authOptions } from "../auth/[...nextauth]";
+
 export default async function handler(request, response) {
   await dbConnect();
-  const session = await getServerSession(request, response);
+  const session = await getServerSession(request, response, authOptions);
 
   if (!session) {
     return response.status(401).json({
@@ -15,10 +17,10 @@ export default async function handler(request, response) {
     });
   }
   const { id } = request.query;
-
+  console.log(session.user);
   if (request.method === "GET") {
-    // Eleganter wäre es den Nutzer direkt aus der Session zu holen, allerdings steht dort aktuell nur der Name drin (NextAuth!?)
-    let user = await User.findOne({ name: session.user?.name });
+    let user = await User.findById(session.user?.id);
+    console.log("findyById", user);
 
     if (!user) {
       return response.status(200).json([]);
