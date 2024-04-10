@@ -4,7 +4,7 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@/db/models/User";
 import { dbToUser } from "@/db/utils";
 
-export default NextAuth({
+export const authOptions = {
   // Configure one or more authentication providers
   providers: [
     GithubProvider({
@@ -52,7 +52,7 @@ export default NextAuth({
 
       return token;
     },
-    async session({ session, token }) {
+    async session({ session, token, user }) {
       if (token) {
         session.accessToken = token.accessToken;
         session.user.id = token.id;
@@ -63,4 +63,5 @@ export default NextAuth({
       }
     },
   },
-});
+};
+export default NextAuth(authOptions);

@@ -9,6 +9,7 @@ import {
 
 import { MdOutlineSaveAlt } from "react-icons/md";
 import { useState } from "react";
+import { useSession } from "next-auth/react";
 
 export default function Form({
   onSubmit,
@@ -19,18 +20,23 @@ export default function Form({
   const [questionText, setQuestionText] = useState("");
   const [answerText, setAnswerText] = useState("");
   const [showNewCollection, setShowNewCollection] = useState(false);
+  const { data: session } = useSession();
 
   async function handleSubmit(event) {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(event.target));
 
     if (data.collection === "__NEW__") {
-      const newCollection = await addCollection({ name: data.newCollection });
+      const newCollection = await addCollection({
+        name: data.newCollection,
+        user: session.user.id,
+      });
       data.collection = newCollection.id;
     }
 
     // get current level from existing card or assign level 1, if card is new
     data.level = card.level || 1;
+    data.user = session.user.id;
     onSubmit(data);
 
     event.target.reset();
