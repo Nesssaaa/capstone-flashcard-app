@@ -9,7 +9,7 @@ export default async function handler(request, response) {
   await dbConnect();
   const session = await getServerSession(request, response, authOptions);
 
-  if (!session.user?.id) {
+  if (!session?.user?.id) {
     return response.status(401).json({
       status: "Anmeldung erforderlich",
       message: "Bitte melde dich an.",
