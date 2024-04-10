@@ -17,9 +17,8 @@ import {
   StyledQuizButtonWrong,
 } from "@/components/QuizPage.styled.js";
 import CollectionHeader from "@/components/CollectionHeader/CollectionHeader.js";
-import { StyledHeadlines } from "@/components/Headline.styled";
-import { Space } from "@/components/CollectionNavBar/CollectionNavBar.styled";
 import { toast } from "react-toastify";
+import { Space } from "@/components/Navigation/Navigation.styled";
 
 export default function QuizPage({
   cards,
