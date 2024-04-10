@@ -31,7 +31,6 @@ export default function Form({
     const data = Object.fromEntries(new FormData(event.target));
 
     if (data.collection === "__NEW__") {
-      const newCollection = await addCollection({ name: data.newCollection });
       data.collection = newCollection.id;
     }
 
