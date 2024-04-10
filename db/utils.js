@@ -69,3 +69,10 @@ export function dbToUser({ _id, name }) {
     name,
   };
 }
+
+export function userToDb({ _id, name }) {
+  return {
+    _id: id,
+    name,
+  };
+}
