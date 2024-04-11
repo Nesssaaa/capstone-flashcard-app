@@ -22,10 +22,14 @@ export const authOptions = {
     }),
 
     CredentialsProvider({
-      name: "credentials",
+      name: "Benutzer und Passwort",
       credentials: {
-        username: { label: "Username", type: "text", placeholder: "username" },
-        password: { label: "Password", type: "password" },
+        username: {
+          label: "Benutzername",
+          type: "text",
+          placeholder: "Benutzername",
+        },
+        password: { label: "Passwort", type: "password" },
       },
       async authorize(credentials) {
         const testaccounts = ["fuchs", "marie", "nicole", "vanessa"];
