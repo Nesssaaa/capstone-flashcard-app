@@ -3,14 +3,15 @@ import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
 :root {
   //background -colors-body, Header Navigation
-    /* --color-background-1: #00c8ff; */
-    
+
+    --color-background-1: ${(props) =>
+      props.$isArchive ? `#8a8f8a60` : `#bdbfbd60`};
     --color-background-2:#595a5900;
     --color-background-3: white;
     --color-background-4: #000000;
-    --color-background-1: #bdbfbd60;
+    
     --color-background-5: #154f5f;
-    --color-background-6:  #92FE9D;
+    --color-background-6:  #8a8f8a60;
     
 
     //background -colors-card
@@ -51,12 +52,13 @@ export default createGlobalStyle`
  }
 
  
-  body > div {
+  body > div:first-child {
     display: flex;
     flex-direction: column;
     flex: 1;
     max-height: 100lvh;
     min-height: 100lvh;
     gap: 1rem;
+    position: relative;
   }
 `;

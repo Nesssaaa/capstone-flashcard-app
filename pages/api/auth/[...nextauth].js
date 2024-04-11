@@ -3,6 +3,10 @@ import GithubProvider from "next-auth/providers/github";
 import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@/db/models/User";
 import { dbToUser } from "@/db/utils";
+import clientPromise from "@/db/mongodb";
+import { MongoDBAdapter } from "@auth/mongodb-adapter";
+import dbConnect from "@/db/connect";
+import { Types } from "mongoose";
 
 export const authOptions = {
   // Configure one or more authentication providers
@@ -20,17 +24,25 @@ export const authOptions = {
       },
       async authorize(credentials) {
         // this is only here in order to make it easier for people to test the application
-        const testUser = dbToUser(
-          await User.findOne({ name: credentials.username })
-        );
-        console.log(testUser);
-        console.log(process.env);
-
         if (
           credentials.username === "fuchs" &&
           credentials.password === "fuchs"
         ) {
-          return testUser;
+          // check if test user already exits
+          await dbConnect();
+
+          let testUser = await User.findOne({ name: credentials.username });
+
+          // if not, create it
+          if (!testUser) {
+            testUser = {
+              name: "fuchs",
+              _id: new Types.ObjectId(),
+            };
+            testUser = await User.create(testUser);
+          }
+
+          return dbToUser(testUser);
         } else {
           return null;
         }
@@ -38,10 +50,10 @@ export const authOptions = {
     }),
   ],
 
-  // adapter: MongoDBAdapter(clientPromise),
-  // session: {
-  //   strategy: "jwt",
-  // },
+  adapter: MongoDBAdapter(clientPromise),
+  session: {
+    strategy: "jwt",
+  },
 
   callbacks: {
     async jwt({ token, user }) {
@@ -52,7 +64,7 @@ export const authOptions = {
 
       return token;
     },
-    async session({ session, token, user }) {
+    async session({ session, token }) {
       if (token) {
         session.accessToken = token.accessToken;
         session.user.id = token.id;

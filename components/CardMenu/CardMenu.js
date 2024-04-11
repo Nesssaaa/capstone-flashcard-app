@@ -4,6 +4,7 @@ import { Menu } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import { MdDeleteForever, MdEdit, MdOutlineClose } from "react-icons/md";
 import { BsThreeDots } from "react-icons/bs";
+import { RxReset } from "react-icons/rx";
 import {
   StyledMenuButton,
   IconWrapper,
@@ -13,7 +14,12 @@ import {
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
-export default function CardMenu({ id, deleteCard, isMastered }) {
+export default function CardMenu({
+  id,
+  deleteCard,
+  handleResetCard,
+  isMastered,
+}) {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
@@ -42,7 +48,7 @@ export default function CardMenu({ id, deleteCard, isMastered }) {
     setIsMenuOpen(false);
   }
 
-  function handleDelete() {
+  function handleDelete(event) {
     confirmAlert({
       title: "Karte löschen?",
       message: "Möchtest du diese Karte wirklich löschen?",
@@ -71,14 +77,19 @@ export default function CardMenu({ id, deleteCard, isMastered }) {
         </StyledMenuButton>
       }
       transition
+      onClick={(event) => event.stopPropagation()}
     >
-      <StyledMenu ref={menuRef}>
+      <StyledMenu ref={menuRef} onClick={(event) => event.stopPropagation()}>
         <StyledMenuItem onClick={onEdit}>
           <MdEdit /> &nbsp; Karte bearbeiten
         </StyledMenuItem>
         <StyledMenuItem onClick={handleDelete}>
           <MdDeleteForever />
           &nbsp; Karte löschen
+        </StyledMenuItem>
+        <StyledMenuItem onClick={handleResetCard}>
+          <RxReset />
+          &nbsp; Kartenlevel zurücksetzen
         </StyledMenuItem>
       </StyledMenu>
     </Menu>

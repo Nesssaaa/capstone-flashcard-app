@@ -9,6 +9,7 @@ import { MdTouchApp } from "react-icons/md";
 import { useState } from "react";
 import ButtonNavBar from "../ButtonNavBar/ButtonNavBar";
 import CardMenu from "../CardMenu/CardMenu";
+import { useSession } from "next-auth/react";
 
 export default function CardContainer({
   question,
@@ -19,26 +20,41 @@ export default function CardContainer({
   isMastered,
   level,
   showArchiveButton = true,
+  resetCard,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const { data: session } = useSession();
 
   function flipCard() {
     setIsFlipped(!isFlipped);
   }
 
-  function stopMenuPropagation(event) {
-    event.stopPropagation();
+  function handleResetCard() {
+    resetCard({
+      id,
+      question,
+      answer,
+      isMastered,
+      level,
+      user: session.user.id,
+    });
+  }
+
+  function showCardMenu() {
+    return (
+      <CardMenu
+        id={id}
+        deleteCard={deleteCard}
+        isMastered={isMastered}
+        handleResetCard={handleResetCard}
+      />
+    );
   }
 
   return (
     <ReactCardFlip flipDirection="vertical" isFlipped={isFlipped}>
       <StyledCardContainerQuestion onClick={flipCard} $level={level}>
-        <CardMenu
-          onClick={stopMenuPropagation}
-          id={id}
-          deleteCard={deleteCard}
-          isMastered={isMastered}
-        />
+        {showCardMenu()}
         <StyledTextShow
           readOnly
           textLength={question}
@@ -57,8 +73,8 @@ export default function CardContainer({
         )}
       </StyledCardContainerQuestion>
 
-      <StyledCardContainerAnswer onClick={flipCard} $level={level} isMastered={isMastered}>
-        <CardMenu onClick={stopMenuPropagation} />
+      <StyledCardContainerAnswer onClick={flipCard} $level={level}>
+        {showCardMenu()}
 
         <StyledTextShow
           readOnly

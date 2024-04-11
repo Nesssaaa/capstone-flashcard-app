@@ -22,9 +22,11 @@ export default function EditPage({
     return "Error";
   }
 
-  function onSubmit(data) {
-    editCard({ ...data, id: card.id });
-    router.push(`/collections/${card.collection}?ismastered=${isMastered}`);
+  async function onSubmit(data) {
+    const success = await editCard({ ...card, ...data });
+    if (success) {
+      router.push(`/collections/${card.collection}?ismastered=${isMastered}`);
+    }
   }
 
   return (

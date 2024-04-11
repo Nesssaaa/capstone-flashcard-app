@@ -1,38 +1,21 @@
-import {
-  StyledNavigation,
-  StyledList,
-  StyledListItem,
-  StyledLink,
-  IconWrapper,
-  Space,
-} from "./CollectionNavBar.styled";
-
 import { BsCollectionFill } from "react-icons/bs";
-import { MdQuiz } from "react-icons/md";
+import { RiArchive2Fill } from "react-icons/ri";
+import { MdOutlineAddCircleOutline, MdDone } from "react-icons/md";
+import NavBarButton from "../Navigation/NavBarButton";
+import NavBar from "../Navigation/NavBar";
 
-export default function CollectionNavbar({ collection }) {
+export default function CollectionNavbar({ id }) {
   return (
-    <>
-      <Space />
-      <StyledNavigation>
-        <StyledList>
-          <StyledListItem>
-            <StyledLink href="/collections">
-              <IconWrapper>
-                <BsCollectionFill />
-              </IconWrapper>
-            </StyledLink>
-          </StyledListItem>
-
-          <StyledListItem>
-            <StyledLink href={`/collections/${collection.id}/quiz`}>
-              <IconWrapper>
-                <MdQuiz />
-              </IconWrapper>
-            </StyledLink>
-          </StyledListItem>
-        </StyledList>
-      </StyledNavigation>
-    </>
+    <NavBar>
+      <NavBarButton href="/collections" icon={<BsCollectionFill />} />
+      <NavBarButton
+        href={`/create?collection=${id}`}
+        icon={<MdOutlineAddCircleOutline />}
+      />
+      <NavBarButton
+        href={`/collections/${id}?archive=true`}
+        icon={<RiArchive2Fill />}
+      />
+    </NavBar>
   );
 }

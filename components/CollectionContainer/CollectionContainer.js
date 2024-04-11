@@ -20,12 +20,19 @@ export default function CollectionContainer({
   color,
   cards,
   deleteCollection,
-  isMastered,
+  archive = false,
+  resetCard,
 }) {
+  function handleResetCards() {
+    cards.forEach(async (card) => {
+      await resetCard(card);
+    });
+  }
+
   return (
     <StyledCollectionContainer>
       <StyledColorContainer $color={color}>
-        {!isMastered ? (
+        {!archive ? (
           <StyledLink href={`/collections/${id}/quiz`}>
             <IconWrapper>
               <MdQuiz />
@@ -33,7 +40,7 @@ export default function CollectionContainer({
           </StyledLink>
         ) : (
           <IconWrapper>
-            <StyledLink href={`/collections/${id}?ismastered=${isMastered}`}>
+            <StyledLink href={`/collections/${id}?archive=${archive}`}>
               <FaCheck />
             </StyledLink>
           </IconWrapper>
@@ -42,9 +49,13 @@ export default function CollectionContainer({
 
       <StyledTextContainer $noCards={!cards}>
         {cards && (
-          <CollectionMenu deleteCollection={deleteCollection} id={id} />
+          <CollectionMenu
+            deleteCollection={deleteCollection}
+            id={id}
+            resetCards={handleResetCards}
+          />
         )}
-        <CollectionLink href={`/collections/${id}?ismastered=${isMastered}`}>
+        <CollectionLink href={`/collections/${id}?archive=${archive}`}>
           <StyledWrapper>
             <StyledCollectionName>{name}</StyledCollectionName>
 
