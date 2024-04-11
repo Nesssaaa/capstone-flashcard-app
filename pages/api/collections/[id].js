@@ -3,6 +3,7 @@ import { collectionToDb, dbToCollection } from "@/db/utils";
 import Deck from "@/db/models/Deck";
 import Card from "@/db/models/Card";
 import { authOptions } from "../auth/[...nextauth]";
+import { getServerSession } from "next-auth/next";
 
 export default async function handler(request, response) {
   await dbConnect();
@@ -32,5 +33,4 @@ export default async function handler(request, response) {
       status: `Collection ${id} including all associated cards successfully deleted.`,
     });
   }
-  mutate();
 }

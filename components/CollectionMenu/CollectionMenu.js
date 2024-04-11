@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react";
 import { Menu } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import { MdDeleteForever, MdEdit, MdOutlineClose } from "react-icons/md";
+import { SlDirections } from "react-icons/sl";
 import { BsThreeDots } from "react-icons/bs";
 import { RxReset } from "react-icons/rx";
 import {
@@ -16,7 +17,12 @@ import {
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 
-export default function CollectionMenu({ id, deleteCollection, resetCards }) {
+export default function CollectionMenu({
+  id,
+  deleteCollection,
+  resetCards,
+  toggleCardDirection,
+}) {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
@@ -138,6 +144,10 @@ export default function CollectionMenu({ id, deleteCollection, resetCards }) {
           <StyledMenuItem onClick={handleReset}>
             <RxReset />
             &nbsp; Kartenstapel zurücksetzen
+          </StyledMenuItem>
+          <StyledMenuItem onClick={() => toggleCardDirection()}>
+            <SlDirections />
+            &nbsp; Umschalten der Kartenrichtung
           </StyledMenuItem>
         </StyledMenu>
       </Menu>

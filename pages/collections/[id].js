@@ -102,6 +102,7 @@ export default function CollectionCardList({
             cards={filteredCards}
             deleteCard={deleteCard}
             onToggle={onToggle}
+            reversedDirection={collection.reversedDirection}
             resetCard={resetCard}
           />
         </>

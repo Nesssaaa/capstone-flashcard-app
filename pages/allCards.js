@@ -7,6 +7,7 @@ export default function AllCardsPage({
   deleteCard,
   onToggle,
   resetCard,
+  toggleCardDirection,
 }) {
   return (
     <>
@@ -16,6 +17,7 @@ export default function AllCardsPage({
           deleteCard={deleteCard}
           onToggle={onToggle}
           resetCard={resetCard}
+          toggleCardDirection={toggleCardDirection}
         />
         <Navigation />
       </div>

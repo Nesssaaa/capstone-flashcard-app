@@ -112,6 +112,7 @@ export default function App({
     });
 
     if (response.ok) {
+      console.log("updated", collection);
       mutateCollections();
     }
   }

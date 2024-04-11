@@ -21,6 +21,7 @@ export default function CardContainer({
   level,
   showArchiveButton = true,
   resetCard,
+  reversedDirection,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const { data: session } = useSession();
@@ -57,8 +58,8 @@ export default function CardContainer({
         {showCardMenu()}
         <StyledTextShow
           readOnly
-          textLength={question}
-          value={question}
+          textLength={reversedDirection ? answer : question}
+          value={reversedDirection ? answer : question}
         ></StyledTextShow>
         <IconWrapper>
           <MdTouchApp />
@@ -78,8 +79,8 @@ export default function CardContainer({
 
         <StyledTextShow
           readOnly
-          textLength={answer}
-          value={answer}
+          textLength={reversedDirection ? question : answer}
+          value={reversedDirection ? question : answer}
         ></StyledTextShow>
         <IconWrapper>
           <MdTouchApp />

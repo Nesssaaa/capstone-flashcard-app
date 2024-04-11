@@ -11,6 +11,7 @@ export default function ArchivesPage({
   deleteCollection,
   editCard,
   resetCard,
+  editCollection,
 }) {
   if (!cards) {
     return <LoadingSpinner />;
@@ -32,6 +33,7 @@ export default function ArchivesPage({
           archive
           editCard={editCard}
           resetCard={resetCard}
+          editCollection={editCollection}
         />
       )}
 

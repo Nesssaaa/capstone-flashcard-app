@@ -8,6 +8,8 @@ export default function CollectionList({
   editCard,
   resetCard,
   archive = false,
+  toggleCardDirection,
+  editCollection,
 }) {
   return (
     <>
@@ -19,14 +21,14 @@ export default function CollectionList({
           return (
             <StyledListContainer key={collection.id}>
               <CollectionContainer
-                name={collection.name}
-                id={collection.id}
-                color={collection.color}
+                collection={collection}
+                editCollection={editCollection}
                 deleteCollection={deleteCollection}
                 cards={filteredCards}
                 archive={archive}
                 editCard={editCard}
                 resetCard={resetCard}
+                toggleCardDirection={toggleCardDirection}
               />
             </StyledListContainer>
           );

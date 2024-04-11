@@ -44,22 +44,23 @@ export function dbToCard({
 
 // TODO: add user to card and collection, otherwise data will be lost
 
-export function collectionToDb({ id, name, color, user }) {
+export function collectionToDb({ id, name, color, user, reversedDirection }) {
   return {
     _id: id,
     name,
     color,
     user,
+    reversedDirection,
   };
 }
 
-export function dbToCollection({ _id, name, color, user }) {
+export function dbToCollection({ _id, name, color, user, reversedDirection }) {
   return {
     id: _id,
     name,
     color,
     user,
-    URLSearchParams,
+    reversedDirection,
   };
 }
 
@@ -70,7 +71,7 @@ export function dbToUser({ _id, name }) {
   };
 }
 
-export function userToDb({ _id, name }) {
+export function userToDb({ id, name }) {
   return {
     _id: id,
     name,
