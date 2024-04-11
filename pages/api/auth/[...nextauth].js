@@ -23,16 +23,11 @@ export const authOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
+        const testaccounts = ["fuchs", "marie", "nicole", "vanessa"];
         // this is only here in order to make it easier for people to test the application
         if (
-          (credentials.username === "fuchs" &&
-            credentials.password === "fuchs") ||
-          (credentials.username === "marie" &&
-            credentials.password === "marie") ||
-          (credentials.username === "nicole" &&
-            credentials.password === "nicole") ||
-          (credentials.username === "vanessa" &&
-            credentials.password === "vanessa")
+          testaccounts.indexOf(credentials.username) != -1 &&
+          credentials.username === credentials.password
         ) {
           // check if test user already exits
           await dbConnect();
