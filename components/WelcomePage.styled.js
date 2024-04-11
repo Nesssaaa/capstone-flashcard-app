@@ -45,3 +45,9 @@ export const StyledWelcome = styled.h3`
   padding: 0;
   margin: 0;
 `;
+export const StyledLoginNav = styled.nav`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;

@@ -8,7 +8,7 @@ import {
 } from "./MenuComponent.styled";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
-import { MdOutlineClose, MdOutlineMenu } from "react-icons/md";
+import { MdOutlineClose, MdOutlineMenu, MdLogout } from "react-icons/md";
 import { PiCards } from "react-icons/pi";
 import { BsCollectionFill } from "react-icons/bs";
 
@@ -42,6 +42,12 @@ export default function MenuComponent() {
               <IconWrapper $size="1.3rem">
                 <PiCards />
                 &nbsp; Zu all meinen Karten
+              </IconWrapper>
+            </StyledMenuItem>
+            <StyledMenuItem href="/">
+              <IconWrapper $size="1.3rem">
+                <MdLogout />
+                &nbsp; Abmelden
               </IconWrapper>
             </StyledMenuItem>
           </MenuList>
