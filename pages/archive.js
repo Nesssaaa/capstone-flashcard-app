@@ -3,11 +3,14 @@ import Navigation from "../components/Navigation/Navigation";
 import { StyledHeadlines } from "@/components/Headline.styled";
 import CollectionList from "@/components/CollectionList/CollectionList";
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
+import GlobalStyle from "../styles";
 
 export default function ArchivesPage({
   cards,
   collections,
   deleteCollection,
+  editCard,
+  resetCard,
   editCollection,
 }) {
   if (!cards) {
@@ -18,7 +21,8 @@ export default function ArchivesPage({
 
   return (
     <>
-      <StyledHeadlines>Das kann ich schon!</StyledHeadlines>
+      <GlobalStyle $isArchive />
+      <StyledHeadlines>Dein Archiv</StyledHeadlines>
       {!filteredCards.length ? (
         <StyledText>Dein Archiv ist noch leer.</StyledText>
       ) : (
@@ -26,10 +30,13 @@ export default function ArchivesPage({
           collections={collections}
           cards={filteredCards}
           deleteCollection={deleteCollection}
-          isMastered={true}
+          archive
+          editCard={editCard}
+          resetCard={resetCard}
           editCollection={editCollection}
         />
       )}
+
       <Navigation />
     </>
   );

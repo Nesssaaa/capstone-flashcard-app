@@ -19,18 +19,25 @@ export default function CollectionContainer({
   collection,
   cards,
   deleteCollection,
-  isMastered,
+  archive = false,
+  resetCard,
   editCollection,
 }) {
+  function handleResetCards() {
+    cards.forEach(async (card) => {
+      await resetCard(card);
+    });
+  }
+
   const { color, name, id, reversedDirection } = collection;
   function toggleCardDirection() {
     editCollection({ ...collection, reversedDirection: !reversedDirection });
   }
-  console.log(collection);
+
   return (
     <StyledCollectionContainer>
       <StyledColorContainer $color={color}>
-        {!isMastered ? (
+        {!archive ? (
           <StyledLink href={`/collections/${id}/quiz`}>
             <IconWrapper>
               <MdQuiz />
@@ -38,7 +45,7 @@ export default function CollectionContainer({
           </StyledLink>
         ) : (
           <IconWrapper>
-            <StyledLink href={`/collections/${id}?ismastered=${isMastered}`}>
+            <StyledLink href={`/collections/${id}?archive=${archive}`}>
               <FaCheck />
             </StyledLink>
           </IconWrapper>
@@ -50,10 +57,11 @@ export default function CollectionContainer({
           <CollectionMenu
             deleteCollection={deleteCollection}
             id={id}
+            resetCards={handleResetCards}
             toggleCardDirection={toggleCardDirection}
           />
         )}
-        <CollectionLink href={`/collections/${id}?ismastered=${isMastered}`}>
+        <CollectionLink href={`/collections/${id}?archive=${archive}`}>
           <StyledWrapper>
             <StyledCollectionName>{name}</StyledCollectionName>
 

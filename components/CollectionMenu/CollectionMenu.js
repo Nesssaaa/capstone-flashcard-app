@@ -5,6 +5,7 @@ import "@szhsin/react-menu/dist/transitions/slide.css";
 import { MdDeleteForever, MdEdit, MdOutlineClose } from "react-icons/md";
 import { SlDirections } from "react-icons/sl";
 import { BsThreeDots } from "react-icons/bs";
+import { RxReset } from "react-icons/rx";
 import {
   StyledMenuButton,
   IconWrapper,
@@ -19,6 +20,7 @@ import "react-confirm-alert/src/react-confirm-alert.css";
 export default function CollectionMenu({
   id,
   deleteCollection,
+  resetCards,
   toggleCardDirection,
 }) {
   const router = useRouter();
@@ -94,30 +96,61 @@ export default function CollectionMenu({
     setIsMenuOpen(false);
   }
 
+  async function handleReset() {
+    const confirmFirst = await new Promise((resolve) => {
+      confirmAlert({
+        title: "Kartenstapel zurücksetzen?",
+        message:
+          "Möchtest du alle Karten des Stapels auf Level 1 zurücksetzen?",
+        buttons: [
+          {
+            label: "Ja, bitte.",
+            onClick: () => resolve(true),
+          },
+          {
+            label: "Nein, danke.",
+            onClick: () => resolve(false),
+          },
+        ],
+      });
+    });
+
+    if (confirmFirst) {
+      resetCards();
+    }
+    setIsMenuOpen(false);
+  }
+
   return (
-    <Menu
-      menuButton={
-        <StyledMenuButton onClick={handleMenuClick}>
-          <IconWrapper>
-            {isMenuOpen ? <MdOutlineClose /> : <BsThreeDots />}
-          </IconWrapper>
-        </StyledMenuButton>
-      }
-      transition
-    >
-      <StyledMenu ref={menuRef}>
-        <StyledMenuItem onClick={onEdit}>
-          <MdEdit /> &nbsp; Kartenstapel bearbeiten
-        </StyledMenuItem>
-        <StyledMenuItem onClick={handleDelete}>
-          <MdDeleteForever />
-          &nbsp; Kartenstapel löschen
-        </StyledMenuItem>
-        <StyledMenuItem onClick={() => toggleCardDirection()}>
-          <SlDirections />
-          &nbsp; Umschalten der Kartenrichtung
-        </StyledMenuItem>
-      </StyledMenu>
-    </Menu>
+    <>
+      <Menu
+        menuButton={
+          <StyledMenuButton onClick={handleMenuClick}>
+            <IconWrapper>
+              {isMenuOpen ? <MdOutlineClose /> : <BsThreeDots />}
+            </IconWrapper>
+          </StyledMenuButton>
+        }
+        transition
+      >
+        <StyledMenu ref={menuRef}>
+          <StyledMenuItem onClick={onEdit}>
+            <MdEdit /> &nbsp; Kartenstapel bearbeiten
+          </StyledMenuItem>
+          <StyledMenuItem onClick={handleDelete}>
+            <MdDeleteForever />
+            &nbsp; Kartenstapel löschen
+          </StyledMenuItem>
+          <StyledMenuItem onClick={handleReset}>
+            <RxReset />
+            &nbsp; Kartenstapel zurücksetzen
+          </StyledMenuItem>
+          <StyledMenuItem onClick={() => toggleCardDirection()}>
+            <SlDirections />
+            &nbsp; Umschalten der Kartenrichtung
+          </StyledMenuItem>
+        </StyledMenu>
+      </Menu>
+    </>
   );
 }

@@ -5,7 +5,9 @@ export default function CollectionList({
   collections,
   cards,
   deleteCollection,
-  isMastered,
+  editCard,
+  resetCard,
+  archive = false,
   toggleCardDirection,
   editCollection,
 }) {
@@ -23,7 +25,9 @@ export default function CollectionList({
                 editCollection={editCollection}
                 deleteCollection={deleteCollection}
                 cards={filteredCards}
-                isMastered={isMastered}
+                archive={archive}
+                editCard={editCard}
+                resetCard={resetCard}
                 toggleCardDirection={toggleCardDirection}
               />
             </StyledListContainer>

@@ -4,6 +4,7 @@ export default function CardList({
   cards,
   deleteCard,
   onToggle,
+  resetCard,
   reversedDirection,
 }) {
   return (
@@ -19,6 +20,7 @@ export default function CardList({
               onToggle={onToggle}
               isMastered={card.isMastered}
               level={card.level}
+              resetCard={resetCard}
               reversedDirection={reversedDirection}
             />
           </div>

@@ -10,13 +10,16 @@
     "test": "jest --watchAll"
   },
   "dependencies": {
+    "@auth/mongodb-adapter": "^2.6.0",
     "@szhsin/react-menu": "^4.1.0",
     "@uiw/react-color-circle": "^2.1.1",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.8",
+    "mongodb": "^6.5.0",
     "mongoose": "^8.2.1",
     "nanoid": "^5.0.6",
     "next": "13.4.8",
+    "next-auth": "^4.24.7",
     "react": "18.2.0",
     "react-card-flip": "^1.2.2",
     "react-color": "^2.19.3",

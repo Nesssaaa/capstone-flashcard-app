@@ -7,8 +7,10 @@ import {
   Select,
 } from "./Form.styled";
 
-import { MdOutlineSaveAlt } from "react-icons/md";
+import FActionButton from "../FaButton/FaButton";
+import { BsSendPlusFill } from "react-icons/bs";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 export default function Form({
   onSubmit,
@@ -16,9 +18,13 @@ export default function Form({
   card = {},
   addCollection,
 }) {
+  const router = useRouter();
   const [questionText, setQuestionText] = useState("");
   const [answerText, setAnswerText] = useState("");
   const [showNewCollection, setShowNewCollection] = useState(false);
+  const [collectionId, setCollectionId] = useState(
+    card.collection || router.query["collection"] || ""
+  );
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -31,11 +37,14 @@ export default function Form({
 
     // get current level from existing card or assign level 1, if card is new
     data.level = card.level || 1;
-    onSubmit(data);
+    const success = await onSubmit(data);
+    if (success) {
+      event.target.reset();
+      setCollectionId(data.collection);
+      setShowNewCollection(false);
 
-    event.target.reset();
-    setShowNewCollection(false);
-    event.target.elements.question.focus();
+      event.target.elements.question.focus();
+    }
   }
 
   function handleQuestionChange(event) {
@@ -48,6 +57,7 @@ export default function Form({
 
   function handleCollectionChange(event) {
     setShowNewCollection(event.target.value === "__NEW__");
+    setCollectionId(event.target.value);
   }
 
   return (
@@ -57,7 +67,7 @@ export default function Form({
         <Select
           name="collection"
           required
-          defaultValue={card.collection || ""}
+          value={collectionId}
           onChange={handleCollectionChange}
         >
           <option disabled value="">
@@ -79,7 +89,7 @@ export default function Form({
         <>
           <StyledLabel>
             Name des neuen Kartenstapels
-            <input name="newCollection" required />
+            <input name="newCollection" required autoComplete="off" />
           </StyledLabel>
         </>
       )}
@@ -109,11 +119,9 @@ export default function Form({
           textLength={answerText}
         />
       </StyledLabel>
-      <StyledButton type="submit">
-        <IconWrapper>
-          <MdOutlineSaveAlt />
-        </IconWrapper>
-      </StyledButton>
+      <FActionButton>
+        <BsSendPlusFill />
+      </FActionButton>
     </StyledForm>
   );
 }

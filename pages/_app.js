@@ -5,10 +5,15 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import useSWR from "swr";
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
+import { SessionProvider } from "next-auth/react";
+import LoginButton from "@/components/LoginButton/LoginButton";
 
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
-export default function App({ Component, pageProps }) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}) {
   const {
     data: cards,
     isLoading: isLoadingCards,
@@ -42,10 +47,12 @@ export default function App({ Component, pageProps }) {
       body: JSON.stringify(card),
     });
     if (response.ok) {
+      toast("Karte erfolgreich hinzugefügt");
       mutateCards();
+    } else {
+      toast.error(`Fehler beim Speichern der Karte: ${response.statusText}`);
     }
-
-    toast("Karte erfolgreich hinzugefügt");
+    return response.ok;
   }
 
   async function updateCard(card) {
@@ -56,15 +63,25 @@ export default function App({ Component, pageProps }) {
       },
       body: JSON.stringify(card),
     });
-
     if (response.ok) {
       mutateCards();
+    } else {
+      toast.error(`Fehler beim Speichern der Karte: ${response.statusText}`);
     }
+    return response.ok;
   }
 
   async function editCard(card) {
-    updateCard(card);
-    toast("Karte erfolgreich bearbeitet");
+    const success = await updateCard(card);
+    if (success) {
+      toast("Karte erfolgreich bearbeitet");
+    }
+    return success;
+  }
+
+  async function resetCard(card) {
+    await updateCard({ ...card, level: 1 });
+    toast("Das Kartenlevel wurde auf den Wert 1 zurückgesetzt");
   }
 
   async function deleteCard(id) {
@@ -168,38 +185,41 @@ export default function App({ Component, pageProps }) {
 
   return (
     <>
-      <Head>
-        <title>SchlauFuchs</title>
-      </Head>
-      <Layout>
-        <GlobalStyle />
+      <SessionProvider session={session}>
+        <Head>
+          <title>SchlauFuchs</title>
+        </Head>
+        <Layout>
+          <GlobalStyle />
 
-        <Component
-          cards={cards}
-          collections={collections}
-          getCard={getCard}
-          addCard={addCard}
-          updateCard={updateCard}
-          editCard={editCard}
-          deleteCard={deleteCard}
-          onToggle={handleToggleMastered}
-          getCollection={getCollection}
-          addCollection={addCollection}
-          deleteCollection={deleteCollection}
-          editCollection={editCollection}
-          {...pageProps}
-        />
-        <ToastContainer
-          position="top-center"
-          autoClose={3000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          draggable
-          theme="light"
-        />
-      </Layout>
+          <Component
+            cards={cards}
+            collections={collections}
+            getCard={getCard}
+            addCard={addCard}
+            updateCard={updateCard}
+            editCard={editCard}
+            deleteCard={deleteCard}
+            onToggle={handleToggleMastered}
+            getCollection={getCollection}
+            addCollection={addCollection}
+            deleteCollection={deleteCollection}
+            editCollection={editCollection}
+            resetCard={resetCard}
+            {...pageProps}
+          />
+          <ToastContainer
+            position="top-center"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            draggable
+            theme="light"
+          />
+        </Layout>
+      </SessionProvider>
     </>
   );
 }
