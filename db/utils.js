@@ -60,7 +60,7 @@ export function dbToCollection({ _id, name, color, user, reversedDirection }) {
     name,
     color,
     user,
-    URLSearchParams,
+    reversedDirection,
   };
 }
 
@@ -71,10 +71,9 @@ export function dbToUser({ _id, name }) {
   };
 }
 
-export function userToDb({ _id, name }) {
+export function userToDb({ id, name }) {
   return {
     _id: id,
     name,
-    reversedDirection,
   };
 }
