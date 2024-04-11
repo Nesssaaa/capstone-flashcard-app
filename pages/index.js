@@ -4,6 +4,7 @@ import AnimatedFox from "@/components/AnimatedFox/AnimatedFox";
 import {
   Space,
   StyledLink,
+  StyledLoginNav,
   StyledMain,
   StyledTitle,
   StyledWelcome,
@@ -21,17 +22,18 @@ export default function HomePage() {
 
       <AnimatedFox />
       <StyledHeadlines>Die schlaue Art zu lernen!</StyledHeadlines>
-      <nav>
+      <StyledLoginNav>
         <StyledButton>
           <StyledLink href="/howToUse">
             Wie funktioniert <br />
             die App?
           </StyledLink>
         </StyledButton>
+
         <SessionProvider>
           <LoginButton />
         </SessionProvider>
-      </nav>
+      </StyledLoginNav>
     </StyledMain>
   );
 }
