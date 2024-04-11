@@ -25,8 +25,14 @@ export const authOptions = {
       async authorize(credentials) {
         // this is only here in order to make it easier for people to test the application
         if (
-          credentials.username === "fuchs" &&
-          credentials.password === "fuchs"
+          (credentials.username === "fuchs" &&
+            credentials.password === "fuchs") ||
+          (credentials.username === "marie" &&
+            credentials.password === "marie") ||
+          (credentials.username === "nicole" &&
+            credentials.password === "nicole") ||
+          (credentials.username === "vanessa" &&
+            credentials.password === "vanessa")
         ) {
           // check if test user already exits
           await dbConnect();
