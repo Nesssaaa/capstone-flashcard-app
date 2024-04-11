@@ -1,6 +1,5 @@
-import { StyledButton } from "../WelcomePage.styled";
-import Link from "next/link";
 import { useSession, signIn, signOut } from "next-auth/react";
+import { StyledButton, StyledLink } from "./LoginButton.styled";
 
 export default function LoginButton() {
   const { data: session } = useSession();
@@ -12,7 +11,10 @@ export default function LoginButton() {
         <StyledButton onClick={() => signOut()}>Abmelden</StyledButton>
         <br />
         Angemeldet als {session.user.name} <br />
-        <Link href="/collections">Leg los...</Link>
+        <br />
+        <StyledLink href="/collections">
+          Hier klicken zum Loslegen...
+        </StyledLink>
       </>
     );
   } else {
