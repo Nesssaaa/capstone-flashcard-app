@@ -42,7 +42,7 @@ export const authOptions = {
           // if not, create it
           if (!testUser) {
             testUser = {
-              name: "fuchs",
+              name: credentials.username,
               _id: new Types.ObjectId(),
             };
             testUser = await User.create(testUser);
