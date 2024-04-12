@@ -44,7 +44,7 @@ export default function MenuComponent() {
                 &nbsp; Zu all meinen Karten
               </IconWrapper>
             </StyledMenuItem>
-            <StyledMenuItem href="/">
+            <StyledMenuItem href="/api/auth/signin">
               <IconWrapper $size="1.3rem">
                 <MdLogout />
                 &nbsp; Abmelden
