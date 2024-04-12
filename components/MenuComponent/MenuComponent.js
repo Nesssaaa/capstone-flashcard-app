@@ -11,8 +11,18 @@ import "@szhsin/react-menu/dist/transitions/slide.css";
 import { MdOutlineClose, MdOutlineMenu, MdLogout } from "react-icons/md";
 import { PiCards } from "react-icons/pi";
 import { BsCollectionFill } from "react-icons/bs";
+import { MenuButton } from "@szhsin/react-menu";
+import { signOut } from "next-auth/react";
+import router from "next/router";
+import LoginButton from "../LoginButton/LoginButton";
+import { useHistory } from "react-router-dom";
 
 export default function MenuComponent() {
+  // const history = useHistory();
+  function handleSignOut() {
+    router.push("/");
+  }
+
   return (
     <>
       <MainMenu
@@ -44,7 +54,7 @@ export default function MenuComponent() {
                 &nbsp; Zu all meinen Karten
               </IconWrapper>
             </StyledMenuItem>
-            <StyledMenuItem href="/api/auth/signin">
+            <StyledMenuItem onClick={handleSignOut} /*href="/api/auth/signin"*/>
               <IconWrapper $size="1.3rem">
                 <MdLogout />
                 &nbsp; Abmelden
