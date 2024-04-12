@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
+import GoogleProvider from "next-auth/providers/google";
 import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@/db/models/User";
 import { dbToUser } from "@/db/utils";
@@ -15,24 +16,27 @@ export const authOptions = {
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_SECRET,
     }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
 
     CredentialsProvider({
-      name: "credentials",
+      name: "Benutzer und Passwort",
       credentials: {
-        username: { label: "Username", type: "text", placeholder: "username" },
-        password: { label: "Password", type: "password" },
+        username: {
+          label: "Benutzername",
+          type: "text",
+          placeholder: "Benutzername",
+        },
+        password: { label: "Passwort", type: "password" },
       },
       async authorize(credentials) {
+        const testaccounts = ["fuchs", "marie", "nicole", "vanessa"];
         // this is only here in order to make it easier for people to test the application
         if (
-          (credentials.username === "fuchs" &&
-            credentials.password === "fuchs") ||
-          (credentials.username === "marie" &&
-            credentials.password === "marie") ||
-          (credentials.username === "nicole" &&
-            credentials.password === "nicole") ||
-          (credentials.username === "vanessa" &&
-            credentials.password === "vanessa")
+          testaccounts.indexOf(credentials.username) != -1 &&
+          credentials.username === credentials.password
         ) {
           // check if test user already exits
           await dbConnect();
