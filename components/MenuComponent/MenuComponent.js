@@ -12,15 +12,14 @@ import { MdOutlineClose, MdOutlineMenu, MdLogout } from "react-icons/md";
 import { PiCards } from "react-icons/pi";
 import { BsCollectionFill } from "react-icons/bs";
 import { MenuButton } from "@szhsin/react-menu";
-import { signOut } from "next-auth/react";
-import router from "next/router";
-import LoginButton from "../LoginButton/LoginButton";
-import { useHistory } from "react-router-dom";
+import { useSession, signOut } from "next-auth/react";
 
 export default function MenuComponent() {
-  // const history = useHistory();
+  const { data: session } = useSession();
   function handleSignOut() {
-    router.push("/");
+    if (session) {
+      signOut({ callbackUrl: "/" });
+    }
   }
 
   return (
