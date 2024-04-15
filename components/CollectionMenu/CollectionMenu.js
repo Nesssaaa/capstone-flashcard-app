@@ -51,6 +51,11 @@ export default function CollectionMenu({
     setIsMenuOpen(false);
   }
 
+  function handleToggleCardDirection() {
+    toggleCardDirection(id);
+    setIsMenuOpen(false);
+  }
+
   async function handleDelete() {
     const confirmFirst = await new Promise((resolve) => {
       confirmAlert({
@@ -145,7 +150,7 @@ export default function CollectionMenu({
             <RxReset />
             &nbsp; Kartenstapel zurücksetzen
           </StyledMenuItem>
-          <StyledMenuItem onClick={() => toggleCardDirection()}>
+          <StyledMenuItem onClick={() => handleToggleCardDirection()}>
             <SlDirections />
             &nbsp; Umschalten der Kartenrichtung
           </StyledMenuItem>
