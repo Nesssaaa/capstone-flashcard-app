@@ -1,24 +1,26 @@
-import Card from "@/db/models/Card";
-import Deck from "@/db/models/Deck";
-import initialCards from "../lib.data.json";
-import initialCollections from "../lib.collections.json";
-import { cardToDb, collectionToDb } from "./utils";
+//TODO: we are testing, if this function is still usefull
 
-export async function seedDb() {
-  let cards = await Card.find();
-  if (cards.length > 0) return cards;
+// import Card from "@/db/models/Card";
+// import Deck from "@/db/models/Deck";
+// import initialCards from "../lib.data.json";
+// import initialCollections from "../lib.collections.json";
+// import { cardToDb, collectionToDb } from "./utils";
 
-  for (const card of initialCards) {
-    await Card.create(cardToDb(card));
-  }
+// export async function seedDb() {
+//   let cards = await Card.find();
+//   if (cards.length > 0) return cards;
 
-  const decks = await Deck.find();
+//   for (const card of initialCards) {
+//     await Card.create(cardToDb(card));
+//   }
 
-  if (decks.length === 0) {
-    for (const deck of initialCollections) {
-      await Deck.create(collectionToDb(deck));
-    }
-  }
+//   const decks = await Deck.find();
 
-  return initialCards;
-}
+//   if (decks.length === 0) {
+//     for (const deck of initialCollections) {
+//       await Deck.create(collectionToDb(deck));
+//     }
+//   }
+
+//   return initialCards;
+// }
