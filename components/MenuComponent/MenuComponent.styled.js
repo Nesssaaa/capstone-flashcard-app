@@ -1,6 +1,11 @@
 import styled from "styled-components";
-import { MenuButton, MenuItem, Menu } from "@szhsin/react-menu";
-import Link from "next/link";
+import {
+  MenuButton,
+  MenuItem,
+  Menu,
+  SubMenu,
+  MenuDivider,
+} from "@szhsin/react-menu";
 
 export const StyledMenu = styled.div`
   top: 0;
@@ -27,7 +32,6 @@ export const MenuList = styled.ul`
   list-style: none;
   font-size: 0.3rem;
   background-color: var(--color-background-4);
-
   color: var(--color-fox);
   padding: 3rem;
 `;
@@ -53,4 +57,18 @@ export const IconWrapper = styled.div`
 export const StyledMenuButton = styled(MenuButton)`
   border: none;
   background-color: transparent;
+`;
+
+export const StyledSubMenu = styled(SubMenu)`
+  font-size: 1.1rem;
+  color: var(--color-fox);
+  list-style: none;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+`;
+
+export const StyledMenuDivider = styled(MenuDivider)`
+  border: 0.1px var(--color-fox) solid;
+  width: 100%;
 `;
