@@ -66,9 +66,21 @@ export const StyledSubMenu = styled(SubMenu)`
   text-decoration: none;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 `;
 
 export const StyledMenuDivider = styled(MenuDivider)`
   border: 0.1px var(--color-fox) solid;
   width: 100%;
+`;
+
+export const StyledLabel = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 0;
+  padding: 0.5rem 0;
+  font-size: 0.5rem;
+  color: var(--color-fox);
+  width: 60vw;
 `;

@@ -7,6 +7,7 @@ import {
   MainMenu,
   StyledSubMenu,
   StyledMenuDivider,
+  StyledLabel,
 } from "./MenuComponent.styled";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
@@ -15,12 +16,7 @@ import { VscColorMode } from "react-icons/vsc";
 import { PiCards } from "react-icons/pi";
 import { BsCollectionFill } from "react-icons/bs";
 import { useSession, signOut } from "next-auth/react";
-import {
-  MenuDivider,
-  MenuItem,
-  MenuRadioGroup,
-  SubMenu,
-} from "@szhsin/react-menu";
+import { MenuItem, MenuRadioGroup } from "@szhsin/react-menu";
 export default function MenuComponent() {
   const { data: session } = useSession();
   function handleSignOut() {
@@ -60,31 +56,34 @@ export default function MenuComponent() {
                 &nbsp; Zu all meinen Karten
               </IconWrapper>
             </StyledMenuItem>
-            <StyledMenuItem>
-              <IconWrapper $size="1.3rem">
-                <VscColorMode />
-                &nbsp; Farbwechsel
-              </IconWrapper>
 
-              <StyledSubMenu>
-                <MenuRadioGroup>
-                  <MenuItem
-                    style={{ color: "var(--color-fox)" }}
-                    type="radio"
-                    value="light"
-                  >
-                    &nbsp; Hell
-                  </MenuItem>
-                  <MenuItem
-                    style={{ color: "var(--color-background-4)" }}
-                    type="radio"
-                    value="dark"
-                  >
-                    &nbsp; Dunkel
-                  </MenuItem>
-                </MenuRadioGroup>
-              </StyledSubMenu>
-            </StyledMenuItem>
+            <StyledSubMenu
+              label={
+                <StyledLabel>
+                  <IconWrapper $size="1.3rem">
+                    <VscColorMode /> &nbsp; Farbwechsel
+                  </IconWrapper>
+                </StyledLabel>
+              }
+            >
+              <MenuRadioGroup>
+                <MenuItem
+                  style={{ color: "var(--color-fox)" }}
+                  type="radio"
+                  value="light"
+                >
+                  &nbsp; Hell
+                </MenuItem>
+                <MenuItem
+                  style={{ color: "var(--color-background-4)" }}
+                  type="radio"
+                  value="dark"
+                >
+                  &nbsp; Dunkel
+                </MenuItem>
+              </MenuRadioGroup>
+            </StyledSubMenu>
+
             <StyledMenuDivider />
             <StyledMenuItem onClick={handleSignOut}>
               <IconWrapper $size="1.3rem">
