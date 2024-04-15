@@ -1,17 +1,31 @@
 import CardList from "../components/CardList/CardList";
 import Navigation from "../components/Navigation/Navigation";
 import { useSession } from "next-auth/react";
+import SearchBar from "@/components/SearchBar/SearchBar";
+import useSWR from "swr";
+import { useState } from "react";
+
+const fetcher = (url) => fetch(url).then((response) => response.json());
 
 export default function AllCardsPage({
-  cards,
   deleteCard,
   onToggle,
   resetCard,
   toggleCardDirection,
 }) {
+  const [searchTerm, setSearchTerm] = useState("bla");
+  const { data: cards, isLoading: isLoadingCards } = useSWR(
+    "/api/cards/filtered?filterString=" + searchTerm,
+    fetcher
+  );
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
   return (
     <>
       <div>
+        <SearchBar handleSearch={handleSearch} />
         <CardList
           cards={cards}
           deleteCard={deleteCard}
@@ -19,6 +33,7 @@ export default function AllCardsPage({
           resetCard={resetCard}
           toggleCardDirection={toggleCardDirection}
         />
+
         <Navigation />
       </div>
     </>

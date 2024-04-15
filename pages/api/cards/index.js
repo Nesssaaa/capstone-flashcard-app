@@ -12,7 +12,16 @@ export default async function handler(request, response) {
   if (!session?.user?.id)
     return response.status(401).json({ status: "Not logged in" });
 
-  if (request.method === "GET") {
+  console.log(request.url);
+  console.log(request.query);
+
+  if (request.method === "GET" && request.url === "/api/cards/filtered") {
+    console.log("JUHU!");
+    cards = []; // TODO: Implement filtering
+    return response.status(200).json(cards);
+  }
+
+  if (request.method === "GET" && request.url === "/api/cards") {
     let cards;
     if (session) {
       cards = await Card.find({
