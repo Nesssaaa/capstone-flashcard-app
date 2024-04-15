@@ -43,6 +43,11 @@ export default function CardMenu({
     setIsMenuOpen(!isMenuOpen);
   }
 
+  function handleResetCards() {
+    handleResetCard(id);
+    setIsMenuOpen(false);
+  }
+
   function onEdit() {
     router.push(`/cards/${id}/edit?ismastered=${isMastered}`);
     setIsMenuOpen(false);
@@ -87,7 +92,7 @@ export default function CardMenu({
           <MdDeleteForever />
           &nbsp; Karte löschen
         </StyledMenuItem>
-        <StyledMenuItem onClick={handleResetCard}>
+        <StyledMenuItem onClick={handleResetCards}>
           <RxReset />
           &nbsp; Kartenlevel zurücksetzen
         </StyledMenuItem>
