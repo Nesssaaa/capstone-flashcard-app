@@ -1,7 +1,7 @@
 import dbConnect from "@/db/connect.js";
 import { cardToDb, dbToCard } from "@/db/utils";
 import Card from "@/db/models/Card";
-import { seedDb } from "@/db/seed";
+// import { seedDb } from "@/db/seed";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "../auth/[...nextauth]";
 
@@ -25,9 +25,9 @@ export default async function handler(request, response) {
     }
 
     // TODO: Seed for correct user
-    if (cards.length === 0) {
-      cards = await seedDb();
-    }
+    // if (cards.length === 0) {
+    //   cards = await seedDb();
+    // }
 
     return response.status(200).json(cards.map((dbCard) => dbToCard(dbCard)));
   }
