@@ -6,6 +6,12 @@ import "react-toastify/dist/ReactToastify.css";
 import useSWR from "swr";
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
 import { SessionProvider } from "next-auth/react";
+import { ThemeProvider } from "styled-components";
+import { darkTheme, lightTheme } from "../styles";
+import { useEffect } from "react";
+import { useState } from "react";
+import useLocalStorageState from "use-local-storage-state";
+import useDarkMode from "@/components/useDarkMode";
 import LoginButton from "@/components/LoginButton/LoginButton";
 
 const fetcher = (url) => fetch(url).then((response) => response.json());
@@ -14,6 +20,26 @@ export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }) {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  useEffect(() => {
+    const storedMode = localStorage.getItem("darkMode");
+    setIsDarkMode(storedMode === "true");
+  }, []);
+
+  function setDarkMode() {
+    setIsDarkMode(true);
+    localStorage.setItem("darkMode", "true");
+  }
+
+  function setLightMode() {
+    setIsDarkMode(false);
+    localStorage.setItem("darkMode", "false");
+  }
+
+  const theme = isDarkMode || true ? darkTheme : lightTheme;
+  console.log(isDarkMode);
+
   const {
     data: cards,
     isLoading: isLoadingCards,
@@ -187,39 +213,46 @@ export default function App({
   return (
     <>
       <SessionProvider session={session}>
-        <Head>
-          <title>SchlauFuchs</title>
-        </Head>
-        <Layout>
-          <GlobalStyle />
+        <ThemeProvider theme={{ func: theme }}>
+          <Head>
+            <title>SchlauFuchs</title>
+          </Head>
+          <Layout>
+            <GlobalStyle />
 
-          <Component
-            cards={cards}
-            collections={collections}
-            getCard={getCard}
-            addCard={addCard}
-            updateCard={updateCard}
-            editCard={editCard}
-            deleteCard={deleteCard}
-            onToggle={handleToggleMastered}
-            getCollection={getCollection}
-            addCollection={addCollection}
-            deleteCollection={deleteCollection}
-            editCollection={editCollection}
-            resetCard={resetCard}
-            {...pageProps}
-          />
-          <ToastContainer
-            position="top-center"
-            autoClose={3000}
-            hideProgressBar={false}
-            newestOnTop={false}
-            closeOnClick
-            rtl={false}
-            draggable
-            theme="light"
-          />
-        </Layout>
+            <Component
+              cards={cards}
+              collections={collections}
+              getCard={getCard}
+              addCard={addCard}
+              updateCard={updateCard}
+              editCard={editCard}
+              deleteCard={deleteCard}
+              onToggle={handleToggleMastered}
+              getCollection={getCollection}
+              addCollection={addCollection}
+              deleteCollection={deleteCollection}
+              editCollection={editCollection}
+              resetCard={resetCard}
+              session={session}
+              setIsDarkMode={setIsDarkMode}
+              isDarkMode={isDarkMode}
+              setDarkMode={setDarkMode}
+              setLightMode={setLightMode}
+              {...pageProps}
+            />
+            <ToastContainer
+              position="top-center"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              draggable
+              theme="light"
+            />
+          </Layout>
+        </ThemeProvider>
       </SessionProvider>
     </>
   );

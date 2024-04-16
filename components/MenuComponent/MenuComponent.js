@@ -17,8 +17,15 @@ import { PiCards } from "react-icons/pi";
 import { BsCollectionFill } from "react-icons/bs";
 import { useSession, signOut } from "next-auth/react";
 import { MenuItem, MenuRadioGroup } from "@szhsin/react-menu";
-export default function MenuComponent() {
+import useDarkMode from "../useDarkMode";
+
+export default function MenuComponent({
+  isDarkMode,
+  setDarkMode,
+  setLightMode,
+}) {
   const { data: session } = useSession();
+
   function handleSignOut() {
     if (session) {
       signOut({ callbackUrl: "/" });
@@ -71,9 +78,14 @@ export default function MenuComponent() {
             >
               <MenuRadioGroup>
                 <MenuItem
-                  style={{ color: "var(--color-fox)" }}
+                  style={{
+                    color: isDarkMode
+                      ? "var(--color-background-4)"
+                      : "var(--color-fox)",
+                  }}
                   type="radio"
                   value="light"
+                  onClick={setLightMode}
                 >
                   &nbsp; Hell
                 </MenuItem>
@@ -81,6 +93,7 @@ export default function MenuComponent() {
                   style={{ color: "var(--color-background-4)" }}
                   type="radio"
                   value="dark"
+                  onClick={console.log("dark") || setDarkMode}
                 >
                   &nbsp; Dunkel
                 </MenuItem>

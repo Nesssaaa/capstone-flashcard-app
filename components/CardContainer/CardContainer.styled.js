@@ -21,7 +21,7 @@ const BaseCardStyle = `
 export const StyledCardContainerQuestion = styled.div`
   ${BaseCardStyle}
   position: relative;
-  background-color: white /*conic-gradient (var(--color-card-1),*/;
+  background-color: var(--color-card-1);
   box-shadow: 1px 1px 6px 1px var(--color-font-3);
   border: 2px var(--color-background-1) solid;
 
@@ -69,7 +69,7 @@ export const StyledTextShow = styled.textarea`
   border: none;
   background-color: transparent;
   text-align: center;
-
+  color: var(--color-font-1);
   font-family: system-ui;
   resize: none;
   outline: none;
