@@ -24,8 +24,8 @@ export default async function handler(request, response) {
     const searchQuery = request.query.filter;
 
     const cards = await Card.find().or([
-      { question: { $regex: searchQuery + ".*" } },
-      { answer: { $regex: searchQuery + ".*" } },
+      { question: { $regex: searchQuery + ".*", $options: "i" } },
+      { answer: { $regex: searchQuery + ".*", $options: "i" } },
     ]);
 
     return response.status(200).json(cards);
