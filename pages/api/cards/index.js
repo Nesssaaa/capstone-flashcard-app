@@ -9,15 +9,25 @@ export default async function handler(request, response) {
   await dbConnect();
   const session = await getServerSession(request, response, authOptions);
 
+  console.log(request.method);
+  console.log(request.url);
+  console.log(request.query.filter);
+
   if (!session?.user?.id)
     return response.status(401).json({ status: "Not logged in" });
 
-  console.log(request.url);
-  console.log(request.query);
+  if (
+    request.method === "GET" &&
+    request.url.includes("/api/cards") &&
+    request.query.filter
+  ) {
+    const searchQuery = request.query.filter;
 
-  if (request.method === "GET" && request.url === "/api/cards/filtered") {
-    console.log("JUHU!");
-    cards = []; // TODO: Implement filtering
+    const cards = await Card.find().or([
+      { question: { $regex: searchQuery + ".*" } },
+      { answer: { $regex: searchQuery + ".*" } },
+    ]);
+
     return response.status(200).json(cards);
   }
 

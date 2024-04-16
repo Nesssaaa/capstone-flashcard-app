@@ -13,9 +13,9 @@ export default function AllCardsPage({
   resetCard,
   toggleCardDirection,
 }) {
-  const [searchTerm, setSearchTerm] = useState("bla");
+  const [searchTerm, setSearchTerm] = useState("");
   const { data: cards, isLoading: isLoadingCards } = useSWR(
-    "/api/cards/filtered?filterString=" + searchTerm,
+    searchTerm ? "/api/cards?filter=" + searchTerm : "/api/cards",
     fetcher
   );
   const handleSearch = (event) => {
