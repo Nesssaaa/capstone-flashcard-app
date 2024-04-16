@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { StyledInput } from "./SearchBar.styled";
 export default function SearchBar({ handleSearch }) {
   return (
     <div>
-      <input type="text" onChange={handleSearch} placeholder="Suche..." />
+      <StyledInput type="text" onChange={handleSearch} placeholder="Suche..." />
     </div>
   );
 }
