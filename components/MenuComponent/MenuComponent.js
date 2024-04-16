@@ -41,17 +41,20 @@ export default function MenuComponent() {
           <MenuList>
             <StyledMenuItem>
               <IconWrapper $size="1.3rem">
+                &nbsp;&nbsp;
                 <MdOutlineClose />
                 &nbsp; Schließen
               </IconWrapper>
             </StyledMenuItem>
             <StyledMenuItem href="/collections">
               <IconWrapper $size="1.3rem">
+                &nbsp;&nbsp;
                 <BsCollectionFill /> &nbsp; Meine Kartenstapel
               </IconWrapper>
             </StyledMenuItem>
             <StyledMenuItem href="/allCards">
               <IconWrapper $size="1.3rem">
+                &nbsp;&nbsp;
                 <PiCards />
                 &nbsp; Zu all meinen Karten
               </IconWrapper>
@@ -87,7 +90,7 @@ export default function MenuComponent() {
             <StyledMenuDivider />
             <StyledMenuItem onClick={handleSignOut}>
               <IconWrapper $size="1.3rem">
-                <MdLogout />
+                &nbsp;&nbsp; <MdLogout />
                 &nbsp; Abmelden
               </IconWrapper>
             </StyledMenuItem>
