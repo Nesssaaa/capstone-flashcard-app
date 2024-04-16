@@ -33,10 +33,14 @@ export default async function handler(request, response) {
   }
 
   if (request.method === "DELETE") {
-    // TODO: Only delete card if user matches
-    await Card.findByIdAndDelete(id);
-    return response
-      .status(200)
-      .json({ status: `Card ${id} successfully deleted.` });
+    const cardData = await Card.findById(id);
+    if (!cardData || cardData.user.toString() !== session.user.id) {
+      return response.status(403).json({ status: "Unauthorized" });
+    } else {
+      await Card.findByIdAndDelete(id);
+      return response
+        .status(200)
+        .json({ status: `Card ${id} successfully deleted.` });
+    }
   }
 }
