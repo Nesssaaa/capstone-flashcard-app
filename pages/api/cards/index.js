@@ -23,10 +23,13 @@ export default async function handler(request, response) {
   ) {
     const searchQuery = request.query.filter;
 
-    const cards = await Card.find().or([
-      { question: { $regex: searchQuery + ".*", $options: "i" } },
-      { answer: { $regex: searchQuery + ".*", $options: "i" } },
-    ]);
+    const cards = await Card.find().or({
+      $or: [
+        { question: { $regex: searchQuery + ".*", $options: "i" } },
+        { answer: { $regex: searchQuery + ".*", $options: "i" } },
+      ],
+      user: session.user.id,
+    });
 
     return response.status(200).json(cards);
   }
