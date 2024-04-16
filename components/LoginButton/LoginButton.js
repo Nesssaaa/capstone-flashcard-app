@@ -20,7 +20,6 @@ export default function LoginButton() {
   } else {
     return (
       <>
-        {/* Not signed in <br /> */}
         <StyledButton onClick={() => signIn()}>Anmelden</StyledButton>
       </>
     );
