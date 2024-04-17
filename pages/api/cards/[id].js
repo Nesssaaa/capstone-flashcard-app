@@ -34,6 +34,7 @@ export default async function handler(request, response) {
 
   if (request.method === "DELETE") {
     const cardData = await Card.findById(id);
+
     if (!cardData || cardData.user.toString() !== session.user.id) {
       return response.status(403).json({ status: "Unauthorized" });
     } else {
