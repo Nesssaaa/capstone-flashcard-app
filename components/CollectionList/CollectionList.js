@@ -11,7 +11,6 @@ export default function CollectionList({
   toggleCardDirection,
   editCollection,
 }) {
-  console.log(collections);
   return (
     <>
       {collections &&

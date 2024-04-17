@@ -50,7 +50,6 @@ export function collectionToDb({
   reversedDirection,
   timestamp,
 }) {
-  console.log("timestamp is:", timestamp);
   return {
     _id: id,
     name,
