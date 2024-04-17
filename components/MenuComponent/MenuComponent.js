@@ -17,12 +17,12 @@ import { PiCards } from "react-icons/pi";
 import { BsCollectionFill } from "react-icons/bs";
 import { useSession, signOut } from "next-auth/react";
 import { MenuItem, MenuRadioGroup } from "@szhsin/react-menu";
-import useDarkMode from "../useDarkMode";
 
 export default function MenuComponent({
   isDarkMode,
   setDarkMode,
   setLightMode,
+  setIsDarkMode,
 }) {
   const { data: session } = useSession();
 
@@ -85,7 +85,7 @@ export default function MenuComponent({
                   }}
                   type="radio"
                   value="light"
-                  onClick={setLightMode}
+                  onClick={() => console.log("das klicken funktioniert")}
                 >
                   &nbsp; Hell
                 </MenuItem>
@@ -93,7 +93,7 @@ export default function MenuComponent({
                   style={{ color: "var(--color-background-4)" }}
                   type="radio"
                   value="dark"
-                  onClick={console.log("dark") || setDarkMode}
+                  onClick={() => setDarkMode()}
                 >
                   &nbsp; Dunkel
                 </MenuItem>

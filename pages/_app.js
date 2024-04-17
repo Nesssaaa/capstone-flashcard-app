@@ -12,8 +12,6 @@ import { useEffect } from "react";
 import { useState } from "react";
 
 import useLocalStorageState from "use-local-storage-state";
-import useDarkMode from "@/components/useDarkMode";
-import LoginButton from "@/components/LoginButton/LoginButton";
 
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
@@ -21,21 +19,22 @@ export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    const storedMode = localStorage.getItem("darkMode");
-    setIsDarkMode(storedMode === "true");
-  }, []);
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    console.log("setIsDarkMode wurde aufgerufen");
+    if (typeof window !== "undefined" && window.localStorage) {
+      const storedMode = localStorage.getItem("darkTheme");
+      return storedMode === "true";
+    }
+  });
 
   function setDarkMode() {
     setIsDarkMode(true);
-    localStorage.setItem("darkMode", "true");
+    localStorage.setItem("darkTheme", "true");
   }
 
   function setLightMode() {
     setIsDarkMode(false);
-    localStorage.setItem("darkMode", "false");
+    localStorage.setItem("darkTheme", "false");
   }
 
   const theme = isDarkMode || true ? darkTheme : lightTheme;
