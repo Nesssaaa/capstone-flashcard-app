@@ -18,12 +18,7 @@ import { BsCollectionFill } from "react-icons/bs";
 import { useSession, signOut } from "next-auth/react";
 import { MenuItem, MenuRadioGroup } from "@szhsin/react-menu";
 
-export default function MenuComponent({
-  isDarkMode,
-  // setDarkMode,
-  // setLightMode,
-  setIsDarkMode,
-}) {
+export default function MenuComponent({ setIsDarkMode }) {
   const { data: session } = useSession();
 
   function handleSignOut() {

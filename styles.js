@@ -19,7 +19,6 @@ export const lightTheme = (props) => ({
 });
 
 export const darkTheme = (props) => {
-  console.log("Ich bin der Darkmode");
   return {
     "--color-background-1": "#111111",
     "--color-background-2": "#212121",
@@ -44,18 +43,12 @@ export default createGlobalStyle`
   ${(props) => props.theme.func(props)}
 
 }
-
-  
-
-  
-  
   *,
   *::before,
   *::after {
     box-sizing: border-box;
   }
 
- 
 
   body {
     display: flex;
@@ -67,7 +60,6 @@ export default createGlobalStyle`
     background: linear-gradient(90deg, var(--color-background-1) 0%, var(--color-background-2) 100%);
  }
 
- 
   body > div:first-child {
     display: flex;
     flex-direction: column;
@@ -78,9 +70,4 @@ export default createGlobalStyle`
     position: relative;
   }
 
-  /* body[data-theme="dark"] {
-    ${Object.entries(darkTheme)
-      .map(([key, value]) => `${key}: ${value};`)
-      .join("\n")}
-} */
 `;

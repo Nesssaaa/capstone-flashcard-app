@@ -7,12 +7,7 @@ import {
 } from "./Header.styled.js";
 import Image from "next/image.js";
 
-export default function Header({
-  isDarkMode,
-  // setDarkMode,
-  // setLightMode,
-  setIsDarkMode,
-}) {
+export default function Header({ isDarkMode, setIsDarkMode }) {
   return (
     <>
       <StyledHeader>
@@ -27,8 +22,6 @@ export default function Header({
         <StyledSpan>
           <MenuComponent
             isDarkMode={isDarkMode}
-            // setDarkMode={setDarkMode}
-            // setLightMode={setLightMode}
             setIsDarkMode={setIsDarkMode}
           />
         </StyledSpan>

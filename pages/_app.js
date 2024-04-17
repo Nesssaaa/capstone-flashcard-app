@@ -8,8 +8,6 @@ import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
 import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "../styles";
-import { useEffect } from "react";
-import { useState } from "react";
 
 import useLocalStorageState from "use-local-storage-state";
 
@@ -22,10 +20,8 @@ export default function App({
   const [isDarkMode, setIsDarkMode] = useLocalStorageState("darkTheme", {
     defaultValue: false,
   });
-  console.log(setIsDarkMode, "setIsDarkMode wird ausgeloggt");
 
   const theme = isDarkMode ? darkTheme : lightTheme;
-  console.log(isDarkMode);
 
   const {
     data: cards,
