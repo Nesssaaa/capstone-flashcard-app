@@ -24,7 +24,7 @@ export default function App({
   });
   console.log(setIsDarkMode, "setIsDarkMode wird ausgeloggt");
 
-  const theme = isDarkMode || true ? darkTheme : lightTheme;
+  const theme = isDarkMode ? darkTheme : lightTheme;
   console.log(isDarkMode);
 
   const {
@@ -204,7 +204,7 @@ export default function App({
           <Head>
             <title>SchlauFuchs</title>
           </Head>
-          <Layout>
+          <Layout setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode}>
             <GlobalStyle />
 
             <Component
@@ -222,8 +222,6 @@ export default function App({
               editCollection={editCollection}
               resetCard={resetCard}
               session={session}
-              setIsDarkMode={setIsDarkMode}
-              isDarkMode={isDarkMode}
               {...pageProps}
             />
             <ToastContainer

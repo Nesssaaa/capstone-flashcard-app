@@ -79,13 +79,11 @@ export default function MenuComponent({
               <MenuRadioGroup>
                 <MenuItem
                   style={{
-                    color: isDarkMode
-                      ? "var(--color-background-4)"
-                      : "var(--color-fox)",
+                    color: "var(--color-fox)",
                   }}
                   type="radio"
                   value="light"
-                  onClick={() => console.log("das klicken funktioniert")}
+                  onClick={() => setIsDarkMode(false)}
                 >
                   &nbsp; Hell
                 </MenuItem>
