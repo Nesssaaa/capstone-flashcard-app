@@ -4,6 +4,7 @@ import Deck from "@/db/models/Deck";
 import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "../auth/[...nextauth]";
+import { seedDb } from "@/db/seed";
 
 export default async function handler(request, response) {
   await dbConnect();
@@ -20,6 +21,11 @@ export default async function handler(request, response) {
     let collections = await Deck.find({
       user: session.user.id,
     });
+
+    if (collections.length === 0) {
+      const seeded = await seedDb(session.user.id);
+      collections = seeded.decks;
+    }
 
     return response
       .status(200)
