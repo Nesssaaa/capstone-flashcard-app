@@ -16,6 +16,7 @@ export const StyledLabel = styled.label`
   gap: 0.5rem;
   font-weight: bold;
   font-size: 1.3rem;
+  color: var(--color-font-1);
 `;
 
 export const StyledButton = styled.button`

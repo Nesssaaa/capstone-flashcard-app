@@ -15,6 +15,7 @@ export const lightTheme = (props) => ({
   "--color-border-1": "#000000",
   "--color-border-2": "white",
   "--color-fox": "#db780de3",
+  "--color-header": "#ffffffba",
 });
 
 export const darkTheme = (props) => {
@@ -33,7 +34,8 @@ export const darkTheme = (props) => {
     "--color-font-3": "white",
     "--color-border-1": "#ffffff",
     "--color-border-2": "#eeeeee",
-    "--color-fox": (props && props.$foxColor) || "#db780de3",
+    "--color-fox": "#db780de3",
+    "--color-header": "#333333",
   };
 };
 

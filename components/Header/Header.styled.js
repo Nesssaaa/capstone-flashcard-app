@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const StyledHeader = styled.div`
   display: flex;
-  background-color: #ffffffba;
+  background-color: var(--color-header);
   padding: 1rem;
   margin-bottom: 1.5rem;
   flex-direction: row;

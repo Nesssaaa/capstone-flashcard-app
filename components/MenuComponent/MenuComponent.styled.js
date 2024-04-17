@@ -52,6 +52,7 @@ export const IconWrapper = styled.div`
   justify-content: center;
   align-items: center;
   font-size: ${({ $size }) => $size || "2.3rem"};
+  color: var(--color-fox);
 `;
 
 export const StyledMenuButton = styled(MenuButton)`
