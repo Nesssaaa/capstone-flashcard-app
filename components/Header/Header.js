@@ -9,8 +9,8 @@ import Image from "next/image.js";
 
 export default function Header({
   isDarkMode,
-  setDarkMode,
-  setLightMode,
+  // setDarkMode,
+  // setLightMode,
   setIsDarkMode,
 }) {
   return (
@@ -27,8 +27,8 @@ export default function Header({
         <StyledSpan>
           <MenuComponent
             isDarkMode={isDarkMode}
-            setDarkMode={setDarkMode}
-            setLightMode={setLightMode}
+            // setDarkMode={setDarkMode}
+            // setLightMode={setLightMode}
             setIsDarkMode={setIsDarkMode}
           />
         </StyledSpan>

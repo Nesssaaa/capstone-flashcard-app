@@ -24,16 +24,6 @@ export default function App({
   });
   console.log(setIsDarkMode, "setIsDarkMode wird ausgeloggt");
 
-  function setDarkMode() {
-    setIsDarkMode(true);
-    localStorage.setItem("darkTheme", "true");
-  }
-
-  function setLightMode() {
-    setIsDarkMode(false);
-    localStorage.setItem("darkTheme", "false");
-  }
-
   const theme = isDarkMode || true ? darkTheme : lightTheme;
   console.log(isDarkMode);
 
@@ -234,8 +224,6 @@ export default function App({
               session={session}
               setIsDarkMode={setIsDarkMode}
               isDarkMode={isDarkMode}
-              setDarkMode={setDarkMode}
-              setLightMode={setLightMode}
               {...pageProps}
             />
             <ToastContainer

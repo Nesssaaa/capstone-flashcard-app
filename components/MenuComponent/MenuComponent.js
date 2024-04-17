@@ -20,8 +20,8 @@ import { MenuItem, MenuRadioGroup } from "@szhsin/react-menu";
 
 export default function MenuComponent({
   isDarkMode,
-  setDarkMode,
-  setLightMode,
+  // setDarkMode,
+  // setLightMode,
   setIsDarkMode,
 }) {
   const { data: session } = useSession();
@@ -93,7 +93,7 @@ export default function MenuComponent({
                   style={{ color: "var(--color-background-4)" }}
                   type="radio"
                   value="dark"
-                  onClick={() => setDarkMode()}
+                  onClick={() => setIsDarkMode(true)}
                 >
                   &nbsp; Dunkel
                 </MenuItem>

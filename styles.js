@@ -78,9 +78,9 @@ export default createGlobalStyle`
     position: relative;
   }
 
-  body[data-theme="dark"] {
+  /* body[data-theme="dark"] {
     ${Object.entries(darkTheme)
       .map(([key, value]) => `${key}: ${value};`)
       .join("\n")}
-}
+} */
 `;
