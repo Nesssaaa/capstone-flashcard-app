@@ -36,10 +36,12 @@ export default function CollectionForm({ collection, editCollection }) {
     const data = Object.fromEntries(new FormData(event.target));
 
     event.target.reset();
+
     editCollection({
       id: currentCollection.id,
       name: data.collectionName,
       color: currentCollection.color,
+      timestamp: new Date(),
     });
     router.push(`/collections`);
   }
