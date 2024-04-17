@@ -19,13 +19,10 @@ export default function App({
   Component,
   pageProps: { session, ...pageProps },
 }) {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    console.log("setIsDarkMode wurde aufgerufen");
-    if (typeof window !== "undefined" && window.localStorage) {
-      const storedMode = localStorage.getItem("darkTheme");
-      return storedMode === "true";
-    }
+  const [isDarkMode, setIsDarkMode] = useLocalStorageState("darkTheme", {
+    defaultValue: false,
   });
+  console.log(setIsDarkMode, "setIsDarkMode wird ausgeloggt");
 
   function setDarkMode() {
     setIsDarkMode(true);

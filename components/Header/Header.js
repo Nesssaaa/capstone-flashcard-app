@@ -1,4 +1,4 @@
-import MenuComponent from "../MenuComponent/MenuComponent.js";
+import MenuComponent from "../MenuComponent/MenuComponent";
 import {
   StyledHeader,
   IconWrapper,

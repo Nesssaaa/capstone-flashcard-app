@@ -9,7 +9,7 @@ export const lightTheme = (props) => ({
   "--color-background-6": "#8a8f8a60",
   "--color-card-1": "white",
   "--color-card-2": "#e6f6e9",
-  "--color-font-1": "#000000",
+  "--color-font-1": "#000000df",
   "--color-font-2": "white",
   "--color-font-3": "#808580d5",
   "--color-border-1": "#000000",
