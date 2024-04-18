@@ -23,19 +23,17 @@ export default function AllCardsPage({
   };
 
   return (
-    <>
-      <div>
-        <SearchBar handleSearch={handleSearch} />
-        <CardList
-          cards={cards}
-          deleteCard={deleteCard}
-          onToggle={onToggle}
-          resetCard={resetCard}
-          toggleCardDirection={toggleCardDirection}
-        />
+    <div>
+      <SearchBar handleSearch={handleSearch} />
+      <CardList
+        cards={cards}
+        deleteCard={deleteCard}
+        onToggle={onToggle}
+        resetCard={resetCard}
+        toggleCardDirection={toggleCardDirection}
+      />
 
-        <Navigation />
-      </div>
-    </>
+      <Navigation />
+    </div>
   );
 }

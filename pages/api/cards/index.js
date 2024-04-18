@@ -9,10 +9,6 @@ export default async function handler(request, response) {
   await dbConnect();
   const session = await getServerSession(request, response, authOptions);
 
-  console.log(request.method);
-  console.log(request.url);
-  console.log(request.query.filter);
-
   if (!session?.user?.id)
     return response.status(401).json({ status: "Not logged in" });
 
