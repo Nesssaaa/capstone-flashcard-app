@@ -48,6 +48,7 @@ export const StyledInput = styled.textarea`
   outline: none;
   max-width: 80vw;
   font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};
+  color: var(--color-font-1);
 `;
 
 export const IconWrapper = styled.div`
