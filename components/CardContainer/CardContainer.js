@@ -11,16 +11,6 @@ import ButtonNavBar from "../ButtonNavBar/ButtonNavBar";
 import CardMenu from "../CardMenu/CardMenu";
 import { useSession } from "next-auth/react";
 
-const [text, setText] = useState("");
-const msg = new SpeechSynthesisUtterance();
-
-function speechHandler(msg) {
-  console.log(answer);
-  msg.text = answer;
-  msg.lang = "de-DE";
-  window.speechSynthesis.speak(msg);
-}
-
 export default function CardContainer({
   question,
   answer,
@@ -35,6 +25,16 @@ export default function CardContainer({
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const { data: session } = useSession();
+
+  const [text, setText] = useState("");
+  const msg = new SpeechSynthesisUtterance();
+
+  function speechHandler(msg) {
+    console.log(answer);
+    msg.text = answer;
+    msg.lang = "de-DE";
+    window.speechSynthesis.speak(msg);
+  }
 
   function flipCard() {
     setIsFlipped(!isFlipped);
