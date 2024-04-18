@@ -11,28 +11,37 @@ export default function CollectionList({
   toggleCardDirection,
   editCollection,
 }) {
+  const sortedCollections = collections
+    ? [...collections].sort((c1, c2) => {
+        if (c1.timestamp > c2.timestamp) return -1;
+        if (c1.timestamp < c2.timestamp) return 1;
+        return 0;
+      })
+    : [];
+
+  const collectionItems = sortedCollections.map((collection) => {
+    const filteredCards = cards.filter(
+      (card) => card.collection === collection.id
+    );
+    return { collection, filteredCards };
+  });
+
   return (
     <>
-      {collections &&
-        collections.map((collection) => {
-          const filteredCards = cards.filter(
-            (card) => card.collection === collection.id
-          );
-          return (
-            <StyledListContainer key={collection.id}>
-              <CollectionContainer
-                collection={collection}
-                editCollection={editCollection}
-                deleteCollection={deleteCollection}
-                cards={filteredCards}
-                archive={archive}
-                editCard={editCard}
-                resetCard={resetCard}
-                toggleCardDirection={toggleCardDirection}
-              />
-            </StyledListContainer>
-          );
-        })}
+      {collectionItems.map(({ collection, filteredCards }) => (
+        <StyledListContainer key={collection.id}>
+          <CollectionContainer
+            collection={collection}
+            editCollection={editCollection}
+            deleteCollection={deleteCollection}
+            cards={filteredCards}
+            archive={archive}
+            editCard={editCard}
+            resetCard={resetCard}
+            toggleCardDirection={toggleCardDirection}
+          />
+        </StyledListContainer>
+      ))}
     </>
   );
 }

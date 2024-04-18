@@ -39,10 +39,6 @@ export default function App({
     return <LoadingSpinner />;
   }
 
-  if (!cards) {
-    return;
-  }
-
   function getCard(id) {
     return cards.find((card) => card.id === id);
   }
@@ -103,14 +99,6 @@ export default function App({
     }
   }
 
-  if (isLoadingCollections) {
-    return <h1>Is loading...</h1>;
-  }
-
-  if (!collections) {
-    return;
-  }
-
   async function updateCollection(collection) {
     const response = await fetch(`/api/collections/${collection.id}`, {
       method: "PUT",
@@ -140,14 +128,6 @@ export default function App({
       mutateCards();
       toast("Kartenstapel wurde gelöscht");
     }
-  }
-
-  if (isLoadingCollections) {
-    return <h1>Is loading...</h1>;
-  }
-
-  if (!collections) {
-    return;
   }
 
   function getCollection(id) {

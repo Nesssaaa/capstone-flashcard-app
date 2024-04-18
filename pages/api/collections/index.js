@@ -4,6 +4,7 @@ import Deck from "@/db/models/Deck";
 import { getServerSession } from "next-auth/next";
 
 import { authOptions } from "../auth/[...nextauth]";
+import { seedDb } from "@/db/seed";
 
 export default async function handler(request, response) {
   await dbConnect();
@@ -15,12 +16,16 @@ export default async function handler(request, response) {
       message: "Bitte melde dich an.",
     });
   }
-  const { id } = request.query;
 
   if (request.method === "GET") {
     let collections = await Deck.find({
       user: session.user.id,
     });
+
+    if (collections.length === 0) {
+      const seeded = await seedDb(session.user.id);
+      collections = seeded.decks;
+    }
 
     return response
       .status(200)
@@ -38,12 +43,5 @@ export default async function handler(request, response) {
       console.log(error);
       return response.status(400).json({ error: error.message });
     }
-  }
-  if (request.method === "DELETE") {
-    // TODO check that the deck belongs to the user before deletion
-    await Deck.findByIdAndDelete(id);
-    return response
-      .status(200)
-      .json({ status: `Collection ${id} successfully deleted.` });
   }
 }

@@ -77,7 +77,7 @@ export default function CollectionMenu({
     if (confirmFirst) {
       const confirmSecond = await new Promise((resolve) => {
         confirmAlert({
-          title: <StyledTitle>Endgültig löschen</StyledTitle>,
+          title: "Endgültig löschen",
           message:
             "Bist du dir ganz sicher? ALLE KARTEN dieses Kartenstapels werden gelöscht!!",
           buttons: [

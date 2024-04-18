@@ -8,7 +8,7 @@ const cardSchema = new Schema({
   answer: { type: String, required: true },
   isMastered: { type: Boolean, required: true, default: false },
   deck: { type: Schema.Types.ObjectId, required: true, ref: "Deck" },
-  level: { type: Number, required: true },
+  level: { type: Number, required: true, default: 1 },
   timestamp: { type: Date, required: true, default: Date.now },
   user: { type: Schema.Types.ObjectId, required: true, ref: "User" },
 });
