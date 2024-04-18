@@ -42,8 +42,6 @@ export function dbToCard({
   };
 }
 
-// TODO: add user to card and collection, otherwise data will be lost
-
 export function collectionToDb({ id, name, color, user, reversedDirection }) {
   return {
     _id: id,
