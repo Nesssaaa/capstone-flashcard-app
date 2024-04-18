@@ -12,7 +12,25 @@ export default async function handler(request, response) {
   if (!session?.user?.id)
     return response.status(401).json({ status: "Not logged in" });
 
-  if (request.method === "GET") {
+  if (
+    request.method === "GET" &&
+    request.url.includes("/api/cards") &&
+    request.query.filter
+  ) {
+    const searchQuery = request.query.filter;
+
+    const cards = await Card.find().or({
+      $or: [
+        { question: { $regex: searchQuery + ".*", $options: "i" } },
+        { answer: { $regex: searchQuery + ".*", $options: "i" } },
+      ],
+      user: session.user.id,
+    });
+
+    return response.status(200).json(cards);
+  }
+
+  if (request.method === "GET" && request.url === "/api/cards") {
     let cards;
     if (session) {
       cards = await Card.find({
