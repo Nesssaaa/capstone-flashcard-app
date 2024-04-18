@@ -5,7 +5,6 @@ export default function LoginButton() {
   const { data: session } = useSession();
 
   if (session) {
-    console.log(session);
     return (
       <>
         <StyledButton onClick={() => signOut()}>Abmelden</StyledButton>
@@ -20,7 +19,6 @@ export default function LoginButton() {
   } else {
     return (
       <>
-        {/* Not signed in <br /> */}
         <StyledButton onClick={() => signIn()}>Anmelden</StyledButton>
       </>
     );
