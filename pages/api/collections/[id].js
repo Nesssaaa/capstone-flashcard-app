@@ -27,10 +27,19 @@ export default async function handler(request, response) {
   }
 
   if (request.method === "DELETE") {
-    await Deck.findByIdAndDelete(id);
-    await Card.deleteMany({ deck: id });
-    return response.status(200).json({
-      status: `Collection ${id} including all associated cards successfully deleted.`,
-    });
+    const collectionData = await Deck.findById(id);
+
+    if (!collectionData || collectionData.user.toString() !== session.user.id) {
+      return response.status(403).json({
+        status: "Forbidden",
+        message: "Du bist nicht berechtigt, diesen Kartenstapel zu löschen.",
+      });
+    } else {
+      await Deck.findByIdAndDelete(id);
+      await Card.deleteMany({ deck: id });
+      return response.status(200).json({
+        status: `Collection ${id} including all associated cards successfully deleted.`,
+      });
+    }
   }
 }

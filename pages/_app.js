@@ -6,7 +6,6 @@ import "react-toastify/dist/ReactToastify.css";
 import useSWR from "swr";
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
 import { SessionProvider } from "next-auth/react";
-import LoginButton from "@/components/LoginButton/LoginButton";
 
 const fetcher = (url) => fetch(url).then((response) => response.json());
 
@@ -28,10 +27,6 @@ export default function App({
 
   if (isLoadingCards || isLoadingCollections) {
     return <LoadingSpinner />;
-  }
-
-  if (!cards) {
-    return;
   }
 
   function getCard(id) {
@@ -94,14 +89,6 @@ export default function App({
     }
   }
 
-  if (isLoadingCollections) {
-    return <h1>Is loading...</h1>;
-  }
-
-  if (!collections) {
-    return;
-  }
-
   async function updateCollection(collection) {
     const response = await fetch(`/api/collections/${collection.id}`, {
       method: "PUT",
@@ -131,14 +118,6 @@ export default function App({
       mutateCards();
       toast("Kartenstapel wurde gelöscht");
     }
-  }
-
-  if (isLoadingCollections) {
-    return <h1>Is loading...</h1>;
-  }
-
-  if (!collections) {
-    return;
   }
 
   function getCollection(id) {

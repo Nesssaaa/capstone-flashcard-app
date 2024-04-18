@@ -1,7 +1,7 @@
 import dbConnect from "@/db/connect.js";
 import { cardToDb, dbToCard } from "@/db/utils";
 import Card from "@/db/models/Card";
-// import { seedDb } from "@/db/seed";
+import { seedDb } from "@/db/seed";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "../auth/[...nextauth]";
 
@@ -32,20 +32,25 @@ export default async function handler(request, response) {
 
   if (request.method === "GET" && request.url === "/api/cards") {
     let cards;
-    if (session) {
+
+    if (request.query.filter) {
+      const searchQuery = request.query.filter;
       cards = await Card.find({
-        user: session.user?.id,
+        $or: [
+          { question: { $regex: searchQuery + ".*", $options: "i" } },
+          { answer: { $regex: searchQuery + ".*", $options: "i" } },
+        ],
+        user: session.user.id,
       });
     } else {
-      // TODO such cards cannot exist anymore, since user is a required field on the card object
-      cards = await Card.find();
-      return response.status(200).json(cards);
-    }
+      cards = await Card.find({
+        user: session.user.id,
+      });
 
-    // TODO: Seed for correct user
-    // if (cards.length === 0) {
-    //   cards = await seedDb();
-    // }
+      if (cards.length === 0) {
+        ({ cards } = await seedDb(session.user.id));
+      }
+    }
 
     return response.status(200).json(cards.map((dbCard) => dbToCard(dbCard)));
   }
