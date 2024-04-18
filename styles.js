@@ -1,45 +1,54 @@
 import { createGlobalStyle } from "styled-components";
 
+export const lightTheme = (props) => ({
+  "--color-background-1": props && props.$isArchive ? `#8a8f8a60` : `#bdbfbd60`,
+  "--color-background-2": "#595a5900",
+  "--color-background-3": "white",
+  "--color-background-4": "#000000",
+  "--color-background-5": "#154f5f",
+  "--color-background-6": "#8a8f8a60",
+  "--color-card-1": "white",
+  "--color-card-2": "#e6f6e9",
+  "--color-font-1": "#000000df",
+  "--color-font-2": "white",
+  "--color-font-3": "#808580d5",
+  "--color-border-1": "#000000",
+  "--color-border-2": "white",
+  "--color-fox": "#db780de3",
+  "--color-header": "#ffffffba",
+});
+
+export const darkTheme = (props) => {
+  return {
+    "--color-background-1": "#111111",
+    "--color-background-2": "#212121",
+    "--color-background-3": "#333333",
+    "--color-background-4": "#000000",
+    "--color-background-5": "#154f5f",
+    "--color-background-6": "#8a8f8a60",
+    "--color-card-1": "#8a8f8a60",
+    "--color-card-2": "#ffffff",
+    "--color-font-1": "#ffffff",
+    "--color-font-2": "#eeeeee",
+    "--color-font-3": "white",
+    "--color-border-1": "#ffffff",
+    "--color-border-2": "#eeeeee",
+    "--color-fox": "#db780de3",
+    "--color-header": "#333333",
+  };
+};
+
 export default createGlobalStyle`
 :root {
-  //background -colors-body, Header Navigation
+  ${(props) => props.theme.func(props)}
 
-    --color-background-1: ${(props) =>
-      props.$isArchive ? `#8a8f8a60` : `#bdbfbd60`};
-    --color-background-2:#595a5900;
-    --color-background-3: white;
-    --color-background-4: #000000;
-    
-    --color-background-5: #154f5f;
-    --color-background-6:  #8a8f8a60;
-    
-
-    //background -colors-card
-    --color-card-1: white;
-    --color-card-2: #e6f6e9;
-
-    //font-colors
-    --color-font-1: #000000;
-    --color-font-2: white;
-    --color-font-3: #808580d5;
-
-    //border-colors
-    --color-border-1: #000000;
-    --color-border-2: white;
-    
-   //special-colors
-   --color-fox:#db780de3;
-
-    --gap: 20px;
-  }
-  
+}
   *,
   *::before,
   *::after {
     box-sizing: border-box;
   }
 
- 
 
   body {
     display: flex;
@@ -51,7 +60,6 @@ export default createGlobalStyle`
     background: linear-gradient(90deg, var(--color-background-1) 0%, var(--color-background-2) 100%);
  }
 
- 
   body > div:first-child {
     display: flex;
     flex-direction: column;
@@ -61,4 +69,5 @@ export default createGlobalStyle`
     gap: 1rem;
     position: relative;
   }
+
 `;

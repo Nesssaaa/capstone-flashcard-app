@@ -31,7 +31,7 @@ export const StyledTextContainer = styled.div`
 export const CollectionLink = styled(Link)`
   text-decoration: none;
 
-  color: #000000c0;
+  color: var(--color-font-1);
   transition: color 0.3s;
   cursor: pointer;
   &:hover {
