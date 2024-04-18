@@ -1,30 +1,37 @@
 [
   {
     "id": "65f5a80a0a0e2029e178274b",
-    "name": "Englisch"
+    "name": "Englisch",
+    "color": "#d56f21ff"
   },
   {
     "id": "65f5a828bb551a734e27375f",
-    "name": "Spanisch"
+    "name": "Spanisch",
+    "color": "#d56f21ff"
   },
   {
     "id": "65f5a834cb0e059dd15a0bc3",
-    "name": "Französisch"
+    "name": "Französisch",
+    "color": "#d56f21ff"
   },
   {
     "id": "65f5a840f46d875294425488",
-    "name": "Italienisch"
+    "name": "Italienisch",
+    "color": "#d56f21ff"
   },
   {
     "id": "65f5a8536324e8dea500371d",
-    "name": "Portugiesich"
+    "name": "Portugiesich",
+    "color": "#d56f21ff"
   },
   {
     "id": "65f5a863e832faf94ced2022",
-    "name": "Niederländisch"
+    "name": "Niederländisch",
+    "color": "#d56f21ff"
   },
   {
     "id": "65f5a86e1e7ef5bf6059d592",
-    "name": "Schwedisch"
+    "name": "Schwedisch",
+    "color": "#d56f21ff"
   }
 ]

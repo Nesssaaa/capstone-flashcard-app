@@ -124,8 +124,8 @@ export default function App({
       method: "DELETE",
     });
     if (response.ok) {
-      mutateCollections();
-      mutateCards();
+      await mutateCollections();
+      await mutateCards();
       toast("Kartenstapel wurde gelöscht");
     }
   }
