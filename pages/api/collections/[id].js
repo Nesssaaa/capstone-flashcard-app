@@ -28,14 +28,6 @@ export default async function handler(request, response) {
 
   if (request.method === "DELETE") {
     const collectionData = await Deck.findById(id);
-    console.log(
-      "ID:",
-      id,
-      "Hier ist die erfragte collection: ",
-      collectionData,
-      " und der collectionUser: ",
-      collectionData.user
-    );
 
     if (!collectionData || collectionData.user.toString() !== session.user.id) {
       return response.status(403).json({

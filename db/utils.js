@@ -42,23 +42,39 @@ export function dbToCard({
   };
 }
 
-export function collectionToDb({ id, name, color, user, reversedDirection }) {
+export function collectionToDb({
+  id,
+  name,
+  color,
+  user,
+  reversedDirection,
+  timestamp,
+}) {
   return {
     _id: id,
     name,
     color,
     user,
     reversedDirection,
+    timestamp,
   };
 }
 
-export function dbToCollection({ _id, name, color, user, reversedDirection }) {
+export function dbToCollection({
+  _id,
+  name,
+  color,
+  user,
+  reversedDirection,
+  timestamp,
+}) {
   return {
     id: _id,
     name,
     color,
     user,
     reversedDirection,
+    timestamp: timestamp || new Date(),
   };
 }
 
