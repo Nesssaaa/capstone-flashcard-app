@@ -25,15 +25,6 @@ export default function CardContainer({
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const { data: session } = useSession();
-  const [text, setText] = useState("");
-  const msg = new SpeechSynthesisUtterance();
-
-  function speechHandler(msg) {
-    console.log(answer);
-    msg.text = answer;
-    msg.lang = "de-DE";
-    window.speechSynthesis.speak(msg);
-  }
 
   function flipCard() {
     setIsFlipped(!isFlipped);
@@ -50,13 +41,14 @@ export default function CardContainer({
     });
   }
 
-  function showCardMenu() {
+  function showCardMenu(text) {
     return (
       <CardMenu
         id={id}
         deleteCard={deleteCard}
         isMastered={isMastered}
         handleResetCard={handleResetCard}
+        readText={text}
       />
     );
   }
@@ -64,7 +56,7 @@ export default function CardContainer({
   return (
     <ReactCardFlip flipDirection="vertical" isFlipped={isFlipped}>
       <StyledCardContainerQuestion onClick={flipCard} $level={level}>
-        {showCardMenu()}
+        {showCardMenu(question)}
         <StyledTextShow
           readOnly
           textLength={reversedDirection ? answer : question}
@@ -73,6 +65,7 @@ export default function CardContainer({
         <IconWrapper>
           <MdTouchApp />
         </IconWrapper>
+
         {isMastered && (
           <ButtonNavBar
             id={id}
@@ -84,7 +77,7 @@ export default function CardContainer({
       </StyledCardContainerQuestion>
 
       <StyledCardContainerAnswer onClick={flipCard} $level={level}>
-        {showCardMenu()}
+        {showCardMenu(answer)}
 
         <StyledTextShow
           readOnly
@@ -94,7 +87,6 @@ export default function CardContainer({
         <IconWrapper>
           <MdTouchApp />
         </IconWrapper>
-        <button onClick={() => speechHandler({ text })}>Speak</button>
         <ButtonNavBar
           id={id}
           deleteCard={deleteCard}
