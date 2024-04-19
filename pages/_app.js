@@ -8,6 +8,7 @@ import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
 import { SessionProvider } from "next-auth/react";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "../styles";
+import { Helmet } from "react-helmet";
 
 import useLocalStorageState from "use-local-storage-state";
 
@@ -180,6 +181,11 @@ export default function App({
           <Head>
             <title>SchlauFuchs</title>
           </Head>
+          <Helmet>
+            <title>
+              Diese Anwendung heißt SchlauFuchs. Das ist eine Karteikarten-App
+            </title>
+          </Helmet>
           <Layout setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode}>
             <GlobalStyle />
 
