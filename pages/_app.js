@@ -180,12 +180,12 @@ export default function App({
         <ThemeProvider theme={{ func: theme }}>
           <Head>
             <title>SchlauFuchs</title>
+            <meta
+              name="description"
+              content="Diese Anwendung heißt SchlauFuchs. Das ist eine Karteikarten-App"
+            />
           </Head>
-          <Helmet>
-            <title>
-              Diese Anwendung heißt SchlauFuchs. Das ist eine Karteikarten-App
-            </title>
-          </Helmet>
+
           <Layout setIsDarkMode={setIsDarkMode} isDarkMode={isDarkMode}>
             <GlobalStyle />
 
