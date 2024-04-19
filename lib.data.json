@@ -1,51 +1,173 @@
 [
   {
-    "id": "65f5a7d0b2ca949506423fdd",
-    "question": "Welcome",
-    "answer": "Willkommen",
+    "question": "Wie hieß die bisher erste und einzige Bundeskanzlerin?",
+    "answer": "Angela Merkel",
     "isMastered": false,
     "collection": "65f5a80a0a0e2029e178274b"
   },
   {
-    "id": "65f5a88c1505cf6a3321af86",
-    "question": "Bienvenido/Bienvenida",
-    "answer": "Willkommen",
+    "question": "Wie heißt der größte Berg der Welt?",
+    "answer": "Mount Everest",
     "isMastered": false,
-    "collection": "65f5a828bb551a734e27375f"
+    "collection": "65f5a80a0a0e2029e178274b"
   },
   {
-    "id": "65f5a8994b0185b21bae142a",
-    "question": "Bienvenue",
-    "answer": "Willkommen",
+    "question": "Welche Stadt wird die 'Ewige Stadt' genannt?",
+    "answer": "Rom",
     "isMastered": false,
-    "collection": "65f5a834cb0e059dd15a0bc3"
+    "collection": "65f5a80a0a0e2029e178274b"
   },
   {
-    "id": "65f5a8a1846a3178d938b9f6",
-    "question": "Benvenuto/Benvenuta",
-    "answer": "Willkommen",
+    "question": "Wann wurde die UNO gegründet?",
+    "answer": "1945",
     "isMastered": false,
-    "collection": "65f5a840f46d875294425488"
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+
+  {
+    "question": "Welches chemische Element hat das Symbol 'H' im Periodensystem der Elemente?",
+    "answer": "Wasserstoff",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274b"
   },
   {
-    "id": "65f5a8adb54e40dd94970d8f",
-    "question": "Bem-vindo/Bem-vinda",
-    "answer": "Willkommen",
+    "question": "Wer schrieb das Buch 'Die Odyssee'?",
+    "answer": "Homer",
     "isMastered": false,
-    "collection": "65f5a8536324e8dea500371d"
+    "collection": "65f5a80a0a0e2029e178274b"
   },
   {
-    "id": "65f5a8b9d978816cf2b96c8b",
-    "question": "Welkom",
-    "answer": "Willkommen",
+    "question": "Welche Farbe hat die Flamme eines Kohlenstoffbrenners?",
+    "answer": "blau",
     "isMastered": false,
-    "collection": "65f5a863e832faf94ced2022"
+    "collection": "65f5a80a0a0e2029e178274b"
   },
   {
-    "id": "65f5a8c0f4a8d5ffa48b6b1c",
-    "question": "Välkommen",
-    "answer": "Willkommen",
+    "question": "Wie nennt man das kleinste Land der Welt?",
+    "answer": "Vatikanstadt",
     "isMastered": false,
-    "collection": "65f5a86e1e7ef5bf6059d592"
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+  {
+    "question": "Wer war der erste Mensch im Weltraum?",
+    "answer": "Juri Gagarin",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+  {
+    "question": "Welches Land hat die längste Küstenlinie der Welt?",
+    "answer": "Kanada",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+  {
+    "question": "Wie heißt die Hauptstadt von Australien?",
+    "answer": "Canberra",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+  {
+    "question": "Welches Tier ist das schnellste Landtier der Welt?",
+    "answer": "Gepard",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+  {
+    "question": "Wie viele Planeten hat unser Sonnensystem?",
+    "answer": "Acht",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+  {
+    "question": "Welches ist das längste Flussdelta der Welt?",
+    "answer": "Ganges-Brahmaputra-Delta",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+
+  {
+    "question": "Welcher Planet ist am nächsten zur Sonne?",
+    "answer": "Merkur",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+  {
+    "question": "Wer schrieb das Buch 'Der Prozess'?",
+    "answer": "Franz Kafka",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+  {
+    "question": "Welches ist das drittgrößte Land der Welt?",
+    "answer": "USA (Vereinigte Staaten von Amerika)",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+  {
+    "question": "Wie heißt die Hauptstadt von Japan?",
+    "answer": "Tokio",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+  {
+    "question": "Wer malte die 'Mona Lisa'?",
+    "answer": "Leonardo da Vinci",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+  {
+    "question": "Wie nennt man die kleinste Knochen im menschlichen Körper?",
+    "answer": "Steigbügel (im Ohr)",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+  {
+    "question": "In welchem Jahr landete der erste Mensch auf dem Mond?",
+    "answer": "1969",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+  {
+    "question": "Wie nennt man die Studie von Pflanzen?",
+    "answer": "Botanik",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+  {
+    "question": "Wer erfand das Telefon?",
+    "answer": "Alexander Graham Bell",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+  {
+    "question": "Welches ist das höchste Gebäude der Welt?",
+    "answer": "Burj Khalifa (in Dubai, Vereinigte Arabische Emirate)",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274b"
+  },
+
+  {
+    "question": "Ein Vater ist 30 Jahre älter als sein Sohn. In 10 Jahren wird der Vater das Doppelte des Alters seines Sohnes haben. Wie alt sind der Vater und der Sohn jetzt?",
+    "answer": "Der Vater ist 40 Jahre alt und der Sohn ist 10 Jahre alt.",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274c"
+  },
+  {
+    "question": "Du hast einen Würfel, der aus 27 kleineren Würfeln besteht, die zu einem größeren Würfel angeordnet sind (3x3x3). Wenn du den äußeren Würfel mit Farbe malst und ihn in kleine Würfel schneidest, wie viele Würfel haben dann keine Farbe?",
+    "answer": "8 Würfel haben keine Farbe.",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274c"
+  },
+  {
+    "question": "Du hast einen Teich voller Lilienblätter. Jeden Tag verdoppelt sich die Anzahl der Lilienblätter. Wenn der Teich nach 48 Tagen vollständig bedeckt ist, nach wie vielen Tagen war er zur Hälfte bedeckt?",
+    "answer": "47 Tage",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274c"
+  },
+  {
+    "question": "Wenn drei Personen in 3 Stunden 3 Kekse essen können, wie viele Kekse können dann 7 Personen in 7 Stunden essen?",
+    "answer": "49 Kekse",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274c"
   }
 ]

@@ -32,7 +32,7 @@ export const authOptions = {
         password: { label: "Passwort", type: "password" },
       },
       async authorize(credentials) {
-        const testaccounts = ["fuchs", "marie", "nicole", "vanessa"];
+        const testaccounts = ["fuchs", "marie", "nicole", "vanessa", "susi"];
         // this is only here in order to make it easier for people to test the application
         if (
           testaccounts.indexOf(credentials.username) != -1 &&
