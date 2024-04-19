@@ -188,8 +188,8 @@ function InternalApp({ Component, pageProps: { ...pageProps } }) {
         <GlobalStyle />
 
         <Component
-          cards={cards}
-          collections={collections}
+          cards={cards || []}
+          collections={collections || []}
           getCard={getCard}
           addCard={addCard}
           updateCard={updateCard}
