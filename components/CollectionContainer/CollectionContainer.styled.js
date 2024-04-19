@@ -6,17 +6,39 @@ export const StyledCollectionContainer = styled.div`
   border: 2px solid darkgray;
   border-radius: 20px;
   width: 75%;
-  flex: 1;
+  position: relative;
+  align-items: center;
 `;
 
 export const StyledColorContainer = styled.div`
   display: flex;
-  border-radius: 15px 0px 0px 15px;
+  border-radius: 20px 0px 0px 20px;
+  border: 1px solid darkgrey;
   background-color: ${(props) => props.$color};
   width: 25%;
+  flex: 1;
+
+  position: absolute;
+  bottom: -1px;
+  top: -1px;
+  left: -1px;
+`;
+
+export const StyledWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 2px solid violet;
+  flex: 1;
+  margin-left: 25%;
+  @media screen and (max-width: 414px) {
+    flex-direction: column;
+  }
 `;
 
 export const StyledTextContainer = styled.div`
+  border: 2px solid red;
   text-align: center;
   flex: 1;
   font-size: 1rem;
@@ -30,7 +52,7 @@ export const StyledTextContainer = styled.div`
 
 export const CollectionLink = styled(Link)`
   text-decoration: none;
-
+  border: 2px solid green;
   color: var(--color-font-1);
   transition: color 0.3s;
   cursor: pointer;
@@ -44,26 +66,18 @@ export const StyledCollectionName = styled.h3`
   margin-bottom: 2.2rem;
   overflow-wrap: break-word;
   max-width: 45%;
+  border: 2px solid yellow;
   @media screen and (max-width: 414px) {
     margin-bottom: 0.5rem;
     max-width: 100%;
   }
 `;
 
-export const StyledWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-
-  @media screen and (max-width: 414px) {
-    flex-direction: column;
-  }
-`;
 export const StyledLink = styled(Link)`
   text-decoration: none;
   color: #000000c0;
   align-self: center;
+  border: 2px solid green;
 `;
 export const IconWrapper = styled.div`
   display: flex;
@@ -72,6 +86,7 @@ export const IconWrapper = styled.div`
   align-items: center;
   padding-left: 2.5rem;
   padding-right: 2.5rem;
+  border: 2px solid pink;
 
   @media screen and (max-width: 414px) {
     font-size: 2rem;
@@ -87,6 +102,7 @@ export const StyledCounter = styled.p`
   border-radius: 20px 20px;
   border: 2px solid darkgray;
   color: #808080da;
+  border: 2px solid brown;
 
   @media screen and (max-width: 414px) {
     margin-bottom: 1rem;

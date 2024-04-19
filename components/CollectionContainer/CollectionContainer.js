@@ -13,7 +13,6 @@ import { MdQuiz } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
 
 import CollectionMenu from "../CollectionMenu/CollectionMenu";
-import { useState } from "react";
 
 export default function CollectionContainer({
   collection,
