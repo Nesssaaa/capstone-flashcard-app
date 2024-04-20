@@ -12,13 +12,21 @@ export const StyledMenuButton = styled(MenuButton)`
 `;
 
 export const IconWrapper = styled.div`
-  font-size: 2.3rem;
+  display: flex;
+  font-size: 2rem;
   color: var(--color-font-3);
   opacity: 0.9;
-  padding: 1rem 1rem 0 1rem;
+  /* border: 2px solid blue; */
+  /* margin-bottom: 80%; */
+  //statt 80% ggfls hier 100% - Größe des Icons 2rem? als calc rein
+  padding: 2%;
+  position: absolute;
+  right: 0.5rem;
+  z-index: 1;
 
   @media screen and (max-width: 414px) {
     padding: 0;
+    /* border: 2px solid blue; */
   }
 `;
 
