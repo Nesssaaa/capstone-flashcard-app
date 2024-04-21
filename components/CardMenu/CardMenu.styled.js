@@ -12,6 +12,7 @@ export const IconWrapper = styled.div`
   color: var(--color-font-3);
   opacity: 0.9;
   padding: 1rem 1rem 0 1rem;
+  cursor: pointer;
 `;
 
 export const StyledMenu = styled.div`

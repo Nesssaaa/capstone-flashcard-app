@@ -51,7 +51,6 @@ export const CollectionLink = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-
   cursor: pointer;
   &:hover {
     color: orangered;
