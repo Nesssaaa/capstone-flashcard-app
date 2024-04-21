@@ -16,9 +16,6 @@ export const IconWrapper = styled.div`
   font-size: 2rem;
   color: var(--color-font-3);
   opacity: 0.9;
-  /* border: 2px solid blue; */
-  /* margin-bottom: 80%; */
-  //statt 80% ggfls hier 100% - Größe des Icons 2rem? als calc rein
   padding: 2%;
   position: absolute;
   right: 0.5rem;
@@ -26,7 +23,6 @@ export const IconWrapper = styled.div`
 
   @media screen and (max-width: 414px) {
     padding: 0;
-    /* border: 2px solid blue; */
   }
 `;
 

@@ -129,7 +129,6 @@ export default function CollectionMenu({
   return (
     <>
       <Menu
-        style="border: 2px solid blue;"
         menuButton={
           <StyledMenuButton onClick={handleMenuClick}>
             <IconWrapper>

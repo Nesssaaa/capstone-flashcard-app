@@ -25,7 +25,6 @@ export const StyledColorContainer = styled.div`
 `;
 
 export const StyledTextContainer = styled.div`
-  /* border: 2px solid red; */
   text-align: center;
   flex: 1;
   font-size: 1rem;
@@ -46,14 +45,12 @@ export const StyledTextContainer = styled.div`
 
 export const CollectionLink = styled(Link)`
   text-decoration: none;
-  /* border: 2px solid yellow; */
   color: var(--color-font-1);
   transition: color 0.3s;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* position: relative; */
 
   cursor: pointer;
   &:hover {
@@ -70,7 +67,6 @@ export const StyledWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: baseline;
-  /* border: 2px solid green; */
   width: 100%;
   height: 100%;
   position: relative;
@@ -89,7 +85,6 @@ export const StyledCollectionName = styled.h3`
   margin-top: 15%;
   margin-left: 5%;
   margin-right: 5%;
-  /* border: 2px solid brown; */
   padding: 3px;
   flex: 1;
   text-align: center;
@@ -122,7 +117,6 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   color: #000000c0;
   align-self: center;
-  /* border: 2px solid yellow; */
   width: 100%;
   height: 100%;
   display: flex;
@@ -134,7 +128,6 @@ export const IconWrapper = styled.div`
   font-size: 3rem;
   justify-content: center;
   align-items: center;
-  /* border: 2px solid red; */
   width: 100%;
   height: 100%;
 
