@@ -74,6 +74,7 @@ export const StyledTextShow = styled.textarea`
   resize: none;
   outline: none;
   font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};
+  cursor: grab;
 `;
 
 export const IconWrapper = styled.div`
