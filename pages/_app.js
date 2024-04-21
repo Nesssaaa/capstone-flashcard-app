@@ -46,6 +46,7 @@ function InternalApp({ Component, pageProps: { ...pageProps } }) {
   }
 
   function getCard(id) {
+    if (!cards) return null;
     return cards.find((card) => card.id === id);
   }
 
@@ -137,6 +138,7 @@ function InternalApp({ Component, pageProps: { ...pageProps } }) {
   }
 
   function getCollection(id) {
+    if (!collections) return null;
     return collections.find((collection) => collection.id === id);
   }
 
