@@ -7,6 +7,8 @@ export function cardToDb({
   level,
   timestamp,
   user,
+  languageAnswer,
+  languageQuestion,
 }) {
   return {
     _id: id,
@@ -17,6 +19,8 @@ export function cardToDb({
     level,
     timestamp,
     user,
+    languageQuestion,
+    languageAnswer,
   };
 }
 
@@ -29,6 +33,8 @@ export function dbToCard({
   level,
   timestamp,
   user,
+  languageQuestion,
+  languageAnswer,
 }) {
   return {
     id: _id,
@@ -39,6 +45,8 @@ export function dbToCard({
     level: level || 1,
     timestamp: timestamp || new Date(),
     user,
+    languageQuestion,
+    languageAnswer,
   };
 }
 

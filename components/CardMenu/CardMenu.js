@@ -19,19 +19,10 @@ export default function CardMenu({
   deleteCard,
   handleResetCard,
   isMastered,
-  readText,
 }) {
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
-
-  const speechSynthesisUtterance = new SpeechSynthesisUtterance();
-
-  function handleReadText() {
-    speechSynthesisUtterance.text = readText;
-    speechSynthesisUtterance.lang = "de-DE";
-    window.speechSynthesis.speak(speechSynthesisUtterance);
-  }
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -104,9 +95,6 @@ export default function CardMenu({
         <StyledMenuItem onClick={handleResetCards}>
           <RxReset />
           &nbsp; Kartenlevel zurücksetzen
-        </StyledMenuItem>
-        <StyledMenuItem onClick={handleReadText}>
-          <MdEdit /> &nbsp; Text vorlesen
         </StyledMenuItem>
       </StyledMenu>
     </Menu>

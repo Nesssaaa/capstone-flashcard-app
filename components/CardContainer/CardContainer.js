@@ -10,6 +10,7 @@ import { useState } from "react";
 import ButtonNavBar from "../ButtonNavBar/ButtonNavBar";
 import CardMenu from "../CardMenu/CardMenu";
 import { useSession } from "next-auth/react";
+import { HiOutlineSpeakerWave } from "react-icons/hi2";
 
 export default function CardContainer({
   question,
@@ -22,6 +23,8 @@ export default function CardContainer({
   showArchiveButton = true,
   resetCard,
   reversedDirection,
+  languageAnswer,
+  languageQuestion,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const { data: session } = useSession();
@@ -41,14 +44,29 @@ export default function CardContainer({
     });
   }
 
-  function showCardMenu(text) {
+  const speechSynthesisUtterance = new SpeechSynthesisUtterance();
+
+  function handleReadQuestion(event) {
+    event.stopPropagation();
+    speechSynthesisUtterance.text = question;
+    speechSynthesisUtterance.lang = languageQuestion;
+    window.speechSynthesis.speak(speechSynthesisUtterance);
+  }
+
+  function handleReadAnswer(event) {
+    event.stopPropagation();
+    speechSynthesisUtterance.text = answer;
+    speechSynthesisUtterance.lang = languageAnswer;
+    window.speechSynthesis.speak(speechSynthesisUtterance);
+  }
+
+  function showCardMenu() {
     return (
       <CardMenu
         id={id}
         deleteCard={deleteCard}
         isMastered={isMastered}
         handleResetCard={handleResetCard}
-        readText={text}
       />
     );
   }
@@ -64,6 +82,7 @@ export default function CardContainer({
         ></StyledTextShow>
         <IconWrapper>
           <MdTouchApp />
+          <HiOutlineSpeakerWave onClick={handleReadQuestion} />
         </IconWrapper>
 
         {isMastered && (
@@ -86,7 +105,9 @@ export default function CardContainer({
         ></StyledTextShow>
         <IconWrapper>
           <MdTouchApp />
+          <HiOutlineSpeakerWave onClick={handleReadAnswer} />
         </IconWrapper>
+
         <ButtonNavBar
           id={id}
           deleteCard={deleteCard}

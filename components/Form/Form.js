@@ -22,6 +22,8 @@ export default function Form({
   const [questionText, setQuestionText] = useState("");
   const [answerText, setAnswerText] = useState("");
   const [showNewCollection, setShowNewCollection] = useState(false);
+  const [languageAnswer, setLanguageAnswer] = useState("");
+  const [languageQuestion, setLanguageQuestion] = useState("");
   const [collectionId, setCollectionId] = useState(
     card.collection || router.query["collection"] || ""
   );
@@ -58,6 +60,16 @@ export default function Form({
   function handleCollectionChange(event) {
     setShowNewCollection(event.target.value === "__NEW__");
     setCollectionId(event.target.value);
+  }
+
+  function handleLanguageChangeQuestion(event) {
+    setLanguageQuestion(event.target.value);
+    card.languageQuestion = event.target.value;
+  }
+
+  function handleLanguageChangeAnswer(event) {
+    setLanguageAnswer(event.target.value);
+    card.languageAnswer = event.target.value;
   }
 
   return (
@@ -107,6 +119,22 @@ export default function Form({
         />
       </StyledLabel>
       <StyledLabel>
+        Wähle die Vorlesesprache deiner Kartenvorderseite
+        <Select
+          id="questionLanguage"
+          name="languageQuestion"
+          required
+          value={card.languageQuestion}
+          onChange={handleLanguageChangeQuestion}
+        >
+          <option value="de-DE">Deutsch</option>
+          <option value="en-US">Englisch</option>
+          <option value="es-ES">Spanisch</option>
+          <option value="fr-FR">Französisch</option>
+          <option value="it-IT">Italienisch</option>
+        </Select>
+      </StyledLabel>
+      <StyledLabel>
         Rückseite
         <StyledInput
           id="answer"
@@ -118,6 +146,22 @@ export default function Form({
           defaultValue={card.answer}
           textLength={answerText}
         />
+      </StyledLabel>
+      <StyledLabel>
+        Wähle die Vorlesesprache deiner Kartenrückseite
+        <Select
+          id="answerLanguage"
+          name="languageAnswer"
+          required
+          value={card.languageAnswer}
+          onChange={handleLanguageChangeAnswer}
+        >
+          <option value="de-DE">Deutsch</option>
+          <option value="en-US">Englisch</option>
+          <option value="es-ES">Spanisch</option>
+          <option value="fr-FR">Französisch</option>
+          <option value="it-IT">Italienisch</option>
+        </Select>
       </StyledLabel>
       <FActionButton>
         <BsSendPlusFill />

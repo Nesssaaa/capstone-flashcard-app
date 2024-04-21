@@ -100,6 +100,8 @@ export default function QuizPage({
         showArchiveButton={false}
         reversedDirection={collection.reversedDirection}
         resetCard={resetCard}
+        languageQuestion={card.languageQuestion}
+        languageAnswer={card.languageAnswer}
       />
       <StyledSection>
         Fortschritt: {countPosition + 1} von {quizCards.length}

@@ -56,4 +56,7 @@ export const IconWrapper = styled.div`
 export const Select = styled.select`
   font-size: 1.2rem;
   padding: 2px 5px;
+  display: block;
+  max-width: 15vw;
+  align-self: center;
 `;
