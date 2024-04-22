@@ -6,14 +6,22 @@ export const StyledCollectionContainer = styled.div`
   border: 2px solid darkgray;
   border-radius: 20px;
   width: 75%;
-  flex: 1;
+  position: relative;
+  align-items: center;
 `;
 
 export const StyledColorContainer = styled.div`
   display: flex;
-  border-radius: 15px 0px 0px 15px;
+  border-radius: 20px 0px 0px 20px;
+  border: 1px solid darkgrey;
+  border-right: none;
   background-color: ${(props) => props.$color};
   width: 25%;
+  flex: 1;
+  position: absolute;
+  bottom: -1px;
+  top: -1px;
+  left: -1px;
 `;
 
 export const StyledTextContainer = styled.div`
@@ -21,6 +29,13 @@ export const StyledTextContainer = styled.div`
   flex: 1;
   font-size: 1rem;
   padding-top: ${(props) => (props.$noCards ? "1.7rem" : "0")};
+  margin-left: 25%;
+  width: 75%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
 
   @media screen and (max-width: 414px) {
     padding-top: ${(props) => (props.$noCards ? "1.5rem" : "0")};
@@ -30,12 +45,35 @@ export const StyledTextContainer = styled.div`
 
 export const CollectionLink = styled(Link)`
   text-decoration: none;
-
   color: var(--color-font-1);
   transition: color 0.3s;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   cursor: pointer;
   &:hover {
     color: orangered;
+
+    @media screen and (max-width: 414px) {
+      flex-direction: column;
+    }
+  }
+`;
+
+export const StyledWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  @media screen and (max-width: 414px) {
+    flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -43,52 +81,57 @@ export const StyledCollectionName = styled.h3`
   margin-top: 0;
   margin-bottom: 2.2rem;
   overflow-wrap: break-word;
-  max-width: 45%;
+  min-width: 45%;
+  margin-top: 15%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 3px;
+  flex: 1;
+  text-align: center;
+
   @media screen and (max-width: 414px) {
     margin-bottom: 0.5rem;
     max-width: 100%;
   }
 `;
 
-export const StyledWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+export const StyledCounter = styled.p`
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  min-width: 14%;
+  max-width: 20%;
+  border-radius: 20px 20px;
+  border: 2px solid darkgray;
+  color: #808080da;
+  text-align: center;
+  padding: 3px;
+  margin-left: 5%;
+  margin-right: 5%;
 
   @media screen and (max-width: 414px) {
-    flex-direction: column;
+    margin-bottom: 1rem;
   }
 `;
+
 export const StyledLink = styled(Link)`
   text-decoration: none;
   color: #000000c0;
   align-self: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 export const IconWrapper = styled.div`
   display: flex;
-  font-size: 2.8rem;
+  font-size: 3rem;
   justify-content: center;
   align-items: center;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  width: 100%;
+  height: 100%;
 
   @media screen and (max-width: 414px) {
     font-size: 2rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-`;
-
-export const StyledCounter = styled.p`
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-  min-width: 10%;
-  border-radius: 20px 20px;
-  border: 2px solid darkgray;
-  color: #808080da;
-
-  @media screen and (max-width: 414px) {
-    margin-bottom: 1rem;
   }
 `;
