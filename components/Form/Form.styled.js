@@ -16,6 +16,7 @@ export const StyledLabel = styled.label`
   gap: 0.5rem;
   font-weight: bold;
   font-size: 1.3rem;
+  color: var(--color-font-1);
 `;
 
 export const StyledButton = styled.button`
@@ -47,6 +48,7 @@ export const StyledInput = styled.textarea`
   outline: none;
   max-width: 80vw;
   font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};
+  color: var(--color-font-1);
 `;
 
 export const IconWrapper = styled.div`

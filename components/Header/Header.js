@@ -1,4 +1,4 @@
-import MenuComponent from "../MenuComponent/MenuComponent.js";
+import MenuComponent from "../MenuComponent/MenuComponent";
 import {
   StyledHeader,
   IconWrapper,
@@ -7,7 +7,7 @@ import {
 } from "./Header.styled.js";
 import Image from "next/image.js";
 
-export default function Header() {
+export default function Header({ isDarkMode, setIsDarkMode }) {
   return (
     <>
       <StyledHeader>
@@ -20,7 +20,10 @@ export default function Header() {
         </StyledLink>
 
         <StyledSpan>
-          <MenuComponent />
+          <MenuComponent
+            isDarkMode={isDarkMode}
+            setIsDarkMode={setIsDarkMode}
+          />
         </StyledSpan>
       </StyledHeader>
     </>

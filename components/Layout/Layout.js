@@ -2,10 +2,10 @@ import Header from "../Header/Header";
 
 import { StyledMain } from "./Layout.styled";
 
-export default function Layout({ children }) {
+export default function Layout({ children, isDarkMode, setIsDarkMode }) {
   return (
     <>
-      <Header />
+      <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       <StyledMain>{children}</StyledMain>
     </>
   );
