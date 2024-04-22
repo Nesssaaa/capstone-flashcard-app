@@ -28,6 +28,10 @@ export default class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="icon" href="/favicon1.ico" />
+          <meta
+            name="description"
+            content="Diese Anwendung heißt SchlauFuchs. Das ist eine Karteikarten-App"
+          />
         </Head>
         <body>
           <Main />

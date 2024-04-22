@@ -8,6 +8,7 @@ import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
 import { SessionProvider, useSession } from "next-auth/react";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "../styles";
+
 import useLocalStorageState from "use-local-storage-state";
 
 const fetcher = (url) => fetch(url).then((response) => response.json());

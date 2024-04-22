@@ -9,7 +9,7 @@ import {
   StyledTitle,
   StyledWelcome,
 } from "@/components/WelcomePage.styled";
-import { StyledButton } from "@/components/WelcomePage.styled";
+
 import LoginButton from "@/components/LoginButton/LoginButton";
 import { SessionProvider } from "next-auth/react";
 
@@ -23,12 +23,10 @@ export default function HomePage() {
       <AnimatedFox />
       <StyledHeadlines>Die schlaue Art zu lernen!</StyledHeadlines>
       <StyledLoginNav>
-        <StyledButton>
-          <StyledLink href="/howToUse">
-            Wie funktioniert <br />
-            die App?
-          </StyledLink>
-        </StyledButton>
+        <StyledLink href="/howToUse">
+          Wie funktioniert <br />
+          die App?
+        </StyledLink>
 
         <SessionProvider>
           <LoginButton />
