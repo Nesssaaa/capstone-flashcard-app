@@ -90,6 +90,7 @@ export default function QuizPage({
     <StyledContainer>
       <CollectionHeader name={collectionName} />
       <CardContainer
+        key={card.id}
         question={card.question}
         answer={card.answer}
         id={card.id}

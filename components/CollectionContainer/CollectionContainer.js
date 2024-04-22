@@ -8,12 +8,12 @@ import {
   StyledCounter,
   IconWrapper,
   StyledLink,
+  IconWrapperArchiv,
 } from "./CollectionContainer.styled";
 import { MdQuiz } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";
 
 import CollectionMenu from "../CollectionMenu/CollectionMenu";
-import { useState } from "react";
 
 export default function CollectionContainer({
   collection,
@@ -61,6 +61,7 @@ export default function CollectionContainer({
             toggleCardDirection={toggleCardDirection}
           />
         )}
+        {/* <StyledWrapper> */}
         <CollectionLink href={`/collections/${id}?archive=${archive}`}>
           <StyledWrapper>
             <StyledCollectionName>{name}</StyledCollectionName>
@@ -68,6 +69,7 @@ export default function CollectionContainer({
             {cards && <StyledCounter>{cards.length}</StyledCounter>}
           </StyledWrapper>
         </CollectionLink>
+        {/* </StyledWrapper> */}
       </StyledTextContainer>
     </StyledCollectionContainer>
   );
