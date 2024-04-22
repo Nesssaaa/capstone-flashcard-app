@@ -87,6 +87,7 @@ export const StyledCollectionName = styled.h3`
   padding: 3px;
   flex: 1;
   text-align: center;
+  color: (var(--color-font-1));
 
   @media screen and (max-width: 414px) {
     margin-bottom: 0.5rem;
@@ -114,13 +115,16 @@ export const StyledCounter = styled.p`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: #000000c0;
+  color: #303030;
   align-self: center;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  &:hover {
+    color: darkblue;
+  }
 `;
 export const IconWrapper = styled.div`
   display: flex;
