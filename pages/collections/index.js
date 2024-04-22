@@ -21,7 +21,10 @@ export default function CollectionsPage({
         <StyledHeadlines>
           Erstelle jetzt deinen ersten Kartenstapel!
         </StyledHeadlines>
-        <StyledLink href={"/create"}>
+        <StyledLink
+          aria-label="Hier kannst du deinen Kartenstapel erstellen"
+          href={"/create"}
+        >
           <IconWrapper>
             <MdOutlineCreateNewFolder />
           </IconWrapper>

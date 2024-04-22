@@ -106,25 +106,33 @@ export default function QuizPage({
         Fortschritt: {countPosition + 1} von {quizCards.length}
         <br />
         <StyledButtonNavBar>
-          <StyledNavButton onClick={decrement} $hidden={countPosition === 0}>
+          <StyledNavButton
+            aria-label="Zurück zur vorherigen Karte"
+            onClick={decrement}
+            $hidden={countPosition === 0}
+          >
             <IconWrapper>
               <FaArrowCircleLeft />
             </IconWrapper>
           </StyledNavButton>
 
-          <StyledQuizButtonRight onClick={onClickRight}>
+          <StyledQuizButtonRight aria-label="wusste ich" onClick={onClickRight}>
             <IconWrapper>
               <PiSmileyDuotone />
             </IconWrapper>
           </StyledQuizButtonRight>
 
-          <StyledQuizButtonWrong onClick={onClickWrong}>
+          <StyledQuizButtonWrong
+            aria-label="wusste ich nicht"
+            onClick={onClickWrong}
+          >
             <IconWrapper>
               <PiSmileySadDuotone />
             </IconWrapper>
           </StyledQuizButtonWrong>
 
           <StyledNavButton
+            aria-label="vor zur nächsten Karte"
             onClick={increment}
             $hidden={countPosition === quizCards.length - 1}
           >
@@ -133,7 +141,10 @@ export default function QuizPage({
             </IconWrapper>
           </StyledNavButton>
         </StyledButtonNavBar>
-        <StyledLink href={`/collections/${collection.id}`}>
+        <StyledLink
+          aria-label="Zurück zur Kartenstapel-Übersicht"
+          href={`/collections/${collection.id}`}
+        >
           zurück zur Übersicht
         </StyledLink>
         <Space />

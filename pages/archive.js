@@ -37,7 +37,7 @@ export default function ArchivesPage({
         />
       )}
 
-      <Navigation />
+      <Navigation aria-label="Navigationsleiste" />
     </>
   );
 }

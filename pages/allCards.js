@@ -33,7 +33,7 @@ export default function AllCardsPage({
         toggleCardDirection={toggleCardDirection}
       />
 
-      <Navigation />
+      <Navigation aria-label="Navigationsleiste" />
     </div>
   );
 }

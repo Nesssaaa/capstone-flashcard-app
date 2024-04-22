@@ -12,12 +12,13 @@ export default function NewPage({ addCard, collections, addCollection }) {
     <>
       <StyledHeadlines>Erstelle deine Lernkarten</StyledHeadlines>
       <Form
+        aria-label="Erstelle eine neue Lernkarte"
         onSubmit={addCard}
         collections={collections}
         addCollection={addCollection}
       />
 
-      <Navigation />
+      <Navigation aria-label="Navigationsleiste" />
     </>
   );
 }

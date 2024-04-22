@@ -11,7 +11,10 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
   return (
     <>
       <StyledHeader>
-        <StyledLink href="/collections">
+        <StyledLink
+          aria-label="Hier gelangst du zum Kartenstapel"
+          href="/collections"
+        >
           SchlauFuchs{" "}
           <IconWrapper>
             {" "}

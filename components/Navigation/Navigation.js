@@ -7,9 +7,21 @@ import NavBar from "./NavBar";
 export default function Navigation() {
   return (
     <NavBar>
-      <NavBarButton href="/collections" icon={<BsCollectionFill />} />
-      <NavBarButton href="/create" icon={<MdOutlineAddCircleOutline />} />
-      <NavBarButton href="/archive" icon={<RiArchive2Fill />} />
+      <NavBarButton
+        aria-label="hier gelangst du zu den Kartenstapeln"
+        href="/collections"
+        icon={<BsCollectionFill />}
+      />
+      <NavBarButton
+        aria-label="hier gelangst du zum Formular für neue Karten"
+        href="/create"
+        icon={<MdOutlineAddCircleOutline />}
+      />
+      <NavBarButton
+        aria-label="hier gelangst du zum Archiv"
+        href="/archive"
+        icon={<RiArchive2Fill />}
+      />
     </NavBar>
   );
 }

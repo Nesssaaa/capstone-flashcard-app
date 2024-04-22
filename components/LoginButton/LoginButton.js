@@ -7,11 +7,19 @@ export default function LoginButton() {
   if (session) {
     return (
       <>
-        <StyledButton onClick={() => signOut()}>Abmelden</StyledButton>
+        <StyledButton
+          aria-label="Hier kannst du dich abmelden"
+          onClick={() => signOut()}
+        >
+          Abmelden
+        </StyledButton>
         <br />
         Angemeldet als {session.user.name} <br />
         <br />
-        <StyledLink href="/collections">
+        <StyledLink
+          aria-label="Hier gelangst du zum Kartenstapel"
+          href="/collections"
+        >
           Hier klicken zum Loslegen...
         </StyledLink>
       </>
@@ -19,7 +27,12 @@ export default function LoginButton() {
   } else {
     return (
       <>
-        <StyledButton onClick={() => signIn()}>Anmelden</StyledButton>
+        <StyledButton
+          aria-label="Hier kannst du dich anmelden"
+          onClick={() => signIn()}
+        >
+          Anmelden
+        </StyledButton>
       </>
     );
   }

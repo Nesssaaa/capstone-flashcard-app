@@ -5,7 +5,11 @@ export default function NavBarButton({ icon, href }) {
   const router = useRouter();
   return (
     <StyledListItem>
-      <StyledLink $isActive={router.pathname === href} href={href}>
+      <StyledLink
+        aria-label="Hier gelangst du zum jeweiligen angegebenen Link"
+        $isActive={router.pathname === href}
+        href={href}
+      >
         <IconWrapper>{icon}</IconWrapper>
       </StyledLink>
     </StyledListItem>

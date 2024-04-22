@@ -23,13 +23,16 @@ export default function HomePage() {
       <AnimatedFox />
       <StyledHeadlines>Die schlaue Art zu lernen!</StyledHeadlines>
       <StyledLoginNav>
-        <StyledLink href="/howToUse">
+        <StyledLink
+          aria-label="Hier kannst du mehr erfahren, wie die App funktioniert"
+          href="/howToUse"
+        >
           Wie funktioniert <br />
           die App?
         </StyledLink>
 
         <SessionProvider>
-          <LoginButton />
+          <LoginButton aria-label="Anmelden" />
         </SessionProvider>
       </StyledLoginNav>
     </StyledMain>

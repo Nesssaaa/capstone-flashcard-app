@@ -35,19 +35,24 @@ export default function ExplainPictures() {
       />
       <StyledNav>
         <StyledButton
+          aria-label="Zurück zum vorherigen Erklaerbild"
           onClick={handlePreviousClick}
           $hidden={currentIndex === 0}
         >
           Zurück
         </StyledButton>
         <StyledButton
+          aria-label="Weiter zum nächsten Erklaerbild"
           onClick={handleNextClick}
           $hidden={currentIndex === explainPictures.length - 1}
         >
           Weiter
         </StyledButton>
       </StyledNav>
-      <StyledLink href={isLoggedIn ? "/collections" : "/"}>
+      <StyledLink
+        aria-label="Hier gelangst du zum Kartenstapel"
+        href={isLoggedIn ? "/collections" : "/"}
+      >
         Ansicht verlassen und gleich loslegen
       </StyledLink>
     </StyledExplainContainer>
