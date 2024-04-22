@@ -1,11 +1,4 @@
-import {
-  IconWrapper,
-  StyledButton,
-  StyledForm,
-  StyledInput,
-  StyledLabel,
-  Select,
-} from "./Form.styled";
+import { StyledForm, StyledInput, StyledLabel, Select } from "./Form.styled";
 
 import FActionButton from "../FaButton/FaButton";
 import { BsSendPlusFill } from "react-icons/bs";
