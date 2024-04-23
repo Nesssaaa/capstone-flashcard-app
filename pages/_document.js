@@ -30,8 +30,8 @@ export default class MyDocument extends Document {
           <link rel="icon" href="/favicon1.ico" />
           <meta
             name="description"
-            content="Diese Anwendung heißt SchlauFuchs. Das ist eine Karteikarten-App"
-          />
+            content="Diese Anwendung heißt SchlauFuchs. Das ist eine Karteikarten-App. Du kannst neue Karten erstellen, die dich beim Lernen unterstützen"
+          ></meta>
         </Head>
         <body>
           <Main />

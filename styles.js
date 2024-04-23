@@ -69,5 +69,4 @@ export default createGlobalStyle`
     gap: 1rem;
     position: relative;
   }
-
 `;
