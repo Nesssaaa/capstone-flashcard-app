@@ -1,4 +1,10 @@
-import { StyledForm, StyledInput, StyledLabel, Select } from "./Form.styled";
+import {
+  StyledForm,
+  StyledInput,
+  StyledLabel,
+  Select,
+  NewCollectionInput,
+} from "./Form.styled";
 
 import FActionButton from "../FaButton/FaButton";
 import { BsSendPlusFill } from "react-icons/bs";
@@ -82,7 +88,11 @@ export default function Form({
         <>
           <StyledLabel>
             Name des neuen Kartenstapels
-            <input name="newCollection" required autoComplete="off" />
+            <NewCollectionInput
+              name="newCollection"
+              required
+              autoComplete="off"
+            />
           </StyledLabel>
         </>
       )}
