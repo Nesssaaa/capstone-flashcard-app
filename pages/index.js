@@ -12,30 +12,36 @@ import {
 
 import LoginButton from "@/components/LoginButton/LoginButton";
 import { SessionProvider } from "next-auth/react";
+import Head from "next/head";
 
 export default function HomePage() {
   return (
-    <StyledMain>
-      <Space />
-      <StyledWelcome>Willkommen </StyledWelcome>
-      <StyledTitle>bei SchlauFuchs!</StyledTitle>
+    <>
+      <Head>
+        <title>SchlauFuchs</title>
+      </Head>
+      <StyledMain>
+        <Space />
+        <StyledWelcome>Willkommen </StyledWelcome>
+        <StyledTitle>bei SchlauFuchs!</StyledTitle>
 
-      <AnimatedFox />
-      <StyledHeadlines>Die schlaue Art zu lernen!</StyledHeadlines>
-      <StyledLoginNav>
-        <StyledLink
-          aria-label="Hier kannst du mehr erfahren, wie die App funktioniert"
-          href="/howToUse"
-        >
-          Wie funktioniert <br />
-          die App?
-        </StyledLink>
+        <AnimatedFox />
+        <StyledHeadlines>Die schlaue Art zu lernen!</StyledHeadlines>
+        <StyledLoginNav>
+          <StyledLink
+            aria-label="Hier kannst du mehr erfahren, wie die App funktioniert"
+            href="/howToUse"
+          >
+            Wie funktioniert <br />
+            die App?
+          </StyledLink>
 
-        <SessionProvider>
-          <LoginButton aria-label="Anmelden" />
-        </SessionProvider>
-      </StyledLoginNav>
-    </StyledMain>
+          <SessionProvider>
+            <LoginButton aria-label="Anmelden" />
+          </SessionProvider>
+        </StyledLoginNav>
+      </StyledMain>
+    </>
   );
 }
 
