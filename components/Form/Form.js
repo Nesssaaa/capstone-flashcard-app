@@ -17,13 +17,20 @@ export default function Form({
   collections = [],
   card = {},
   addCollection,
+  languageQuestion,
+  onLanguageChangeQuestion,
+  languageAnswer,
+  onLanguageChangeAnswer,
 }) {
   const router = useRouter();
   const [questionText, setQuestionText] = useState("");
   const [answerText, setAnswerText] = useState("");
   const [showNewCollection, setShowNewCollection] = useState(false);
-  const [languageAnswer, setLanguageAnswer] = useState("");
-  const [languageQuestion, setLanguageQuestion] = useState("");
+  const [localLanguageQuestion, setLocalLanguageQuestion] =
+    useState(languageQuestion);
+  const [localLanguageAnswer, setLocalLanguageAnswer] =
+    useState(languageAnswer);
+
   const [collectionId, setCollectionId] = useState(
     card.collection || router.query["collection"] || ""
   );
@@ -63,13 +70,13 @@ export default function Form({
   }
 
   function handleLanguageChangeQuestion(event) {
-    setLanguageQuestion(event.target.value);
-    card.languageQuestion = event.target.value;
+    setLocalLanguageQuestion(event.target.value);
+    onLanguageChangeQuestion(event);
   }
 
   function handleLanguageChangeAnswer(event) {
-    setLanguageAnswer(event.target.value);
-    card.languageAnswer = event.target.value;
+    setLocalLanguageAnswer(event.target.value);
+    onLanguageChangeAnswer(event);
   }
 
   return (
