@@ -1,55 +1,101 @@
-export function cardToDb(card) {
-  const { id, collection, ...rest } = card;
-
+export function cardToDb({
+  id,
+  question,
+  answer,
+  collection,
+  isMastered,
+  level,
+  timestamp,
+  user,
+  languageAnswer,
+  languageQuestion,
+}) {
   return {
     _id: id,
     deck: collection,
-    ...rest,
+    question,
+    answer,
+    isMastered,
+    level,
+    timestamp,
+    user,
+    languageQuestion,
+    languageAnswer,
   };
 }
 
-export function dbToCard(card) {
-  const { _id, deck, level, timestamp, ...rest } = card;
-
+export function dbToCard({
+  _id,
+  question,
+  answer,
+  deck,
+  isMastered,
+  level,
+  timestamp,
+  user,
+  languageQuestion,
+  languageAnswer,
+}) {
   return {
     id: _id,
     collection: deck,
+    question,
+    answer,
+    isMastered,
     level: level || 1,
     timestamp: timestamp || new Date(),
-    ...rest,
+    user,
+    languageQuestion,
+    languageAnswer,
   };
 }
 
-export function collectionToDb(collection) {
-  const { id, ...rest } = collection;
+export function collectionToDb({
+  id,
+  name,
+  color,
+  user,
+  reversedDirection,
+  timestamp,
+}) {
   return {
     _id: id,
-    ...rest,
+    name,
+    color,
+    user,
+    reversedDirection,
+    timestamp,
   };
 }
 
-export function dbToCollection(collection) {
-  const { _id, timestamp, ...rest } = collection;
+export function dbToCollection({
+  _id,
+  name,
+  color,
+  user,
+  reversedDirection,
+  timestamp,
+}) {
   return {
     id: _id,
+    name,
+    color,
+    user,
+    reversedDirection,
     timestamp: timestamp || new Date(),
-    ...rest,
   };
 }
 
-export function dbToUser(user) {
-  const { _id, ...rest } = user;
+export function dbToUser({ _id, name }) {
   return {
     id: _id,
-    ...rest,
+    name,
   };
 }
 
-export function userToDb(user) {
-  const { id, ...rest } = user;
-
+export function userToDb({ id, name }) {
   return {
     _id: id,
-    ...rest,
+    name,
   };
 }

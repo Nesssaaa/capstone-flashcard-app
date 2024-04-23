@@ -12,6 +12,8 @@ export default function EditPage({
   editCard,
   collections,
   addCollection,
+  languageQuestion,
+  languageAnswer,
 }) {
   const router = useRouter();
   const card = getCard(router.query.id);
@@ -37,6 +39,10 @@ export default function EditPage({
         card={card}
         collections={collections}
         addCollection={addCollection}
+        languageQuestion={languageQuestion}
+        onLanguageChangeQuestion={() => {}}
+        languageAnswer={languageAnswer}
+        onLanguageChangeAnswer={() => {}}
       />
     </>
   );

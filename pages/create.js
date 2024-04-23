@@ -7,7 +7,13 @@ export const StyledH1 = styled.h1`
   text-align: center;
 `;
 
-export default function NewPage({ addCard, collections, addCollection }) {
+export default function NewPage({
+  addCard,
+  collections,
+  addCollection,
+  languageQuestion,
+  languageAnswer,
+}) {
   return (
     <>
       <StyledHeadlines>Erstelle deine Lernkarten</StyledHeadlines>
@@ -15,6 +21,10 @@ export default function NewPage({ addCard, collections, addCollection }) {
         onSubmit={addCard}
         collections={collections}
         addCollection={addCollection}
+        languageQuestion={languageQuestion}
+        onLanguageChangeQuestion={() => {}}
+        languageAnswer={languageAnswer}
+        onLanguageChangeAnswer={() => {}}
       />
 
       <Navigation />
