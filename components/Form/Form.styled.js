@@ -30,23 +30,26 @@ export const StyledLabel = styled.label`
 
 export const Select = styled.select`
   font-size: 1.2rem;
-  padding: 2px 5px;
+  padding: 5px 5px;
   margin: 0.2rem auto;
   width: 90%;
   border-radius: 0.5rem;
-  border: 1px solid darkgrey;
-  color: var(--color-input-select);
+  border: 1px solid var(--color-border-3);
+  color: var(--color-font-1);
+  background: var(--color-background-3);
+  opacity: 70%;
 `;
 
 export const NewCollectionInput = styled.input`
   margin: 0.2rem auto;
   width: 90%;
   font-size: 1.2rem;
-  padding: 3px 5px;
-  line-height: 10.5%;
+  padding: 5px 5px;
   border-radius: 0.5rem;
-  border: 1px solid darkgrey;
-  color: var(--color-input-select);
+  border: 1px solid var(--color-border-3);
+  color: var(--color-font-1);
+  background: var(--color-background-3);
+  opacity: 70%;
 `;
 
 export const StyledInput = styled.textarea`
@@ -64,6 +67,6 @@ export const StyledInput = styled.textarea`
   outline: none;
   font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};
   color: var(--color-font-1);
-  border: 1px solid darkgrey;
-  width: 95%;
+  border: 1px solid var(--color-border-3);
+  width: 90%;
 `;
