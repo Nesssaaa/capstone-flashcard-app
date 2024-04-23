@@ -71,12 +71,10 @@ export default function Form({
 
   function handleLanguageChangeQuestion(event) {
     setLocalLanguageQuestion(event.target.value);
-    onLanguageChangeQuestion(event);
   }
 
   function handleLanguageChangeAnswer(event) {
     setLocalLanguageAnswer(event.target.value);
-    onLanguageChangeAnswer(event);
   }
 
   return (

@@ -22,9 +22,7 @@ export default function NewPage({
         collections={collections}
         addCollection={addCollection}
         languageQuestion={languageQuestion}
-        onLanguageChangeQuestion={() => {}}
         languageAnswer={languageAnswer}
-        onLanguageChangeAnswer={() => {}}
       />
 
       <Navigation />

@@ -40,9 +40,7 @@ export default function EditPage({
         collections={collections}
         addCollection={addCollection}
         languageQuestion={languageQuestion}
-        onLanguageChangeQuestion={() => {}}
         languageAnswer={languageAnswer}
-        onLanguageChangeAnswer={() => {}}
       />
     </>
   );

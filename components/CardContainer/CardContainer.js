@@ -74,7 +74,7 @@ export default function CardContainer({
   return (
     <ReactCardFlip flipDirection="vertical" isFlipped={isFlipped}>
       <StyledCardContainerQuestion onClick={flipCard} $level={level}>
-        {showCardMenu(question)}
+        {showCardMenu()}
         <StyledTextShow
           readOnly
           textLength={reversedDirection ? answer : question}
@@ -96,7 +96,7 @@ export default function CardContainer({
       </StyledCardContainerQuestion>
 
       <StyledCardContainerAnswer onClick={flipCard} $level={level}>
-        {showCardMenu(answer)}
+        {showCardMenu()}
 
         <StyledTextShow
           readOnly
