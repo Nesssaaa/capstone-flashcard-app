@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const StyledInput = styled.input`
   width: 90%;
-  /* text-align: center; */
   font-size: 1.2rem;
   padding: 5px 5px;
   border-radius: 0.5rem;

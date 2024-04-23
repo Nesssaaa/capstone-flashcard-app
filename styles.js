@@ -17,7 +17,7 @@ export const lightTheme = (props) => ({
   "--color-border-3": "#a9a9a9",
   "--color-fox": "#db780de3",
   "--color-header": "#ffffffba",
-  "--color-input-select": "#303030",
+  "--color-counter": "#808580d5",
 });
 
 export const darkTheme = (props) => {
@@ -38,7 +38,7 @@ export const darkTheme = (props) => {
     "--color-border-3": "#a9a9a9",
     "--color-fox": "#db780de3",
     "--color-header": "#333333",
-    "--color-input-select": "#303030",
+    "--color-counter": "#808580d5",
   };
 };
 

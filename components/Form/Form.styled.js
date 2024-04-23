@@ -19,6 +19,7 @@ export const StyledLabel = styled.label`
   font-weight: bold;
   font-size: 1.3rem;
   color: var(--color-font-1);
+  opacity: 95%;
   width: 90vw;
   max-width: 80%;
   color: var(--color-font-1);
