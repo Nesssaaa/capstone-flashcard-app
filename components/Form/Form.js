@@ -131,7 +131,7 @@ export default function Form({
           id="questionLanguage"
           name="languageQuestion"
           required
-          value={card.languageQuestion}
+          value={localLanguageQuestion}
           onChange={handleLanguageChangeQuestion}
         >
           <option value="de-DE">Deutsch</option>
@@ -160,7 +160,7 @@ export default function Form({
           id="answerLanguage"
           name="languageAnswer"
           required
-          value={card.languageAnswer}
+          value={localLanguageAnswer}
           onChange={handleLanguageChangeAnswer}
         >
           <option value="de-DE">Deutsch</option>
