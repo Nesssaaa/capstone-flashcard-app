@@ -1,30 +1,12 @@
 [
   {
-    "id": "65f5a80a0a0e2029e178274b",
-    "name": "Englisch"
+    "id": "65f5a80a0a0e2029e178274x",
+    "name": "Allgemeinwissen",
+    "color": "#db780de3"
   },
   {
-    "id": "65f5a828bb551a734e27375f",
-    "name": "Spanisch"
-  },
-  {
-    "id": "65f5a834cb0e059dd15a0bc3",
-    "name": "Französisch"
-  },
-  {
-    "id": "65f5a840f46d875294425488",
-    "name": "Italienisch"
-  },
-  {
-    "id": "65f5a8536324e8dea500371d",
-    "name": "Portugiesich"
-  },
-  {
-    "id": "65f5a863e832faf94ced2022",
-    "name": "Niederländisch"
-  },
-  {
-    "id": "65f5a86e1e7ef5bf6059d592",
-    "name": "Schwedisch"
+    "id": "65f5a80a0a0e2029e178274z",
+    "name": "Knobelaufgaben",
+    "color": "#db780de3"
   }
 ]
