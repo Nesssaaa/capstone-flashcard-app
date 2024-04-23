@@ -1,51 +1,229 @@
 [
   {
-    "id": "65f5a7d0b2ca949506423fdd",
-    "question": "Welcome",
-    "answer": "Willkommen",
+    "question": "Wie hieß die bisher erste und einzige Bundeskanzlerin?",
+    "languageQuestion": "de-DE",
+    "answer": "Angela Merkel",
+    "languageAnswer": "de-DE",
     "isMastered": false,
-    "collection": "65f5a80a0a0e2029e178274b"
+    "collection": "65f5a80a0a0e2029e178274x"
   },
   {
-    "id": "65f5a88c1505cf6a3321af86",
-    "question": "Bienvenido/Bienvenida",
-    "answer": "Willkommen",
+    "question": "Wie heißt der größte Berg der Welt?",
+    "languageQuestion": "de-DE",
+    "answer": "Mount Everest",
+    "languageAnswer": "de-DE",
     "isMastered": false,
-    "collection": "65f5a828bb551a734e27375f"
+    "collection": "65f5a80a0a0e2029e178274x"
   },
   {
-    "id": "65f5a8994b0185b21bae142a",
-    "question": "Bienvenue",
-    "answer": "Willkommen",
+    "question": "Welche Stadt wird die 'Ewige Stadt' genannt?",
+    "languageQuestion": "de-DE",
+    "answer": "Rom",
+    "languageAnswer": "de-DE",
     "isMastered": false,
-    "collection": "65f5a834cb0e059dd15a0bc3"
+    "collection": "65f5a80a0a0e2029e178274x"
   },
   {
-    "id": "65f5a8a1846a3178d938b9f6",
-    "question": "Benvenuto/Benvenuta",
-    "answer": "Willkommen",
+    "question": "Wann wurde die UNO gegründet?",
+    "languageQuestion": "de-DE",
+    "answer": "1945",
+    "languageAnswer": "de-DE",
     "isMastered": false,
-    "collection": "65f5a840f46d875294425488"
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+
+  {
+    "question": "Welches chemische Element hat das Symbol 'H' im Periodensystem der Elemente?",
+    "languageQuestion": "de-DE",
+    "answer": "Wasserstoff",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274x"
   },
   {
-    "id": "65f5a8adb54e40dd94970d8f",
-    "question": "Bem-vindo/Bem-vinda",
-    "answer": "Willkommen",
+    "question": "Wer schrieb das Buch 'Die Odyssee'?",
+    "languageQuestion": "de-DE",
+    "answer": "Homer",
+    "languageAnswer": "de-DE",
     "isMastered": false,
-    "collection": "65f5a8536324e8dea500371d"
+    "collection": "65f5a80a0a0e2029e178274x"
   },
   {
-    "id": "65f5a8b9d978816cf2b96c8b",
-    "question": "Welkom",
-    "answer": "Willkommen",
+    "question": "Welche Farbe hat die Flamme eines Kohlenstoffbrenners?",
+    "languageQuestion": "de-DE",
+    "answer": "blau",
+    "languageAnswer": "de-DE",
     "isMastered": false,
-    "collection": "65f5a863e832faf94ced2022"
+    "collection": "65f5a80a0a0e2029e178274x"
   },
   {
-    "id": "65f5a8c0f4a8d5ffa48b6b1c",
-    "question": "Välkommen",
-    "answer": "Willkommen",
+    "question": "Wie nennt man das kleinste Land der Welt?",
+    "languageQuestion": "de-DE",
+    "answer": "Vatikanstadt",
+    "languageAnswer": "de-DE",
     "isMastered": false,
-    "collection": "65f5a86e1e7ef5bf6059d592"
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+  {
+    "question": "Wer war der erste Mensch im Weltraum?",
+    "languageQuestion": "de-DE",
+    "answer": "Juri Gagarin",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+  {
+    "question": "Welches Land hat die längste Küstenlinie der Welt?",
+    "languageQuestion": "de-DE",
+    "answer": "Kanada",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+  {
+    "question": "Wie heißt die Hauptstadt von Australien?",
+    "languageQuestion": "de-DE",
+    "answer": "Canberra",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+  {
+    "question": "Welches Tier ist das schnellste Landtier der Welt?",
+    "languageQuestion": "de-DE",
+    "answer": "Gepard",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+  {
+    "question": "Wie viele Planeten hat unser Sonnensystem?",
+    "languageQuestion": "de-DE",
+    "answer": "Acht",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+  {
+    "question": "Welches ist das längste Flussdelta der Welt?",
+    "languageQuestion": "de-DE",
+    "answer": "Ganges-Brahmaputra-Delta",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+
+  {
+    "question": "Welcher Planet ist am nächsten zur Sonne?",
+    "languageQuestion": "de-DE",
+    "answer": "Merkur",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+  {
+    "question": "Wer schrieb das Buch 'Der Prozess'?",
+    "languageQuestion": "de-DE",
+    "answer": "Franz Kafka",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+  {
+    "question": "Welches ist das drittgrößte Land der Welt?",
+    "languageQuestion": "de-DE",
+    "answer": "USA (Vereinigte Staaten von Amerika)",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+  {
+    "question": "Wie heißt die Hauptstadt von Japan?",
+    "languageQuestion": "de-DE",
+    "answer": "Tokio",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+  {
+    "question": "Wer malte die 'Mona Lisa'?",
+    "languageQuestion": "de-DE",
+    "answer": "Leonardo da Vinci",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+  {
+    "question": "Wie nennt man die kleinste Knochen im menschlichen Körper?",
+    "languageQuestion": "de-DE",
+    "answer": "Steigbügel (im Ohr)",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+  {
+    "question": "In welchem Jahr landete der erste Mensch auf dem Mond?",
+    "languageQuestion": "de-DE",
+    "answer": "1969",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+  {
+    "question": "Wie nennt man die Studie von Pflanzen?",
+    "languageQuestion": "de-DE",
+    "answer": "Botanik",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+  {
+    "question": "Wer erfand das Telefon?",
+    "languageQuestion": "de-DE",
+    "answer": "Alexander Graham Bell",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+  {
+    "question": "Welches ist das höchste Gebäude der Welt?",
+    "languageQuestion": "de-DE",
+    "answer": "Burj Khalifa (in Dubai, Vereinigte Arabische Emirate)",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274x"
+  },
+
+  {
+    "question": "Ein Vater ist 30 Jahre älter als sein Sohn. In 10 Jahren wird der Vater das Doppelte des Alters seines Sohnes haben. Wie alt sind der Vater und der Sohn jetzt?",
+    "languageQuestion": "de-DE",
+    "answer": "Der Vater ist 40 Jahre alt und der Sohn ist 10 Jahre alt.",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274z"
+  },
+  {
+    "question": "Du hast einen Würfel, der aus 27 kleineren Würfeln besteht, die zu einem größeren Würfel angeordnet sind (3x3x3). Wenn du den äußeren Würfel mit Farbe malst und ihn in kleine Würfel schneidest, wie viele Würfel haben dann keine Farbe?",
+    "languageQuestion": "de-DE",
+    "answer": "8 Würfel haben keine Farbe.",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274z"
+  },
+  {
+    "question": "Du hast einen Teich voller Lilienblätter. Jeden Tag verdoppelt sich die Anzahl der Lilienblätter. Wenn der Teich nach 48 Tagen vollständig bedeckt ist, nach wie vielen Tagen war er zur Hälfte bedeckt?",
+    "languageQuestion": "de-DE",
+    "answer": "47 Tage",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274z"
+  },
+  {
+    "question": "Wenn drei Personen in 3 Stunden 3 Kekse essen können, wie viele Kekse können dann 7 Personen in 7 Stunden essen?",
+    "languageQuestion": "de-DE",
+    "answer": "49 Kekse",
+    "languageAnswer": "de-DE",
+    "isMastered": false,
+    "collection": "65f5a80a0a0e2029e178274z"
   }
 ]

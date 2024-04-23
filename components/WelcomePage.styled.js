@@ -30,6 +30,13 @@ export const StyledLink = styled(Link)`
   color: white;
   font-style: bold;
   text-decoration: none;
+  background-color: #db780de3;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px;
+  margin: 1.2rem 0.5rem;
+  text-align: center;
 `;
 
 export const StyledTitle = styled.h3`

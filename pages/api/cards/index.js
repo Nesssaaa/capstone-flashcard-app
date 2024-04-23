@@ -26,7 +26,7 @@ export default async function handler(request, response) {
       user: session.user.id,
     });
 
-    return response.status(200).json(cards);
+    return response.status(200).json(cards.map((dbCard) => dbToCard(dbCard)));
   }
 
   if (request.method === "GET" && request.url === "/api/cards") {
