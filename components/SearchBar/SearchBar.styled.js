@@ -1,9 +1,15 @@
 import styled from "styled-components";
 
 export const StyledInput = styled.input`
-  width: 20rem;
-  height: 2.5rem;
+  width: 90%;
+  font-size: 1.2rem;
+  padding: 5px 5px;
   border-radius: 0.5rem;
-  border: 1px var(--color-font-2) solid;
+  border: 1px solid var(--color-border-3);
   margin-bottom: 2rem;
+  margin-left: 5%;
+  margin-right: 5%;
+  color: var(--color-font-1);
+  opacity: 70%;
+  background: var(--color-background-3);
 `;

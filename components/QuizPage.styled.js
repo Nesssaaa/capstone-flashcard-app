@@ -18,6 +18,7 @@ export const StyledSection = styled.section`
   flex-direction: column;
   text-align: center;
   gap: 1rem;
+  color: var(--color-counter);
 `;
 
 export const StyledButtonContainer = styled.div`

@@ -20,6 +20,7 @@ export const IconWrapper = styled.div`
   position: absolute;
   right: 0.5rem;
   z-index: 1;
+  cursor: pointer;
 
   @media screen and (max-width: 414px) {
     padding: 0;

@@ -9,13 +9,15 @@ export const lightTheme = (props) => ({
   "--color-background-6": "#8a8f8a60",
   "--color-card-1": "white",
   "--color-card-2": "#e6f6e9",
-  "--color-font-1": "#000000df",
-  "--color-font-2": "white",
+  "--color-font-1": "#303030",
+  "--color-font-2": "#ffffff",
   "--color-font-3": "#808580d5",
   "--color-border-1": "#000000",
-  "--color-border-2": "white",
+  "--color-border-2": "#ffffff",
+  "--color-border-3": "#a9a9a9",
   "--color-fox": "#db780de3",
   "--color-header": "#ffffffba",
+  "--color-counter": "#808580d5",
 });
 
 export const darkTheme = (props) => {
@@ -28,13 +30,15 @@ export const darkTheme = (props) => {
     "--color-background-6": "#8a8f8a60",
     "--color-card-1": "#8a8f8a60",
     "--color-card-2": "#ffffff",
-    "--color-font-1": "#ffffff",
+    "--color-font-1": "#f5f5f5",
     "--color-font-2": "#eeeeee",
-    "--color-font-3": "white",
+    "--color-font-3": "#ffffff",
     "--color-border-1": "#ffffff",
     "--color-border-2": "#eeeeee",
+    "--color-border-3": "#a9a9a9",
     "--color-fox": "#db780de3",
     "--color-header": "#333333",
+    "--color-counter": "#808580d5",
   };
 };
 

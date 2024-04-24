@@ -7,34 +7,54 @@ export const StyledForm = styled.form`
   gap: 2rem;
   justify-content: center;
   align-items: center;
+  margin-bottom: 5rem;
 `;
 
 export const StyledLabel = styled.label`
   margin: 0.7rem;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.5rem;
   font-weight: bold;
   font-size: 1.3rem;
   color: var(--color-font-1);
+  opacity: 95%;
+  width: 90vw;
+  max-width: 80%;
+  color: var(--color-font-1);
+
+  @media screen and (max-width: 414px) {
+    max-width: 90%;
+  }
 `;
 
-export const StyledButton = styled.button`
-  margin: auto;
-  padding: 0 1rem;
-  height: 4.5rem;
-  width: 4.5rem;
-  /* color: var(--color-font-2); */
-  border-radius: 50%;
-  border: none;
-  /* box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  background-color: rgba(0, 0, 0, 0.4); */
-  background-color: var(--color-background-1);
-  color: var(--color-font-3);
+export const Select = styled.select`
+  font-size: 1.2rem;
+  padding: 5px 5px;
+  margin: 0.2rem auto;
+  width: 90%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border-3);
+  color: var(--color-font-1);
+  background: var(--color-background-3);
+  opacity: 70%;
+`;
+
+export const NewCollectionInput = styled.input`
+  margin: 0.2rem auto;
+  width: 90%;
+  font-size: 1.2rem;
+  padding: 5px 5px;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border-3);
+  color: var(--color-font-1);
+  background: var(--color-background-3);
+  opacity: 70%;
 `;
 
 export const StyledInput = styled.textarea`
-  margin: 0.2rem 0.7rem;
+  margin: 0.2rem auto;
   padding: 3rem;
   height: 13rem;
   border-radius: 0.5rem;
@@ -46,19 +66,8 @@ export const StyledInput = styled.textarea`
   opacity: 0.7;
   resize: none;
   outline: none;
-  max-width: 80vw;
   font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};
   color: var(--color-font-1);
-`;
-
-export const IconWrapper = styled.div`
-  font-size: 2.7rem;
-`;
-
-export const Select = styled.select`
-  font-size: 1.2rem;
-  padding: 2px 5px;
-  display: block;
-  max-width: 15vw;
-  align-self: center;
+  border: 1px solid var(--color-border-3);
+  width: 90%;
 `;

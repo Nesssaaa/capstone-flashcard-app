@@ -1,10 +1,9 @@
 import {
-  IconWrapper,
-  StyledButton,
   StyledForm,
   StyledInput,
   StyledLabel,
   Select,
+  NewCollectionInput,
 } from "./Form.styled";
 
 import FActionButton from "../FaButton/FaButton";
@@ -106,7 +105,11 @@ export default function Form({
         <>
           <StyledLabel>
             Name des neuen Kartenstapels
-            <input name="newCollection" required autoComplete="off" />
+            <NewCollectionInput
+              name="newCollection"
+              required
+              autoComplete="off"
+            />
           </StyledLabel>
         </>
       )}
