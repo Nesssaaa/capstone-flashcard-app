@@ -17,9 +17,7 @@ export default function Form({
   card = {},
   addCollection,
   languageQuestion,
-  onLanguageChangeQuestion,
   languageAnswer,
-  onLanguageChangeAnswer,
 }) {
   const router = useRouter();
   const [questionText, setQuestionText] = useState("");
