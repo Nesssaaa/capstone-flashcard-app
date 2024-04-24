@@ -29,7 +29,7 @@ export default function LoginButton() {
       <>
         <StyledButton
           aria-label="Hier kannst du dich anmelden"
-          onClick={() => signIn()}
+          onClick={() => signIn(null, { callbackUrl: "/collections" })}
         >
           Anmelden
         </StyledButton>
