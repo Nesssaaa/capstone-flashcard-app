@@ -18,7 +18,11 @@ export default function EditCollectionPage({ getCollection, editCollection }) {
   return (
     <>
       <StyledHeadlines>Bearbeite deinen Kartenstapel</StyledHeadlines>
-      <CollectionForm collection={collection} editCollection={editCollection} />
+      <CollectionForm
+        arial-label="Mit diesem Formular bearbeitest du deinen Kartenstapel"
+        collection={collection}
+        editCollection={editCollection}
+      />
     </>
   );
 }

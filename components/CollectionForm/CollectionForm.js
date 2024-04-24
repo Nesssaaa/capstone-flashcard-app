@@ -51,7 +51,10 @@ export default function CollectionForm({ collection, editCollection }) {
   }
 
   return (
-    <StyledForm onSubmit={handleSubmit}>
+    <StyledForm
+      aria-label="Mit diesem Formular kannst du deinen Kartenstapel bearbeiten"
+      onSubmit={handleSubmit}
+    >
       <CollectionContainer
         collection={currentCollection}
         editCollection={editCollection}
@@ -80,13 +83,20 @@ export default function CollectionForm({ collection, editCollection }) {
         onChange={handleChangeName}
       />
       <nav>
-        <StyledButton type="submit">
+        <StyledButton
+          aria-label="Kartenstapel erstellen und speichern"
+          type="submit"
+        >
           <IconWrapper>
             <FaCheck />
           </IconWrapper>
         </StyledButton>
 
-        <StyledButton type="button" onClick={handleCancel}>
+        <StyledButton
+          aria-label="Den Vorgang des Erstellens abbrechen"
+          type="button"
+          onClick={handleCancel}
+        >
           <IconWrapper>
             <ImCancelCircle />
           </IconWrapper>

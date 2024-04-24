@@ -38,14 +38,20 @@ export default function CollectionContainer({
     <StyledCollectionContainer>
       <StyledColorContainer $color={color}>
         {!archive ? (
-          <StyledLink href={`/collections/${id}/quiz`}>
+          <StyledLink
+            aria-label="Hiermit startest du dein Quiz"
+            href={`/collections/${id}/quiz`}
+          >
             <IconWrapper>
               <MdQuiz />
             </IconWrapper>
           </StyledLink>
         ) : (
           <IconWrapper>
-            <StyledLink href={`/collections/${id}?archive=${archive}`}>
+            <StyledLink
+              aria-label="Weiterleitung zum Archiv"
+              href={`/collections/${id}?archive=${archive}`}
+            >
               <FaCheck />
             </StyledLink>
           </IconWrapper>
@@ -61,7 +67,10 @@ export default function CollectionContainer({
             toggleCardDirection={toggleCardDirection}
           />
         )}
-        <CollectionLink href={`/collections/${id}?archive=${archive}`}>
+        <CollectionLink
+          aria-label="Weiterleitung zum Archiv"
+          href={`/collections/${id}?archive=${archive}`}
+        >
           <StyledWrapper>
             <StyledCollectionName>{name}</StyledCollectionName>
             {cards && <StyledCounter>{cards.length}</StyledCounter>}

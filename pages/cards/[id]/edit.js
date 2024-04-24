@@ -35,6 +35,7 @@ export default function EditPage({
     <>
       <StyledHeadlines>Bearbeite deine Lernkarten</StyledHeadlines>
       <Form
+        aria-label="Mit diesem Formular bearbeitest du deine Lernkarte"
         onSubmit={onSubmit}
         card={card}
         collections={collections}

@@ -75,7 +75,10 @@ export default function CardMenu({
   return (
     <Menu
       menuButton={
-        <StyledMenuButton onClick={handleMenuClick}>
+        <StyledMenuButton
+          aria-label="Hier kannst du das Kartenmenu öffnen und schließen"
+          onClick={handleMenuClick}
+        >
           <IconWrapper>
             {isMenuOpen ? <MdOutlineClose /> : <BsThreeDots />}
           </IconWrapper>
@@ -85,14 +88,23 @@ export default function CardMenu({
       onClick={(event) => event.stopPropagation()}
     >
       <StyledMenu ref={menuRef} onClick={(event) => event.stopPropagation()}>
-        <StyledMenuItem onClick={onEdit}>
+        <StyledMenuItem
+          aria-label="Hier kannst du eine Karte bearbeiten"
+          onClick={onEdit}
+        >
           <MdEdit /> &nbsp; Karte bearbeiten
         </StyledMenuItem>
-        <StyledMenuItem onClick={handleDelete}>
+        <StyledMenuItem
+          aria-label="Hier kannst du die Karte löschen"
+          onClick={handleDelete}
+        >
           <MdDeleteForever />
           &nbsp; Karte löschen
         </StyledMenuItem>
-        <StyledMenuItem onClick={handleResetCards}>
+        <StyledMenuItem
+          aria-label="Hier kannst du das Kartenlevel zurücksetzen"
+          onClick={handleResetCards}
+        >
           <RxReset />
           &nbsp; Kartenlevel zurücksetzen
         </StyledMenuItem>

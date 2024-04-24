@@ -31,7 +31,7 @@ export default function MenuComponent({ setIsDarkMode }) {
     <>
       <MainMenu
         menuButton={
-          <StyledMenuButton>
+          <StyledMenuButton aria-label="Hier kannst du das Menu öffnen und schließen">
             <IconWrapper>
               <MdOutlineMenu />
             </IconWrapper>
@@ -48,13 +48,19 @@ export default function MenuComponent({ setIsDarkMode }) {
                 &nbsp; Schließen
               </IconWrapper>
             </StyledMenuItem>
-            <StyledMenuItem href="/collections">
+            <StyledMenuItem
+              aria-label="Hier gelangst du zum Kartenstapel"
+              href="/collections"
+            >
               <IconWrapper $size="1.3rem">
                 &nbsp;&nbsp;
                 <BsCollectionFill /> &nbsp; Meine Kartenstapel
               </IconWrapper>
             </StyledMenuItem>
-            <StyledMenuItem href="/allCards">
+            <StyledMenuItem
+              aria-label="Hier gelangst du zu einer Übersicht, die alle deine Karten anzeigt"
+              href="/allCards"
+            >
               <IconWrapper $size="1.3rem">
                 &nbsp;&nbsp;
                 <PiCards />
@@ -62,17 +68,18 @@ export default function MenuComponent({ setIsDarkMode }) {
               </IconWrapper>
             </StyledMenuItem>
 
-            <StyledSubMenu
-              label={
+            <StyledSubMenu aria-label="Hier gelangst du zu den Farbeinstellungen">
+              label=
+              {
                 <StyledLabel>
                   <IconWrapper $size="1.3rem">
                     <VscColorMode /> &nbsp; Farbwechsel
                   </IconWrapper>
                 </StyledLabel>
               }
-            >
               <MenuRadioGroup>
                 <MenuItem
+                  aria-label="Hier kannst du den hellen Farbmodus auswaehlen"
                   style={{
                     color: "var(--color-fox)",
                   }}
@@ -83,6 +90,7 @@ export default function MenuComponent({ setIsDarkMode }) {
                   &nbsp; Hell
                 </MenuItem>
                 <MenuItem
+                  aria-label="Hier kannst du den dunkten Farbmodus auswaehlen"
                   style={{ color: "var(--color-background-4)" }}
                   type="radio"
                   value="dark"
@@ -94,7 +102,10 @@ export default function MenuComponent({ setIsDarkMode }) {
             </StyledSubMenu>
 
             <StyledMenuDivider />
-            <StyledMenuItem onClick={handleSignOut}>
+            <StyledMenuItem
+              aria-label="Hier kannst du dich abmelden"
+              onClick={handleSignOut}
+            >
               <IconWrapper $size="1.3rem">
                 &nbsp;&nbsp; <MdLogout />
                 &nbsp; Abmelden

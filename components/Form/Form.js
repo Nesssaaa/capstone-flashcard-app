@@ -77,7 +77,10 @@ export default function Form({
   }
 
   return (
-    <StyledForm onSubmit={handleSubmit}>
+    <StyledForm
+      aria-label="Mit diesem Formular erstellst du deine Lernkarte"
+      onSubmit={handleSubmit}
+    >
       <StyledLabel>
         Wähle einen passenden Kartenstapel
         <Select

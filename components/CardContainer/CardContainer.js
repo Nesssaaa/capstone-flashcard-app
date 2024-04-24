@@ -61,7 +61,11 @@ export default function CardContainer({
   }
 
   return (
-    <ReactCardFlip flipDirection="vertical" isFlipped={isFlipped}>
+    <ReactCardFlip
+      aria-label="Durch Tippen auf die Karte kannst du diese umdrehen"
+      flipDirection="vertical"
+      isFlipped={isFlipped}
+    >
       <StyledCardContainerQuestion onClick={flipCard} $level={level}>
         <CardMenu
           id={id}

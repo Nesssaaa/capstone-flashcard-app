@@ -13,6 +13,7 @@ export default function NewPage({
     <>
       <StyledHeadlines>Erstelle deine Lernkarten</StyledHeadlines>
       <Form
+        aria-label="Erstelle eine neue Lernkarte"
         onSubmit={addCard}
         collections={collections}
         addCollection={addCollection}
@@ -20,7 +21,7 @@ export default function NewPage({
         languageAnswer={languageAnswer}
       />
 
-      <Navigation />
+      <Navigation aria-label="Navigationsleiste" />
     </>
   );
 }

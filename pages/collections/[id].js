@@ -93,7 +93,12 @@ export default function CollectionCardList({
           <p>Dein Kartenstapel ist noch leer.</p>
           <br />
           <p>
-            <StyledLink href={"/create"}>Füge neue Karten hinzu!</StyledLink>
+            <StyledLink
+              aria-label="Hier kannst du Karten hinzufügen"
+              href={"/create"}
+            >
+              Füge neue Karten hinzu!
+            </StyledLink>
           </p>
         </StyledContainer>
       ) : (
@@ -108,18 +113,21 @@ export default function CollectionCardList({
         </>
       )}
       {!isArchivePage && (
-        <FActionButton onClick={handleQuizClick}>
+        <FActionButton aria-label="Quiz starten" onClick={handleQuizClick}>
           <MdQuiz />
         </FActionButton>
       )}
 
       {isArchivePage && (
-        <FActionButton onClick={handleResetClick}>
+        <FActionButton
+          aria-label="Karten zurücksetzen"
+          onClick={handleResetClick}
+        >
           <GiCardDraw />
         </FActionButton>
       )}
 
-      <CollectionNavbar id={collection.id} />
+      <CollectionNavbar aria-label="Navigationsleiste" id={collection.id} />
     </>
   );
 }
