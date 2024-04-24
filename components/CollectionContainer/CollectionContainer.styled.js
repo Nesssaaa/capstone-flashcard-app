@@ -13,7 +13,7 @@ export const StyledCollectionContainer = styled.div`
 export const StyledColorContainer = styled.div`
   display: flex;
   border-radius: 20px 0px 0px 20px;
-  border: 1px solid darkgrey;
+  border: 1px solid var(--color-border-3);
   border-right: none;
   background-color: ${(props) => props.$color};
   width: 25%;
@@ -46,12 +46,12 @@ export const StyledTextContainer = styled.div`
 export const CollectionLink = styled(Link)`
   text-decoration: none;
   color: var(--color-font-1);
+  opacity: 95%;
   transition: color 0.3s;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-
   cursor: pointer;
   &:hover {
     color: orangered;
@@ -88,6 +88,7 @@ export const StyledCollectionName = styled.h3`
   padding: 3px;
   flex: 1;
   text-align: center;
+  color: (var(--color-font-1));
 
   @media screen and (max-width: 414px) {
     margin-bottom: 0.5rem;
@@ -115,13 +116,16 @@ export const StyledCounter = styled.p`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: #000000c0;
+  color: #303030;
   align-self: center;
   width: 100%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  &:hover {
+    color: darkblue;
+  }
 `;
 export const IconWrapper = styled.div`
   display: flex;

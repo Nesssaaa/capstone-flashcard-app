@@ -67,18 +67,15 @@ export default function CollectionContainer({
             toggleCardDirection={toggleCardDirection}
           />
         )}
-        {/* <StyledWrapper> */}
         <CollectionLink
           aria-label="Weiterleitung zum Archiv"
           href={`/collections/${id}?archive=${archive}`}
         >
           <StyledWrapper>
             <StyledCollectionName>{name}</StyledCollectionName>
-
             {cards && <StyledCounter>{cards.length}</StyledCounter>}
           </StyledWrapper>
         </CollectionLink>
-        {/* </StyledWrapper> */}
       </StyledTextContainer>
     </StyledCollectionContainer>
   );

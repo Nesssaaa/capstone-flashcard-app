@@ -1,4 +1,10 @@
-import { StyledForm, StyledInput, StyledLabel, Select } from "./Form.styled";
+import {
+  StyledForm,
+  StyledInput,
+  StyledLabel,
+  Select,
+  NewCollectionInput,
+} from "./Form.styled";
 
 import FActionButton from "../FaButton/FaButton";
 import { BsSendPlusFill } from "react-icons/bs";
@@ -10,11 +16,20 @@ export default function Form({
   collections = [],
   card = {},
   addCollection,
+  languageQuestion,
+  onLanguageChangeQuestion,
+  languageAnswer,
+  onLanguageChangeAnswer,
 }) {
   const router = useRouter();
   const [questionText, setQuestionText] = useState("");
   const [answerText, setAnswerText] = useState("");
   const [showNewCollection, setShowNewCollection] = useState(false);
+  const [localLanguageQuestion, setLocalLanguageQuestion] =
+    useState(languageQuestion);
+  const [localLanguageAnswer, setLocalLanguageAnswer] =
+    useState(languageAnswer);
+
   const [collectionId, setCollectionId] = useState(
     card.collection || router.query["collection"] || ""
   );
@@ -53,6 +68,14 @@ export default function Form({
     setCollectionId(event.target.value);
   }
 
+  function handleLanguageChangeQuestion(event) {
+    setLocalLanguageQuestion(event.target.value);
+  }
+
+  function handleLanguageChangeAnswer(event) {
+    setLocalLanguageAnswer(event.target.value);
+  }
+
   return (
     <StyledForm
       aria-label="Mit diesem Formular erstellst du deine Lernkarte"
@@ -85,7 +108,11 @@ export default function Form({
         <>
           <StyledLabel>
             Name des neuen Kartenstapels
-            <input name="newCollection" required autoComplete="off" />
+            <NewCollectionInput
+              name="newCollection"
+              required
+              autoComplete="off"
+            />
           </StyledLabel>
         </>
       )}
@@ -103,6 +130,22 @@ export default function Form({
         />
       </StyledLabel>
       <StyledLabel>
+        Wähle die Vorlesesprache deiner Kartenvorderseite
+        <Select
+          id="questionLanguage"
+          name="languageQuestion"
+          required
+          value={localLanguageQuestion}
+          onChange={handleLanguageChangeQuestion}
+        >
+          <option value="de-DE">Deutsch</option>
+          <option value="en-US">Englisch</option>
+          <option value="es-ES">Spanisch</option>
+          <option value="fr-FR">Französisch</option>
+          <option value="it-IT">Italienisch</option>
+        </Select>
+      </StyledLabel>
+      <StyledLabel>
         Rückseite
         <StyledInput
           id="answer"
@@ -115,7 +158,23 @@ export default function Form({
           textLength={answerText}
         />
       </StyledLabel>
-      <FActionButton aria-label="Lernkarte erstellen und speichern">
+      <StyledLabel>
+        Wähle die Vorlesesprache deiner Kartenrückseite
+        <Select
+          id="answerLanguage"
+          name="languageAnswer"
+          required
+          value={localLanguageAnswer}
+          onChange={handleLanguageChangeAnswer}
+        >
+          <option value="de-DE">Deutsch</option>
+          <option value="en-US">Englisch</option>
+          <option value="es-ES">Spanisch</option>
+          <option value="fr-FR">Französisch</option>
+          <option value="it-IT">Italienisch</option>
+        </Select>
+      </StyledLabel>
+      <FActionButton>
         <BsSendPlusFill />
       </FActionButton>
     </StyledForm>

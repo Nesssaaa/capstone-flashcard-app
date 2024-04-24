@@ -3,8 +3,12 @@ import { RiArchive2Fill } from "react-icons/ri";
 import { MdOutlineAddCircleOutline, MdDone } from "react-icons/md";
 import NavBarButton from "../Navigation/NavBarButton";
 import NavBar from "../Navigation/NavBar";
+import { useRouter } from "next/router";
 
 export default function CollectionNavbar({ id }) {
+  const router = useRouter();
+  const isArchivePage = router.query["archive"] === "true";
+
   return (
     <NavBar>
       <NavBarButton
@@ -17,11 +21,20 @@ export default function CollectionNavbar({ id }) {
         href={`/create?collection=${id}`}
         icon={<MdOutlineAddCircleOutline />}
       />
-      <NavBarButton
-        aria-label="hier gelangst du zum Archiv des ausgewählten Kartenstapels"
-        href={`/collections/${id}?archive=true`}
-        icon={<RiArchive2Fill />}
-      />
+      {!isArchivePage && (
+        <NavBarButton
+          aria-label="Hier gelangst du zum Archiv des ausgewählten Kartenstapels"
+          href={`/collections/${id}?archive=true`}
+          icon={<RiArchive2Fill />}
+        />
+      )}
+      {isArchivePage && (
+        <NavBarButton
+          aria-label="Hier gelangst du zum Archiv"
+          href={`/archive`}
+          icon={<RiArchive2Fill />}
+        />
+      )}
     </NavBar>
   );
 }
