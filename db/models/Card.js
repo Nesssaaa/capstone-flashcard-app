@@ -11,6 +11,8 @@ const cardSchema = new Schema({
   level: { type: Number, required: true, default: 1 },
   timestamp: { type: Date, required: true, default: Date.now },
   user: { type: Schema.Types.ObjectId, required: true, ref: "User" },
+  languageQuestion: { type: String, required: true, default: "de-DE" },
+  languageAnswer: { type: String, required: true, default: "de-DE" },
 });
 
 const Card = mongoose.models.Card || mongoose.model("Card", cardSchema);

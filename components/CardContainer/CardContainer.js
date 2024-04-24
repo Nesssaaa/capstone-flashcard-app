@@ -10,6 +10,7 @@ import { useState } from "react";
 import ButtonNavBar from "../ButtonNavBar/ButtonNavBar";
 import CardMenu from "../CardMenu/CardMenu";
 import { useSession } from "next-auth/react";
+import { HiOutlineSpeakerWave } from "react-icons/hi2";
 
 export default function CardContainer({
   question,
@@ -22,18 +23,11 @@ export default function CardContainer({
   showArchiveButton = true,
   resetCard,
   reversedDirection,
+  languageAnswer,
+  languageQuestion,
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
   const { data: session } = useSession();
-  const [text, setText] = useState("");
-  const msg = new SpeechSynthesisUtterance();
-
-  function speechHandler(msg) {
-    console.log(answer);
-    msg.text = answer;
-    msg.lang = "de-DE";
-    window.speechSynthesis.speak(msg);
-  }
 
   function flipCard() {
     setIsFlipped(!isFlipped);
@@ -50,21 +44,31 @@ export default function CardContainer({
     });
   }
 
-  function showCardMenu() {
-    return (
-      <CardMenu
-        id={id}
-        deleteCard={deleteCard}
-        isMastered={isMastered}
-        handleResetCard={handleResetCard}
-      />
-    );
+  const speechSynthesisUtterance = new SpeechSynthesisUtterance();
+
+  function handleReadQuestion(event) {
+    event.stopPropagation();
+    speechSynthesisUtterance.text = question;
+    speechSynthesisUtterance.lang = languageQuestion;
+    window.speechSynthesis.speak(speechSynthesisUtterance);
+  }
+
+  function handleReadAnswer(event) {
+    event.stopPropagation();
+    speechSynthesisUtterance.text = answer;
+    speechSynthesisUtterance.lang = languageAnswer;
+    window.speechSynthesis.speak(speechSynthesisUtterance);
   }
 
   return (
     <ReactCardFlip flipDirection="vertical" isFlipped={isFlipped}>
       <StyledCardContainerQuestion onClick={flipCard} $level={level}>
-        {showCardMenu()}
+        <CardMenu
+          id={id}
+          deleteCard={deleteCard}
+          isMastered={isMastered}
+          handleResetCard={handleResetCard}
+        />
         <StyledTextShow
           readOnly
           textLength={reversedDirection ? answer : question}
@@ -72,7 +76,9 @@ export default function CardContainer({
         ></StyledTextShow>
         <IconWrapper>
           <MdTouchApp />
+          <HiOutlineSpeakerWave onClick={handleReadQuestion} />
         </IconWrapper>
+
         {isMastered && (
           <ButtonNavBar
             id={id}
@@ -84,7 +90,12 @@ export default function CardContainer({
       </StyledCardContainerQuestion>
 
       <StyledCardContainerAnswer onClick={flipCard} $level={level}>
-        {showCardMenu()}
+        <CardMenu
+          id={id}
+          deleteCard={deleteCard}
+          isMastered={isMastered}
+          handleResetCard={handleResetCard}
+        />
 
         <StyledTextShow
           readOnly
@@ -93,7 +104,9 @@ export default function CardContainer({
         ></StyledTextShow>
         <IconWrapper>
           <MdTouchApp />
+          <HiOutlineSpeakerWave onClick={handleReadAnswer} />
         </IconWrapper>
+
         <ButtonNavBar
           id={id}
           deleteCard={deleteCard}
