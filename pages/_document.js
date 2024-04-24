@@ -28,7 +28,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="de">
         <Head>
-          <link rel="icon" href="/favicon1.ico" />
+          <link alt="kleiner Fuchskopf" rel="icon" href="/favicon1.ico" />
           <meta
             name="description"
             content="Diese Anwendung heißt SchlauFuchs. Das ist eine Karteikarten-App. Du kannst neue Karten erstellen, die dich beim Lernen unterstützen"
