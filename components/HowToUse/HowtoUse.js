@@ -29,7 +29,7 @@ export default function ExplainPictures() {
     <StyledExplainContainer>
       <StyledImage
         src={explainPictures[currentIndex]}
-        alt={`ExplainPicture ${currentIndex + 1}`}
+        alt={`Erklaerbild ${currentIndex + 1}`}
         width={260}
         height={550}
       />
