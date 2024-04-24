@@ -141,6 +141,21 @@ export default function Form({
           <option value="es-ES">Spanisch</option>
           <option value="fr-FR">Französisch</option>
           <option value="it-IT">Italienisch</option>
+          <option value="pt-PT">Portugiesisch</option>
+          <option value="uk-UA">Ukrainisch</option>
+          <option value="ru-RU">Russisch</option>
+          <option value="pl-PL">Polnisch</option>
+          <option value="nl-NL">Niederländisch</option>
+          <option value="cs-CZ">Tschechisch</option>
+          <option value="fi-FI">Finnisch</option>
+          <option value="hu-HU">Ungarisch</option>
+          <option value="ro-RO">Rumänisch</option>
+          <option value="tr-TR">Türkisch</option>
+          <option value="sv-SE">Schwedisch</option>
+          <option value="sk-SK">Slowakisch</option>
+          <option value="hr-HR">Kroatisch</option>
+          <option value="bg-BG">Bulgarisch</option>
+          <option value="el-GR">Griechisch</option>
         </Select>
       </StyledLabel>
       <StyledLabel>
@@ -170,6 +185,21 @@ export default function Form({
           <option value="es-ES">Spanisch</option>
           <option value="fr-FR">Französisch</option>
           <option value="it-IT">Italienisch</option>
+          <option value="pt-PT">Portugiesisch</option>
+          <option value="uk-UA">Ukrainisch</option>
+          <option value="ru-RU">Russisch</option>
+          <option value="pl-PL">Polnisch</option>
+          <option value="nl-NL">Niederländisch</option>
+          <option value="cs-CZ">Tschechisch</option>
+          <option value="fi-FI">Finnisch</option>
+          <option value="hu-HU">Ungarisch</option>
+          <option value="ro-RO">Rumänisch</option>
+          <option value="tr-TR">Türkisch</option>
+          <option value="sv-SE">Schwedisch</option>
+          <option value="sk-SK">Slowakisch</option>
+          <option value="hr-HR">Kroatisch</option>
+          <option value="bg-BG">Bulgarisch</option>
+          <option value="el-GR">Griechisch</option>
         </Select>
       </StyledLabel>
       <FActionButton>
