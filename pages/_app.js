@@ -45,6 +45,9 @@ function InternalApp({ Component, pageProps: { ...pageProps } }) {
   if (isLoadingCards || isLoadingCollections) {
     return <LoadingSpinner />;
   }
+  if (isLoggedIn && (cards === undefined || collections === undefined)) {
+    return <LoadingSpinner />;
+  }
 
   function getCard(id) {
     if (!cards) return null;
