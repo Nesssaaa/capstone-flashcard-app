@@ -68,15 +68,15 @@ export default function MenuComponent({ setIsDarkMode }) {
               </IconWrapper>
             </StyledMenuItem>
 
-            <StyledSubMenu aria-label="Hier gelangst du zu den Farbeinstellungen">
-              label=
-              {
-                <StyledLabel>
+            <StyledSubMenu
+              label={
+                <StyledLabel aria-label="Hier kannst du den Farbmodus wechseln">
                   <IconWrapper $size="1.3rem">
                     <VscColorMode /> &nbsp; Farbwechsel
                   </IconWrapper>
                 </StyledLabel>
               }
+            >
               <MenuRadioGroup>
                 <MenuItem
                   aria-label="Hier kannst du den hellen Farbmodus auswaehlen"
