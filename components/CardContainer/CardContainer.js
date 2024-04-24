@@ -60,21 +60,15 @@ export default function CardContainer({
     window.speechSynthesis.speak(speechSynthesisUtterance);
   }
 
-  function showCardMenu() {
-    return (
-      <CardMenu
-        id={id}
-        deleteCard={deleteCard}
-        isMastered={isMastered}
-        handleResetCard={handleResetCard}
-      />
-    );
-  }
-
   return (
     <ReactCardFlip flipDirection="vertical" isFlipped={isFlipped}>
       <StyledCardContainerQuestion onClick={flipCard} $level={level}>
-        {showCardMenu()}
+        <CardMenu
+          id={id}
+          deleteCard={deleteCard}
+          isMastered={isMastered}
+          handleResetCard={handleResetCard}
+        />
         <StyledTextShow
           readOnly
           textLength={reversedDirection ? answer : question}
@@ -96,7 +90,12 @@ export default function CardContainer({
       </StyledCardContainerQuestion>
 
       <StyledCardContainerAnswer onClick={flipCard} $level={level}>
-        {showCardMenu()}
+        <CardMenu
+          id={id}
+          deleteCard={deleteCard}
+          isMastered={isMastered}
+          handleResetCard={handleResetCard}
+        />
 
         <StyledTextShow
           readOnly
