@@ -16,8 +16,6 @@ export default function Form({
   collections = [],
   card = {},
   addCollection,
-  languageQuestion,
-  languageAnswer,
 }) {
   const router = useRouter();
   const [questionText, setQuestionText] = useState("");
@@ -74,11 +72,16 @@ export default function Form({
 
     // get current level from existing card or assign level 1, if card is new
     data.level = card.level || 1;
+    data.languageQuestion = data.languageQuestion || selectedLanguageQuestion;
+    data.languageAnswer = data.languageAnswer || selectedLanguageAnswer;
+
     const success = await onSubmit(data);
     if (success) {
       event.target.reset();
       setCollectionId(data.collection);
       setShowNewCollection(false);
+      setSelectedLanguageQuestion(data.languageQuestion);
+      setSelectedLanguageAnswer(data.languageAnswer);
 
       event.target.elements.question.focus();
     }
@@ -98,8 +101,7 @@ export default function Form({
   }
 
   function handleLanguageChangeQuestion(event) {
-    const newLanguage = event.target.value;
-    setSelectedLanguageQuestion(newLanguage);
+    setSelectedLanguageQuestion(event.target.value);
   }
 
   function handleLanguageChangeAnswer(event) {
