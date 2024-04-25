@@ -6,6 +6,8 @@ export default function CardList({
   onToggle,
   resetCard,
   reversedDirection,
+  isFlipped,
+  setIsFlipped,
 }) {
   return (
     <>
@@ -24,6 +26,8 @@ export default function CardList({
               reversedDirection={reversedDirection}
               languageAnswer={card.languageAnswer}
               languageQuestion={card.languageQuestion}
+              isFlipped={isFlipped}
+              setIsFlipped={setIsFlipped}
             />
           </div>
         ))}

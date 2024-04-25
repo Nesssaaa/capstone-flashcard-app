@@ -27,6 +27,8 @@ export default function QuizPage({
   deleteCard,
   updateCard,
   resetCard,
+  isFlipped,
+  setIsFlipped,
 }) {
   const router = useRouter();
   const collection = getCollection(router.query.id);
@@ -103,6 +105,8 @@ export default function QuizPage({
         resetCard={resetCard}
         languageQuestion={card.languageQuestion}
         languageAnswer={card.languageAnswer}
+        isFlipped={isFlipped}
+        setIsFlipped={setIsFlipped}
       />
       <StyledSection>
         Fortschritt: {countPosition + 1} von {quizCards.length}

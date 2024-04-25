@@ -12,8 +12,12 @@ export default function AllCardsPage({
   onToggle,
   resetCard,
   toggleCardDirection,
+  isFlipped,
+  setIsFlipped,
 }) {
   const [searchTerm, setSearchTerm] = useState("");
+  const [isFlippedCardListActive, setIsFlippedCardListActive] = useState(false);
+
   const { data: cards, isLoading: isLoadingCards } = useSWR(
     searchTerm ? "/api/cards?filter=" + searchTerm : "/api/cards",
     fetcher
@@ -22,15 +26,25 @@ export default function AllCardsPage({
     setSearchTerm(event.target.value);
   };
 
+  function toggleAllFlipped() {
+    setIsFlipped(!isFlipped);
+  }
+
   return (
     <div>
       <SearchBar handleSearch={handleSearch} />
+      <button onClick={toggleAllFlipped}>
+        Zeige die Rückseite aller Karten an
+      </button>
+
       <CardList
         cards={cards}
         deleteCard={deleteCard}
         onToggle={onToggle}
         resetCard={resetCard}
         toggleCardDirection={toggleCardDirection}
+        isFlipped={isFlipped}
+        setIsFlipped={setIsFlipped}
       />
 
       <Navigation aria-label="Navigationsleiste" />

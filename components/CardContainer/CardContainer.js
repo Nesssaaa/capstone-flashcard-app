@@ -25,8 +25,9 @@ export default function CardContainer({
   reversedDirection,
   languageAnswer,
   languageQuestion,
+  isFlipped,
+  setIsFlipped,
 }) {
-  const [isFlipped, setIsFlipped] = useState(false);
   const { data: session } = useSession();
 
   function flipCard() {

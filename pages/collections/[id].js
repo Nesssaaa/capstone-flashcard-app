@@ -28,6 +28,8 @@ export default function CollectionCardList({
   resetCard,
   onToggle,
   updateCard,
+  isFlipped,
+  setIsFlipped,
 }) {
   const router = useRouter();
   const collection = getCollection(router.query.id);
@@ -109,6 +111,8 @@ export default function CollectionCardList({
             onToggle={onToggle}
             reversedDirection={collection.reversedDirection}
             resetCard={resetCard}
+            isFlipped={isFlipped}
+            setIsFlipped={setIsFlipped}
           />
         </>
       )}

@@ -8,6 +8,7 @@ import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner";
 import { SessionProvider, useSession } from "next-auth/react";
 import { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "../styles";
+import { useState } from "react";
 
 import useLocalStorageState from "use-local-storage-state";
 
@@ -26,6 +27,8 @@ function InternalApp({ Component, pageProps: { ...pageProps } }) {
     defaultValue: false,
   });
   const theme = isDarkMode ? darkTheme : lightTheme;
+
+  const [isFlipped, setIsFlipped] = useState(false);
 
   const { data: session, status } = useSession();
   const isLoggedIn = status === "authenticated";
@@ -207,6 +210,8 @@ function InternalApp({ Component, pageProps: { ...pageProps } }) {
           deleteCollection={deleteCollection}
           editCollection={editCollection}
           resetCard={resetCard}
+          isFlipped={isFlipped}
+          setIsFlipped={setIsFlipped}
           {...pageProps}
         />
         <ToastContainer
