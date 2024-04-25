@@ -6,7 +6,6 @@ import {
 } from "../../components/Navigation/Navigation.styled";
 import Navigation from "../../components/Navigation/Navigation";
 import { StyledHeadlines } from "@/components/Headline.styled";
-import CSSLoadingSpinner from "@/components/LoadingSpinner/CSSLoadingSpinner/CSSLoadingSpinner";
 import { useSession } from "next-auth/react";
 import styled from "styled-components";
 import Image from "next/image";
@@ -48,7 +47,6 @@ export default function CollectionsPage({
             fontSize={20}
             alt="kleiner Fuchskopf"
           />
-          <CSSLoadingSpinner />
         </Wrapper>
       </>
     );
