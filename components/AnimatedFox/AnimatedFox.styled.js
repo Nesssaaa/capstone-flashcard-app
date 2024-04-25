@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Image from "next/image";
 
 export const StyledFox = styled.div`
   display: flex;
@@ -6,4 +7,12 @@ export const StyledFox = styled.div`
   align-items: center;
   background-color: var(--color-background-2);
   padding: 0;
+  border: 2px solid red;
+`;
+
+export const StyledImage = styled(Image)`
+  width: 90%;
+  height: auto;
+  max-width: 100%;
+  max-height: 40vh;
 `;

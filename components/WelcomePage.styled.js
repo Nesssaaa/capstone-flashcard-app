@@ -5,28 +5,13 @@ export const StyledMain = styled.main`
   display: flex;
   border: 2px solid red;
   padding: var(--main-padding);
-
-  overflow: auto;
   flex-direction: column;
   align-items: center;
   font-family: system-ui;
   max-width: 640px;
   margin: 0 auto;
-`;
-
-export const Space = styled.div`
-  height: 3rem;
   flex: 1;
-`;
-
-export const StyledButton = styled.button`
-  background-color: #db780de3;
-  padding: 0.8rem 1.2rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 25px;
-  margin: 1.2rem 0.5rem;
-  flex: 1;
+  height: 100%;
 `;
 
 export const StyledLink = styled(Link)`
@@ -35,7 +20,7 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   background-color: #db780de3;
   padding: 0.8rem 1.2rem;
-  font-size: 1rem;
+  font-size: 2.5vh;
   border: none;
   border-radius: 25px;
   margin: 1.2rem 0.5rem;
@@ -43,25 +28,32 @@ export const StyledLink = styled(Link)`
   flex: 1;
 `;
 
-export const StyledTitle = styled.h3`
-  text-align: center;
-  font-size: 1.9rem;
-  color: #db780de3;
-  flex: 1;
-`;
-
 export const StyledWelcome = styled.h3`
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 4vh;
   color: #db780de3;
   padding: 0;
   margin: 0;
+  margin-top: 1.5vh;
   flex: 1;
+  border: 2px solid blue;
 `;
+
+export const StyledTitle = styled.h3`
+  text-align: center;
+  font-size: 3vh;
+  color: #db780de3;
+  flex: 1;
+  border: 2px solid yellow;
+  margin-top: 1rem;
+`;
+
 export const StyledLoginNav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   flex: 1;
+  border: 2px solid orange;
+  height: 15vh;
 `;

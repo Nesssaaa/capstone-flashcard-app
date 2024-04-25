@@ -2,7 +2,6 @@ import { StyledHeadlines } from "@/components/Headline.styled";
 import Link from "next/link";
 import AnimatedFox from "@/components/AnimatedFox/AnimatedFox";
 import {
-  Space,
   StyledLink,
   StyledLoginNav,
   StyledMain,
@@ -21,7 +20,6 @@ export default function HomePage() {
         <title>SchlauFuchs</title>
       </Head>
       <StyledMain>
-        <Space />
         <StyledWelcome>Willkommen </StyledWelcome>
         <StyledTitle>bei SchlauFuchs!</StyledTitle>
 
