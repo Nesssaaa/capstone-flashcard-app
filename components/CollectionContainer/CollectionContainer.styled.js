@@ -124,7 +124,7 @@ export const StyledLink = styled(Link)`
   justify-content: center;
   align-items: center;
   &:hover {
-    color: darkblue;
+    color: black;
   }
 `;
 export const IconWrapper = styled.div`
