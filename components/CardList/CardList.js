@@ -22,6 +22,8 @@ export default function CardList({
               level={card.level}
               resetCard={resetCard}
               reversedDirection={reversedDirection}
+              languageAnswer={card.languageAnswer}
+              languageQuestion={card.languageQuestion}
             />
           </div>
         ))}

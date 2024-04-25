@@ -130,7 +130,10 @@ export default function CollectionMenu({
     <>
       <Menu
         menuButton={
-          <StyledMenuButton onClick={handleMenuClick}>
+          <StyledMenuButton
+            aria-label="Hier öffnest du das Kartenstapelmenu"
+            onClick={handleMenuClick}
+          >
             <IconWrapper>
               {isMenuOpen ? <MdOutlineClose /> : <BsThreeDots />}
             </IconWrapper>
@@ -139,18 +142,30 @@ export default function CollectionMenu({
         transition
       >
         <StyledMenu ref={menuRef}>
-          <StyledMenuItem onClick={onEdit}>
+          <StyledMenuItem
+            aria-label="Hier kannst du einen Kartenstapel bearbeiten"
+            onClick={onEdit}
+          >
             <MdEdit /> &nbsp; Kartenstapel bearbeiten
           </StyledMenuItem>
-          <StyledMenuItem onClick={handleDelete}>
+          <StyledMenuItem
+            aria-label="Hier kannst du den gesamten Kartenstapel löschen"
+            onClick={handleDelete}
+          >
             <MdDeleteForever />
             &nbsp; Kartenstapel löschen
           </StyledMenuItem>
-          <StyledMenuItem onClick={handleReset}>
+          <StyledMenuItem
+            aria-label="Hier kannst du den gesamten Kartenstapel zurücksetzen"
+            onClick={handleReset}
+          >
             <RxReset />
             &nbsp; Kartenstapel zurücksetzen
           </StyledMenuItem>
-          <StyledMenuItem onClick={() => handleToggleCardDirection()}>
+          <StyledMenuItem
+            aria-label="Hier kannst du die Kartenrichtung umschalten"
+            onClick={() => handleToggleCardDirection()}
+          >
             <SlDirections />
             &nbsp; Umschalten der Kartenrichtung
           </StyledMenuItem>

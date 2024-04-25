@@ -11,19 +11,29 @@ export default function CollectionNavbar({ id }) {
 
   return (
     <NavBar>
-      <NavBarButton href="/collections" icon={<BsCollectionFill />} />
       <NavBarButton
+        aria-label="hier gelangst du zu den Kartenstapeln"
+        href="/collections"
+        icon={<BsCollectionFill />}
+      />
+      <NavBarButton
+        aria-label="Erstelle zum ausgewählten Kartenstapel neue Lernkarten"
         href={`/create?collection=${id}`}
         icon={<MdOutlineAddCircleOutline />}
       />
       {!isArchivePage && (
         <NavBarButton
+          aria-label="Hier gelangst du zum Archiv des ausgewählten Kartenstapels"
           href={`/collections/${id}?archive=true`}
           icon={<RiArchive2Fill />}
         />
       )}
       {isArchivePage && (
-        <NavBarButton href={`/archive`} icon={<RiArchive2Fill />} />
+        <NavBarButton
+          aria-label="Hier gelangst du zum Archiv"
+          href={`/archive`}
+          icon={<RiArchive2Fill />}
+        />
       )}
     </NavBar>
   );

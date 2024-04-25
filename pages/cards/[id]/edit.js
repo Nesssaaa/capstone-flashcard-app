@@ -12,6 +12,8 @@ export default function EditPage({
   editCard,
   collections,
   addCollection,
+  languageQuestion,
+  languageAnswer,
 }) {
   const router = useRouter();
   const card = getCard(router.query.id);
@@ -33,10 +35,13 @@ export default function EditPage({
     <>
       <StyledHeadlines>Bearbeite deine Lernkarten</StyledHeadlines>
       <Form
+        aria-label="Mit diesem Formular bearbeitest du deine Lernkarte"
         onSubmit={onSubmit}
         card={card}
         collections={collections}
         addCollection={addCollection}
+        languageQuestion={languageQuestion}
+        languageAnswer={languageAnswer}
       />
     </>
   );

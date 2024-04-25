@@ -1,22 +1,10 @@
-export function cardToDb({
-  id,
-  question,
-  answer,
-  collection,
-  isMastered,
-  level,
-  timestamp,
-  user,
-}) {
+export function cardToDb(card) {
+  const { id, collection, ...rest } = card;
+
   return {
     _id: id,
     deck: collection,
-    question,
-    answer,
-    isMastered,
-    level,
-    timestamp,
-    user,
+    ...rest,
   };
 }
 
@@ -29,6 +17,8 @@ export function dbToCard({
   level,
   timestamp,
   user,
+  languageQuestion,
+  languageAnswer,
 }) {
   return {
     id: _id,
@@ -39,24 +29,16 @@ export function dbToCard({
     level: level || 1,
     timestamp: timestamp || new Date(),
     user,
+    languageQuestion,
+    languageAnswer,
   };
 }
 
-export function collectionToDb({
-  id,
-  name,
-  color,
-  user,
-  reversedDirection,
-  timestamp,
-}) {
+export function collectionToDb(collection) {
+  const { id, ...rest } = collection;
   return {
     _id: id,
-    name,
-    color,
-    user,
-    reversedDirection,
-    timestamp,
+    ...rest,
   };
 }
 
