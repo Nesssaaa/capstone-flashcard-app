@@ -7,7 +7,6 @@ export const StyledFox = styled.div`
   align-items: center;
   background-color: var(--color-background-2);
   padding: 0;
-  border: 2px solid red;
 `;
 
 export const StyledImage = styled(Image)`

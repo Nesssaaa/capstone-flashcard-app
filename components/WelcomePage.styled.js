@@ -3,7 +3,6 @@ import Link from "next/link";
 
 export const StyledMain = styled.main`
   display: flex;
-  border: 2px solid red;
   padding: var(--main-padding);
   flex-direction: column;
   align-items: center;
@@ -34,9 +33,8 @@ export const StyledWelcome = styled.h3`
   color: #db780de3;
   padding: 0;
   margin: 0;
-  margin-top: 1.5vh;
+  margin-top: 3vh;
   flex: 1;
-  border: 2px solid blue;
 `;
 
 export const StyledTitle = styled.h3`
@@ -44,7 +42,6 @@ export const StyledTitle = styled.h3`
   font-size: 3vh;
   color: #db780de3;
   flex: 1;
-  border: 2px solid yellow;
   margin-top: 1rem;
 `;
 
@@ -54,6 +51,5 @@ export const StyledLoginNav = styled.nav`
   align-items: center;
   flex-direction: column;
   flex: 1;
-  border: 2px solid orange;
   height: 15vh;
 `;
