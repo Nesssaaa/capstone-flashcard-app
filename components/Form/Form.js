@@ -23,10 +23,41 @@ export default function Form({
   const [questionText, setQuestionText] = useState("");
   const [answerText, setAnswerText] = useState("");
   const [showNewCollection, setShowNewCollection] = useState(false);
-  const [localLanguageQuestion, setLocalLanguageQuestion] =
-    useState(languageQuestion);
-  const [localLanguageAnswer, setLocalLanguageAnswer] =
-    useState(languageAnswer);
+
+  const languageOptions = [
+    { value: "de-DE", label: "Deutsch" },
+    { value: "en-US", label: "Englisch" },
+    { value: "es-ES", label: "Spanisch" },
+    { value: "fr-FR", label: "Französisch" },
+    { value: "it-IT", label: "Italienisch" },
+    { value: "pt-PT", label: "Portugiesisch" },
+    { value: "uk-UA", label: "Ukrainisch" },
+    { value: "ru-RU", label: "Russisch" },
+    { value: "pl-PL", label: "Polnisch" },
+    { value: "nl-NL", label: "Niederländisch" },
+    { value: "cs-CZ", label: "Tschechisch" },
+    { value: "fi-FI", label: "Finnisch" },
+    { value: "hu-HU", label: "Ungarisch" },
+    { value: "ro-RO", label: "Rumänisch" },
+    { value: "tr-TR", label: "Türkisch" },
+    { value: "sv-SE", label: "Schwedisch" },
+    { value: "sk-SK", label: "Slowakisch" },
+    { value: "hr-HR", label: "Kroatisch" },
+    { value: "bg-BG", label: "Bulgarisch" },
+    { value: "el-GR", label: "Griechisch" },
+  ];
+
+  const sortedLanguageOptions = [...languageOptions].sort((a, b) =>
+    a.label.localeCompare(b.label)
+  );
+
+  const defaultLanguage = "de-DE";
+
+  const [selectedLanguageQuestion, setSelectedLanguageQuestion] =
+    useState(defaultLanguage);
+
+  const [selectedLanguageAnswer, setSelectedLanguageAnswer] =
+    useState(defaultLanguage);
 
   const [collectionId, setCollectionId] = useState(
     card.collection || router.query["collection"] || ""
@@ -67,11 +98,12 @@ export default function Form({
   }
 
   function handleLanguageChangeQuestion(event) {
-    setLocalLanguageQuestion(event.target.value);
+    const newLanguage = event.target.value;
+    setSelectedLanguageQuestion(newLanguage);
   }
 
   function handleLanguageChangeAnswer(event) {
-    setLocalLanguageAnswer(event.target.value);
+    setSelectedLanguageAnswer(event.target.value);
   }
 
   return (
@@ -133,29 +165,14 @@ export default function Form({
           id="questionLanguage"
           name="languageQuestion"
           required
-          value={localLanguageQuestion}
+          value={selectedLanguageQuestion}
           onChange={handleLanguageChangeQuestion}
         >
-          <option value="de-DE">Deutsch</option>
-          <option value="en-US">Englisch</option>
-          <option value="es-ES">Spanisch</option>
-          <option value="fr-FR">Französisch</option>
-          <option value="it-IT">Italienisch</option>
-          <option value="pt-PT">Portugiesisch</option>
-          <option value="uk-UA">Ukrainisch</option>
-          <option value="ru-RU">Russisch</option>
-          <option value="pl-PL">Polnisch</option>
-          <option value="nl-NL">Niederländisch</option>
-          <option value="cs-CZ">Tschechisch</option>
-          <option value="fi-FI">Finnisch</option>
-          <option value="hu-HU">Ungarisch</option>
-          <option value="ro-RO">Rumänisch</option>
-          <option value="tr-TR">Türkisch</option>
-          <option value="sv-SE">Schwedisch</option>
-          <option value="sk-SK">Slowakisch</option>
-          <option value="hr-HR">Kroatisch</option>
-          <option value="bg-BG">Bulgarisch</option>
-          <option value="el-GR">Griechisch</option>
+          {sortedLanguageOptions.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
         </Select>
       </StyledLabel>
       <StyledLabel>
@@ -177,29 +194,14 @@ export default function Form({
           id="answerLanguage"
           name="languageAnswer"
           required
-          value={localLanguageAnswer}
+          value={selectedLanguageAnswer}
           onChange={handleLanguageChangeAnswer}
         >
-          <option value="de-DE">Deutsch</option>
-          <option value="en-US">Englisch</option>
-          <option value="es-ES">Spanisch</option>
-          <option value="fr-FR">Französisch</option>
-          <option value="it-IT">Italienisch</option>
-          <option value="pt-PT">Portugiesisch</option>
-          <option value="uk-UA">Ukrainisch</option>
-          <option value="ru-RU">Russisch</option>
-          <option value="pl-PL">Polnisch</option>
-          <option value="nl-NL">Niederländisch</option>
-          <option value="cs-CZ">Tschechisch</option>
-          <option value="fi-FI">Finnisch</option>
-          <option value="hu-HU">Ungarisch</option>
-          <option value="ro-RO">Rumänisch</option>
-          <option value="tr-TR">Türkisch</option>
-          <option value="sv-SE">Schwedisch</option>
-          <option value="sk-SK">Slowakisch</option>
-          <option value="hr-HR">Kroatisch</option>
-          <option value="bg-BG">Bulgarisch</option>
-          <option value="el-GR">Griechisch</option>
+          {sortedLanguageOptions.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
         </Select>
       </StyledLabel>
       <FActionButton>
