@@ -5,7 +5,7 @@ export const StyledButton = styled.button`
   //using var from styles.js not possible, because Layout is disabled on index.js
   color: white;
   padding: 2rem 2rem;
-  font-size: 1rem;
+  font-size: 2.5vh;
   border: none;
   border-radius: 25px;
   margin: 1.2rem 0.5rem;

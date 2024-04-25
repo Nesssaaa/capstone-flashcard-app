@@ -46,6 +46,7 @@ export default function CollectionsPage({
             height={120}
             fontSize={20}
             alt="kleiner Fuchskopf"
+            priority
           />
         </Wrapper>
       </>
