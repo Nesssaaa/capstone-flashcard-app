@@ -2,10 +2,11 @@ import styled from "styled-components";
 import Link from "next/link";
 
 export const StyledMain = styled.main`
-  padding: var(--main-padding);
-  flex: 1;
-  overflow: auto;
   display: flex;
+  border: 2px solid red;
+  padding: var(--main-padding);
+
+  overflow: auto;
   flex-direction: column;
   align-items: center;
   font-family: system-ui;
@@ -15,6 +16,7 @@ export const StyledMain = styled.main`
 
 export const Space = styled.div`
   height: 3rem;
+  flex: 1;
 `;
 
 export const StyledButton = styled.button`
@@ -24,6 +26,7 @@ export const StyledButton = styled.button`
   border: none;
   border-radius: 25px;
   margin: 1.2rem 0.5rem;
+  flex: 1;
 `;
 
 export const StyledLink = styled(Link)`
@@ -37,12 +40,14 @@ export const StyledLink = styled(Link)`
   border-radius: 25px;
   margin: 1.2rem 0.5rem;
   text-align: center;
+  flex: 1;
 `;
 
 export const StyledTitle = styled.h3`
   text-align: center;
   font-size: 1.9rem;
   color: #db780de3;
+  flex: 1;
 `;
 
 export const StyledWelcome = styled.h3`
@@ -51,10 +56,12 @@ export const StyledWelcome = styled.h3`
   color: #db780de3;
   padding: 0;
   margin: 0;
+  flex: 1;
 `;
 export const StyledLoginNav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  flex: 1;
 `;

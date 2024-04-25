@@ -5,4 +5,5 @@ export const StyledFox = styled.div`
   justify-content: center;
   align-items: center;
   background-color: var(--color-background-2);
+  flex: 1;
 `;
