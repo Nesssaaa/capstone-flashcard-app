@@ -9,6 +9,7 @@ import { StyledHeadlines } from "@/components/Headline.styled";
 import CSSLoadingSpinner from "@/components/LoadingSpinner/CSSLoadingSpinner/CSSLoadingSpinner";
 import { useSession } from "next-auth/react";
 import styled from "styled-components";
+import Image from "next/image";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -40,6 +41,13 @@ export default function CollectionsPage({
       <>
         <Wrapper>
           Lade...
+          <Image
+            src="/fox.png"
+            width={120}
+            height={120}
+            fontSize={20}
+            alt="kleiner Fuchskopf"
+          />
           <CSSLoadingSpinner />
         </Wrapper>
       </>

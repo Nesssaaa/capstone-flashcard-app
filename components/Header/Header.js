@@ -22,6 +22,7 @@ export default function Header({ isDarkMode, setIsDarkMode }) {
               src="/fox.png"
               width={42}
               height={42}
+              fontSize={20}
               alt="kleiner Fuchskopf"
             />
           </IconWrapper>
