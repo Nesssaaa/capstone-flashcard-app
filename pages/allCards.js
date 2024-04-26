@@ -14,6 +14,7 @@ export default function AllCardsPage({
   toggleCardDirection,
 }) {
   const [searchTerm, setSearchTerm] = useState("");
+  const [reversedDirection, setReversedDirection] = useState(false);
   const { data: cards, isLoading: isLoadingCards } = useSWR(
     searchTerm ? "/api/cards?filter=" + searchTerm : "/api/cards",
     fetcher
@@ -22,15 +23,25 @@ export default function AllCardsPage({
     setSearchTerm(event.target.value);
   };
 
+  function toggleReversedDirection() {
+    setReversedDirection(!reversedDirection);
+  }
+
   return (
     <div>
       <SearchBar handleSearch={handleSearch} />
+      <button onClick={toggleReversedDirection}>
+        {reversedDirection
+          ? "Drehe alle Karten wieder um und zeige die Vorderseiten"
+          : "Kartenrichtung umschalten und alle Rückseiten anzeigen"}
+      </button>
       <CardList
         cards={cards}
         deleteCard={deleteCard}
         onToggle={onToggle}
         resetCard={resetCard}
         toggleCardDirection={toggleCardDirection}
+        reversedDirection={reversedDirection}
       />
 
       <Navigation aria-label="Navigationsleiste" />
