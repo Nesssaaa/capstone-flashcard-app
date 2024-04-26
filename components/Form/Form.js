@@ -49,13 +49,13 @@ export default function Form({
     a.label.localeCompare(b.label)
   );
 
-  const defaultLanguage = "de-DE";
+  const [selectedLanguageQuestion, setSelectedLanguageQuestion] = useState(
+    card.languageQuestion || "de-DE"
+  );
 
-  const [selectedLanguageQuestion, setSelectedLanguageQuestion] =
-    useState(defaultLanguage);
-
-  const [selectedLanguageAnswer, setSelectedLanguageAnswer] =
-    useState(defaultLanguage);
+  const [selectedLanguageAnswer, setSelectedLanguageAnswer] = useState(
+    card.languageAnswer || "de-DE"
+  );
 
   const [collectionId, setCollectionId] = useState(
     card.collection || router.query["collection"] || ""
