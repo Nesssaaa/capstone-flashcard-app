@@ -17,6 +17,7 @@ import { PiCards } from "react-icons/pi";
 import { BsCollectionFill } from "react-icons/bs";
 import { useSession, signOut } from "next-auth/react";
 import { MenuItem, MenuRadioGroup } from "@szhsin/react-menu";
+import { FaRegQuestionCircle } from "react-icons/fa";
 
 export default function MenuComponent({ setIsDarkMode }) {
   const { data: session } = useSession();
@@ -65,6 +66,17 @@ export default function MenuComponent({ setIsDarkMode }) {
                 &nbsp;&nbsp;
                 <PiCards />
                 &nbsp; Zu all meinen Karten
+              </IconWrapper>
+            </StyledMenuItem>
+
+            <StyledMenuItem
+              aria-label="Hier erfährst du, wie Schlaufuchs funktioniert"
+              href="/howToUse"
+            >
+              <IconWrapper $size="1.3rem">
+                &nbsp;&nbsp;
+                <FaRegQuestionCircle />
+                &nbsp; Benutzertipps
               </IconWrapper>
             </StyledMenuItem>
 
