@@ -58,7 +58,7 @@ export default function AllCardsPage({
 
 export const StyledToggleDirection = styled.button`
   width: 60%;
-  font-size: 1.1rem;
+  font-size: 1rem;
   padding: 5px 5px;
   border-radius: 0.9rem;
   border: 1px solid var(--color-border-3);
