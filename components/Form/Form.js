@@ -4,10 +4,12 @@ import {
   StyledLabel,
   Select,
   NewCollectionInput,
+  StyledButton,
+  StyledFieldset,
 } from "./Form.styled";
-
-import FActionButton from "../FaButton/FaButton";
-import { BsSendPlusFill } from "react-icons/bs";
+import { FaSave } from "react-icons/fa";
+// import FActionButton from "../FaButton/FaButton";
+// import { BsSendPlusFill } from "react-icons/bs";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
@@ -79,102 +81,107 @@ export default function Form({
       aria-label="Mit diesem Formular erstellst du deine Lernkarte"
       onSubmit={handleSubmit}
     >
-      <StyledLabel>
-        Wähle einen passenden Kartenstapel
-        <Select
-          name="collection"
-          required
-          value={collectionId}
-          onChange={handleCollectionChange}
-        >
-          <option disabled value="">
-            Bitte triff eine Auswahl
-          </option>
-          <optgroup label="Anlage neue Sammlung">
-            <option value="__NEW__">Neuen Kartenstapel anlegen</option>
-          </optgroup>
-          <optgroup label="Bestehende Sammlung">
-            {collections.map((collection) => (
-              <option key={collection.id} value={collection.id}>
-                {collection.name}
-              </option>
-            ))}
-          </optgroup>
-        </Select>
-      </StyledLabel>
-      {showNewCollection && (
-        <>
-          <StyledLabel>
-            Name des neuen Kartenstapels
-            <NewCollectionInput
-              name="newCollection"
-              required
-              autoComplete="off"
-            />
-          </StyledLabel>
-        </>
-      )}
-      <StyledLabel>
-        Vorderseite
-        <StyledInput
-          id="question"
-          onChange={handleQuestionChange}
-          name="question"
-          required
-          placeholder="Gib hier deine Frage ein"
-          type="text"
-          defaultValue={card.question}
-          textLength={questionText}
-        />
-      </StyledLabel>
-      <StyledLabel>
-        Wähle die Vorlesesprache deiner Kartenvorderseite
-        <Select
-          id="questionLanguage"
-          name="languageQuestion"
-          required
-          value={localLanguageQuestion}
-          onChange={handleLanguageChangeQuestion}
-        >
-          <option value="de-DE">Deutsch</option>
-          <option value="en-US">Englisch</option>
-          <option value="es-ES">Spanisch</option>
-          <option value="fr-FR">Französisch</option>
-          <option value="it-IT">Italienisch</option>
-        </Select>
-      </StyledLabel>
-      <StyledLabel>
-        Rückseite
-        <StyledInput
-          id="answer"
-          onChange={handleAnswerChange}
-          name="answer"
-          required
-          placeholder="Gib hier deine Antwort ein"
-          type="text"
-          defaultValue={card.answer}
-          textLength={answerText}
-        />
-      </StyledLabel>
-      <StyledLabel>
-        Wähle die Vorlesesprache deiner Kartenrückseite
-        <Select
-          id="answerLanguage"
-          name="languageAnswer"
-          required
-          value={localLanguageAnswer}
-          onChange={handleLanguageChangeAnswer}
-        >
-          <option value="de-DE">Deutsch</option>
-          <option value="en-US">Englisch</option>
-          <option value="es-ES">Spanisch</option>
-          <option value="fr-FR">Französisch</option>
-          <option value="it-IT">Italienisch</option>
-        </Select>
-      </StyledLabel>
-      <FActionButton>
-        <BsSendPlusFill />
-      </FActionButton>
+      <StyledFieldset>
+        <StyledLabel>
+          Wähle einen passenden Kartenstapel
+          <Select
+            name="collection"
+            required
+            value={collectionId}
+            onChange={handleCollectionChange}
+          >
+            <option disabled value="">
+              Bitte triff eine Auswahl
+            </option>
+            <optgroup label="Anlage neue Sammlung">
+              <option value="__NEW__">Neuen Kartenstapel anlegen</option>
+            </optgroup>
+            <optgroup label="Bestehende Sammlung">
+              {collections.map((collection) => (
+                <option key={collection.id} value={collection.id}>
+                  {collection.name}
+                </option>
+              ))}
+            </optgroup>
+          </Select>
+        </StyledLabel>
+        {showNewCollection && (
+          <>
+            <StyledLabel>
+              Name des neuen Kartenstapels
+              <NewCollectionInput
+                name="newCollection"
+                required
+                autoComplete="off"
+              />
+            </StyledLabel>
+          </>
+        )}
+        <StyledLabel>
+          Vorderseite
+          <StyledInput
+            id="question"
+            onChange={handleQuestionChange}
+            name="question"
+            required
+            placeholder="Gib hier deine Frage ein"
+            type="text"
+            defaultValue={card.question}
+            textLength={questionText}
+          />
+        </StyledLabel>
+        <StyledLabel>
+          Wähle die Vorlesesprache deiner Kartenvorderseite
+          <Select
+            id="questionLanguage"
+            name="languageQuestion"
+            required
+            value={localLanguageQuestion}
+            onChange={handleLanguageChangeQuestion}
+          >
+            <option value="de-DE">Deutsch</option>
+            <option value="en-US">Englisch</option>
+            <option value="es-ES">Spanisch</option>
+            <option value="fr-FR">Französisch</option>
+            <option value="it-IT">Italienisch</option>
+          </Select>
+        </StyledLabel>
+        <StyledLabel>
+          Rückseite
+          <StyledInput
+            id="answer"
+            onChange={handleAnswerChange}
+            name="answer"
+            required
+            placeholder="Gib hier deine Antwort ein"
+            type="text"
+            defaultValue={card.answer}
+            textLength={answerText}
+          />
+        </StyledLabel>
+        <StyledLabel>
+          Wähle die Vorlesesprache deiner Kartenrückseite
+          <Select
+            id="answerLanguage"
+            name="languageAnswer"
+            required
+            value={localLanguageAnswer}
+            onChange={handleLanguageChangeAnswer}
+          >
+            <option value="de-DE">Deutsch</option>
+            <option value="en-US">Englisch</option>
+            <option value="es-ES">Spanisch</option>
+            <option value="fr-FR">Französisch</option>
+            <option value="it-IT">Italienisch</option>
+          </Select>
+        </StyledLabel>
+        {/* <FActionButton> */}
+        <StyledButton>
+          {/* <BsSendPlusFill /> */}
+          <FaSave />
+        </StyledButton>
+        {/* </FActionButton> */}
+      </StyledFieldset>
     </StyledForm>
   );
 }
