@@ -71,10 +71,9 @@ export const NewCollectionInput = styled.input`
 export const StyledInput = styled.textarea`
   margin: 0.2rem auto;
   padding: 3rem;
-  height: 13rem;
   border-radius: 0.5rem;
   border: none;
-  box-shadow: 2px 2px 10px 2px var(--color-background-1);
+
   background-color: var(--color-background-3);
   text-align: center;
   font-family: system-ui;
@@ -85,6 +84,7 @@ export const StyledInput = styled.textarea`
   color: var(--color-font-1);
   width: 90%;
   box-shadow: 1px 1px 6px 1px var(--color-font-3);
+  /* box-shadow: 2px 2px 10px 2px var(--color-background-1); */
 `;
 
 export const StyledButton = styled.button`
@@ -94,7 +94,7 @@ export const StyledButton = styled.button`
   border-radius: 25px;
   background-color: #db780de3;
   padding: 0.5vh 3vh;
-  box-shadow: 1px 1px 6px 1px var(--color-border-3);
+  box-shadow: 1px 1px 6px 1px var(--color-background-1);
   cursor: pointer;
   display: flex;
   justify-content: center;
