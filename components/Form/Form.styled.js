@@ -14,6 +14,7 @@ export const StyledFieldset = styled.fieldset`
   gap: 1vh;
   justify-content: center;
   align-items: center;
+  padding: 0;
   padding-bottom: 3vh;
   min-width: 95%;
   max-width: 95%;
@@ -21,7 +22,8 @@ export const StyledFieldset = styled.fieldset`
   margin-right: 3vh;
   margin-bottom: 2vh;
   border-radius: 0.5rem;
-  box-shadow: 1px 1px 6px 1px var(--color-border-3);
+  box-shadow: 1px 1px 0px 1px var(--color-border-3);
+  position: relative;
 `;
 
 export const StyledLabel = styled.label`
@@ -52,7 +54,7 @@ export const Select = styled.select`
   color: var(--color-font-1);
   background: var(--color-background-3);
   opacity: 70%;
-  box-shadow: 1px 1px 6px 1px var(--color-border-3);
+  box-shadow: 1px 1px 0px 1px var(--color-border-3);
 `;
 
 export const NewCollectionInput = styled.input`
@@ -65,7 +67,7 @@ export const NewCollectionInput = styled.input`
   color: var(--color-font-1);
   background: var(--color-background-3);
   opacity: 70%;
-  box-shadow: 1px 1px 6px 1px var(--color-border-3);
+  box-shadow: 1px 1px 0px 1px var(--color-border-3);
 `;
 
 export const StyledInput = styled.textarea`
@@ -80,16 +82,29 @@ export const StyledInput = styled.textarea`
   opacity: 0.7;
   resize: none;
   outline: none;
-  font-size: ${({ textLength }) => `${calculateFontSize(textLength)}px`};
+  font-size: ${({ textLength }) => `${calculateFontSize(textLength)}rem`};
   color: var(--color-font-1);
   width: 90%;
-  box-shadow: 1px 1px 6px 1px var(--color-font-3);
-  /* box-shadow: 2px 2px 10px 2px var(--color-background-1); */
+  box-shadow: 1px 1px 0px 1px var(--color-font-3);
+`;
+
+export const StyledButtonContainer = styled.div`
+  border-top: 1px solid var(--color-border-3);
+
+  width: 100%;
+  background: var(--color-background-3);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 1px 1px 2px 1px var(--color-font-3);
 `;
 
 export const StyledButton = styled.button`
   color: white;
-  font-size: 2.5vh;
+  font-size: 2vh;
   border: none;
   border-radius: 25px;
   background-color: #db780de3;

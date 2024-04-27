@@ -6,10 +6,8 @@ import {
   NewCollectionInput,
   StyledButton,
   StyledFieldset,
+  StyledButtonContainer,
 } from "./Form.styled";
-import { FaSave } from "react-icons/fa";
-// import FActionButton from "../FaButton/FaButton";
-// import { BsSendPlusFill } from "react-icons/bs";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
@@ -82,6 +80,9 @@ export default function Form({
       onSubmit={handleSubmit}
     >
       <StyledFieldset>
+        <StyledButtonContainer>
+          <StyledButton>speichern</StyledButton>
+        </StyledButtonContainer>
         <StyledLabel>
           Wähle einen passenden Kartenstapel
           <Select
@@ -175,12 +176,6 @@ export default function Form({
             <option value="it-IT">Italienisch</option>
           </Select>
         </StyledLabel>
-        {/* <FActionButton> */}
-        <StyledButton>
-          {/* <BsSendPlusFill /> */}
-          <FaSave />
-        </StyledButton>
-        {/* </FActionButton> */}
       </StyledFieldset>
     </StyledForm>
   );
