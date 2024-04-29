@@ -11,6 +11,8 @@ import { GiCardDraw } from "react-icons/gi";
 import GlobalStyle from "../../styles.js";
 import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
+import SearchBar from "@/components/SearchBar/SearchBar.js";
+import { useState } from "react";
 
 export const StyledContainer = styled.div`
   text-align: center;
@@ -29,7 +31,9 @@ export default function CollectionCardList({
   onToggle,
   updateCard,
 }) {
+  const [searchTerm, setSearchTerm] = useState("");
   const router = useRouter();
+
   const collection = getCollection(router.query.id);
 
   if (!collection) {
@@ -42,6 +46,11 @@ export default function CollectionCardList({
     ? cards
         .filter((card) => card.collection === collection.id)
         .filter((card) => card.isMastered === isArchivePage)
+        .filter(
+          (card) =>
+            card.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            card.answer.toLowerCase().includes(searchTerm.toLowerCase())
+        )
     : [];
 
   function handleQuizClick() {
@@ -78,6 +87,10 @@ export default function CollectionCardList({
     }
   }
 
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
   const headerName = isArchivePage
     ? `${collection.name}-Archiv`
     : collection.name;
@@ -88,7 +101,7 @@ export default function CollectionCardList({
       <StyledContainer>
         <CollectionHeader name={headerName} />
       </StyledContainer>
-      {!isArchivePage && !filteredCards.length ? (
+      {!isArchivePage && !filteredCards.length && searchTerm === "" ? (
         <StyledContainer>
           <p>Dein Kartenstapel ist noch leer.</p>
           <br />
@@ -103,6 +116,7 @@ export default function CollectionCardList({
         </StyledContainer>
       ) : (
         <>
+          <SearchBar handleSearch={handleSearch} />
           <CardList
             cards={filteredCards}
             deleteCard={deleteCard}
