@@ -15,7 +15,7 @@ export const StyledForm = styled.form`
 
 export const StyledLabel = styled.label`
   margin: 0.7rem;
-  margin-top: 0;
+  margin-top: 0%.5;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -23,7 +23,7 @@ export const StyledLabel = styled.label`
   font-weight: bold;
   font-size: calc(min(1.7rem, 2.2vh));
   opacity: 95%;
-  width: 90vw;
+  width: 100vw;
   max-width: 95%;
   color: var(--color-font-1);
   text-align: center;
@@ -37,7 +37,7 @@ export const Select = styled.select`
   font-size: calc(min(1.7rem, 1.9vh));
   padding: 5px 5px;
   margin: 0.2rem auto;
-  width: 90%;
+  width: 100%;
   border-radius: 0.5rem;
   border: 1px solid var(--color-border-3);
   color: var(--color-font-1);
@@ -48,7 +48,7 @@ export const Select = styled.select`
 
 export const NewCollectionInput = styled.input`
   margin: 0.2rem auto;
-  width: 90%;
+  width: 100%;
   font-size: calc(min(1.7rem, 1.9vh));
   padding: 6px 6px;
   border-radius: 0.5rem;
@@ -72,7 +72,7 @@ export const StyledInput = styled.textarea`
   resize: none;
   outline: none;
   color: var(--color-font-1);
-  width: 90%;
+  width: 100%;
   box-shadow: 1px 1px 2px 1px var(--color-form-2);
 `;
 
