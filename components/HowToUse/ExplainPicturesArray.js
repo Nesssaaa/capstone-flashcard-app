@@ -6,7 +6,7 @@ export const explainPictures = [
   "/Explain_FlipCard.png",
   "/Explain_QuizMode.png",
   "/Explain_CreateCard.png",
-  "/Explain_Archiv_new.png",
+
   "/Explain_ArchivCard.png",
   "/Explain_MainMenu.png",
   "/Explain_lastPage.png",
