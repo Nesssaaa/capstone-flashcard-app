@@ -21,11 +21,12 @@ export const StyledLabel = styled.label`
   align-items: center;
   gap: 0.5rem;
   font-weight: bold;
-  font-size: calc(min(1.7rem, 2vh));
+  font-size: calc(min(1.7rem, 2.2vh));
   opacity: 95%;
   width: 90vw;
   max-width: 95%;
   color: var(--color-font-1);
+  text-align: center;
 
   @media screen and (max-width: 414px) {
     max-width: 90%;
@@ -33,7 +34,7 @@ export const StyledLabel = styled.label`
 `;
 
 export const Select = styled.select`
-  font-size: calc(min(1.7rem, 1.8vh));
+  font-size: calc(min(1.7rem, 1.9vh));
   padding: 5px 5px;
   margin: 0.2rem auto;
   width: 90%;
@@ -48,8 +49,8 @@ export const Select = styled.select`
 export const NewCollectionInput = styled.input`
   margin: 0.2rem auto;
   width: 90%;
-  font-size: calc(min(1.7rem, 1.8vh));
-  padding: 5px 5px;
+  font-size: calc(min(1.7rem, 1.9vh));
+  padding: 6px 6px;
   border-radius: 0.5rem;
   border: 1px solid var(--color-border-3);
   color: var(--color-font-1);
@@ -63,7 +64,7 @@ export const StyledInput = styled.textarea`
   padding: 3rem;
   border-radius: 0.5rem;
   border: 1px solid var(--color-border-3);
-  font-size: calc(min(1.7rem, 2vh));
+  font-size: calc(min(1.7rem, 2.3vh));
   background-color: var(--color-background-3);
   text-align: center;
   font-family: system-ui;
@@ -91,10 +92,11 @@ export const StyledButtonContainer = styled.div`
 
 export const StyledButton = styled.button`
   color: var(--color-form-button);
-  font-size: calc(min(1.3rem, 1.4vh));
+  font-size: calc(min(1.3rem, 2vh));
   border: none;
   border-radius: 25px;
   background-color: #db780de3;
+  font-weight: bold;
   padding: 0.8vh 2vh;
   margin-right: 0.8rem;
   cursor: pointer;
