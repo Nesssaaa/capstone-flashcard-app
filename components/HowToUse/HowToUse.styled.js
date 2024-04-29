@@ -5,10 +5,10 @@ import Link from "next/link";
 export const StyledImage = styled(Image)`
   border-radius: 20px;
   border: 2px solid gray;
-  width: 95%;
+  width: 93%;
   height: 100%;
   max-width: 100vw;
-  max-height: 80vh;
+  max-height: 75vh;
 
   @media screen and (max-width: 375px) {
     width: 75%;
