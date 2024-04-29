@@ -19,10 +19,11 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   background-color: #db780de3;
   padding: 0.8rem 1.2rem;
-  font-size: 2.5vh;
+  font-size: calc(min(1.7rem, 2.5vh));
   border: none;
   border-radius: 25px;
-  margin: 1.2rem 0.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.25rem;
   text-align: center;
   flex: 1;
 `;

@@ -13,9 +13,9 @@ export default function LoginButton() {
         >
           Abmelden
         </StyledButton>
-        <br />
+        {/* <br /> */}
         Angemeldet als {session.user.name} <br />
-        <br />
+        {/* <br /> */}
         <StyledLink
           aria-label="Hier gelangst du zum Kartenstapel"
           href="/collections"

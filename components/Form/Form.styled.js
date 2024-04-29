@@ -6,38 +6,25 @@ export const StyledForm = styled.form`
   flex-direction: column;
   max-width: 640px;
   align-items: center;
-`;
-
-export const StyledFieldset = styled.fieldset`
-  display: flex;
-  flex-direction: column;
-  gap: 1vh;
-  justify-content: center;
-  align-items: center;
-  padding: 0;
-  padding-bottom: 3vh;
-  min-width: 95%;
-  max-width: 95%;
-  margin-left: 3vh;
-  margin-right: 3vh;
-  margin-bottom: 2vh;
-  border-radius: 0.5rem;
-  box-shadow: 1px 1px 0px 1px var(--color-border-3);
   position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 4vh;
+  gap: 1vh;
 `;
 
 export const StyledLabel = styled.label`
   margin: 0.7rem;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.5rem;
   font-weight: bold;
-  font-size: 2vh;
-  color: var(--color-font-1);
+  font-size: calc(min(1.7rem, 2vh));
   opacity: 95%;
   width: 90vw;
-  max-width: 80%;
+  max-width: 95%;
   color: var(--color-font-1);
 
   @media screen and (max-width: 414px) {
@@ -46,70 +33,70 @@ export const StyledLabel = styled.label`
 `;
 
 export const Select = styled.select`
-  font-size: 1.2rem;
+  font-size: calc(min(1.7rem, 1.8vh));
   padding: 5px 5px;
   margin: 0.2rem auto;
   width: 90%;
   border-radius: 0.5rem;
+  border: 1px solid var(--color-border-3);
   color: var(--color-font-1);
   background: var(--color-background-3);
   opacity: 70%;
-  box-shadow: 1px 1px 0px 1px var(--color-border-3);
+  box-shadow: 1px 1px 2px 1px var(--color-form-2);
 `;
 
 export const NewCollectionInput = styled.input`
   margin: 0.2rem auto;
   width: 90%;
-  font-size: 1.2rem;
+  font-size: calc(min(1.7rem, 1.8vh));
   padding: 5px 5px;
   border-radius: 0.5rem;
   border: 1px solid var(--color-border-3);
   color: var(--color-font-1);
   background: var(--color-background-3);
   opacity: 70%;
-  box-shadow: 1px 1px 0px 1px var(--color-border-3);
+  box-shadow: 1px 1px 2px 1px var(--color-form-2);
 `;
 
 export const StyledInput = styled.textarea`
   margin: 0.2rem auto;
   padding: 3rem;
   border-radius: 0.5rem;
-  border: none;
-
+  border: 1px solid var(--color-border-3);
+  font-size: calc(min(1.7rem, 2vh));
   background-color: var(--color-background-3);
   text-align: center;
   font-family: system-ui;
   opacity: 0.7;
   resize: none;
   outline: none;
-  font-size: ${({ textLength }) => `${calculateFontSize(textLength)}rem`};
   color: var(--color-font-1);
   width: 90%;
-  box-shadow: 1px 1px 0px 1px var(--color-font-3);
+  box-shadow: 1px 1px 2px 1px var(--color-form-2);
 `;
 
 export const StyledButtonContainer = styled.div`
-  border-top: 1px solid var(--color-border-3);
-
-  width: 100%;
+  /* border-top: 1px solid var(--color-border-3); */
+  width: 110%;
+  max-height: calc(min(4rem, 5vh));
   background: var(--color-background-3);
-  padding: 0.5rem;
+  padding: 0.7vh;
   display: flex;
   justify-content: flex-end;
   position: sticky;
   top: 0;
   z-index: 10;
-  box-shadow: 1px 1px 2px 1px var(--color-font-3);
+  box-shadow: 1px 1px 2px 1px var(--color-form-1);
 `;
 
 export const StyledButton = styled.button`
-  color: white;
-  font-size: 2vh;
+  color: var(--color-form-button);
+  font-size: calc(min(1.3rem, 1.4vh));
   border: none;
   border-radius: 25px;
   background-color: #db780de3;
-  padding: 0.5vh 3vh;
-  box-shadow: 1px 1px 6px 1px var(--color-background-1);
+  padding: 0.8vh 2vh;
+  margin-right: 0.8rem;
   cursor: pointer;
   display: flex;
   justify-content: center;
