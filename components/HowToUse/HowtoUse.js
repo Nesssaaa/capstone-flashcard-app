@@ -30,8 +30,9 @@ export default function ExplainPictures() {
       <StyledImage
         src={explainPictures[currentIndex]}
         alt={`Erklaerbild ${currentIndex + 1}`}
-        width={260}
+        width={245}
         height={550}
+        priority
       />
       <StyledNav>
         <StyledButton
