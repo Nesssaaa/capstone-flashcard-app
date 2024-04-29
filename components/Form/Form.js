@@ -16,17 +16,46 @@ export default function Form({
   collections = [],
   card = {},
   addCollection,
-  languageQuestion,
-  languageAnswer,
 }) {
   const router = useRouter();
   const [questionText, setQuestionText] = useState("");
   const [answerText, setAnswerText] = useState("");
   const [showNewCollection, setShowNewCollection] = useState(false);
-  const [localLanguageQuestion, setLocalLanguageQuestion] =
-    useState(languageQuestion);
-  const [localLanguageAnswer, setLocalLanguageAnswer] =
-    useState(languageAnswer);
+
+  const languageOptions = [
+    { value: "de-DE", label: "Deutsch" },
+    { value: "en-US", label: "Englisch" },
+    { value: "es-ES", label: "Spanisch" },
+    { value: "fr-FR", label: "Französisch" },
+    { value: "it-IT", label: "Italienisch" },
+    { value: "pt-PT", label: "Portugiesisch" },
+    { value: "uk-UA", label: "Ukrainisch" },
+    { value: "ru-RU", label: "Russisch" },
+    { value: "pl-PL", label: "Polnisch" },
+    { value: "nl-NL", label: "Niederländisch" },
+    { value: "cs-CZ", label: "Tschechisch" },
+    { value: "fi-FI", label: "Finnisch" },
+    { value: "hu-HU", label: "Ungarisch" },
+    { value: "ro-RO", label: "Rumänisch" },
+    { value: "tr-TR", label: "Türkisch" },
+    { value: "sv-SE", label: "Schwedisch" },
+    { value: "sk-SK", label: "Slowakisch" },
+    { value: "hr-HR", label: "Kroatisch" },
+    { value: "bg-BG", label: "Bulgarisch" },
+    { value: "el-GR", label: "Griechisch" },
+  ];
+
+  const sortedLanguageOptions = [...languageOptions].sort((a, b) =>
+    a.label.localeCompare(b.label)
+  );
+
+  const [selectedLanguageQuestion, setSelectedLanguageQuestion] = useState(
+    card.languageQuestion || "de-DE"
+  );
+
+  const [selectedLanguageAnswer, setSelectedLanguageAnswer] = useState(
+    card.languageAnswer || "de-DE"
+  );
 
   const [collectionId, setCollectionId] = useState(
     card.collection || router.query["collection"] || ""
@@ -43,11 +72,16 @@ export default function Form({
 
     // get current level from existing card or assign level 1, if card is new
     data.level = card.level || 1;
+    data.languageQuestion = data.languageQuestion || selectedLanguageQuestion;
+    data.languageAnswer = data.languageAnswer || selectedLanguageAnswer;
+
     const success = await onSubmit(data);
     if (success) {
       event.target.reset();
       setCollectionId(data.collection);
       setShowNewCollection(false);
+      setSelectedLanguageQuestion(data.languageQuestion);
+      setSelectedLanguageAnswer(data.languageAnswer);
 
       event.target.elements.question.focus();
     }
@@ -67,11 +101,11 @@ export default function Form({
   }
 
   function handleLanguageChangeQuestion(event) {
-    setLocalLanguageQuestion(event.target.value);
+    setSelectedLanguageQuestion(event.target.value);
   }
 
   function handleLanguageChangeAnswer(event) {
-    setLocalLanguageAnswer(event.target.value);
+    setSelectedLanguageAnswer(event.target.value);
   }
 
   return (
@@ -133,14 +167,14 @@ export default function Form({
           id="questionLanguage"
           name="languageQuestion"
           required
-          value={localLanguageQuestion}
+          value={selectedLanguageQuestion}
           onChange={handleLanguageChangeQuestion}
         >
-          <option value="de-DE">Deutsch</option>
-          <option value="en-US">Englisch</option>
-          <option value="es-ES">Spanisch</option>
-          <option value="fr-FR">Französisch</option>
-          <option value="it-IT">Italienisch</option>
+          {sortedLanguageOptions.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
         </Select>
       </StyledLabel>
       <StyledLabel>
@@ -162,14 +196,14 @@ export default function Form({
           id="answerLanguage"
           name="languageAnswer"
           required
-          value={localLanguageAnswer}
+          value={selectedLanguageAnswer}
           onChange={handleLanguageChangeAnswer}
         >
-          <option value="de-DE">Deutsch</option>
-          <option value="en-US">Englisch</option>
-          <option value="es-ES">Spanisch</option>
-          <option value="fr-FR">Französisch</option>
-          <option value="it-IT">Italienisch</option>
+          {sortedLanguageOptions.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
         </Select>
       </StyledLabel>
       <FActionButton>
