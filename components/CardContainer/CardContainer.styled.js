@@ -16,11 +16,25 @@ const BaseCardStyle = `
   opacity: 0.7;
   resize: none;
   font-family: system-ui;
+  position: relative;
+`;
+
+const QuizPageStyle = `
+  left: 1.5rem;
+  right: 1.5rem;
+  position: absolute;
+  top: 0;
+  bottom: 1rem;
+  margin: 0;
+  min-height: 0;
 `;
 
 export const StyledCardContainerQuestion = styled.div`
   ${BaseCardStyle}
-  position: relative;
+
+  ${(props) =>
+    props.theme?.cardContainer?.useAllAvailableSpace ? QuizPageStyle : ""}
+
   background-color: var(--color-card-1);
   box-shadow: 1px 1px 6px 1px var(--color-font-3);
 
@@ -28,19 +42,20 @@ export const StyledCardContainerQuestion = styled.div`
     content: ${({ $level }) => `"lvl ${$level}"`};
     position: absolute;
     z-index: -1;
-    bottom: 1.7rem;
-    left: 0.7rem;
+    bottom: 1rem;
+    left: 1.5rem;
     font-weight: bold;
     font-size: 2rem;
     color: var(--color-fox);
     opacity: 0.3;
-    padding: 0.5rem;
   }
 `;
 
 export const StyledCardContainerAnswer = styled.div`
   ${BaseCardStyle}
-  position: relative;
+  ${(props) =>
+    props.theme?.cardContainer?.useAllAvailableSpace ? QuizPageStyle : ""}
+
   background-color: var(--color-card-1);
   box-shadow: 2px 2px 8px 3px var(--color-fox);
 
@@ -48,13 +63,12 @@ export const StyledCardContainerAnswer = styled.div`
     content: ${({ $level }) => `"lvl ${$level}"`};
     position: absolute;
     z-index: -1;
-    bottom: 1.7rem;
-    left: 0.7rem;
+    bottom: 1rem;
+    left: 1.5rem;
     font-size: 2rem;
     font-weight: bold;
     color: var(--color-fox);
     opacity: 0.3;
-    padding: 0.5rem;
   }
 `;
 
@@ -77,10 +91,13 @@ export const StyledTextShow = styled.textarea`
 
 export const IconWrapper = styled.div`
   position: absolute;
-  bottom: 32px;
-  right: 14px;
+  bottom: 1rem;
+  right: 1rem;
+  left: 50%;
+  margin-left: -1rem;
   font-size: 2.3rem;
   color: var(--color-font-3);
   opacity: 0.8;
-  margin-left: 80%;
+  display: flex;
+  justify-content: space-between;
 `;

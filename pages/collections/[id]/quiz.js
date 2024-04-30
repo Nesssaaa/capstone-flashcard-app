@@ -12,10 +12,13 @@ import {
   IconWrapper,
   StyledQuizButtonRight,
   StyledQuizButtonWrong,
+  StyledContainerWrapper,
+  P,
 } from "@/components/QuizPage.styled.js";
-import CollectionHeader from "@/components/CollectionHeader/CollectionHeader.js";
+// import CollectionHeader from "@/components/CollectionHeader/CollectionHeader.js";
 import { toast } from "react-toastify";
-import { Space } from "@/components/Navigation/Navigation.styled";
+import CollectionHeader from "@/components/CollectionHeader/CollectionHeader";
+import { ThemeProvider } from "styled-components";
 
 export default function QuizPage({
   cards,
@@ -83,27 +86,37 @@ export default function QuizPage({
     return <h2>Dieser Kartenstapel enthält noch keine Karten.</h2>;
   }
 
+  function quizTheme(props) {
+    return {
+      ...props,
+      cardContainer: {
+        useAllAvailableSpace: true,
+      },
+    };
+  }
+
   return (
     <StyledContainer>
-      <CollectionHeader name={collectionName} />
-      <CardContainer
-        key={card.id}
-        question={card.question}
-        answer={card.answer}
-        id={card.id}
-        deleteCard={deleteCard}
-        onToggle={onToggle}
-        isMastered={card.isMastered}
-        level={card.level}
-        showArchiveButton={false}
-        reversedDirection={collection.reversedDirection}
-        resetCard={resetCard}
-        languageQuestion={card.languageQuestion}
-        languageAnswer={card.languageAnswer}
-      />
+      <StyledContainerWrapper>
+        <ThemeProvider theme={quizTheme}>
+          <CardContainer
+            key={card.id}
+            question={card.question}
+            answer={card.answer}
+            id={card.id}
+            deleteCard={deleteCard}
+            onToggle={onToggle}
+            isMastered={card.isMastered}
+            level={card.level}
+            showArchiveButton={false}
+            reversedDirection={collection.reversedDirection}
+            resetCard={resetCard}
+            languageQuestion={card.languageQuestion}
+            languageAnswer={card.languageAnswer}
+          />
+        </ThemeProvider>
+      </StyledContainerWrapper>
       <StyledSection>
-        Fortschritt: {countPosition + 1} von {quizCards.length}
-        <br />
         <StyledButtonNavBar>
           <StyledQuizButtonRight aria-label="wusste ich" onClick={onClickRight}>
             <IconWrapper>
@@ -120,14 +133,26 @@ export default function QuizPage({
             </IconWrapper>
           </StyledQuizButtonWrong>
         </StyledButtonNavBar>
+        <P>
+          Fortschritt: {countPosition + 1} von {quizCards.length}
+        </P>
         <StyledLink
           aria-label="Zurück zur Kartenstapel-Übersicht"
           href={`/collections/${collection.id}`}
         >
           zurück zur Übersicht
         </StyledLink>
-        <Space />
       </StyledSection>
     </StyledContainer>
   );
 }
+
+// set initial page props that are available in _app.js.
+QuizPage.getInitialProps = () => {
+  return {
+    // globalStyleOverrides overrides style properties used in the Layout
+    globalStyleOverride: {
+      useFlexMain: true,
+    },
+  };
+};

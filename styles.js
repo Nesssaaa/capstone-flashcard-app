@@ -52,8 +52,7 @@ export const darkTheme = (props) => {
 
 export default createGlobalStyle`
 :root {
-  ${(props) => props.theme.func(props)}
-
+  ${(props) => props.theme.rootVariablesFunc(props)}
 }
   *,
   *::before,
