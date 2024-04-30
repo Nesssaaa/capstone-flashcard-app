@@ -70,8 +70,14 @@ export default function QuizPage({
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
-    if (isLeftSwipe) onClickRight();
-    if (isRightSwipe) onClickWrong();
+    if (isLeftSwipe) {
+      toast("Gut! Weiter!");
+      onClickRight();
+    }
+    if (isRightSwipe) {
+      toast("Schade... nächstes Mal!");
+      onClickWrong();
+    }
   };
 
   const card = quizCards[countPosition];
