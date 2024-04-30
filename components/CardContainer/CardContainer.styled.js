@@ -23,7 +23,7 @@ const QuizPageStyle = `
   left: 1.5rem;
   right: 1.5rem;
   position: absolute;
-  top: 0;
+  top: 5px;
   bottom: 1rem;
   margin: 0;
   min-height: 0;
