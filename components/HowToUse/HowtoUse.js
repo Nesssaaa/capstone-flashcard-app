@@ -30,13 +30,6 @@ export default function ExplainPictures() {
 
   return (
     <StyledExplainContainer>
-      {/* <StyledImage
-        src={explainPictures[currentIndex]}
-        alt={`Erklaerbild ${currentIndex + 1}`}
-        width={245}
-        height={550}
-        priority
-      /> */}
       <Link
         aria-label="Hier gelangst du zum Kartenstapel"
         href={isLastIndex ? (isLoggedIn ? "/collections" : "/") : "#"}
