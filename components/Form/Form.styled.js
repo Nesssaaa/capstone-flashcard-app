@@ -77,7 +77,7 @@ export const StyledInput = styled.textarea`
 
 export const StyledButtonContainer = styled.div`
   /* border-top: 1px solid var(--color-border-3); */
-  width: 110%;
+  width: 100%;
   max-height: calc(min(4rem, 5vh));
   background: var(--color-background-3);
   padding: 0.7vh;
