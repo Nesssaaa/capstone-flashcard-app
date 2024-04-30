@@ -3,14 +3,11 @@ import useCount from "@/components/quizPositionCounter.js";
 import { getRandomCards } from "@/utils.js";
 import CardContainer from "@/components/CardContainer/CardContainer.js";
 import { useRouter } from "next/router";
-import { FaArrowCircleLeft } from "react-icons/fa";
-import { FaArrowCircleRight } from "react-icons/fa";
 import { PiSmileyDuotone, PiSmileySadDuotone } from "react-icons/pi";
 import {
   StyledLink,
   StyledContainer,
   StyledSection,
-  StyledNavButton,
   StyledButtonNavBar,
   IconWrapper,
   StyledQuizButtonRight,
@@ -108,16 +105,6 @@ export default function QuizPage({
         Fortschritt: {countPosition + 1} von {quizCards.length}
         <br />
         <StyledButtonNavBar>
-          <StyledNavButton
-            aria-label="Zurück zur vorherigen Karte"
-            onClick={decrement}
-            $hidden={countPosition === 0}
-          >
-            <IconWrapper>
-              <FaArrowCircleLeft />
-            </IconWrapper>
-          </StyledNavButton>
-
           <StyledQuizButtonRight aria-label="wusste ich" onClick={onClickRight}>
             <IconWrapper>
               <PiSmileyDuotone />
@@ -132,16 +119,6 @@ export default function QuizPage({
               <PiSmileySadDuotone />
             </IconWrapper>
           </StyledQuizButtonWrong>
-
-          <StyledNavButton
-            aria-label="vor zur nächsten Karte"
-            onClick={increment}
-            $hidden={countPosition === quizCards.length - 1}
-          >
-            <IconWrapper>
-              <FaArrowCircleRight />
-            </IconWrapper>
-          </StyledNavButton>
         </StyledButtonNavBar>
         <StyledLink
           aria-label="Zurück zur Kartenstapel-Übersicht"

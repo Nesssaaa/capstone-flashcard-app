@@ -26,15 +26,6 @@ export const StyledButtonContainer = styled.div`
   justify-content: space-evenly;
 `;
 
-export const StyledNavButton = styled.button`
-  border: none;
-  background-color: rgba(0, 0, 0, 0);
-  color: var(--color-font-3);
-  font-size: 2.3rem;
-  margin: 15px;
-  visibility: ${(props) => (props.$hidden ? "hidden" : "visible")};
-`;
-
 export const StyledQuizButtonWrong = styled.button`
   border: none;
   color: #ffa7a1;
