@@ -53,6 +53,26 @@ export default function QuizPage({
 
   const [quizCards, setQuizCards] = useState(getRandomCards(filteredCards, 15));
   const { countPosition, increment, decrement } = useCount(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null); // otherwise the swipe is fired even with usual touch events
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe) onClickRight();
+    if (isRightSwipe) onClickWrong();
+  };
 
   const card = quizCards[countPosition];
   const collectionName = collection ? collection.name : "lädt gerade...";
@@ -97,7 +117,11 @@ export default function QuizPage({
 
   return (
     <StyledContainer>
-      <StyledContainerWrapper>
+      <StyledContainerWrapper
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
+      >
         <ThemeProvider theme={quizTheme}>
           <CardContainer
             key={card.id}
