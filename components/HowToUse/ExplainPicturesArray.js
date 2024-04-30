@@ -1,5 +1,5 @@
 export const explainPictures = [
-  "/Explain_LogIn_new.png",
+  "/Explain_Login_new.png",
   "/Explain_Collections_new.png",
   "/Explain_EditCollection_new.png",
   "/Explain_Flashcard_new.png",
