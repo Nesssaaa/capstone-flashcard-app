@@ -5,10 +5,8 @@ export const StyledHeader = styled.div`
   display: flex;
   background-color: var(--color-header);
   padding: 1rem;
-  margin-bottom: 1.5rem;
   flex-direction: row;
   justify-content: center;
-
   font-size: 2.5rem;
   color: var(--color-fox);
   font-weight: bold;
@@ -22,7 +20,6 @@ export const StyledHeader = styled.div`
 
 export const StyledSpan = styled.span`
   margin-left: 8%;
-
   justify-content: center;
   align-items: center;
   display: flex;

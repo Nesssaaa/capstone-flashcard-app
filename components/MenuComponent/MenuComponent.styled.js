@@ -18,8 +18,8 @@ export const StyledMenu = styled.div`
   align-items: center;
 `;
 export const MainMenu = styled(Menu)`
-  opacity: 0.85;
-  z-index: 1;
+  opacity: 0.9;
+  z-index: 11;
 `;
 
 export const MenuList = styled.ul`

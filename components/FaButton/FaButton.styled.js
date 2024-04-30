@@ -16,6 +16,6 @@ export const FAButton = styled.button`
 export const IconWrapper = styled.div`
   display: flex;
   justify-content: center;
-  color: white;
+  color: var(--color-font-2);
   font-size: 2rem;
 `;

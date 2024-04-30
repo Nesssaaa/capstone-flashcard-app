@@ -3,11 +3,11 @@ import Link from "next/link";
 
 export const StyledCollectionContainer = styled.div`
   display: flex;
-  border: 2px solid darkgray;
   border-radius: 20px;
   width: 75%;
   position: relative;
   align-items: center;
+  box-shadow: 1px 1px 6px 1px var(--color-font-3);
 `;
 
 export const StyledColorContainer = styled.div`

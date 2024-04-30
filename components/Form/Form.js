@@ -4,10 +4,10 @@ import {
   StyledLabel,
   Select,
   NewCollectionInput,
+  StyledButton,
+  StyledButtonContainer,
 } from "./Form.styled";
-
-import FActionButton from "../FaButton/FaButton";
-import { BsSendPlusFill } from "react-icons/bs";
+import { StyledHeadlines } from "../Headline.styled";
 import { useState } from "react";
 import { useRouter } from "next/router";
 
@@ -113,6 +113,10 @@ export default function Form({
       aria-label="Mit diesem Formular erstellst du deine Lernkarte"
       onSubmit={handleSubmit}
     >
+      <StyledButtonContainer>
+        <StyledButton>speichern</StyledButton>
+      </StyledButtonContainer>
+      <StyledHeadlines>Erstelle deine Lernkarten</StyledHeadlines>
       <StyledLabel>
         Wähle einen passenden Kartenstapel
         <Select
@@ -206,9 +210,6 @@ export default function Form({
           ))}
         </Select>
       </StyledLabel>
-      <FActionButton>
-        <BsSendPlusFill />
-      </FActionButton>
     </StyledForm>
   );
 }
