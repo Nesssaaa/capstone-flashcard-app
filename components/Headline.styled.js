@@ -6,5 +6,5 @@ export const StyledHeadlines = styled.h3`
   color: var(--color-font-1);
   opacity: 95%;
   margin: 1vh;
-  margin-bottom: 1vh;
+  margin-bottom: 3vh;
 `;
