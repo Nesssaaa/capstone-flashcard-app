@@ -36,7 +36,7 @@ export const authOptions = {
         // this is only here in order to make it easier for people to test the application
         if (
           testaccounts.indexOf(credentials.username) != -1 &&
-          credentials.username === credentials.password
+          credentials.password === process.env.PASSWORD
         ) {
           // check if test user already exits
           await dbConnect();
