@@ -20,17 +20,17 @@ Unsere Demo-Version ist für die mobile Ansicht mit dem iphoneXR und iphoneSE so
 
 ## Technologien und Tools
 
-- React
-- React Hooks
+- [React](https://react.dev/)
+- [React Hooks]()
 - React Router
-- React Testing Library / Jest
+- React Testing Library / [Jest](https://jestjs.io/)
 - Styled-Components
-- Next.js
-- Node.js
-- NextAuth.js / Google-Login / GitHub-Login
-- MongoDB
-- Mongoose
-- Vercel
+- [Next.js](https://nextjs.org/)
+- [Node.js](https://nodejs.org/en)
+- [NextAuth.js](https://next-auth.js.org/) / Google-Login / GitHub-Login
+- [MongoDB](https://www.mongodb.com/)
+- [Mongoose](https://mongoosejs.com/)
+- [Vercel](https://vercel.com/)
 - Git / GitHub
 
 ## Team
