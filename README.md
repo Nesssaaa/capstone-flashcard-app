@@ -4,7 +4,7 @@
 
 📚 Du kannst neue Kartenstapel z.B. deine Schulfächer erstellen. Mit unserem Kartenformular legst du deine eigenen Lernkarten für jeden Kartenstapel an. Wie Karteikarten haben die Schlaufuchs-Lernkarten eine Vorder- und eine Rückseite.
 
-📣 Du kannst dir jede Karteikarte vorlesen lassen und dabei aus verschiedenen Sprachen wählen - ptimal zum Lernen von Fremdsprachen.
+📣 Du kannst dir jede Karteikarte vorlesen lassen und dabei aus verschiedenen Sprachen wählen - optimal zum Lernen von Fremdsprachen.
 
 💡 Wir verwenden die Spaced-Repetition-Methode, damit das Gelernte besser im Gedächtnis abgespeichert wird. Jede Karteikarte durchläuft dabei 5 Level, bis sie als gekonnt abgespeichert wird.
 
