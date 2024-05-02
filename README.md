@@ -2,7 +2,7 @@
 
 🦊 Schlaufuchs simuliert das Lernen mit Karteikarten.
 
-📚 Du kannst neue Kartenstapel z.B. deine Schulfächer erstellen. Mit unserem Kartenformular legst du deine eigenen Lernkarten für jeden Kartenstapel an, die wie Karteikarten eine Vorder- und eine Rückseite haben.
+📚 Du kannst neue Kartenstapel z.B. deine Schulfächer erstellen. Mit unserem Kartenformular legst du deine eigenen Lernkarten für jeden Kartenstapel an. Wie Karteikarten haben die Schlaufuchs-Lernkarten eine Vorder- und eine Rückseite.
 
 📣 Du kannst dir jede Karteikarte vorlesen lassen und dabei aus verschiedenen Sprachen wählen - ptimal zum Lernen von Fremdsprachen.
 
