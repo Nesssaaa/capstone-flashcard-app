@@ -73,7 +73,6 @@ export default function CollectionCardList({
       filteredCards &&
         filteredCards.forEach(async (card) => {
           await resetCard(card);
-          await updateCard({ ...card, isMastered: false });
         });
     }
   }

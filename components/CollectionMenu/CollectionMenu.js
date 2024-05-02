@@ -11,7 +11,6 @@ import {
   IconWrapper,
   StyledMenu,
   StyledMenuItem,
-  StyledTitle,
   StyledLabel,
 } from "./CollectionMenu.styled";
 import { confirmAlert } from "react-confirm-alert";

@@ -96,7 +96,7 @@ function InternalApp({ Component, pageProps: { ...pageProps } }) {
   }
 
   async function resetCard(card) {
-    await updateCard({ ...card, level: 1 });
+    await updateCard({ ...card, level: 1, isMastered: false });
     toast("Das Kartenlevel wurde auf den Wert 1 zurückgesetzt");
   }
 
