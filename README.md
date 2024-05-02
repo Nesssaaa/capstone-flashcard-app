@@ -12,7 +12,7 @@
 
 ## Demo-Version
 
-Unsere Demo-Version ist auf Vercel gehostet: [Schlaufuchs](https://capstone-flashcard-app-zeta.vercel.app/)
+Unsere Demo-Version ist auf Vercel gehostet: [Schlaufuchs](https://capstone-flashcard-app-zeta.vercel.app/).
 
 Anmelden kannst du dich über dein GitHub oder Google-Konto.
 
