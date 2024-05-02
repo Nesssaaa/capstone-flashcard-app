@@ -14,10 +14,17 @@ import {
   StyledQuizButtonWrong,
   StyledContainerWrapper,
   P,
+  StyledSummaryContainer,
+  StyledText,
+  StyledSummary,
+  StyledButton,
+  StyledButtonContainer,
+  StyledH2,
+  Wrapper,
+  StyledImage,
 } from "@/components/QuizPage.styled.js";
-// import CollectionHeader from "@/components/CollectionHeader/CollectionHeader.js";
+
 import { toast } from "react-toastify";
-import CollectionHeader from "@/components/CollectionHeader/CollectionHeader";
 import { ThemeProvider } from "styled-components";
 
 export default function QuizPage({
@@ -30,29 +37,29 @@ export default function QuizPage({
 }) {
   const router = useRouter();
   const collection = getCollection(router.query.id);
-  const filteredCards = collection
-    ? cards
-        .filter((card) => card.collection === collection.id)
-        .filter((card) => card.isMastered === false)
-        .sort((card1, card2) => {
-          if (card1.level < card2.level) return -1;
-          if (card1.level > card2.level) return 1;
-          if (card1.timestamp < card2.timestamp) return -1;
-          if (card1.timestamp > card2.timestamp) return 1;
-          return 0;
-        })
-        .slice(0, 15)
-    : [];
 
-  // Note:  We store a SNAPSHOT of the cards as they were at the beginning of the quiz in the state.
-  // Even if the cards are updated in the database through the calls of updateCard, the card's
-  // state in this quiz page remains the state of the card at the beginning of the quiz.
-  // This is intentional, such that the user can, for example, go back to the previous card
-  // and see the same state as before answering the card and can, e.g., correct a mis-click (right or wrong).
-  // The cards are only refreshed when the page is reloaded or a new quiz is started.
+  function getNewQuizCards() {
+    const filteredCards = collection
+      ? cards
+          .filter((card) => card.collection === collection.id)
+          .filter((card) => card.isMastered === false)
+          .sort((card1, card2) => {
+            if (card1.level < card2.level) return -1;
+            if (card1.level > card2.level) return 1;
+            if (card1.timestamp < card2.timestamp) return -1;
+            if (card1.timestamp > card2.timestamp) return 1;
+            return 0;
+          })
+          .slice(0, 15)
+      : [];
+    return getRandomCards(filteredCards, 15);
+  }
 
-  const [quizCards, setQuizCards] = useState(getRandomCards(filteredCards, 15));
-  const { countPosition, increment, decrement } = useCount(0);
+  const [quizCards, setQuizCards] = useState(getNewQuizCards);
+  const { countPosition, increment, reset } = useCount(0);
+  const [rightClicks, setRightClicks] = useState(0);
+  const [showSummary, setShowSummary] = useState(false);
+
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
 
@@ -81,7 +88,6 @@ export default function QuizPage({
   };
 
   const card = quizCards[countPosition];
-  const collectionName = collection ? collection.name : "lädt gerade...";
 
   const currentCard = quizCards[countPosition];
 
@@ -89,7 +95,7 @@ export default function QuizPage({
     if (countPosition < quizCards.length - 1) {
       increment();
     } else {
-      toast("Geschafft!");
+      setShowSummary(true);
     }
   }
 
@@ -105,11 +111,27 @@ export default function QuizPage({
       isMastered: currentCard.level === 5,
       timestamp: new Date(),
     });
+    setRightClicks((prevCount) => prevCount + 1);
     continueQuiz();
   }
 
-  if (!filteredCards || filteredCards.length === 0) {
-    return <h2>Dieser Kartenstapel enthält noch keine Karten.</h2>;
+  function handleClickYes() {
+    console.log("1:", quizCards);
+    setQuizCards(getNewQuizCards());
+    reset();
+    setRightClicks(0);
+    setShowSummary(false);
+  }
+
+  console.log(quizCards);
+
+  function handleClickNo() {
+    console.log("Link zu Collections");
+    router.push("/collections/");
+  }
+
+  if (!quizCards || quizCards.length === 0) {
+    return <StyledH2>Dieser Kartenstapel enthält noch keine Karten.</StyledH2>;
   }
 
   function quizTheme(props) {
@@ -122,58 +144,104 @@ export default function QuizPage({
   }
 
   return (
-    <StyledContainer>
-      <StyledContainerWrapper
-        onTouchStart={onTouchStart}
-        onTouchMove={onTouchMove}
-        onTouchEnd={onTouchEnd}
-      >
-        <ThemeProvider theme={quizTheme}>
-          <CardContainer
-            key={card.id}
-            question={card.question}
-            answer={card.answer}
-            id={card.id}
-            deleteCard={deleteCard}
-            onToggle={onToggle}
-            isMastered={card.isMastered}
-            level={card.level}
-            showArchiveButton={false}
-            reversedDirection={collection.reversedDirection}
-            resetCard={resetCard}
-            languageQuestion={card.languageQuestion}
-            languageAnswer={card.languageAnswer}
-          />
-        </ThemeProvider>
-      </StyledContainerWrapper>
-      <StyledSection>
-        <StyledButtonNavBar>
-          <StyledQuizButtonRight aria-label="wusste ich" onClick={onClickRight}>
-            <IconWrapper>
-              <PiSmileyDuotone />
-            </IconWrapper>
-          </StyledQuizButtonRight>
-
-          <StyledQuizButtonWrong
-            aria-label="wusste ich nicht"
-            onClick={onClickWrong}
+    <>
+      {!showSummary && (
+        <StyledContainer>
+          <StyledContainerWrapper
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
           >
-            <IconWrapper>
-              <PiSmileySadDuotone />
-            </IconWrapper>
-          </StyledQuizButtonWrong>
-        </StyledButtonNavBar>
-        <P>
-          Fortschritt: {countPosition + 1} von {quizCards.length}
-        </P>
-        <StyledLink
-          aria-label="Zurück zur Kartenstapel-Übersicht"
-          href={`/collections/${collection.id}`}
-        >
-          zurück zur Übersicht
-        </StyledLink>
-      </StyledSection>
-    </StyledContainer>
+            <ThemeProvider theme={quizTheme}>
+              <CardContainer
+                key={card.id}
+                question={card.question}
+                answer={card.answer}
+                id={card.id}
+                deleteCard={deleteCard}
+                onToggle={onToggle}
+                isMastered={card.isMastered}
+                level={card.level}
+                showArchiveButton={false}
+                reversedDirection={collection.reversedDirection}
+                resetCard={resetCard}
+                languageQuestion={card.languageQuestion}
+                languageAnswer={card.languageAnswer}
+              />
+            </ThemeProvider>
+          </StyledContainerWrapper>
+          <StyledSection>
+            <StyledButtonNavBar>
+              <StyledQuizButtonRight
+                aria-label="wusste ich"
+                onClick={onClickRight}
+              >
+                <IconWrapper>
+                  <PiSmileyDuotone />
+                </IconWrapper>
+              </StyledQuizButtonRight>
+
+              <StyledQuizButtonWrong
+                aria-label="wusste ich nicht"
+                onClick={onClickWrong}
+              >
+                <IconWrapper>
+                  <PiSmileySadDuotone />
+                </IconWrapper>
+              </StyledQuizButtonWrong>
+            </StyledButtonNavBar>
+            <P>
+              Fortschritt: {countPosition + 1} von {quizCards.length}
+            </P>
+            <StyledLink
+              aria-label="Zurück zur Kartenstapel-Übersicht"
+              href={`/collections/${collection.id}`}
+            >
+              zurück zur Übersicht
+            </StyledLink>
+          </StyledSection>
+        </StyledContainer>
+      )}
+      {showSummary && (
+        <>
+          <StyledSummaryContainer>
+            {rightClicks == quizCards.length ? (
+              <>
+                <StyledText>Super!</StyledText>
+                <StyledText>
+                  Du hast alle Karten richtig beantwortet.
+                </StyledText>
+                <StyledText>Weiter so, du Schlaufuchs!</StyledText>
+                <Wrapper>
+                  <StyledImage
+                    src="/fox.png"
+                    width={120}
+                    height={120}
+                    fontSize={20}
+                    alt="kleiner Fuchskopf"
+                    priority
+                  />
+                </Wrapper>
+              </>
+            ) : (
+              <StyledSummary>
+                Du hast {rightClicks} von {quizCards.length} Karte
+                {quizCards.length === 1 ? "" : "n"} richtig beantwortet!
+              </StyledSummary>
+            )}
+            <StyledText>Möchtest du ein neues Quiz starten?</StyledText>
+            <StyledButtonContainer>
+              <StyledButton aria-label="ja" onClick={handleClickYes}>
+                Ja
+              </StyledButton>
+              <StyledButton aria-label="nein" onClick={handleClickNo}>
+                Nein
+              </StyledButton>
+            </StyledButtonContainer>
+          </StyledSummaryContainer>
+        </>
+      )}
+    </>
   );
 }
 
