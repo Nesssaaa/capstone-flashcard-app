@@ -1,9 +1,13 @@
 # Schlaufuchs - die schlaue Art zu lernen
 
 🦊 Schlaufuchs simuliert das Lernen mit Karteikarten.
+
 📚 Du kannst neue Kartenstapel z.B. deine Schulfächer erstellen. Mit unserem Kartenformular legst du deine eigenen Lernkarten für jeden Kartenstapel an, die wie Karteikarten eine Vorder- und eine Rückseite haben.
+
 📣 Du kannst dir jede Karteikarte vorlesen lassen und dabei aus verschiedenen Sprachen wählen - ptimal zum Lernen von Fremdsprachen.
+
 💡 Wir verwenden die Spaced-Repetition-Methode, damit das Gelernte besser im Gedächtnis abgespeichert wird. Jede Karteikarte durchläuft dabei 5 Level, bis sie als gekonnt abgespeichert wird.
+
 🥳 Hab Spaß beim Lernen und verbessere deine Schulnoten mit Schlaufuchs!
 
 ## Demo-Version
