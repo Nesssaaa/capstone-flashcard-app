@@ -1,5 +1,6 @@
 # Schlaufuchs 
-<img width="906" alt="Readme_Schlaufuchs" src="https://github.com/Nesssaaa/capstone-flashcard-app/assets/148340045/8c6aa1bd-cbba-4e74-acfc-6576922330b8">
+<img width="817" alt="Schlaufuchs_Readme" src="https://github.com/Nesssaaa/capstone-flashcard-app/assets/148340045/597607bc-1a2b-4695-b88c-5543471ec5ef">
+
 
 
 🦊 Schlaufuchs simuliert das Lernen mit Karteikarten.
