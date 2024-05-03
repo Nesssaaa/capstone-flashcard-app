@@ -1,4 +1,6 @@
-# Schlaufuchs - die schlaue Art zu lernen
+# Schlaufuchs 
+<img width="906" alt="Readme_Schlaufuchs" src="https://github.com/Nesssaaa/capstone-flashcard-app/assets/148340045/8c6aa1bd-cbba-4e74-acfc-6576922330b8">
+
 
 🦊 Schlaufuchs simuliert das Lernen mit Karteikarten.
 
