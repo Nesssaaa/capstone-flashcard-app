@@ -14,7 +14,7 @@
 
 Unsere Demo-Version ist auf Vercel gehostet: [Schlaufuchs](https://capstone-flashcard-app-zeta.vercel.app/).
 
-Anmelden kannst du dich über dein GitHub oder Google-Konto.
+Anmelden kannst du dich über dein GitHub- oder Google-Konto.
 
 Unsere Demo-Version ist für die mobile Ansicht mit dem iPhone XR und iPhone SE, sowie dem Google-Chrome-Browser optimiert. Aber auch auf jedem anderen Gerät ist Schlaufuchs benutzbar.
 
