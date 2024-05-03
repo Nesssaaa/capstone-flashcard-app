@@ -16,7 +16,7 @@ Unsere Demo-Version ist auf Vercel gehostet: [Schlaufuchs](https://capstone-flas
 
 Anmelden kannst du dich über dein GitHub oder Google-Konto.
 
-Unsere Demo-Version ist für die mobile Ansicht mit dem iphoneXR und iphoneSE sowie dem Google-Chrome-Browser optimiert. Aber auch auf jedem anderen Gerät ist Schlaufuchs benutzbar.
+Unsere Demo-Version ist für die mobile Ansicht mit dem iPhone XR und iPhone SE, sowie dem Google-Chrome-Browser optimiert. Aber auch auf jedem anderen Gerät ist Schlaufuchs benutzbar.
 
 ## Technologien und Tools
 
