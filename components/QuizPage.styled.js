@@ -74,11 +74,6 @@ export const P = styled.p`
 `;
 
 export const StyledSummaryContainer = styled.div`
-  /* left: 1.5rem;
-  right: 1.5rem;
-  position: absolute;
-  top: 85px; */
-  /* bottom: 20vh; */
   margin: 0;
   margin-top: 5vh;
   margin-left: 1rem;

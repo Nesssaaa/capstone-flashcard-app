@@ -15,16 +15,12 @@ const BaseCardStyle = `
   border-radius: 20px;
   opacity: 0.7;
   resize: none;
-  font-family: system-ui;
   position: relative;
 `;
 
 const QuizPageStyle = `
-  left: 1.5rem;
-  right: 1.5rem;
   position: absolute;
-  top: 10px;
-  bottom: 1rem;
+  inset: 0.6rem 1.5rem 1rem 1.5rem;
   margin: 0;
   min-height: 0;
 `;
