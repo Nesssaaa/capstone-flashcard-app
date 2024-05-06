@@ -1,5 +1,6 @@
 # Schlaufuchs - die schlaue Art zu lernen
-<img width="817" alt="Schlaufuchs_Readme" src="https://github.com/Nesssaaa/capstone-flashcard-app/assets/148340045/597607bc-1a2b-4695-b88c-5543471ec5ef">
+<img width="812" alt="Screenshot_Readme2" src="https://github.com/Nesssaaa/capstone-flashcard-app/assets/148340045/7e6aed6a-ecb5-4cb0-8efc-0d613d27b90a">
+
 
 
 
