@@ -18,7 +18,7 @@ export default function ButtonNavBar({
     <StyledButtonNavBar>
       {showArchiveButton && (
         <CardButton
-          aria-label="Durch Klicken auf das Häckchen gelangst du zum Archiv, durch Klicken auf die Wiederholungspfeile wird deine Lernkarte wieder dem aktiven Kartenstapel hinzugefügt"
+          aria-label="Durch Klicken auf das Häkchen gelangst du zum Archiv, durch Klicken auf die Wiederholungspfeile wird deine Lernkarte wieder dem aktiven Kartenstapel hinzugefügt"
           onClick={handleClick}
         >
           <IconWrapper>{isMastered ? <FaRepeat /> : <FaCheck />}</IconWrapper>
