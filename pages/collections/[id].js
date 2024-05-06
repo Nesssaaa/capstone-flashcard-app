@@ -1,8 +1,6 @@
 import CardList from "../../components/CardList/CardList.js";
 import { useRouter } from "next/router";
-import styled from "styled-components";
 import CollectionNavbar from "@/components/CollectionNavBar/CollectionNavBar.js";
-import Link from "next/link";
 import CollectionHeader from "@/components/CollectionHeader/CollectionHeader.js";
 import LoadingSpinner from "@/components/LoadingSpinner/LoadingSpinner.js";
 import FActionButton from "@/components/FaButton/FaButton.js";
@@ -13,15 +11,11 @@ import { confirmAlert } from "react-confirm-alert";
 import "react-confirm-alert/src/react-confirm-alert.css";
 import SearchBar from "@/components/SearchBar/SearchBar.js";
 import { useState } from "react";
-
-export const StyledContainer = styled.div`
-  text-align: center;
-`;
-
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: var(--color-fox);
-`;
+import {
+  StyledContainer,
+  StyledLink,
+  Wrapper,
+} from "@/components/collections[id].styled.js";
 
 export default function CollectionCardList({
   cards,
@@ -29,7 +23,6 @@ export default function CollectionCardList({
   deleteCard,
   resetCard,
   onToggle,
-  updateCard,
 }) {
   const [searchTerm, setSearchTerm] = useState("");
   const router = useRouter();
@@ -114,7 +107,7 @@ export default function CollectionCardList({
           </p>
         </StyledContainer>
       ) : (
-        <>
+        <Wrapper>
           <SearchBar handleSearch={handleSearch} />
           <CardList
             cards={filteredCards}
@@ -123,7 +116,7 @@ export default function CollectionCardList({
             reversedDirection={collection.reversedDirection}
             resetCard={resetCard}
           />
-        </>
+        </Wrapper>
       )}
       {!isArchivePage && (
         <FActionButton aria-label="Quiz starten" onClick={handleQuizClick}>
