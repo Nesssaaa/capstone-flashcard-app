@@ -8,7 +8,6 @@ import {
   StyledCounter,
   IconWrapper,
   StyledLink,
-  IconWrapperArchiv,
 } from "./CollectionContainer.styled";
 import { MdQuiz } from "react-icons/md";
 import { FaCheck } from "react-icons/fa";

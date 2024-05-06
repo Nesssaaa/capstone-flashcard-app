@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { calculateFontSize } from "../../utils";
 
 export const StyledForm = styled.form`
   display: flex;
@@ -7,15 +6,12 @@ export const StyledForm = styled.form`
   max-width: 640px;
   align-items: center;
   position: relative;
-  padding-left: 1rem;
-  padding-right: 1rem;
   padding-bottom: 4vh;
-  gap: 1vh;
 `;
 
 export const StyledLabel = styled.label`
   margin: 0.7rem;
-  margin-top: 0%.5;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -77,8 +73,7 @@ export const StyledInput = styled.textarea`
 `;
 
 export const StyledButtonContainer = styled.div`
-  /* border-top: 1px solid var(--color-border-3); */
-  width: 110%;
+  width: 100%;
   max-height: calc(min(4rem, 5vh));
   background: var(--color-background-3);
   padding: 0.7vh;
@@ -88,6 +83,8 @@ export const StyledButtonContainer = styled.div`
   top: 0;
   z-index: 10;
   box-shadow: 1px 1px 2px 1px var(--color-form-1);
+  margin: 0;
+  margin-bottom: 1vh;
 `;
 
 export const StyledButton = styled.button`

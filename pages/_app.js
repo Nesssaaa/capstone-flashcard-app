@@ -25,7 +25,7 @@ function InternalApp({ Component, pageProps: { ...pageProps } }) {
   const [isDarkMode, setIsDarkMode] = useLocalStorageState("darkTheme", {
     defaultValue: false,
   });
-  const theme = isDarkMode ? darkTheme : lightTheme;
+  const themeRootVariablesFunc = isDarkMode ? darkTheme : lightTheme;
 
   const { data: session, status } = useSession();
   const isLoggedIn = status === "authenticated";
@@ -96,7 +96,7 @@ function InternalApp({ Component, pageProps: { ...pageProps } }) {
   }
 
   async function resetCard(card) {
-    await updateCard({ ...card, level: 1 });
+    await updateCard({ ...card, level: 1, isMastered: false });
     toast("Das Kartenlevel wurde auf den Wert 1 zurückgesetzt");
   }
 
@@ -186,7 +186,13 @@ function InternalApp({ Component, pageProps: { ...pageProps } }) {
   }
 
   return (
-    <ThemeProvider theme={{ func: theme }}>
+    <ThemeProvider
+      theme={{
+        rootVariablesFunc: themeRootVariablesFunc,
+        // override theme properties using the globalStyleOverride setting
+        ...(pageProps.globalStyleOverride || {}),
+      }}
+    >
       <Head>
         <title>SchlauFuchs</title>
       </Head>

@@ -16,12 +16,14 @@ export const lightTheme = (props) => ({
   "--color-border-2": "#ffffff",
   "--color-border-3": "#a9a9a9",
   "--color-fox": "#db780de3",
+  "--color-fox-2": "#db780d",
   "--color-header": "#ffffffba",
   "--color-counter": "#808580d5",
   "--color-form-1": "#dfdfdf",
   "--color-form-2": "#b0b0b0",
   // "--color-form-button": "#303030",
   "--color-form-button": "#ffffff",
+  "--color-card-quiz": "#fafaf9",
 });
 
 export const darkTheme = (props) => {
@@ -41,19 +43,19 @@ export const darkTheme = (props) => {
     "--color-border-2": "#eeeeee",
     "--color-border-3": "#505050",
     "--color-fox": "#db780de3",
+    "--color-fox-2": "#db780d",
     "--color-header": "#333333",
     "--color-counter": "#909090",
     "--color-form-1": "#303030",
     "--color-form-2": "#404040",
-
     "--color-form-button": "#303030",
+    "--color-card-quiz": "#333333",
   };
 };
 
 export default createGlobalStyle`
 :root {
-  ${(props) => props.theme.func(props)}
-
+  ${(props) => props.theme.rootVariablesFunc(props)}
 }
   *,
   *::before,

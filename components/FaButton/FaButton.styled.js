@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FAButton = styled.button`
   border: none;
-  position: absolute;
+  position: fixed;
   bottom: 5.5rem;
   right: 3rem;
   cursor: pointer;

@@ -4,7 +4,9 @@ import { MenuButton, MenuItem } from "@szhsin/react-menu";
 export const StyledMenuButton = styled(MenuButton)`
   border: none;
   background-color: transparent;
-  margin-left: 80%;
+  position: absolute;
+  top: 0;
+  right: 0;
 `;
 
 export const IconWrapper = styled.div`

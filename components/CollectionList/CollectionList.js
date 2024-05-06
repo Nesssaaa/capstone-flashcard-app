@@ -28,20 +28,22 @@ export default function CollectionList({
 
   return (
     <>
-      {collectionItems.map(({ collection, filteredCards }) => (
-        <StyledListContainer key={collection.id}>
-          <CollectionContainer
-            collection={collection}
-            editCollection={editCollection}
-            deleteCollection={deleteCollection}
-            cards={filteredCards}
-            archive={archive}
-            editCard={editCard}
-            resetCard={resetCard}
-            toggleCardDirection={toggleCardDirection}
-          />
-        </StyledListContainer>
-      ))}
+      {collectionItems
+        .filter(({ filteredCards }) => !archive || filteredCards.length > 0)
+        .map(({ collection, filteredCards }) => (
+          <StyledListContainer key={collection.id}>
+            <CollectionContainer
+              collection={collection}
+              editCollection={editCollection}
+              deleteCollection={deleteCollection}
+              cards={filteredCards}
+              archive={archive}
+              editCard={editCard}
+              resetCard={resetCard}
+              toggleCardDirection={toggleCardDirection}
+            />
+          </StyledListContainer>
+        ))}
     </>
   );
 }
