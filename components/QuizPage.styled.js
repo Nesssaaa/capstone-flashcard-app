@@ -67,7 +67,7 @@ export const IconWrapper = styled.div`
   margin: 0;
 `;
 
-export const P = styled.p`
+export const StyledProgressContainer = styled.p`
   color: var(--color-font-1);
   font-size: 1.2rem;
   margin: 0;

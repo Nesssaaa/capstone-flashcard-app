@@ -13,7 +13,7 @@ import {
   StyledQuizButtonRight,
   StyledQuizButtonWrong,
   StyledContainerWrapper,
-  P,
+  StyledProgressContainer,
   StyledSummaryContainer,
   StyledText,
   StyledSummary,
@@ -190,9 +190,9 @@ export default function QuizPage({
                 </IconWrapper>
               </StyledQuizButtonWrong>
             </StyledButtonNavBar>
-            <P>
+            <StyledProgressContainer>
               Fortschritt: {countPosition + 1} von {quizCards.length}
-            </P>
+            </StyledProgressContainer>
             <StyledLink
               aria-label="Zurück zur Kartenstapel-Übersicht"
               href={`/collections/${collection.id}`}
