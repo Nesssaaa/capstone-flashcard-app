@@ -7,11 +7,13 @@
 ## So funktioniert's
 🦊 Schlaufuchs simuliert das Lernen mit Karteikarten.
 
-📚 Du kannst neue Kartenstapel z.B. deine Schulfächer erstellen. Mit unserem Kartenformular legst du deine eigenen Lernkarten für jeden Kartenstapel an. Wie Karteikarten haben die Schlaufuchs-Lernkarten eine Vorder- und eine Rückseite.
+📚 Du kannst neue Kartenstapel beispielsweise für deine Schulfächer erstellen. Dann legst du deine eigenen Lernkarten für jeden Kartenstapel an. Wie Karteikarten haben die Schlaufuchs-Lernkarten eine Vorder- und eine Rückseite.
 
 📣 Du kannst dir jede Karteikarte vorlesen lassen und dabei aus verschiedenen Sprachen wählen - optimal zum Lernen von Fremdsprachen.
 
-💡 Wir verwenden die Spaced-Repetition-Methode, damit das Gelernte besser im Gedächtnis abgespeichert wird. Jede Karteikarte durchläuft dabei 5 Level, bis sie als gekonnt abgespeichert wird.
+💡 Im Quiz lernst du deine Karteikarten mit einer "[Spaced-repetition](https://de.wikipedia.org/wiki/Spaced_repetition)"-Methode, damit das Gelernte besser im Langzeitgedächtnis abgespeichert wird: Jede Karteikarte bleibt so lange im aktiven Lernprozess, bis sie in sechs aufeinanderfolgenden Quizdurchläufen richtig beantwortet wurde. Danach wird die Karte automatisch ins Archiv verschoben und wird nicht mehr abgefragt. Kannst du eine Karte nicht beantworten, wird sie wieder häufiger abgefragt. 
+
+📙 Karten können jederzeit manuell archiviert oder auch reaktiviert werden, so dass du stets die Kontrolle darüber hast, welche Karten sich im aktiven Lernprozess befinden oder pausieren.  
 
 🥳 Hab Spaß beim Lernen und verbessere deine Schulnoten mit Schlaufuchs!
 
