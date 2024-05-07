@@ -28,7 +28,7 @@ Unsere Demo-Version ist für die mobile Ansicht mit dem iPhone XR und iPhone SE,
 ## Technologien und Tools
 
 - [React](https://react.dev/)
-- [Jest](https://jestjs.io/) / React Testing Library 
+- [Jest](https://jestjs.io/) / [React Testing Library](https://testing-library.com/) 
 - [styled-components](https://styled-components.com/)
 - [Next.js](https://nextjs.org/)
 - [Node.js](https://nodejs.org/en)
