@@ -77,6 +77,7 @@ export default function CardContainer({
           readOnly
           textLength={reversedDirection ? answer : question}
           value={reversedDirection ? answer : question}
+          aria-label="Text der Kartenvorderseite"
         ></StyledTextShow>
         <IconWrapper>
           <MdTouchApp />
@@ -104,6 +105,7 @@ export default function CardContainer({
         />
 
         <StyledTextShow
+          aria-label="Text der Kartenrückseite"
           readOnly
           textLength={reversedDirection ? question : answer}
           value={reversedDirection ? question : answer}
