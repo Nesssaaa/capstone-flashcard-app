@@ -28,14 +28,17 @@ Unsere Demo-Version ist für die mobile Ansicht mit dem iPhone XR und iPhone SE,
 ## Technologien und Tools
 
 - [React](https://react.dev/)
+- JavaScript
 - [Jest](https://jestjs.io/) / [React Testing Library](https://testing-library.com/) 
 - [styled-components](https://styled-components.com/)
+- [CSS Modules](https://nextjs.org/docs/app/building-your-application/styling/css-modules)
 - [Next.js](https://nextjs.org/)
 - [Node.js](https://nodejs.org/en)
 - [NextAuth.js](https://next-auth.js.org/) / Google-Login / GitHub-Login
 - [MongoDB](https://www.mongodb.com/)
 - [Mongoose](https://mongoosejs.com/)
 - [Vercel](https://vercel.com/)
+- [axe DevTools](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
 - Git / GitHub
 
 ## Team
