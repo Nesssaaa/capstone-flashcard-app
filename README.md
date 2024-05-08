@@ -1,11 +1,11 @@
-# Schlaufuchs - die schlaue Art zu lernen
+# SchlauFuchs - die schlaue Art zu lernen
 <img width="975" alt="Screenshot_README" src="https://github.com/Nesssaaa/capstone-flashcard-app/assets/148340045/b08dcbad-19f4-4846-8a96-aa1120bd23b4">
 
 
 
 
 ## So funktioniert's
-🦊 Schlaufuchs simuliert das Lernen mit Karteikarten.
+🦊 SchlauFuchs simuliert das Lernen mit Karteikarten.
 
 📚 Du kannst neue Kartenstapel beispielsweise für deine Schulfächer erstellen. Dann legst du deine eigenen Lernkarten für jeden Kartenstapel an. Wie Karteikarten haben die Schlaufuchs-Lernkarten eine Vorder- und eine Rückseite.
 
