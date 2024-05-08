@@ -39,7 +39,7 @@ Unsere Demo-Version ist für die mobile Ansicht mit dem iPhone XR und iPhone SE,
 - [Mongoose](https://mongoosejs.com/)
 - [Vercel](https://vercel.com/)
 - [axe DevTools](https://chromewebstore.google.com/detail/axe-devtools-web-accessib/lhdoppojpmngadmnindnejefpokejbdd)
-- SWR
+- [SWR](https://swr.vercel.app/)
 - Git / GitHub
 
 ## Team
