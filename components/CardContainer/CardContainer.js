@@ -112,7 +112,9 @@ export default function CardContainer({
         ></StyledTextShow>
         <IconWrapper>
           <MdTouchApp />
-          <HiOutlineSpeakerWave onClick={handleReadAnswer} />
+          <HiOutlineSpeakerWave
+            onClick={reversedDirection ? handleReadQuestion : handleReadAnswer}
+          />
         </IconWrapper>
 
         <ButtonNavBar
